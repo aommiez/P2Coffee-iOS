@@ -1,0 +1,476 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3698C21D1946B0AB00BD42E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C21C1946B0AB00BD42E3 /* Foundation.framework */; };
+		3698C21F1946B0AB00BD42E3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C21E1946B0AB00BD42E3 /* CoreGraphics.framework */; };
+		3698C2211946B0AB00BD42E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C2201946B0AB00BD42E3 /* UIKit.framework */; };
+		3698C2231946B0AB00BD42E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C2221946B0AB00BD42E3 /* CoreData.framework */; };
+		3698C2291946B0AB00BD42E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2271946B0AB00BD42E3 /* InfoPlist.strings */; };
+		3698C22B1946B0AB00BD42E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C22A1946B0AB00BD42E3 /* main.m */; };
+		3698C22F1946B0AB00BD42E3 /* PFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */; };
+		3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */; };
+		3698C2341946B0AB00BD42E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2331946B0AB00BD42E3 /* Images.xcassets */; };
+		3698C23B1946B0AB00BD42E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C23A1946B0AB00BD42E3 /* XCTest.framework */; };
+		3698C23C1946B0AB00BD42E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C21C1946B0AB00BD42E3 /* Foundation.framework */; };
+		3698C23D1946B0AB00BD42E3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C2201946B0AB00BD42E3 /* UIKit.framework */; };
+		3698C23E1946B0AB00BD42E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C2221946B0AB00BD42E3 /* CoreData.framework */; };
+		3698C2461946B0AB00BD42E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2441946B0AB00BD42E3 /* InfoPlist.strings */; };
+		3698C2481946B0AB00BD42E3 /* P2CoffeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3698C23F1946B0AB00BD42E3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3698C2111946B0AB00BD42E3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3698C2181946B0AB00BD42E3;
+			remoteInfo = P2Coffee;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3698C2191946B0AB00BD42E3 /* P2Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3698C21C1946B0AB00BD42E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3698C21E1946B0AB00BD42E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		3698C2201946B0AB00BD42E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3698C2221946B0AB00BD42E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3698C2261946B0AB00BD42E3 /* P2Coffee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2Coffee-Info.plist"; sourceTree = "<group>"; };
+		3698C2281946B0AB00BD42E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3698C22A1946B0AB00BD42E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3698C22C1946B0AB00BD42E3 /* P2Coffee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2Coffee-Prefix.pch"; sourceTree = "<group>"; };
+		3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAppDelegate.h; sourceTree = "<group>"; };
+		3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAppDelegate.m; sourceTree = "<group>"; };
+		3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P2Coffee.xcdatamodel; sourceTree = "<group>"; };
+		3698C2331946B0AB00BD42E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2CoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3698C23A1946B0AB00BD42E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		3698C2431946B0AB00BD42E3 /* P2CoffeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2CoffeeTests-Info.plist"; sourceTree = "<group>"; };
+		3698C2451946B0AB00BD42E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2CoffeeTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3698C2161946B0AB00BD42E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C21F1946B0AB00BD42E3 /* CoreGraphics.framework in Frameworks */,
+				3698C2231946B0AB00BD42E3 /* CoreData.framework in Frameworks */,
+				3698C2211946B0AB00BD42E3 /* UIKit.framework in Frameworks */,
+				3698C21D1946B0AB00BD42E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3698C2361946B0AB00BD42E3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C23B1946B0AB00BD42E3 /* XCTest.framework in Frameworks */,
+				3698C23E1946B0AB00BD42E3 /* CoreData.framework in Frameworks */,
+				3698C23D1946B0AB00BD42E3 /* UIKit.framework in Frameworks */,
+				3698C23C1946B0AB00BD42E3 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3698C2101946B0AB00BD42E3 = {
+			isa = PBXGroup;
+			children = (
+				3698C2241946B0AB00BD42E3 /* P2Coffee */,
+				3698C2411946B0AB00BD42E3 /* P2CoffeeTests */,
+				3698C21B1946B0AB00BD42E3 /* Frameworks */,
+				3698C21A1946B0AB00BD42E3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3698C21A1946B0AB00BD42E3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3698C2191946B0AB00BD42E3 /* P2Coffee.app */,
+				3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3698C21B1946B0AB00BD42E3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3698C21C1946B0AB00BD42E3 /* Foundation.framework */,
+				3698C21E1946B0AB00BD42E3 /* CoreGraphics.framework */,
+				3698C2201946B0AB00BD42E3 /* UIKit.framework */,
+				3698C2221946B0AB00BD42E3 /* CoreData.framework */,
+				3698C23A1946B0AB00BD42E3 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3698C2241946B0AB00BD42E3 /* P2Coffee */ = {
+			isa = PBXGroup;
+			children = (
+				3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */,
+				3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */,
+				3698C2331946B0AB00BD42E3 /* Images.xcassets */,
+				3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */,
+				3698C2251946B0AB00BD42E3 /* Supporting Files */,
+			);
+			path = P2Coffee;
+			sourceTree = "<group>";
+		};
+		3698C2251946B0AB00BD42E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3698C2261946B0AB00BD42E3 /* P2Coffee-Info.plist */,
+				3698C2271946B0AB00BD42E3 /* InfoPlist.strings */,
+				3698C22A1946B0AB00BD42E3 /* main.m */,
+				3698C22C1946B0AB00BD42E3 /* P2Coffee-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3698C2411946B0AB00BD42E3 /* P2CoffeeTests */ = {
+			isa = PBXGroup;
+			children = (
+				3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */,
+				3698C2421946B0AB00BD42E3 /* Supporting Files */,
+			);
+			path = P2CoffeeTests;
+			sourceTree = "<group>";
+		};
+		3698C2421946B0AB00BD42E3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3698C2431946B0AB00BD42E3 /* P2CoffeeTests-Info.plist */,
+				3698C2441946B0AB00BD42E3 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3698C2181946B0AB00BD42E3 /* P2Coffee */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2Coffee" */;
+			buildPhases = (
+				3698C2151946B0AB00BD42E3 /* Sources */,
+				3698C2161946B0AB00BD42E3 /* Frameworks */,
+				3698C2171946B0AB00BD42E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = P2Coffee;
+			productName = P2Coffee;
+			productReference = 3698C2191946B0AB00BD42E3 /* P2Coffee.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3698C2381946B0AB00BD42E3 /* P2CoffeeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2CoffeeTests" */;
+			buildPhases = (
+				3698C2351946B0AB00BD42E3 /* Sources */,
+				3698C2361946B0AB00BD42E3 /* Frameworks */,
+				3698C2371946B0AB00BD42E3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3698C2401946B0AB00BD42E3 /* PBXTargetDependency */,
+			);
+			name = P2CoffeeTests;
+			productName = P2CoffeeTests;
+			productReference = 3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3698C2111946B0AB00BD42E3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PF;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Platwo fusion";
+				TargetAttributes = {
+					3698C2381946B0AB00BD42E3 = {
+						TestTargetID = 3698C2181946B0AB00BD42E3;
+					};
+				};
+			};
+			buildConfigurationList = 3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "P2Coffee" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 3698C2101946B0AB00BD42E3;
+			productRefGroup = 3698C21A1946B0AB00BD42E3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3698C2181946B0AB00BD42E3 /* P2Coffee */,
+				3698C2381946B0AB00BD42E3 /* P2CoffeeTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3698C2171946B0AB00BD42E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C2291946B0AB00BD42E3 /* InfoPlist.strings in Resources */,
+				3698C2341946B0AB00BD42E3 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3698C2371946B0AB00BD42E3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C2461946B0AB00BD42E3 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3698C2151946B0AB00BD42E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C22F1946B0AB00BD42E3 /* PFAppDelegate.m in Sources */,
+				3698C22B1946B0AB00BD42E3 /* main.m in Sources */,
+				3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3698C2351946B0AB00BD42E3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3698C2481946B0AB00BD42E3 /* P2CoffeeTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3698C2401946B0AB00BD42E3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3698C2181946B0AB00BD42E3 /* P2Coffee */;
+			targetProxy = 3698C23F1946B0AB00BD42E3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3698C2271946B0AB00BD42E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3698C2281946B0AB00BD42E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		3698C2441946B0AB00BD42E3 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3698C2451946B0AB00BD42E3 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3698C2491946B0AB00BD42E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		3698C24A1946B0AB00BD42E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3698C24C1946B0AB00BD42E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
+				INFOPLIST_FILE = "P2Coffee/P2Coffee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		3698C24D1946B0AB00BD42E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
+				INFOPLIST_FILE = "P2Coffee/P2Coffee-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		3698C24F1946B0AB00BD42E3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/P2Coffee.app/P2Coffee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "P2CoffeeTests/P2CoffeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		3698C2501946B0AB00BD42E3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/P2Coffee.app/P2Coffee";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
+				INFOPLIST_FILE = "P2CoffeeTests/P2CoffeeTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "P2Coffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3698C2491946B0AB00BD42E3 /* Debug */,
+				3698C24A1946B0AB00BD42E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2Coffee" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3698C24C1946B0AB00BD42E3 /* Debug */,
+				3698C24D1946B0AB00BD42E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2CoffeeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3698C24F1946B0AB00BD42E3 /* Debug */,
+				3698C2501946B0AB00BD42E3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */,
+			);
+			currentVersion = 3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */;
+			path = P2Coffee.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 3698C2111946B0AB00BD42E3 /* Project object */;
+}
