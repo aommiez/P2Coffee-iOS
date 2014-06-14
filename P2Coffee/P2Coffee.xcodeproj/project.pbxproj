@@ -22,6 +22,41 @@
 		3698C23E1946B0AB00BD42E3 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C2221946B0AB00BD42E3 /* CoreData.framework */; };
 		3698C2461946B0AB00BD42E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2441946B0AB00BD42E3 /* InfoPlist.strings */; };
 		3698C2481946B0AB00BD42E3 /* P2CoffeeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */; };
+		EA250F571947FEFE00202DB1 /* icon_activity_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F431947FEFE00202DB1 /* icon_activity_off.png */; };
+		EA250F581947FEFE00202DB1 /* icon_activity_on.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F441947FEFE00202DB1 /* icon_activity_on.png */; };
+		EA250F591947FEFE00202DB1 /* icon_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F451947FEFE00202DB1 /* icon_contact_off.png */; };
+		EA250F5A1947FEFE00202DB1 /* icon_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F461947FEFE00202DB1 /* icon_contact_on.png */; };
+		EA250F5B1947FEFE00202DB1 /* icon_showcase_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F471947FEFE00202DB1 /* icon_showcase_off.png */; };
+		EA250F5C1947FEFE00202DB1 /* icon_showcase_on.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F481947FEFE00202DB1 /* icon_showcase_on.png */; };
+		EA250F5D1947FEFE00202DB1 /* icon_update_off.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F491947FEFE00202DB1 /* icon_update_off.png */; };
+		EA250F5E1947FEFE00202DB1 /* icon_update_on.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F4A1947FEFE00202DB1 /* icon_update_on.png */; };
+		EA250F5F1947FEFE00202DB1 /* icon_activity_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F4C1947FEFE00202DB1 /* icon_activity_off@2x.png */; };
+		EA250F601947FEFE00202DB1 /* icon_activity_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F4D1947FEFE00202DB1 /* icon_activity_on@2x.png */; };
+		EA250F611947FEFE00202DB1 /* icon_contact_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F4E1947FEFE00202DB1 /* icon_contact_off@2x.png */; };
+		EA250F621947FEFE00202DB1 /* icon_contact_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F4F1947FEFE00202DB1 /* icon_contact_on@2x.png */; };
+		EA250F631947FEFE00202DB1 /* icon_showcase_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F501947FEFE00202DB1 /* icon_showcase_off@2x.png */; };
+		EA250F641947FEFE00202DB1 /* icon_showcase_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F511947FEFE00202DB1 /* icon_showcase_on@2x.png */; };
+		EA250F651947FEFE00202DB1 /* icon_update_off@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F521947FEFE00202DB1 /* icon_update_off@2x.png */; };
+		EA250F661947FEFE00202DB1 /* icon_update_on@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F531947FEFE00202DB1 /* icon_update_on@2x.png */; };
+		EA250F671947FEFE00202DB1 /* Notification_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F541947FEFE00202DB1 /* Notification_icon@2x.png */; };
+		EA250F681947FEFE00202DB1 /* Setting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F551947FEFE00202DB1 /* Setting_icon@2x.png */; };
+		EA287CCD194AB46500FBBF4D /* default.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EA287CCC194AB46500FBBF4D /* default.jpeg */; };
+		EA287CD2194AB4CD00FBBF4D /* PFContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA287CD0194AB4CD00FBBF4D /* PFContactViewController.m */; };
+		EA287CD3194AB4CD00FBBF4D /* PFContactViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA287CD1194AB4CD00FBBF4D /* PFContactViewController_Wide.xib */; };
+		EA287CD7194AB63000FBBF4D /* Powered.png in Resources */ = {isa = PBXBuildFile; fileRef = EA287CD5194AB63000FBBF4D /* Powered.png */; };
+		EA287CD8194AB63000FBBF4D /* Powered@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA287CD6194AB63000FBBF4D /* Powered@2x.png */; };
+		EA287CDD194AB70900FBBF4D /* PagedImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA287CDC194AB70900FBBF4D /* PagedImageScrollView.m */; };
+		EA287CE1194AB7EC00FBBF4D /* AsyncImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = EA287CE0194AB7EC00FBBF4D /* AsyncImageView.m */; };
+		EAA575A71946D84C00001547 /* notificationView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA575791946D84C00001547 /* notificationView.xib */; };
+		EAA575A81946D84C00001547 /* PFCustomBadge.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5757B1946D84C00001547 /* PFCustomBadge.m */; };
+		EAA575A91946D84C00001547 /* PFTabBarItemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5757D1946D84C00001547 /* PFTabBarItemButton.m */; };
+		EAA575AA1946D84C00001547 /* PFTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5757F1946D84C00001547 /* PFTabBarViewController.m */; };
+		EAA575BE1946D84C00001547 /* Tab1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA575991946D84C00001547 /* Tab1ViewController.m */; };
+		EAA575BF1946D84C00001547 /* Tab1ViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA5759A1946D84C00001547 /* Tab1ViewController_Wide.xib */; };
+		EAA575C01946D84C00001547 /* Tab2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA5759D1946D84C00001547 /* Tab2ViewController.m */; };
+		EAA575C11946D84C00001547 /* Tab2ViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA5759E1946D84C00001547 /* Tab2ViewController_Wide.xib */; };
+		EAA575C21946D84C00001547 /* Tab3ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EAA575A11946D84C00001547 /* Tab3ViewController.m */; };
+		EAA575C31946D84C00001547 /* Tab3ViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAA575A21946D84C00001547 /* Tab3ViewController_Wide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +88,50 @@
 		3698C2431946B0AB00BD42E3 /* P2CoffeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2CoffeeTests-Info.plist"; sourceTree = "<group>"; };
 		3698C2451946B0AB00BD42E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2CoffeeTests.m; sourceTree = "<group>"; };
+		EA250F431947FEFE00202DB1 /* icon_activity_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_activity_off.png; sourceTree = "<group>"; };
+		EA250F441947FEFE00202DB1 /* icon_activity_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_activity_on.png; sourceTree = "<group>"; };
+		EA250F451947FEFE00202DB1 /* icon_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contact_off.png; sourceTree = "<group>"; };
+		EA250F461947FEFE00202DB1 /* icon_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_contact_on.png; sourceTree = "<group>"; };
+		EA250F471947FEFE00202DB1 /* icon_showcase_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_showcase_off.png; sourceTree = "<group>"; };
+		EA250F481947FEFE00202DB1 /* icon_showcase_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_showcase_on.png; sourceTree = "<group>"; };
+		EA250F491947FEFE00202DB1 /* icon_update_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_update_off.png; sourceTree = "<group>"; };
+		EA250F4A1947FEFE00202DB1 /* icon_update_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_update_on.png; sourceTree = "<group>"; };
+		EA250F4C1947FEFE00202DB1 /* icon_activity_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_activity_off@2x.png"; sourceTree = "<group>"; };
+		EA250F4D1947FEFE00202DB1 /* icon_activity_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_activity_on@2x.png"; sourceTree = "<group>"; };
+		EA250F4E1947FEFE00202DB1 /* icon_contact_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contact_off@2x.png"; sourceTree = "<group>"; };
+		EA250F4F1947FEFE00202DB1 /* icon_contact_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_contact_on@2x.png"; sourceTree = "<group>"; };
+		EA250F501947FEFE00202DB1 /* icon_showcase_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_showcase_off@2x.png"; sourceTree = "<group>"; };
+		EA250F511947FEFE00202DB1 /* icon_showcase_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_showcase_on@2x.png"; sourceTree = "<group>"; };
+		EA250F521947FEFE00202DB1 /* icon_update_off@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_update_off@2x.png"; sourceTree = "<group>"; };
+		EA250F531947FEFE00202DB1 /* icon_update_on@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_update_on@2x.png"; sourceTree = "<group>"; };
+		EA250F541947FEFE00202DB1 /* Notification_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Notification_icon@2x.png"; sourceTree = "<group>"; };
+		EA250F551947FEFE00202DB1 /* Setting_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting_icon@2x.png"; sourceTree = "<group>"; };
+		EA287CCC194AB46500FBBF4D /* default.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpeg; sourceTree = "<group>"; };
+		EA287CCF194AB4CD00FBBF4D /* PFContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFContactViewController.h; sourceTree = "<group>"; };
+		EA287CD0194AB4CD00FBBF4D /* PFContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFContactViewController.m; sourceTree = "<group>"; };
+		EA287CD1194AB4CD00FBBF4D /* PFContactViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFContactViewController_Wide.xib; sourceTree = "<group>"; };
+		EA287CD5194AB63000FBBF4D /* Powered.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Powered.png; sourceTree = "<group>"; };
+		EA287CD6194AB63000FBBF4D /* Powered@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Powered@2x.png"; sourceTree = "<group>"; };
+		EA287CDB194AB70900FBBF4D /* PagedImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PagedImageScrollView.h; sourceTree = "<group>"; };
+		EA287CDC194AB70900FBBF4D /* PagedImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PagedImageScrollView.m; sourceTree = "<group>"; };
+		EA287CDF194AB7EC00FBBF4D /* AsyncImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncImageView.h; sourceTree = "<group>"; };
+		EA287CE0194AB7EC00FBBF4D /* AsyncImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncImageView.m; sourceTree = "<group>"; };
+		EAA575791946D84C00001547 /* notificationView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = notificationView.xib; sourceTree = "<group>"; };
+		EAA5757A1946D84C00001547 /* PFCustomBadge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFCustomBadge.h; sourceTree = "<group>"; };
+		EAA5757B1946D84C00001547 /* PFCustomBadge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFCustomBadge.m; sourceTree = "<group>"; };
+		EAA5757C1946D84C00001547 /* PFTabBarItemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTabBarItemButton.h; sourceTree = "<group>"; };
+		EAA5757D1946D84C00001547 /* PFTabBarItemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTabBarItemButton.m; sourceTree = "<group>"; };
+		EAA5757E1946D84C00001547 /* PFTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTabBarViewController.h; sourceTree = "<group>"; };
+		EAA5757F1946D84C00001547 /* PFTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTabBarViewController.m; sourceTree = "<group>"; };
+		EAA575981946D84C00001547 /* Tab1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab1ViewController.h; sourceTree = "<group>"; };
+		EAA575991946D84C00001547 /* Tab1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab1ViewController.m; sourceTree = "<group>"; };
+		EAA5759A1946D84C00001547 /* Tab1ViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tab1ViewController_Wide.xib; sourceTree = "<group>"; };
+		EAA5759C1946D84C00001547 /* Tab2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab2ViewController.h; sourceTree = "<group>"; };
+		EAA5759D1946D84C00001547 /* Tab2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab2ViewController.m; sourceTree = "<group>"; };
+		EAA5759E1946D84C00001547 /* Tab2ViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tab2ViewController_Wide.xib; sourceTree = "<group>"; };
+		EAA575A01946D84C00001547 /* Tab3ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tab3ViewController.h; sourceTree = "<group>"; };
+		EAA575A11946D84C00001547 /* Tab3ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tab3ViewController.m; sourceTree = "<group>"; };
+		EAA575A21946D84C00001547 /* Tab3ViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Tab3ViewController_Wide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +194,10 @@
 		3698C2241946B0AB00BD42E3 /* P2Coffee */ = {
 			isa = PBXGroup;
 			children = (
+				EA287CD9194AB70900FBBF4D /* Ext */,
+				EAA575781946D84C00001547 /* Class */,
+				EAA575801946D84C00001547 /* ImagesTab */,
+				EAA575961946D84C00001547 /* ViewController */,
 				3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */,
 				3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */,
 				3698C2331946B0AB00BD42E3 /* Images.xcassets */,
@@ -151,6 +234,158 @@
 				3698C2441946B0AB00BD42E3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		EA250F421947FEFE00202DB1 /* i4 */ = {
+			isa = PBXGroup;
+			children = (
+				EA250F431947FEFE00202DB1 /* icon_activity_off.png */,
+				EA250F441947FEFE00202DB1 /* icon_activity_on.png */,
+				EA250F451947FEFE00202DB1 /* icon_contact_off.png */,
+				EA250F461947FEFE00202DB1 /* icon_contact_on.png */,
+				EA250F471947FEFE00202DB1 /* icon_showcase_off.png */,
+				EA250F481947FEFE00202DB1 /* icon_showcase_on.png */,
+				EA250F491947FEFE00202DB1 /* icon_update_off.png */,
+				EA250F4A1947FEFE00202DB1 /* icon_update_on.png */,
+			);
+			path = i4;
+			sourceTree = "<group>";
+		};
+		EA250F4B1947FEFE00202DB1 /* i5 */ = {
+			isa = PBXGroup;
+			children = (
+				EA250F4C1947FEFE00202DB1 /* icon_activity_off@2x.png */,
+				EA250F4D1947FEFE00202DB1 /* icon_activity_on@2x.png */,
+				EA250F4E1947FEFE00202DB1 /* icon_contact_off@2x.png */,
+				EA250F4F1947FEFE00202DB1 /* icon_contact_on@2x.png */,
+				EA250F501947FEFE00202DB1 /* icon_showcase_off@2x.png */,
+				EA250F511947FEFE00202DB1 /* icon_showcase_on@2x.png */,
+				EA250F521947FEFE00202DB1 /* icon_update_off@2x.png */,
+				EA250F531947FEFE00202DB1 /* icon_update_on@2x.png */,
+			);
+			path = i5;
+			sourceTree = "<group>";
+		};
+		EA287CCB194AB46500FBBF4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CCC194AB46500FBBF4D /* default.jpeg */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		EA287CCE194AB49B00FBBF4D /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CD4194AB63000FBBF4D /* Images */,
+				EA287CCF194AB4CD00FBBF4D /* PFContactViewController.h */,
+				EA287CD0194AB4CD00FBBF4D /* PFContactViewController.m */,
+				EA287CD1194AB4CD00FBBF4D /* PFContactViewController_Wide.xib */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		EA287CD4194AB63000FBBF4D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CD5194AB63000FBBF4D /* Powered.png */,
+				EA287CD6194AB63000FBBF4D /* Powered@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		EA287CD9194AB70900FBBF4D /* Ext */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CDE194AB7EC00FBBF4D /* AsyncImageView */,
+				EA287CDA194AB70900FBBF4D /* PagedImageScrollView */,
+			);
+			path = Ext;
+			sourceTree = SOURCE_ROOT;
+		};
+		EA287CDA194AB70900FBBF4D /* PagedImageScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CDB194AB70900FBBF4D /* PagedImageScrollView.h */,
+				EA287CDC194AB70900FBBF4D /* PagedImageScrollView.m */,
+			);
+			path = PagedImageScrollView;
+			sourceTree = "<group>";
+		};
+		EA287CDE194AB7EC00FBBF4D /* AsyncImageView */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CDF194AB7EC00FBBF4D /* AsyncImageView.h */,
+				EA287CE0194AB7EC00FBBF4D /* AsyncImageView.m */,
+			);
+			path = AsyncImageView;
+			sourceTree = "<group>";
+		};
+		EAA575781946D84C00001547 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				EAA575791946D84C00001547 /* notificationView.xib */,
+				EAA5757A1946D84C00001547 /* PFCustomBadge.h */,
+				EAA5757B1946D84C00001547 /* PFCustomBadge.m */,
+				EAA5757C1946D84C00001547 /* PFTabBarItemButton.h */,
+				EAA5757D1946D84C00001547 /* PFTabBarItemButton.m */,
+				EAA5757E1946D84C00001547 /* PFTabBarViewController.h */,
+				EAA5757F1946D84C00001547 /* PFTabBarViewController.m */,
+			);
+			path = Class;
+			sourceTree = SOURCE_ROOT;
+		};
+		EAA575801946D84C00001547 /* ImagesTab */ = {
+			isa = PBXGroup;
+			children = (
+				EA250F421947FEFE00202DB1 /* i4 */,
+				EA250F4B1947FEFE00202DB1 /* i5 */,
+				EA250F541947FEFE00202DB1 /* Notification_icon@2x.png */,
+				EA250F551947FEFE00202DB1 /* Setting_icon@2x.png */,
+			);
+			path = ImagesTab;
+			sourceTree = SOURCE_ROOT;
+		};
+		EAA575961946D84C00001547 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EA287CCB194AB46500FBBF4D /* Images */,
+				EAA575971946D84C00001547 /* Tab1 */,
+				EAA5759B1946D84C00001547 /* Tab2 */,
+				EAA5759F1946D84C00001547 /* Tab3 */,
+				EA287CCE194AB49B00FBBF4D /* Contact */,
+			);
+			path = ViewController;
+			sourceTree = SOURCE_ROOT;
+		};
+		EAA575971946D84C00001547 /* Tab1 */ = {
+			isa = PBXGroup;
+			children = (
+				EAA575981946D84C00001547 /* Tab1ViewController.h */,
+				EAA575991946D84C00001547 /* Tab1ViewController.m */,
+				EAA5759A1946D84C00001547 /* Tab1ViewController_Wide.xib */,
+			);
+			path = Tab1;
+			sourceTree = "<group>";
+		};
+		EAA5759B1946D84C00001547 /* Tab2 */ = {
+			isa = PBXGroup;
+			children = (
+				EAA5759C1946D84C00001547 /* Tab2ViewController.h */,
+				EAA5759D1946D84C00001547 /* Tab2ViewController.m */,
+				EAA5759E1946D84C00001547 /* Tab2ViewController_Wide.xib */,
+			);
+			path = Tab2;
+			sourceTree = "<group>";
+		};
+		EAA5759F1946D84C00001547 /* Tab3 */ = {
+			isa = PBXGroup;
+			children = (
+				EAA575A01946D84C00001547 /* Tab3ViewController.h */,
+				EAA575A11946D84C00001547 /* Tab3ViewController.m */,
+				EAA575A21946D84C00001547 /* Tab3ViewController_Wide.xib */,
+			);
+			path = Tab3;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -229,8 +464,34 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA250F591947FEFE00202DB1 /* icon_contact_off.png in Resources */,
+				EA287CD3194AB4CD00FBBF4D /* PFContactViewController_Wide.xib in Resources */,
+				EA250F581947FEFE00202DB1 /* icon_activity_on.png in Resources */,
 				3698C2291946B0AB00BD42E3 /* InfoPlist.strings in Resources */,
 				3698C2341946B0AB00BD42E3 /* Images.xcassets in Resources */,
+				EAA575A71946D84C00001547 /* notificationView.xib in Resources */,
+				EA250F5A1947FEFE00202DB1 /* icon_contact_on.png in Resources */,
+				EA250F621947FEFE00202DB1 /* icon_contact_on@2x.png in Resources */,
+				EA250F651947FEFE00202DB1 /* icon_update_off@2x.png in Resources */,
+				EAA575C11946D84C00001547 /* Tab2ViewController_Wide.xib in Resources */,
+				EA250F671947FEFE00202DB1 /* Notification_icon@2x.png in Resources */,
+				EAA575C31946D84C00001547 /* Tab3ViewController_Wide.xib in Resources */,
+				EA287CCD194AB46500FBBF4D /* default.jpeg in Resources */,
+				EA250F641947FEFE00202DB1 /* icon_showcase_on@2x.png in Resources */,
+				EA250F571947FEFE00202DB1 /* icon_activity_off.png in Resources */,
+				EA250F5D1947FEFE00202DB1 /* icon_update_off.png in Resources */,
+				EA250F5F1947FEFE00202DB1 /* icon_activity_off@2x.png in Resources */,
+				EA250F5E1947FEFE00202DB1 /* icon_update_on.png in Resources */,
+				EA250F661947FEFE00202DB1 /* icon_update_on@2x.png in Resources */,
+				EA250F611947FEFE00202DB1 /* icon_contact_off@2x.png in Resources */,
+				EA250F631947FEFE00202DB1 /* icon_showcase_off@2x.png in Resources */,
+				EA287CD8194AB63000FBBF4D /* Powered@2x.png in Resources */,
+				EAA575BF1946D84C00001547 /* Tab1ViewController_Wide.xib in Resources */,
+				EA287CD7194AB63000FBBF4D /* Powered.png in Resources */,
+				EA250F601947FEFE00202DB1 /* icon_activity_on@2x.png in Resources */,
+				EA250F5C1947FEFE00202DB1 /* icon_showcase_on.png in Resources */,
+				EA250F681947FEFE00202DB1 /* Setting_icon@2x.png in Resources */,
+				EA250F5B1947FEFE00202DB1 /* icon_showcase_off.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +511,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3698C22F1946B0AB00BD42E3 /* PFAppDelegate.m in Sources */,
+				EA287CD2194AB4CD00FBBF4D /* PFContactViewController.m in Sources */,
+				EAA575BE1946D84C00001547 /* Tab1ViewController.m in Sources */,
 				3698C22B1946B0AB00BD42E3 /* main.m in Sources */,
+				EAA575AA1946D84C00001547 /* PFTabBarViewController.m in Sources */,
+				EAA575A91946D84C00001547 /* PFTabBarItemButton.m in Sources */,
+				EAA575A81946D84C00001547 /* PFCustomBadge.m in Sources */,
+				EA287CE1194AB7EC00FBBF4D /* AsyncImageView.m in Sources */,
+				EA287CDD194AB70900FBBF4D /* PagedImageScrollView.m in Sources */,
 				3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */,
+				EAA575C21946D84C00001547 /* Tab3ViewController.m in Sources */,
+				EAA575C01946D84C00001547 /* Tab2ViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +718,7 @@
 				3698C24D1946B0AB00BD42E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2CoffeeTests" */ = {
 			isa = XCConfigurationList;
@@ -456,6 +727,7 @@
 				3698C2501946B0AB00BD42E3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

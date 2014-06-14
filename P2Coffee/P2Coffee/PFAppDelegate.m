@@ -17,8 +17,68 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    
+    self.tab1 = [[Tab1ViewController alloc] init];
+    self.tab2 = [[Tab2ViewController alloc] init];
+    self.tab3 = [[Tab3ViewController alloc] init];
+    self.contact = [[PFContactViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        self.tab1 = [[Tab1ViewController alloc] initWithNibName:@"Tab1ViewController_Wide" bundle:nil];
+        self.tab2 = [[Tab2ViewController alloc] initWithNibName:@"Tab2ViewController_Wide" bundle:nil];
+        self.tab3 = [[Tab3ViewController alloc] initWithNibName:@"Tab3ViewController_Wide" bundle:nil];
+        self.contact = [[PFContactViewController alloc] initWithNibName:@"PFContactViewController_Wide" bundle:nil];
+        
+    } else {
+        self.tab1 = [[Tab1ViewController alloc] initWithNibName:@"Tab1ViewController" bundle:nil];
+        self.tab2 = [[Tab2ViewController alloc] initWithNibName:@"Tab2ViewController" bundle:nil];
+        self.tab3 = [[Tab3ViewController alloc] initWithNibName:@"Tab3ViewController" bundle:nil];
+        self.contact = [[PFContactViewController alloc] initWithNibName:@"PFContactViewController" bundle:nil];
+        
+    }
+    
+    self.tabBarViewController = [[PFTabBarViewController alloc] initWithBackgroundImage:nil viewControllers:self.tab1,self.tab2,self.tab3,self.contact,nil];
+    
+    if(IS_WIDESCREEN){
+        
+        PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_off"]];
+        
+        PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_off"]];
+        
+        PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_off"]];
+        
+        PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_off"]];
+        
+    }else{
+        
+        PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"icon_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"icon_update_off"]];
+        
+        PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"icon_showcase_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"icon_showcase_off"]];
+        
+        PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"icon_activity_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"icon_activity_off"]];
+        
+        PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"icon_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"icon_contact_off"]];
+        
+    }
+    
+    [self.tabBarViewController setSelectedIndex:0];
+    [self.window setRootViewController:self.tabBarViewController];
     [self.window makeKeyAndVisible];
     return YES;
 }
@@ -144,6 +204,14 @@
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)HideTabbar {
+    [self.tabBarViewController hideTabBarWithAnimation:YES];
+}
+
+- (void)ShowTabbar {
+    [self.tabBarViewController showTabBarWithAnimation:YES];
 }
 
 @end
