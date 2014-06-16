@@ -10,9 +10,9 @@
 
 #import "PFTabBarViewController.h"
 
-#import "Tab1ViewController.h"
-#import "Tab2ViewController.h"
-#import "Tab3ViewController.h"
+#import "PFUpdateViewController.h"
+#import "PFMenuViewController.h"
+#import "PFMemberViewController.h"
 #import "PFContactViewController.h"
 
 @interface PFAppDelegate : UIResponder <UIApplicationDelegate>
@@ -21,9 +21,9 @@
 
 @property (strong, nonatomic) PFTabBarViewController *tabBarViewController;
 
-@property (strong, nonatomic) Tab1ViewController *tab1;
-@property (strong, nonatomic) Tab2ViewController *tab2;
-@property (strong, nonatomic) Tab3ViewController *tab3;
+@property (strong, nonatomic) PFUpdateViewController *update;
+@property (strong, nonatomic) PFMenuViewController *menu;
+@property (strong, nonatomic) PFMemberViewController *member;
 @property (strong, nonatomic) PFContactViewController *contact;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
