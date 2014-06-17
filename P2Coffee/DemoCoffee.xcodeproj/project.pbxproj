@@ -14,7 +14,7 @@
 		3698C2291946B0AB00BD42E3 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2271946B0AB00BD42E3 /* InfoPlist.strings */; };
 		3698C22B1946B0AB00BD42E3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C22A1946B0AB00BD42E3 /* main.m */; };
 		3698C22F1946B0AB00BD42E3 /* PFAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */; };
-		3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */; };
+		3698C2321946B0AB00BD42E3 /* DemoCoffee.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3698C2301946B0AB00BD42E3 /* DemoCoffee.xcdatamodeld */; };
 		3698C2341946B0AB00BD42E3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3698C2331946B0AB00BD42E3 /* Images.xcassets */; };
 		3698C23B1946B0AB00BD42E3 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C23A1946B0AB00BD42E3 /* XCTest.framework */; };
 		3698C23C1946B0AB00BD42E3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3698C21C1946B0AB00BD42E3 /* Foundation.framework */; };
@@ -98,7 +98,7 @@
 		3698C22C1946B0AB00BD42E3 /* DemoCoffee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoCoffee-Prefix.pch"; sourceTree = "<group>"; };
 		3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAppDelegate.h; sourceTree = "<group>"; };
 		3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAppDelegate.m; sourceTree = "<group>"; };
-		3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P2Coffee.xcdatamodel; sourceTree = "<group>"; };
+		3698C2311946B0AB00BD42E3 /* DemoCoffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DemoCoffee.xcdatamodel; sourceTree = "<group>"; };
 		3698C2331946B0AB00BD42E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		3698C2391946B0AB00BD42E3 /* DemoCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3698C23A1946B0AB00BD42E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -244,7 +244,7 @@
 				3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */,
 				3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */,
 				3698C2331946B0AB00BD42E3 /* Images.xcassets */,
-				3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */,
+				3698C2301946B0AB00BD42E3 /* DemoCoffee.xcdatamodeld */,
 				3698C2251946B0AB00BD42E3 /* Supporting Files */,
 			);
 			path = P2Coffee;
@@ -733,7 +733,7 @@
 				EA024A8C194FFB600032CF51 /* PFWebViewController.m in Sources */,
 				EA287CE1194AB7EC00FBBF4D /* AsyncImageView.m in Sources */,
 				EA287CDD194AB70900FBBF4D /* PagedImageScrollView.m in Sources */,
-				3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */,
+				3698C2321946B0AB00BD42E3 /* DemoCoffee.xcdatamodeld in Sources */,
 				EAEF1DB9194EFB0200D72F51 /* PFContactViewController.m in Sources */,
 				EA024A74194FEE4D0032CF51 /* PFMemberViewController.m in Sources */,
 				EAEF1DAD194EF90800D72F51 /* CMMapLauncher.m in Sources */,
@@ -957,13 +957,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		3698C2301946B0AB00BD42E3 /* P2Coffee.xcdatamodeld */ = {
+		3698C2301946B0AB00BD42E3 /* DemoCoffee.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */,
+				3698C2311946B0AB00BD42E3 /* DemoCoffee.xcdatamodel */,
 			);
-			currentVersion = 3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */;
-			path = P2Coffee.xcdatamodeld;
+			currentVersion = 3698C2311946B0AB00BD42E3 /* DemoCoffee.xcdatamodel */;
+			path = DemoCoffee.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
