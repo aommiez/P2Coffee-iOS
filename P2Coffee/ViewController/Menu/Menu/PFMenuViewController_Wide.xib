@@ -82,6 +82,7 @@
                                             <segment title="Drinks"/>
                                             <segment title="Desserts"/>
                                         </segments>
+                                        <color key="tintColor" red="0.40784313725490196" green="0.27843137254901962" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
