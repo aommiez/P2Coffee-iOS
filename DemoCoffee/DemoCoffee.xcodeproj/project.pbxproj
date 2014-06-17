@@ -74,6 +74,8 @@
 		EA024D04195031220032CF51 /* PFUpdateViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */; };
 		EA024D0C195035C00032CF51 /* PFContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024D0A195035C00032CF51 /* PFContactCell.m */; };
 		EA024D0D195035C00032CF51 /* PFContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024D0B195035C00032CF51 /* PFContactCell.xib */; };
+		EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024D0F195037EB0032CF51 /* PFRewardViewController.m */; };
+		EA024D12195037EB0032CF51 /* PFRewardViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024D10195037EB0032CF51 /* PFRewardViewController_Wide.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +177,9 @@
 		EA024D09195035C00032CF51 /* PFContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFContactCell.h; sourceTree = "<group>"; };
 		EA024D0A195035C00032CF51 /* PFContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFContactCell.m; sourceTree = "<group>"; };
 		EA024D0B195035C00032CF51 /* PFContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFContactCell.xib; sourceTree = "<group>"; };
+		EA024D0E195037EB0032CF51 /* PFRewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFRewardViewController.h; sourceTree = "<group>"; };
+		EA024D0F195037EB0032CF51 /* PFRewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFRewardViewController.m; sourceTree = "<group>"; };
+		EA024D10195037EB0032CF51 /* PFRewardViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFRewardViewController_Wide.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -467,7 +472,6 @@
 			children = (
 				EA024CC3195031220032CF51 /* Member */,
 				EA024CBF195031220032CF51 /* History */,
-				EA024D07195035420032CF51 /* Stamp */,
 				EA024D06195035420032CF51 /* Reward */,
 			);
 			path = Member;
@@ -487,6 +491,7 @@
 		EA024CC3195031220032CF51 /* Member */ = {
 			isa = PBXGroup;
 			children = (
+				EA024D19195039FB0032CF51 /* Cell */,
 				EA024CC4195031220032CF51 /* PFMemberViewController.h */,
 				EA024CC5195031220032CF51 /* PFMemberViewController.m */,
 				EA024CC6195031220032CF51 /* PFMemberViewController_Wide.xib */,
@@ -540,15 +545,11 @@
 		EA024D06195035420032CF51 /* Reward */ = {
 			isa = PBXGroup;
 			children = (
+				EA024D0E195037EB0032CF51 /* PFRewardViewController.h */,
+				EA024D0F195037EB0032CF51 /* PFRewardViewController.m */,
+				EA024D10195037EB0032CF51 /* PFRewardViewController_Wide.xib */,
 			);
 			path = Reward;
-			sourceTree = "<group>";
-		};
-		EA024D07195035420032CF51 /* Stamp */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Stamp;
 			sourceTree = "<group>";
 		};
 		EA024D08195035C00032CF51 /* Cell */ = {
@@ -557,6 +558,13 @@
 				EA024D09195035C00032CF51 /* PFContactCell.h */,
 				EA024D0A195035C00032CF51 /* PFContactCell.m */,
 				EA024D0B195035C00032CF51 /* PFContactCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EA024D19195039FB0032CF51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -656,6 +664,7 @@
 				EA024C57195030B30032CF51 /* Images.xcassets in Resources */,
 				EA024CE1195031220032CF51 /* update_standby.png in Resources */,
 				EA024CE8195031220032CF51 /* update_light@2x.png in Resources */,
+				EA024D12195037EB0032CF51 /* PFRewardViewController_Wide.xib in Resources */,
 				EA024CDE195031220032CF51 /* menu_light.png in Resources */,
 				EA024CFE195031220032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
 				EA024CED195031220032CF51 /* PFBranchViewController_Wide.xib in Resources */,
@@ -701,6 +710,7 @@
 				EA024CD2195031220032CF51 /* PFCustomBadge.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
 				EA024CD9195031220032CF51 /* PagedImageScrollView.m in Sources */,
+				EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */,
 				EA024CF0195031220032CF51 /* PFContactViewController.m in Sources */,
 				EA024CFD195031220032CF51 /* PFHistoryViewController.m in Sources */,
 				EA024C55195030B30032CF51 /* DemoCoffee.xcdatamodeld in Sources */,

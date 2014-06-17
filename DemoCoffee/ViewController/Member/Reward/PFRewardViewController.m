@@ -1,18 +1,18 @@
 //
-//  PFBranchViewController.m
-//  P2Coffee
+//  PFRewardViewController.m
+//  DemoCoffee
 //
-//  Created by Pariwat on 6/16/14.
+//  Created by Pariwat on 6/17/14.
 //  Copyright (c) 2014 Platwo fusion. All rights reserved.
 //
 
-#import "PFBranchViewController.h"
+#import "PFRewardViewController.h"
 
-@interface PFBranchViewController ()
+@interface PFRewardViewController ()
 
 @end
 
-@implementation PFBranchViewController
+@implementation PFRewardViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
