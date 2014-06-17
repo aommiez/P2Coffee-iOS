@@ -32,6 +32,10 @@
 		EA024A7E194FEF0A0032CF51 /* PFMenuViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024A7B194FEF0A0032CF51 /* PFMenuViewController_Wide.xib */; };
 		EA024A86194FEF8E0032CF51 /* PFUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024A84194FEF8E0032CF51 /* PFUpdateViewController.m */; };
 		EA024A87194FEF8E0032CF51 /* PFUpdateViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024A85194FEF8E0032CF51 /* PFUpdateViewController_Wide.xib */; };
+		EA024A8C194FFB600032CF51 /* PFWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024A8A194FFB600032CF51 /* PFWebViewController.m */; };
+		EA024A8D194FFB600032CF51 /* PFWebViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024A8B194FFB600032CF51 /* PFWebViewController_Wide.xib */; };
+		EA024A90194FFE630032CF51 /* icon_reload.png in Resources */ = {isa = PBXBuildFile; fileRef = EA024A8E194FFE630032CF51 /* icon_reload.png */; };
+		EA024A91194FFE630032CF51 /* icon_reload@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA024A8F194FFE630032CF51 /* icon_reload@2x.png */; };
 		EA250F671947FEFE00202DB1 /* Notification_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F541947FEFE00202DB1 /* Notification_icon@2x.png */; };
 		EA250F681947FEFE00202DB1 /* Setting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA250F551947FEFE00202DB1 /* Setting_icon@2x.png */; };
 		EA287CCD194AB46500FBBF4D /* default.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EA287CCC194AB46500FBBF4D /* default.jpeg */; };
@@ -116,6 +120,11 @@
 		EA024A83194FEF8E0032CF51 /* PFUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUpdateViewController.h; sourceTree = "<group>"; };
 		EA024A84194FEF8E0032CF51 /* PFUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUpdateViewController.m; sourceTree = "<group>"; };
 		EA024A85194FEF8E0032CF51 /* PFUpdateViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFUpdateViewController_Wide.xib; sourceTree = "<group>"; };
+		EA024A89194FFB600032CF51 /* PFWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFWebViewController.h; sourceTree = "<group>"; };
+		EA024A8A194FFB600032CF51 /* PFWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFWebViewController.m; sourceTree = "<group>"; };
+		EA024A8B194FFB600032CF51 /* PFWebViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFWebViewController_Wide.xib; sourceTree = "<group>"; };
+		EA024A8E194FFE630032CF51 /* icon_reload.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_reload.png; sourceTree = "<group>"; };
+		EA024A8F194FFE630032CF51 /* icon_reload@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_reload@2x.png"; sourceTree = "<group>"; };
 		EA250F541947FEFE00202DB1 /* Notification_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Notification_icon@2x.png"; sourceTree = "<group>"; };
 		EA250F551947FEFE00202DB1 /* Setting_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Setting_icon@2x.png"; sourceTree = "<group>"; };
 		EA287CCC194AB46500FBBF4D /* default.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpeg; sourceTree = "<group>"; };
@@ -359,6 +368,16 @@
 			path = Update;
 			sourceTree = "<group>";
 		};
+		EA024A88194FFB360032CF51 /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				EA024A89194FFB600032CF51 /* PFWebViewController.h */,
+				EA024A8A194FFB600032CF51 /* PFWebViewController.m */,
+				EA024A8B194FFB600032CF51 /* PFWebViewController_Wide.xib */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
 		EA287CCB194AB46500FBBF4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
@@ -374,6 +393,7 @@
 				EAEF1DB5194EFB0200D72F51 /* Contact */,
 				EAEF1DB4194EFB0200D72F51 /* Branch */,
 				EAEF1D9F194EF88400D72F51 /* Map */,
+				EA024A88194FFB360032CF51 /* Web */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -381,6 +401,8 @@
 		EA287CD4194AB63000FBBF4D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				EA024A8E194FFE630032CF51 /* icon_reload.png */,
+				EA024A8F194FFE630032CF51 /* icon_reload@2x.png */,
 				EA287CD5194AB63000FBBF4D /* Powered.png */,
 				EA287CD6194AB63000FBBF4D /* Powered@2x.png */,
 			);
@@ -660,8 +682,10 @@
 				EA287CCD194AB46500FBBF4D /* default.jpeg in Resources */,
 				EAEF1D76194EEB3700D72F51 /* member_light.png in Resources */,
 				EAEF1D7C194EEB3700D72F51 /* contact_light@2x.png in Resources */,
+				EA024A91194FFE630032CF51 /* icon_reload@2x.png in Resources */,
 				EA024A28194FE53E0032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
 				EAEF1D7E194EEB3700D72F51 /* member_light@2x.png in Resources */,
+				EA024A90194FFE630032CF51 /* icon_reload.png in Resources */,
 				EA024A6E194FE9C60032CF51 /* PFContactCell.xib in Resources */,
 				EAEF1D79194EEB3700D72F51 /* menu_standby.png in Resources */,
 				EA024A75194FEE4D0032CF51 /* PFMemberViewController_Wide.xib in Resources */,
@@ -675,6 +699,7 @@
 				EA287CD7194AB63000FBBF4D /* Powered.png in Resources */,
 				EA024A87194FEF8E0032CF51 /* PFUpdateViewController_Wide.xib in Resources */,
 				EA250F681947FEFE00202DB1 /* Setting_icon@2x.png in Resources */,
+				EA024A8D194FFB600032CF51 /* PFWebViewController_Wide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +730,7 @@
 				EA024A6D194FE9C60032CF51 /* PFContactCell.m in Sources */,
 				EAA575A81946D84C00001547 /* PFCustomBadge.m in Sources */,
 				EA024A27194FE53E0032CF51 /* PFHistoryViewController.m in Sources */,
+				EA024A8C194FFB600032CF51 /* PFWebViewController.m in Sources */,
 				EA287CE1194AB7EC00FBBF4D /* AsyncImageView.m in Sources */,
 				EA287CDD194AB70900FBBF4D /* PagedImageScrollView.m in Sources */,
 				3698C2321946B0AB00BD42E3 /* P2Coffee.xcdatamodeld in Sources */,

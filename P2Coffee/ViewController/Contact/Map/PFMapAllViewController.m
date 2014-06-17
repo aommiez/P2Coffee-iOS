@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
     return self;
 }
@@ -26,13 +27,38 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    UIBarButtonItem *anotherButton = [[UIBarButtonItem alloc] initWithTitle:@"Get Direction" style:UIBarButtonItemStyleDone target:self action:@selector(getDistance)];
+    [anotherButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
+                                           [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
+    
+    self.navigationItem.rightBarButtonItem = anotherButton;
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)getDistance {
+
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFMapAllViewControllerBack)]){
+            [self.delegate PFMapAllViewControllerBack];
+        }
+    }
+    
 }
 
 @end

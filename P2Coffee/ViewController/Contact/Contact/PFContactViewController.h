@@ -7,14 +7,32 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFMapAllViewController.h"
+#import "PFWebViewController.h"
+
+@protocol PFContactViewControllerDelegate <NSObject>
+
+- (void)HideTabbar;
+- (void)ShowTabbar;
+
+@end
 
 @interface PFContactViewController : UIViewController
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
+
+@property (strong, nonatomic) IBOutlet UILabel *content;
+@property (strong, nonatomic) IBOutlet UIView *mapButton;
+@property (weak, nonatomic) IBOutlet UIImageView *mapImage;
+@property (strong, nonatomic) IBOutlet UILabel *location;
+
+- (IBAction)mapTapped:(id)sender;
+- (IBAction)webTapped:(id)sender;
 
 @end

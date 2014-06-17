@@ -39,6 +39,15 @@
     
     self.tableView.tableHeaderView = self.headerView;
     self.tableView.tableFooterView = self.footerView;
+    
+    //map
+    CALayer *mapimg = [self.mapImage layer];
+    [mapimg setMasksToBounds:YES];
+    [mapimg setCornerRadius:7.0f];
+    
+    CALayer *mapbt = [self.mapButton layer];
+    [mapbt setMasksToBounds:YES];
+    [mapbt setCornerRadius:7.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,6 +57,47 @@
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (IBAction) mapTapped:(id)sender {
+    
+    [self.delegate HideTabbar];
+    
+    PFMapAllViewController *mapView = [[PFMapAllViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        mapView = [[PFMapAllViewController alloc] initWithNibName:@"PFMapAllViewController_Wide" bundle:nil];
+    } else {
+        mapView = [[PFMapAllViewController alloc] initWithNibName:@"PFMapAllViewController" bundle:nil];
+    }
+    
+    mapView.delegate = self;
+    [self.navController pushViewController:mapView animated:YES];
+}
+
+- (IBAction)webTapped:(id)sender {
+    
+    [self.delegate HideTabbar];
+    
+    PFWebViewController *webView = [[PFWebViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        webView = [[PFWebViewController alloc] initWithNibName:@"PFWebViewController_Wide" bundle:nil];
+    } else {
+        webView = [[PFWebViewController alloc] initWithNibName:@"PFWebViewController" bundle:nil];
+    }
+    
+    webView.url = @"http://www.google.com";
+    webView.delegate = self;
+    [self.navController pushViewController:webView animated:YES];
+}
+
+- (void) PFMapAllViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void) PFWebViewControllerBack {
+    [self.delegate ShowTabbar];
 }
 
 @end

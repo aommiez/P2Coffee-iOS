@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFMapView.h"
+#import "CMMapLauncher.h"
 
-@interface PFMapAllViewController : UIViewController
+@protocol PFMapAllViewControllerDelegate <NSObject>
+
+- (void) PFMapAllViewControllerBack;
+
+@end
+
+@interface PFMapAllViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
+
+@property (assign, nonatomic) id delegate;
 
 @end
