@@ -51,8 +51,6 @@
 		EA024CEB195031220032CF51 /* Setting_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = EA024C9E195031220032CF51 /* Setting_icon@2x.png */; };
 		EA024CEC195031220032CF51 /* PFBranchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024CA3195031220032CF51 /* PFBranchViewController.m */; };
 		EA024CED195031220032CF51 /* PFBranchViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CA4195031220032CF51 /* PFBranchViewController_Wide.xib */; };
-		EA024CEE195031220032CF51 /* PFContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024CA7195031220032CF51 /* PFContactCell.m */; };
-		EA024CEF195031220032CF51 /* PFContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CA8195031220032CF51 /* PFContactCell.xib */; };
 		EA024CF0195031220032CF51 /* PFContactViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024CAA195031220032CF51 /* PFContactViewController.m */; };
 		EA024CF1195031220032CF51 /* PFContactViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CAB195031220032CF51 /* PFContactViewController_Wide.xib */; };
 		EA024CF2195031220032CF51 /* icon_reload.png in Resources */ = {isa = PBXBuildFile; fileRef = EA024CAD195031220032CF51 /* icon_reload.png */; };
@@ -74,6 +72,8 @@
 		EA024D02195031220032CF51 /* PFMenuViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CCB195031220032CF51 /* PFMenuViewController_Wide.xib */; };
 		EA024D03195031220032CF51 /* PFUpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024CCF195031220032CF51 /* PFUpdateViewController.m */; };
 		EA024D04195031220032CF51 /* PFUpdateViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */; };
+		EA024D0C195035C00032CF51 /* PFContactCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EA024D0A195035C00032CF51 /* PFContactCell.m */; };
+		EA024D0D195035C00032CF51 /* PFContactCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EA024D0B195035C00032CF51 /* PFContactCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -143,9 +143,6 @@
 		EA024CA2195031220032CF51 /* PFBranchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBranchViewController.h; sourceTree = "<group>"; };
 		EA024CA3195031220032CF51 /* PFBranchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBranchViewController.m; sourceTree = "<group>"; };
 		EA024CA4195031220032CF51 /* PFBranchViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFBranchViewController_Wide.xib; sourceTree = "<group>"; };
-		EA024CA6195031220032CF51 /* PFContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFContactCell.h; sourceTree = "<group>"; };
-		EA024CA7195031220032CF51 /* PFContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFContactCell.m; sourceTree = "<group>"; };
-		EA024CA8195031220032CF51 /* PFContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFContactCell.xib; sourceTree = "<group>"; };
 		EA024CA9195031220032CF51 /* PFContactViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFContactViewController.h; sourceTree = "<group>"; };
 		EA024CAA195031220032CF51 /* PFContactViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFContactViewController.m; sourceTree = "<group>"; };
 		EA024CAB195031220032CF51 /* PFContactViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFContactViewController_Wide.xib; sourceTree = "<group>"; };
@@ -175,6 +172,9 @@
 		EA024CCE195031220032CF51 /* PFUpdateViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUpdateViewController.h; sourceTree = "<group>"; };
 		EA024CCF195031220032CF51 /* PFUpdateViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUpdateViewController.m; sourceTree = "<group>"; };
 		EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFUpdateViewController_Wide.xib; sourceTree = "<group>"; };
+		EA024D09195035C00032CF51 /* PFContactCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFContactCell.h; sourceTree = "<group>"; };
+		EA024D0A195035C00032CF51 /* PFContactCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFContactCell.m; sourceTree = "<group>"; };
+		EA024D0B195035C00032CF51 /* PFContactCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFContactCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,11 +378,11 @@
 		EA024C9F195031220032CF51 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				EA024CA0195031220032CF51 /* Contact */,
 				EA024CBC195031220032CF51 /* Images */,
-				EA024CBE195031220032CF51 /* Member */,
-				EA024CC7195031220032CF51 /* Menu */,
 				EA024CCC195031220032CF51 /* Update */,
+				EA024CC7195031220032CF51 /* Menu */,
+				EA024CBE195031220032CF51 /* Member */,
+				EA024CA0195031220032CF51 /* Contact */,
 			);
 			path = ViewController;
 			sourceTree = SOURCE_ROOT;
@@ -390,9 +390,9 @@
 		EA024CA0195031220032CF51 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				EA024CA1195031220032CF51 /* Branch */,
-				EA024CA5195031220032CF51 /* Contact */,
 				EA024CAC195031220032CF51 /* Images */,
+				EA024CA5195031220032CF51 /* Contact */,
+				EA024CA1195031220032CF51 /* Branch */,
 				EA024CB1195031220032CF51 /* Map */,
 				EA024CB8195031220032CF51 /* Web */,
 			);
@@ -412,9 +412,7 @@
 		EA024CA5195031220032CF51 /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				EA024CA6195031220032CF51 /* PFContactCell.h */,
-				EA024CA7195031220032CF51 /* PFContactCell.m */,
-				EA024CA8195031220032CF51 /* PFContactCell.xib */,
+				EA024D08195035C00032CF51 /* Cell */,
 				EA024CA9195031220032CF51 /* PFContactViewController.h */,
 				EA024CAA195031220032CF51 /* PFContactViewController.m */,
 				EA024CAB195031220032CF51 /* PFContactViewController_Wide.xib */,
@@ -467,8 +465,10 @@
 		EA024CBE195031220032CF51 /* Member */ = {
 			isa = PBXGroup;
 			children = (
-				EA024CBF195031220032CF51 /* History */,
 				EA024CC3195031220032CF51 /* Member */,
+				EA024CBF195031220032CF51 /* History */,
+				EA024D07195035420032CF51 /* Stamp */,
+				EA024D06195035420032CF51 /* Reward */,
 			);
 			path = Member;
 			sourceTree = "<group>";
@@ -476,6 +476,7 @@
 		EA024CBF195031220032CF51 /* History */ = {
 			isa = PBXGroup;
 			children = (
+				EA024D05195032FD0032CF51 /* Cell */,
 				EA024CC0195031220032CF51 /* PFHistoryViewController.h */,
 				EA024CC1195031220032CF51 /* PFHistoryViewController.m */,
 				EA024CC2195031220032CF51 /* PFHistoryViewController_Wide.xib */,
@@ -527,6 +528,37 @@
 				EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */,
 			);
 			path = Update;
+			sourceTree = "<group>";
+		};
+		EA024D05195032FD0032CF51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		EA024D06195035420032CF51 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Reward;
+			sourceTree = "<group>";
+		};
+		EA024D07195035420032CF51 /* Stamp */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Stamp;
+			sourceTree = "<group>";
+		};
+		EA024D08195035C00032CF51 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EA024D09195035C00032CF51 /* PFContactCell.h */,
+				EA024D0A195035C00032CF51 /* PFContactCell.m */,
+				EA024D0B195035C00032CF51 /* PFContactCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,7 +638,6 @@
 			files = (
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
-				EA024CEF195031220032CF51 /* PFContactCell.xib in Resources */,
 				EA024CDF195031220032CF51 /* menu_standby.png in Resources */,
 				EA024CEB195031220032CF51 /* Setting_icon@2x.png in Resources */,
 				EA024CFC195031220032CF51 /* default.jpeg in Resources */,
@@ -629,6 +660,7 @@
 				EA024CFE195031220032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
 				EA024CED195031220032CF51 /* PFBranchViewController_Wide.xib in Resources */,
 				EA024D00195031220032CF51 /* PFMemberViewController_Wide.xib in Resources */,
+				EA024D0D195035C00032CF51 /* PFContactCell.xib in Resources */,
 				EA024CE6195031220032CF51 /* menu_light@2x.png in Resources */,
 				EA024D02195031220032CF51 /* PFMenuViewController_Wide.xib in Resources */,
 				EA024CE2195031220032CF51 /* contact_light@2x.png in Resources */,
@@ -669,7 +701,6 @@
 				EA024CD2195031220032CF51 /* PFCustomBadge.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
 				EA024CD9195031220032CF51 /* PagedImageScrollView.m in Sources */,
-				EA024CEE195031220032CF51 /* PFContactCell.m in Sources */,
 				EA024CF0195031220032CF51 /* PFContactViewController.m in Sources */,
 				EA024CFD195031220032CF51 /* PFHistoryViewController.m in Sources */,
 				EA024C55195030B30032CF51 /* DemoCoffee.xcdatamodeld in Sources */,
@@ -677,6 +708,7 @@
 				EA024CFA195031220032CF51 /* PFWebViewController.m in Sources */,
 				EA024CEC195031220032CF51 /* PFBranchViewController.m in Sources */,
 				EA024CD5195031220032CF51 /* AsyncImageView.m in Sources */,
+				EA024D0C195035C00032CF51 /* PFContactCell.m in Sources */,
 				EA024CF6195031220032CF51 /* PFMapAllViewController.m in Sources */,
 				EA024D03195031220032CF51 /* PFUpdateViewController.m in Sources */,
 			);
@@ -875,6 +907,7 @@
 				EA024C70195030B40032CF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		EA024C71195030B40032CF51 /* Build configuration list for PBXNativeTarget "DemoCoffeeTests" */ = {
 			isa = XCConfigurationList;
@@ -883,6 +916,7 @@
 				EA024C73195030B40032CF51 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
