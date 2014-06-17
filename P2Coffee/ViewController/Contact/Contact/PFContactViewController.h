@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h> 
+
 #import "PFMapAllViewController.h"
 #import "PFWebViewController.h"
 
@@ -17,7 +19,7 @@
 
 @end
 
-@interface PFContactViewController : UIViewController
+@interface PFContactViewController : UIViewController < MFMailComposeViewControllerDelegate >
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
@@ -33,6 +35,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *location;
 
 - (IBAction)mapTapped:(id)sender;
+
+- (IBAction)callTapped:(id)sender;
 - (IBAction)webTapped:(id)sender;
+- (IBAction)emailTapped:(id)sender;
+- (IBAction)powerbyTapped:(id)sender;
 
 @end

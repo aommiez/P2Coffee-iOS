@@ -87,22 +87,22 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3698C2191946B0AB00BD42E3 /* P2Coffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = P2Coffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3698C2191946B0AB00BD42E3 /* DemoCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3698C21C1946B0AB00BD42E3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3698C21E1946B0AB00BD42E3 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3698C2201946B0AB00BD42E3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3698C2221946B0AB00BD42E3 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		3698C2261946B0AB00BD42E3 /* P2Coffee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2Coffee-Info.plist"; sourceTree = "<group>"; };
+		3698C2261946B0AB00BD42E3 /* DemoCoffee-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoCoffee-Info.plist"; sourceTree = "<group>"; };
 		3698C2281946B0AB00BD42E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3698C22A1946B0AB00BD42E3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3698C22C1946B0AB00BD42E3 /* P2Coffee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "P2Coffee-Prefix.pch"; sourceTree = "<group>"; };
+		3698C22C1946B0AB00BD42E3 /* DemoCoffee-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoCoffee-Prefix.pch"; sourceTree = "<group>"; };
 		3698C22D1946B0AB00BD42E3 /* PFAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PFAppDelegate.h; sourceTree = "<group>"; };
 		3698C22E1946B0AB00BD42E3 /* PFAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PFAppDelegate.m; sourceTree = "<group>"; };
 		3698C2311946B0AB00BD42E3 /* P2Coffee.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = P2Coffee.xcdatamodel; sourceTree = "<group>"; };
 		3698C2331946B0AB00BD42E3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = P2CoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3698C2391946B0AB00BD42E3 /* DemoCoffeeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoCoffeeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3698C23A1946B0AB00BD42E3 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		3698C2431946B0AB00BD42E3 /* P2CoffeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "P2CoffeeTests-Info.plist"; sourceTree = "<group>"; };
+		3698C2431946B0AB00BD42E3 /* DemoCoffeeTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DemoCoffeeTests-Info.plist"; sourceTree = "<group>"; };
 		3698C2451946B0AB00BD42E3 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3698C2471946B0AB00BD42E3 /* P2CoffeeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = P2CoffeeTests.m; sourceTree = "<group>"; };
 		EA024A24194FE53E0032CF51 /* PFHistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryViewController.h; sourceTree = "<group>"; };
@@ -216,8 +216,8 @@
 		3698C21A1946B0AB00BD42E3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3698C2191946B0AB00BD42E3 /* P2Coffee.app */,
-				3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */,
+				3698C2191946B0AB00BD42E3 /* DemoCoffee.app */,
+				3698C2391946B0AB00BD42E3 /* DemoCoffeeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,10 +253,10 @@
 		3698C2251946B0AB00BD42E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3698C2261946B0AB00BD42E3 /* P2Coffee-Info.plist */,
+				3698C2261946B0AB00BD42E3 /* DemoCoffee-Info.plist */,
 				3698C2271946B0AB00BD42E3 /* InfoPlist.strings */,
 				3698C22A1946B0AB00BD42E3 /* main.m */,
-				3698C22C1946B0AB00BD42E3 /* P2Coffee-Prefix.pch */,
+				3698C22C1946B0AB00BD42E3 /* DemoCoffee-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -273,7 +273,7 @@
 		3698C2421946B0AB00BD42E3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				3698C2431946B0AB00BD42E3 /* P2CoffeeTests-Info.plist */,
+				3698C2431946B0AB00BD42E3 /* DemoCoffeeTests-Info.plist */,
 				3698C2441946B0AB00BD42E3 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -588,9 +588,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3698C2181946B0AB00BD42E3 /* P2Coffee */ = {
+		3698C2181946B0AB00BD42E3 /* DemoCoffee */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2Coffee" */;
+			buildConfigurationList = 3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "DemoCoffee" */;
 			buildPhases = (
 				3698C2151946B0AB00BD42E3 /* Sources */,
 				3698C2161946B0AB00BD42E3 /* Frameworks */,
@@ -600,14 +600,14 @@
 			);
 			dependencies = (
 			);
-			name = P2Coffee;
+			name = DemoCoffee;
 			productName = P2Coffee;
-			productReference = 3698C2191946B0AB00BD42E3 /* P2Coffee.app */;
+			productReference = 3698C2191946B0AB00BD42E3 /* DemoCoffee.app */;
 			productType = "com.apple.product-type.application";
 		};
-		3698C2381946B0AB00BD42E3 /* P2CoffeeTests */ = {
+		3698C2381946B0AB00BD42E3 /* DemoCoffeeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2CoffeeTests" */;
+			buildConfigurationList = 3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "DemoCoffeeTests" */;
 			buildPhases = (
 				3698C2351946B0AB00BD42E3 /* Sources */,
 				3698C2361946B0AB00BD42E3 /* Frameworks */,
@@ -618,9 +618,9 @@
 			dependencies = (
 				3698C2401946B0AB00BD42E3 /* PBXTargetDependency */,
 			);
-			name = P2CoffeeTests;
+			name = DemoCoffeeTests;
 			productName = P2CoffeeTests;
-			productReference = 3698C2391946B0AB00BD42E3 /* P2CoffeeTests.xctest */;
+			productReference = 3698C2391946B0AB00BD42E3 /* DemoCoffeeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -641,7 +641,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "P2Coffee" */;
+			buildConfigurationList = 3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "DemoCoffee" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -653,8 +653,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3698C2181946B0AB00BD42E3 /* P2Coffee */,
-				3698C2381946B0AB00BD42E3 /* P2CoffeeTests */,
+				3698C2181946B0AB00BD42E3 /* DemoCoffee */,
+				3698C2381946B0AB00BD42E3 /* DemoCoffeeTests */,
 			);
 		};
 /* End PBXProject section */
@@ -755,7 +755,7 @@
 /* Begin PBXTargetDependency section */
 		3698C2401946B0AB00BD42E3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 3698C2181946B0AB00BD42E3 /* P2Coffee */;
+			target = 3698C2181946B0AB00BD42E3 /* DemoCoffee */;
 			targetProxy = 3698C23F1946B0AB00BD42E3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -814,6 +814,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -845,6 +846,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -858,9 +860,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
-				INFOPLIST_FILE = "P2Coffee/P2Coffee-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "P2Coffee/DemoCoffee-Prefix.pch";
+				INFOPLIST_FILE = "P2Coffee/DemoCoffee-Info.plist";
+				PRODUCT_NAME = DemoCoffee;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -874,9 +876,9 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
-				INFOPLIST_FILE = "P2Coffee/P2Coffee-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "P2Coffee/DemoCoffee-Prefix.pch";
+				INFOPLIST_FILE = "P2Coffee/DemoCoffee-Info.plist";
+				PRODUCT_NAME = DemoCoffee;
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
@@ -897,8 +899,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "P2CoffeeTests/P2CoffeeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "P2CoffeeTests/DemoCoffeeTests-Info.plist";
+				PRODUCT_NAME = DemoCoffeeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -915,8 +917,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "P2Coffee/P2Coffee-Prefix.pch";
-				INFOPLIST_FILE = "P2CoffeeTests/P2CoffeeTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "P2CoffeeTests/DemoCoffeeTests-Info.plist";
+				PRODUCT_NAME = DemoCoffeeTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -925,7 +927,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "P2Coffee" */ = {
+		3698C2141946B0AB00BD42E3 /* Build configuration list for PBXProject "DemoCoffee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3698C2491946B0AB00BD42E3 /* Debug */,
@@ -934,7 +936,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2Coffee" */ = {
+		3698C24B1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "DemoCoffee" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3698C24C1946B0AB00BD42E3 /* Debug */,
@@ -943,7 +945,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "P2CoffeeTests" */ = {
+		3698C24E1946B0AB00BD42E3 /* Build configuration list for PBXNativeTarget "DemoCoffeeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3698C24F1946B0AB00BD42E3 /* Debug */,

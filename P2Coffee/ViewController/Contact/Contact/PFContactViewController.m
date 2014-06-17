@@ -92,6 +92,86 @@
     [self.navController pushViewController:webView animated:YES];
 }
 
+- (IBAction)emailTapped:(id)sender {
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Select Menu"
+                                  delegate:self
+                                  cancelButtonTitle:@"cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Send Email", nil];
+    [actionSheet showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+    //[self.actionSheet showInView:self.view];
+    
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    //Get the name of the current pressed button
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if  ([buttonTitle isEqualToString:@"Send Email"]) {
+        [self.delegate HideTabbar];
+        NSLog(@"Send Email");
+        // Email Subject
+        NSString *emailTitle = @"Demo Coffee";
+        // Email Content
+        NSString *messageBody = @"Demo Coffee!";
+        // To address
+        //NSArray *toRecipents = [NSArray arrayWithObject:[self.obj objectForKey:@"email"]];
+        
+        [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
+        
+        [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                               [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0], NSForegroundColorAttributeName, nil]];
+        
+        MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+        mc.mailComposeDelegate = self;
+        
+        [mc.navigationBar setTintColor:[UIColor whiteColor]];
+        [mc setSubject:emailTitle];
+        [mc setMessageBody:messageBody isHTML:NO];
+        //[mc setToRecipients:toRecipents];
+        
+        // Present mail view controller on screen
+        [self presentViewController:mc animated:YES completion:NULL];
+        
+    }
+    if ([buttonTitle isEqualToString:@"Cancel"]) {
+        NSLog(@"Cancel");
+    }
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            //[self reloadView];
+            NSLog(@"Mail cancelled");
+            break;
+        case MFMailComposeResultSaved:
+            NSLog(@"Mail saved");
+            break;
+        case MFMailComposeResultSent:
+            NSLog(@"Mail sent");
+            break;
+        case MFMailComposeResultFailed:
+            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+    [self.delegate ShowTabbar];
+}
+
+- (IBAction)powerbyTapped:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://pla2fusion.com/"]];
+}
+
 - (void) PFMapAllViewControllerBack {
     [self.delegate ShowTabbar];
 }

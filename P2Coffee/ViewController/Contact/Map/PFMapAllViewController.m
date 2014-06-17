@@ -33,7 +33,6 @@
                                            [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
     
     self.navigationItem.rightBarButtonItem = anotherButton;
-    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
 }
 
 - (void)didReceiveMemoryWarning
