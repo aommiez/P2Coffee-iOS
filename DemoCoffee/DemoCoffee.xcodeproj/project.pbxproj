@@ -35,7 +35,6 @@
 		3686239D1953F0E2004636DF /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686239B1953F0E2004636DF /* LoggerClient.m */; };
 		3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3686239E1953F1AF004636DF /* CFNetwork.framework */; };
 		368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A01953F1C1004636DF /* SystemConfiguration.framework */; };
-		368623A31953F1DD004636DF /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A21953F1DD004636DF /* GHUnitIOS.framework */; };
 		368623A51953F3B9004636DF /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A41953F3B9004636DF /* libxml2.2.dylib */; };
 		368623A71953F516004636DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A61953F516004636DF /* MobileCoreServices.framework */; };
 		368623B31953F590004636DF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623A91953F590004636DF /* FMDatabase.m */; };
@@ -305,7 +304,6 @@
 				368623981953F040004636DF /* FacebookSDK.framework in Frameworks */,
 				368623A71953F516004636DF /* MobileCoreServices.framework in Frameworks */,
 				368623A51953F3B9004636DF /* libxml2.2.dylib in Frameworks */,
-				368623A31953F1DD004636DF /* GHUnitIOS.framework in Frameworks */,
 				368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */,
 				3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */,
 				EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */,
