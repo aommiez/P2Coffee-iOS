@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PFMemberCell.h"
+
 @interface PFMemberViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
@@ -15,6 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIView *nologinView;
+@property (weak, nonatomic) IBOutlet UIView *nomemberView;
+@property (weak, nonatomic) IBOutlet UIView *memberView;
 
 @end

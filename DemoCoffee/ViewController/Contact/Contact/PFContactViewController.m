@@ -59,6 +59,30 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 49;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFContactCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFContactCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFContactCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+
 - (IBAction) mapTapped:(id)sender {
     
     [self.delegate HideTabbar];

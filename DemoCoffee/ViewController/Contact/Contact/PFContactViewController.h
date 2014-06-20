@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h> 
 
+#import "PFContactCell.h"
+
 #import "PFMapAllViewController.h"
 #import "PFWebViewController.h"
 

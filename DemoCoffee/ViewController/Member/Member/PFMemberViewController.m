@@ -37,7 +37,11 @@
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
-    self.tableView.tableHeaderView = self.nologinView;
+    //self.tableView.tableHeaderView = self.nomemberView;
+    self.tableView.tableHeaderView = self.memberView;
+    
+    UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
+    self.tableView.tableFooterView = fv;
 }
 
 - (void)didReceiveMemoryWarning
