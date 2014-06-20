@@ -18,6 +18,6 @@
 
 @interface PFMapAllViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
-@property (assign, nonatomic) id delegate;
+@property (assign, nonatomic) id <PFMapAllViewControllerDelegate> delegate;
 
 @end

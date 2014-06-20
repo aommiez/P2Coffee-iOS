@@ -59,6 +59,9 @@
     
     self.navItem.leftBarButtonItem = leftButton;
     self.navItem.rightBarButtonItem = rightButton;
+    
+    UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 48)];
+    self.tableView.tableFooterView = fv;
 }
 
 - (void)didReceiveMemoryWarning
@@ -71,11 +74,63 @@
 }
 
 - (void)account {
+    [self.delegate HideTabbar];
+    
+    PFAccountViewController *account = [[PFAccountViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        account = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+    } else {
+        account = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
+    }
+    
+    account.delegate = self;
+    [self.navController pushViewController:account animated:YES];
     
 }
 
 - (void)notify {
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Notification coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 300;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFUpdateCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFUpdateCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFUpdateCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
     
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Update detail coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (void)PFAccountViewControllerBack {
+    [self.delegate ShowTabbar];
 }
 
 @end

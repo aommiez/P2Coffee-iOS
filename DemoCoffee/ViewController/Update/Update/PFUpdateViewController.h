@@ -8,8 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PFUpdateCell.h"
+
+#import "PFAccountViewController.h"
+#import "PFNotificationViewController.h"
+
+@protocol PFUpdateViewControllerDelegate <NSObject>
+
+- (void)HideTabbar;
+- (void)ShowTabbar;
+
+@end
+
 @interface PFUpdateViewController : UIViewController
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 

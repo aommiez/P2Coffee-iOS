@@ -10,8 +10,18 @@
 
 #import "PFMemberCell.h"
 
+#import "PFRewardViewController.h"
+
+@protocol PFMemberViewControllerDelegate <NSObject>
+
+- (void)HideTabbar;
+- (void)ShowTabbar;
+
+@end
+
 @interface PFMemberViewController : UIViewController
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
@@ -19,5 +29,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nomemberView;
 @property (weak, nonatomic) IBOutlet UIView *memberView;
+
+- (IBAction)addPointTapped:(id)sender;
 
 @end

@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
     return self;
 }
@@ -26,13 +27,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.navigationItem.title = @"Reward";
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFRewardViewControllerBack)]){
+            [self.delegate PFRewardViewControllerBack];
+        }
+    }
 }
 
 @end

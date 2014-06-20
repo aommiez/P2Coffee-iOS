@@ -82,6 +82,20 @@
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.delegate HideTabbar];
+    
+    PFBranchViewController *branch = [[PFBranchViewController alloc] init];
+    
+    if(IS_WIDESCREEN){
+        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController_Wide" bundle:nil];
+    } else {
+        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
+    }
+    branch.delegate = self;
+    [self.navController pushViewController:branch animated:YES];
+}
 
 - (IBAction) mapTapped:(id)sender {
     
@@ -97,6 +111,14 @@
     
     mapView.delegate = self;
     [self.navController pushViewController:mapView animated:YES];
+}
+
+- (IBAction)callTapped:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Contact coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (IBAction)webTapped:(id)sender {
@@ -194,6 +216,10 @@
 
 - (IBAction)powerbyTapped:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://pla2fusion.com/"]];
+}
+
+- (void)PFBranchViewControllerBack {
+    [self.delegate ShowTabbar];
 }
 
 - (void) PFMapAllViewControllerBack {

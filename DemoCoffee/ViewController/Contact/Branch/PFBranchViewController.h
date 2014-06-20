@@ -8,6 +8,21 @@
 
 #import <UIKit/UIKit.h>
 
+#import "PFMapViewController.h"
+
+@protocol PFBranchViewControllerDelegate <NSObject>
+
+- (void)PFBranchViewControllerBack;
+
+@end
+
 @interface PFBranchViewController : UIViewController
+
+@property (assign, nonatomic) id <PFBranchViewControllerDelegate> delegate;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIView *branchView;
+
+- (IBAction)mapTapped:(id)sender;
+- (IBAction)callTapped:(id)sender;
 
 @end

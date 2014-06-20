@@ -53,4 +53,55 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 3;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 65;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFMemberCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFMemberCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFMemberCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [self.delegate HideTabbar];
+    
+    PFRewardViewController *reward = [[PFRewardViewController alloc] init];
+    
+    if(IS_WIDESCREEN){
+        reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController_Wide" bundle:nil];
+    } else {
+        reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
+    }
+    reward.delegate = self;
+    [self.navController pushViewController:reward animated:YES];
+
+}
+
+- (IBAction)addPointTapped:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Add point coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (void) PFRewardViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
 @end

@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PFRewardViewControllerDelegate <NSObject>
+
+- (void) PFRewardViewControllerBack;
+
+@end
+
 @interface PFRewardViewController : UIViewController
+
+@property (assign, nonatomic) id <PFRewardViewControllerDelegate> delegate;
 
 @end

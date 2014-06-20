@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PFMapView.h"
+#import "CMMapLauncher.h"
 
 @interface PFMapViewController : UIViewController
+
+@property (assign, nonatomic) id delegate;
 
 @end

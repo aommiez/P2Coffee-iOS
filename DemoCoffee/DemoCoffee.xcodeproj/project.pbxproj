@@ -62,6 +62,21 @@
 		526A34E61954024400D5FAB0 /* stamp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D41954024400D5FAB0 /* stamp@2x.png */; };
 		526A34EB195402CD00D5FAB0 /* PFMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A34E9195402CD00D5FAB0 /* PFMemberCell.m */; };
 		526A34EC195402CD00D5FAB0 /* PFMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A34EA195402CD00D5FAB0 /* PFMemberCell.xib */; };
+		526A34F219541FB000D5FAB0 /* PFUpdateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A34F019541FB000D5FAB0 /* PFUpdateCell.m */; };
+		526A34F319541FB000D5FAB0 /* PFUpdateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A34F119541FB000D5FAB0 /* PFUpdateCell.xib */; };
+		526A34F71954281400D5FAB0 /* PFAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A34F51954281400D5FAB0 /* PFAccountViewController.m */; };
+		526A34F81954281400D5FAB0 /* PFAccountViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A34F61954281400D5FAB0 /* PFAccountViewController_Wide.xib */; };
+		526A35071954294200D5FAB0 /* EmailIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34FB1954294200D5FAB0 /* EmailIcon@2x.png */; };
+		526A35081954294200D5FAB0 /* FootCreateAccIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34FC1954294200D5FAB0 /* FootCreateAccIp5@2x.png */; };
+		526A35091954294200D5FAB0 /* HeadCreateAccIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34FD1954294200D5FAB0 /* HeadCreateAccIp5@2x.png */; };
+		526A350B1954294200D5FAB0 /* PhoneIcon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34FF1954294200D5FAB0 /* PhoneIcon@2x.png */; };
+		526A350D1954294200D5FAB0 /* ProfileLineText@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A35011954294200D5FAB0 /* ProfileLineText@2x.png */; };
+		526A350F1954294200D5FAB0 /* ProfileTextFoot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A35031954294200D5FAB0 /* ProfileTextFoot@2x.png */; };
+		526A35101954294200D5FAB0 /* ProfileTextHead@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A35041954294200D5FAB0 /* ProfileTextHead@2x.png */; };
+		526A351519542B2200D5FAB0 /* Icon_Facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A351419542B2200D5FAB0 /* Icon_Facebook.png */; };
+		526A351E1954375200D5FAB0 /* PFEditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A351C1954375200D5FAB0 /* PFEditAccountViewController.m */; };
+		526A351F1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A351D1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib */; };
+		529AEED31954627F009A46EE /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 529AEED21954627F009A46EE /* default.jpg */; };
 		EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C3F195030B30032CF51 /* Foundation.framework */; };
 		EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C41195030B30032CF51 /* CoreGraphics.framework */; };
 		EA024C44195030B30032CF51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C43195030B30032CF51 /* UIKit.framework */; };
@@ -238,6 +253,24 @@
 		526A34E8195402CD00D5FAB0 /* PFMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMemberCell.h; sourceTree = "<group>"; };
 		526A34E9195402CD00D5FAB0 /* PFMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMemberCell.m; sourceTree = "<group>"; };
 		526A34EA195402CD00D5FAB0 /* PFMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFMemberCell.xib; sourceTree = "<group>"; };
+		526A34EF19541FB000D5FAB0 /* PFUpdateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFUpdateCell.h; sourceTree = "<group>"; };
+		526A34F019541FB000D5FAB0 /* PFUpdateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFUpdateCell.m; sourceTree = "<group>"; };
+		526A34F119541FB000D5FAB0 /* PFUpdateCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFUpdateCell.xib; sourceTree = "<group>"; };
+		526A34F41954281400D5FAB0 /* PFAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAccountViewController.h; sourceTree = "<group>"; };
+		526A34F51954281400D5FAB0 /* PFAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAccountViewController.m; sourceTree = "<group>"; };
+		526A34F61954281400D5FAB0 /* PFAccountViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAccountViewController_Wide.xib; sourceTree = "<group>"; };
+		526A34FB1954294200D5FAB0 /* EmailIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "EmailIcon@2x.png"; sourceTree = "<group>"; };
+		526A34FC1954294200D5FAB0 /* FootCreateAccIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "FootCreateAccIp5@2x.png"; sourceTree = "<group>"; };
+		526A34FD1954294200D5FAB0 /* HeadCreateAccIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HeadCreateAccIp5@2x.png"; sourceTree = "<group>"; };
+		526A34FF1954294200D5FAB0 /* PhoneIcon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PhoneIcon@2x.png"; sourceTree = "<group>"; };
+		526A35011954294200D5FAB0 /* ProfileLineText@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProfileLineText@2x.png"; sourceTree = "<group>"; };
+		526A35031954294200D5FAB0 /* ProfileTextFoot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProfileTextFoot@2x.png"; sourceTree = "<group>"; };
+		526A35041954294200D5FAB0 /* ProfileTextHead@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ProfileTextHead@2x.png"; sourceTree = "<group>"; };
+		526A351419542B2200D5FAB0 /* Icon_Facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon_Facebook.png; sourceTree = "<group>"; };
+		526A351B1954375200D5FAB0 /* PFEditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFEditAccountViewController.h; sourceTree = "<group>"; };
+		526A351C1954375200D5FAB0 /* PFEditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFEditAccountViewController.m; sourceTree = "<group>"; };
+		526A351D1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFEditAccountViewController_Wide.xib; sourceTree = "<group>"; };
+		529AEED21954627F009A46EE /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		EA024C3C195030B30032CF51 /* DemoCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA024C3F195030B30032CF51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA024C41195030B30032CF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -535,6 +568,45 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		526A34ED19541F9400D5FAB0 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				526A34F91954294200D5FAB0 /* Images */,
+				526A34F41954281400D5FAB0 /* PFAccountViewController.h */,
+				526A34F51954281400D5FAB0 /* PFAccountViewController.m */,
+				526A34F61954281400D5FAB0 /* PFAccountViewController_Wide.xib */,
+				526A351B1954375200D5FAB0 /* PFEditAccountViewController.h */,
+				526A351C1954375200D5FAB0 /* PFEditAccountViewController.m */,
+				526A351D1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib */,
+			);
+			path = Account;
+			sourceTree = "<group>";
+		};
+		526A34EE19541FA000D5FAB0 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				526A34EF19541FB000D5FAB0 /* PFUpdateCell.h */,
+				526A34F019541FB000D5FAB0 /* PFUpdateCell.m */,
+				526A34F119541FB000D5FAB0 /* PFUpdateCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		526A34F91954294200D5FAB0 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				526A351419542B2200D5FAB0 /* Icon_Facebook.png */,
+				526A34FB1954294200D5FAB0 /* EmailIcon@2x.png */,
+				526A34FC1954294200D5FAB0 /* FootCreateAccIp5@2x.png */,
+				526A34FD1954294200D5FAB0 /* HeadCreateAccIp5@2x.png */,
+				526A34FF1954294200D5FAB0 /* PhoneIcon@2x.png */,
+				526A35011954294200D5FAB0 /* ProfileLineText@2x.png */,
+				526A35031954294200D5FAB0 /* ProfileTextFoot@2x.png */,
+				526A35041954294200D5FAB0 /* ProfileTextHead@2x.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		EA024C33195030B20032CF51 = {
 			isa = PBXGroup;
 			children = (
@@ -675,6 +747,7 @@
 				EA024C94195031220032CF51 /* ip5 */,
 				EA024C9D195031220032CF51 /* Notification_icon@2x.png */,
 				EA024C9E195031220032CF51 /* Setting_icon@2x.png */,
+				529AEED21954627F009A46EE /* default.jpg */,
 			);
 			path = ImagesTab;
 			sourceTree = SOURCE_ROOT;
@@ -851,7 +924,7 @@
 			isa = PBXGroup;
 			children = (
 				EA024CCD195031220032CF51 /* Update */,
-				EA024D1B19503BF90032CF51 /* Account */,
+				526A34ED19541F9400D5FAB0 /* Account */,
 				EA024D1C19503BF90032CF51 /* Notification */,
 			);
 			path = Update;
@@ -860,7 +933,7 @@
 		EA024CCD195031220032CF51 /* Update */ = {
 			isa = PBXGroup;
 			children = (
-				EA024D1A19503BEE0032CF51 /* Cell */,
+				526A34EE19541FA000D5FAB0 /* Cell */,
 				EA024CCE195031220032CF51 /* PFUpdateViewController.h */,
 				EA024CCF195031220032CF51 /* PFUpdateViewController.m */,
 				EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */,
@@ -893,20 +966,6 @@
 				EA024D0B195035C00032CF51 /* PFContactCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		EA024D1A19503BEE0032CF51 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
-		EA024D1B19503BF90032CF51 /* Account */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Account;
 			sourceTree = "<group>";
 		};
 		EA024D1C19503BF90032CF51 /* Notification */ = {
@@ -1009,12 +1068,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
+				526A351F1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib in Resources */,
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
 				526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */,
 				EA024CDF195031220032CF51 /* menu_standby.png in Resources */,
 				EA024CEB195031220032CF51 /* Setting_icon@2x.png in Resources */,
 				EA024CFC195031220032CF51 /* default.jpeg in Resources */,
+				526A34F81954281400D5FAB0 /* PFAccountViewController_Wide.xib in Resources */,
 				EA024CF7195031220032CF51 /* PFMapAllViewController_Wide.xib in Resources */,
+				529AEED31954627F009A46EE /* default.jpg in Resources */,
 				526A34E21954024400D5FAB0 /* glow@2x.png in Resources */,
 				EA024CF2195031220032CF51 /* icon_reload.png in Resources */,
 				EA024CF3195031220032CF51 /* icon_reload@2x.png in Resources */,
@@ -1026,14 +1088,20 @@
 				EA024CDB195031220032CF51 /* contact_standby.png in Resources */,
 				EA024CE9195031220032CF51 /* update_standby@2x.png in Resources */,
 				EA024CDC195031220032CF51 /* member_light.png in Resources */,
+				526A351519542B2200D5FAB0 /* Icon_Facebook.png in Resources */,
 				526A34E11954024400D5FAB0 /* cross_icon@2x.png in Resources */,
+				526A350B1954294200D5FAB0 /* PhoneIcon@2x.png in Resources */,
+				526A350D1954294200D5FAB0 /* ProfileLineText@2x.png in Resources */,
 				EA024CF9195031220032CF51 /* PFMapViewController_Wide.xib in Resources */,
 				526A34D51954024400D5FAB0 /* bgLight.png in Resources */,
 				526A34E61954024400D5FAB0 /* stamp@2x.png in Resources */,
 				526A34D81954024400D5FAB0 /* button_minus.png in Resources */,
+				526A35101954294200D5FAB0 /* ProfileTextHead@2x.png in Resources */,
 				EA024D04195031220032CF51 /* PFUpdateViewController_Wide.xib in Resources */,
 				526A34DE1954024400D5FAB0 /* correct_icon.png in Resources */,
+				526A35071954294200D5FAB0 /* EmailIcon@2x.png in Resources */,
 				EA024CE4195031220032CF51 /* member_light@2x.png in Resources */,
+				526A350F1954294200D5FAB0 /* ProfileTextFoot@2x.png in Resources */,
 				EA024C57195030B30032CF51 /* Images.xcassets in Resources */,
 				EA024CE1195031220032CF51 /* update_standby.png in Resources */,
 				EA024CE8195031220032CF51 /* update_light@2x.png in Resources */,
@@ -1042,6 +1110,7 @@
 				526A34DC1954024400D5FAB0 /* button_point.png in Resources */,
 				EA024CDE195031220032CF51 /* menu_light.png in Resources */,
 				EA024CFE195031220032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
+				526A35081954294200D5FAB0 /* FootCreateAccIp5@2x.png in Resources */,
 				EA024CED195031220032CF51 /* PFBranchViewController_Wide.xib in Resources */,
 				EA024D00195031220032CF51 /* PFMemberViewController_Wide.xib in Resources */,
 				EA024D0D195035C00032CF51 /* PFContactCell.xib in Resources */,
@@ -1052,6 +1121,7 @@
 				526A34EC195402CD00D5FAB0 /* PFMemberCell.xib in Resources */,
 				EA024CE3195031220032CF51 /* contact_standby@2x.png in Resources */,
 				526A34E51954024400D5FAB0 /* stamp.png in Resources */,
+				526A35091954294200D5FAB0 /* HeadCreateAccIp5@2x.png in Resources */,
 				EA024D2719503C860032CF51 /* PFNotificationCell.xib in Resources */,
 				526A34DD1954024400D5FAB0 /* button_point@2x.png in Resources */,
 				526A34DA1954024400D5FAB0 /* button_plus.png in Resources */,
@@ -1065,6 +1135,7 @@
 				EA024CDA195031220032CF51 /* contact_light.png in Resources */,
 				526A34E41954024400D5FAB0 /* line2.png in Resources */,
 				526A34DF1954024400D5FAB0 /* correct_icon@2x.png in Resources */,
+				526A34F319541FB000D5FAB0 /* PFUpdateCell.xib in Resources */,
 				EA024CFB195031220032CF51 /* PFWebViewController_Wide.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1091,6 +1162,7 @@
 				368623571953EDEB004636DF /* NSString+Clean.m in Sources */,
 				368623521953EDEB004636DF /* DbPool.m in Sources */,
 				368623531953EDEB004636DF /* DebugLog.m in Sources */,
+				526A34F71954281400D5FAB0 /* PFAccountViewController.m in Sources */,
 				EA024C52195030B30032CF51 /* PFAppDelegate.m in Sources */,
 				EA024C4E195030B30032CF51 /* main.m in Sources */,
 				368623941953F001004636DF /* AFURLRequestSerialization.m in Sources */,
@@ -1105,11 +1177,13 @@
 				EA024D01195031220032CF51 /* PFMenuViewController.m in Sources */,
 				EA024CD2195031220032CF51 /* PFCustomBadge.m in Sources */,
 				368623B31953F590004636DF /* FMDatabase.m in Sources */,
+				526A351E1954375200D5FAB0 /* PFEditAccountViewController.m in Sources */,
 				368623741953EE14004636DF /* sqlite3_unicode.c in Sources */,
 				3686239D1953F0E2004636DF /* LoggerClient.m in Sources */,
 				368623751953EE14004636DF /* sqlite3.c in Sources */,
 				3686234E1953EDEB004636DF /* Db.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
+				526A34F219541FB000D5FAB0 /* PFUpdateCell.m in Sources */,
 				EA024CD9195031220032CF51 /* PagedImageScrollView.m in Sources */,
 				EA024D2119503C190032CF51 /* PFNotificationViewController.m in Sources */,
 				EA024D2619503C860032CF51 /* PFNotificationCell.m in Sources */,
