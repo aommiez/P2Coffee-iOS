@@ -7,6 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3686234E1953EDEB004636DF /* Db.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623371953EDEB004636DF /* Db.m */; };
+		3686234F1953EDEB004636DF /* DbBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623391953EDEB004636DF /* DbBackground.m */; };
+		368623501953EDEB004636DF /* DbCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686233B1953EDEB004636DF /* DbCache.m */; };
+		368623511953EDEB004636DF /* DbObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686233D1953EDEB004636DF /* DbObject.m */; };
+		368623521953EDEB004636DF /* DbPool.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686233F1953EDEB004636DF /* DbPool.m */; };
+		368623531953EDEB004636DF /* DebugLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623411953EDEB004636DF /* DebugLog.m */; };
+		368623541953EDEB004636DF /* FMResultSet+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623431953EDEB004636DF /* FMResultSet+Additions.m */; };
+		368623551953EDEB004636DF /* FuncionesGlobales.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623451953EDEB004636DF /* FuncionesGlobales.m */; };
+		368623561953EDEB004636DF /* NSDate+DateFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623471953EDEB004636DF /* NSDate+DateFunctions.m */; };
+		368623571953EDEB004636DF /* NSString+Clean.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623491953EDEB004636DF /* NSString+Clean.m */; };
+		368623581953EDEB004636DF /* SqlGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686234B1953EDEB004636DF /* SqlGenerator.m */; };
+		368623591953EDEB004636DF /* Validators.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686234D1953EDEB004636DF /* Validators.m */; };
+		368623741953EE14004636DF /* sqlite3_unicode.c in Sources */ = {isa = PBXBuildFile; fileRef = 3686236E1953EE14004636DF /* sqlite3_unicode.c */; };
+		368623751953EE14004636DF /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 368623701953EE14004636DF /* sqlite3.c */; };
+		368623791953EFB2004636DF /* DCManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623781953EFB2004636DF /* DCManager.m */; };
+		3686238E1953F001004636DF /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686237C1953F001004636DF /* AFHTTPRequestOperation.m */; };
+		3686238F1953F001004636DF /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686237E1953F001004636DF /* AFHTTPRequestOperationManager.m */; };
+		368623901953F001004636DF /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623801953F001004636DF /* AFHTTPSessionManager.m */; };
+		368623911953F001004636DF /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623831953F001004636DF /* AFNetworkReachabilityManager.m */; };
+		368623921953F001004636DF /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623851953F001004636DF /* AFSecurityPolicy.m */; };
+		368623931953F001004636DF /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623871953F001004636DF /* AFURLConnectionOperation.m */; };
+		368623941953F001004636DF /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623891953F001004636DF /* AFURLRequestSerialization.m */; };
+		368623951953F001004636DF /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686238B1953F001004636DF /* AFURLResponseSerialization.m */; };
+		368623961953F001004636DF /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686238D1953F001004636DF /* AFURLSessionManager.m */; };
+		368623981953F040004636DF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623971953F040004636DF /* FacebookSDK.framework */; };
+		3686239D1953F0E2004636DF /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686239B1953F0E2004636DF /* LoggerClient.m */; };
+		3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3686239E1953F1AF004636DF /* CFNetwork.framework */; };
+		368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A01953F1C1004636DF /* SystemConfiguration.framework */; };
+		368623A31953F1DD004636DF /* GHUnitIOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A21953F1DD004636DF /* GHUnitIOS.framework */; };
+		368623A51953F3B9004636DF /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A41953F3B9004636DF /* libxml2.2.dylib */; };
+		368623A71953F516004636DF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A61953F516004636DF /* MobileCoreServices.framework */; };
+		368623B31953F590004636DF /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623A91953F590004636DF /* FMDatabase.m */; };
+		368623B41953F590004636DF /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AB1953F590004636DF /* FMDatabaseAdditions.m */; };
+		368623B51953F590004636DF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AD1953F590004636DF /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		368623B61953F590004636DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AF1953F590004636DF /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		368623B81953F590004636DF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623B21953F590004636DF /* FMResultSet.m */; };
 		EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C3F195030B30032CF51 /* Foundation.framework */; };
 		EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C41195030B30032CF51 /* CoreGraphics.framework */; };
 		EA024C44195030B30032CF51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C43195030B30032CF51 /* UIKit.framework */; };
@@ -93,6 +129,75 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		368623361953EDEB004636DF /* Db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Db.h; path = External/orm/Db.h; sourceTree = SOURCE_ROOT; };
+		368623371953EDEB004636DF /* Db.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Db.m; path = External/orm/Db.m; sourceTree = SOURCE_ROOT; };
+		368623381953EDEB004636DF /* DbBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbBackground.h; path = External/orm/DbBackground.h; sourceTree = SOURCE_ROOT; };
+		368623391953EDEB004636DF /* DbBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbBackground.m; path = External/orm/DbBackground.m; sourceTree = SOURCE_ROOT; };
+		3686233A1953EDEB004636DF /* DbCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbCache.h; path = External/orm/DbCache.h; sourceTree = SOURCE_ROOT; };
+		3686233B1953EDEB004636DF /* DbCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbCache.m; path = External/orm/DbCache.m; sourceTree = SOURCE_ROOT; };
+		3686233C1953EDEB004636DF /* DbObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbObject.h; path = External/orm/DbObject.h; sourceTree = SOURCE_ROOT; };
+		3686233D1953EDEB004636DF /* DbObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbObject.m; path = External/orm/DbObject.m; sourceTree = SOURCE_ROOT; };
+		3686233E1953EDEB004636DF /* DbPool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbPool.h; path = External/orm/DbPool.h; sourceTree = SOURCE_ROOT; };
+		3686233F1953EDEB004636DF /* DbPool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DbPool.m; path = External/orm/DbPool.m; sourceTree = SOURCE_ROOT; };
+		368623401953EDEB004636DF /* DebugLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DebugLog.h; path = External/orm/DebugLog.h; sourceTree = SOURCE_ROOT; };
+		368623411953EDEB004636DF /* DebugLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DebugLog.m; path = External/orm/DebugLog.m; sourceTree = SOURCE_ROOT; };
+		368623421953EDEB004636DF /* FMResultSet+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "FMResultSet+Additions.h"; path = "External/orm/FMResultSet+Additions.h"; sourceTree = SOURCE_ROOT; };
+		368623431953EDEB004636DF /* FMResultSet+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "FMResultSet+Additions.m"; path = "External/orm/FMResultSet+Additions.m"; sourceTree = SOURCE_ROOT; };
+		368623441953EDEB004636DF /* FuncionesGlobales.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FuncionesGlobales.h; path = External/orm/FuncionesGlobales.h; sourceTree = SOURCE_ROOT; };
+		368623451953EDEB004636DF /* FuncionesGlobales.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FuncionesGlobales.m; path = External/orm/FuncionesGlobales.m; sourceTree = SOURCE_ROOT; };
+		368623461953EDEB004636DF /* NSDate+DateFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSDate+DateFunctions.h"; path = "External/orm/NSDate+DateFunctions.h"; sourceTree = SOURCE_ROOT; };
+		368623471953EDEB004636DF /* NSDate+DateFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSDate+DateFunctions.m"; path = "External/orm/NSDate+DateFunctions.m"; sourceTree = SOURCE_ROOT; };
+		368623481953EDEB004636DF /* NSString+Clean.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+Clean.h"; path = "External/orm/NSString+Clean.h"; sourceTree = SOURCE_ROOT; };
+		368623491953EDEB004636DF /* NSString+Clean.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+Clean.m"; path = "External/orm/NSString+Clean.m"; sourceTree = SOURCE_ROOT; };
+		3686234A1953EDEB004636DF /* SqlGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SqlGenerator.h; path = External/orm/SqlGenerator.h; sourceTree = SOURCE_ROOT; };
+		3686234B1953EDEB004636DF /* SqlGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SqlGenerator.m; path = External/orm/SqlGenerator.m; sourceTree = SOURCE_ROOT; };
+		3686234C1953EDEB004636DF /* Validators.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Validators.h; path = External/orm/Validators.h; sourceTree = SOURCE_ROOT; };
+		3686234D1953EDEB004636DF /* Validators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Validators.m; path = External/orm/Validators.m; sourceTree = SOURCE_ROOT; };
+		3686236E1953EE14004636DF /* sqlite3_unicode.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3_unicode.c; path = External/sqlite/sqlite3_unicode.c; sourceTree = SOURCE_ROOT; };
+		3686236F1953EE14004636DF /* sqlite3_unicode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3_unicode.h; path = External/sqlite/sqlite3_unicode.h; sourceTree = SOURCE_ROOT; };
+		368623701953EE14004636DF /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = External/sqlite/sqlite3.c; sourceTree = SOURCE_ROOT; };
+		368623711953EE14004636DF /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = External/sqlite/sqlite3.h; sourceTree = SOURCE_ROOT; };
+		368623721953EE14004636DF /* sqlite3ext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3ext.h; path = External/sqlite/sqlite3ext.h; sourceTree = SOURCE_ROOT; };
+		368623771953EFB2004636DF /* DCManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCManager.h; path = DCManager/DCManager.h; sourceTree = "<group>"; };
+		368623781953EFB2004636DF /* DCManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCManager.m; path = DCManager/DCManager.m; sourceTree = "<group>"; };
+		3686237B1953F001004636DF /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperation.h; path = External/afnetworking/AFHTTPRequestOperation.h; sourceTree = SOURCE_ROOT; };
+		3686237C1953F001004636DF /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = External/afnetworking/AFHTTPRequestOperation.m; sourceTree = SOURCE_ROOT; };
+		3686237D1953F001004636DF /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPRequestOperationManager.h; path = External/afnetworking/AFHTTPRequestOperationManager.h; sourceTree = SOURCE_ROOT; };
+		3686237E1953F001004636DF /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperationManager.m; path = External/afnetworking/AFHTTPRequestOperationManager.m; sourceTree = SOURCE_ROOT; };
+		3686237F1953F001004636DF /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = External/afnetworking/AFHTTPSessionManager.h; sourceTree = SOURCE_ROOT; };
+		368623801953F001004636DF /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = External/afnetworking/AFHTTPSessionManager.m; sourceTree = SOURCE_ROOT; };
+		368623811953F001004636DF /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = External/afnetworking/AFNetworking.h; sourceTree = SOURCE_ROOT; };
+		368623821953F001004636DF /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = External/afnetworking/AFNetworkReachabilityManager.h; sourceTree = SOURCE_ROOT; };
+		368623831953F001004636DF /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = External/afnetworking/AFNetworkReachabilityManager.m; sourceTree = SOURCE_ROOT; };
+		368623841953F001004636DF /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = External/afnetworking/AFSecurityPolicy.h; sourceTree = SOURCE_ROOT; };
+		368623851953F001004636DF /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = External/afnetworking/AFSecurityPolicy.m; sourceTree = SOURCE_ROOT; };
+		368623861953F001004636DF /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = External/afnetworking/AFURLConnectionOperation.h; sourceTree = SOURCE_ROOT; };
+		368623871953F001004636DF /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = External/afnetworking/AFURLConnectionOperation.m; sourceTree = SOURCE_ROOT; };
+		368623881953F001004636DF /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = External/afnetworking/AFURLRequestSerialization.h; sourceTree = SOURCE_ROOT; };
+		368623891953F001004636DF /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = External/afnetworking/AFURLRequestSerialization.m; sourceTree = SOURCE_ROOT; };
+		3686238A1953F001004636DF /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = External/afnetworking/AFURLResponseSerialization.h; sourceTree = SOURCE_ROOT; };
+		3686238B1953F001004636DF /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = External/afnetworking/AFURLResponseSerialization.m; sourceTree = SOURCE_ROOT; };
+		3686238C1953F001004636DF /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = External/afnetworking/AFURLSessionManager.h; sourceTree = SOURCE_ROOT; };
+		3686238D1953F001004636DF /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = External/afnetworking/AFURLSessionManager.m; sourceTree = SOURCE_ROOT; };
+		368623971953F040004636DF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = External/Facebook/FacebookSDK.framework; sourceTree = "<group>"; };
+		3686239A1953F0E2004636DF /* LoggerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerClient.h; path = External/Logger/LoggerClient.h; sourceTree = SOURCE_ROOT; };
+		3686239B1953F0E2004636DF /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggerClient.m; path = External/Logger/LoggerClient.m; sourceTree = SOURCE_ROOT; };
+		3686239C1953F0E2004636DF /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerCommon.h; path = External/Logger/LoggerCommon.h; sourceTree = SOURCE_ROOT; };
+		3686239E1953F1AF004636DF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		368623A01953F1C1004636DF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		368623A21953F1DD004636DF /* GHUnitIOS.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GHUnitIOS.framework; path = External/GHUnit/GHUnitIOS.framework; sourceTree = "<group>"; };
+		368623A41953F3B9004636DF /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		368623A61953F516004636DF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		368623A81953F590004636DF /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabase.h; path = External/fdbm/FMDatabase.h; sourceTree = SOURCE_ROOT; };
+		368623A91953F590004636DF /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabase.m; path = External/fdbm/FMDatabase.m; sourceTree = SOURCE_ROOT; };
+		368623AA1953F590004636DF /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseAdditions.h; path = External/fdbm/FMDatabaseAdditions.h; sourceTree = SOURCE_ROOT; };
+		368623AB1953F590004636DF /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseAdditions.m; path = External/fdbm/FMDatabaseAdditions.m; sourceTree = SOURCE_ROOT; };
+		368623AC1953F590004636DF /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabasePool.h; path = External/fdbm/FMDatabasePool.h; sourceTree = SOURCE_ROOT; };
+		368623AD1953F590004636DF /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabasePool.m; path = External/fdbm/FMDatabasePool.m; sourceTree = SOURCE_ROOT; };
+		368623AE1953F590004636DF /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMDatabaseQueue.h; path = External/fdbm/FMDatabaseQueue.h; sourceTree = SOURCE_ROOT; };
+		368623AF1953F590004636DF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = External/fdbm/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
+		368623B11953F590004636DF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = External/fdbm/FMResultSet.h; sourceTree = SOURCE_ROOT; };
+		368623B21953F590004636DF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = External/fdbm/FMResultSet.m; sourceTree = SOURCE_ROOT; };
 		EA024C3C195030B30032CF51 /* DemoCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA024C3F195030B30032CF51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA024C41195030B30032CF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -197,6 +302,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368623981953F040004636DF /* FacebookSDK.framework in Frameworks */,
+				368623A71953F516004636DF /* MobileCoreServices.framework in Frameworks */,
+				368623A51953F3B9004636DF /* libxml2.2.dylib in Frameworks */,
+				368623A31953F1DD004636DF /* GHUnitIOS.framework in Frameworks */,
+				368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */,
+				3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */,
 				EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */,
 				EA024C46195030B30032CF51 /* CoreData.framework in Frameworks */,
 				EA024C44195030B30032CF51 /* UIKit.framework in Frameworks */,
@@ -218,6 +329,138 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		368623331953EC51004636DF /* Tabbar */ = {
+			isa = PBXGroup;
+			children = (
+				EA024C75195031220032CF51 /* notificationView.xib */,
+				EA024C76195031220032CF51 /* PFCustomBadge.h */,
+				EA024C77195031220032CF51 /* PFCustomBadge.m */,
+				EA024C78195031220032CF51 /* PFTabBarItemButton.h */,
+				EA024C79195031220032CF51 /* PFTabBarItemButton.m */,
+				EA024C7A195031220032CF51 /* PFTabBarViewController.h */,
+				EA024C7B195031220032CF51 /* PFTabBarViewController.m */,
+			);
+			name = Tabbar;
+			sourceTree = "<group>";
+		};
+		368623341953EC63004636DF /* ORM */ = {
+			isa = PBXGroup;
+			children = (
+				368623361953EDEB004636DF /* Db.h */,
+				368623371953EDEB004636DF /* Db.m */,
+				368623381953EDEB004636DF /* DbBackground.h */,
+				368623391953EDEB004636DF /* DbBackground.m */,
+				3686233A1953EDEB004636DF /* DbCache.h */,
+				3686233B1953EDEB004636DF /* DbCache.m */,
+				3686233C1953EDEB004636DF /* DbObject.h */,
+				3686233D1953EDEB004636DF /* DbObject.m */,
+				3686233E1953EDEB004636DF /* DbPool.h */,
+				3686233F1953EDEB004636DF /* DbPool.m */,
+				368623401953EDEB004636DF /* DebugLog.h */,
+				368623411953EDEB004636DF /* DebugLog.m */,
+				368623421953EDEB004636DF /* FMResultSet+Additions.h */,
+				368623431953EDEB004636DF /* FMResultSet+Additions.m */,
+				368623441953EDEB004636DF /* FuncionesGlobales.h */,
+				368623451953EDEB004636DF /* FuncionesGlobales.m */,
+				368623461953EDEB004636DF /* NSDate+DateFunctions.h */,
+				368623471953EDEB004636DF /* NSDate+DateFunctions.m */,
+				368623481953EDEB004636DF /* NSString+Clean.h */,
+				368623491953EDEB004636DF /* NSString+Clean.m */,
+				3686234A1953EDEB004636DF /* SqlGenerator.h */,
+				3686234B1953EDEB004636DF /* SqlGenerator.m */,
+				3686234C1953EDEB004636DF /* Validators.h */,
+				3686234D1953EDEB004636DF /* Validators.m */,
+			);
+			name = ORM;
+			path = ../Class;
+			sourceTree = "<group>";
+		};
+		368623351953EDDB004636DF /* External */ = {
+			isa = PBXGroup;
+			children = (
+				368623991953F0DC004636DF /* Logger */,
+				3686237A1953EFC9004636DF /* afnetworking */,
+				3686236C1953EE09004636DF /* sqlite */,
+				3686235A1953EDF3004636DF /* fdbm */,
+				368623341953EC63004636DF /* ORM */,
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		3686235A1953EDF3004636DF /* fdbm */ = {
+			isa = PBXGroup;
+			children = (
+				368623A81953F590004636DF /* FMDatabase.h */,
+				368623A91953F590004636DF /* FMDatabase.m */,
+				368623AA1953F590004636DF /* FMDatabaseAdditions.h */,
+				368623AB1953F590004636DF /* FMDatabaseAdditions.m */,
+				368623AC1953F590004636DF /* FMDatabasePool.h */,
+				368623AD1953F590004636DF /* FMDatabasePool.m */,
+				368623AE1953F590004636DF /* FMDatabaseQueue.h */,
+				368623AF1953F590004636DF /* FMDatabaseQueue.m */,
+				368623B11953F590004636DF /* FMResultSet.h */,
+				368623B21953F590004636DF /* FMResultSet.m */,
+			);
+			name = fdbm;
+			sourceTree = "<group>";
+		};
+		3686236C1953EE09004636DF /* sqlite */ = {
+			isa = PBXGroup;
+			children = (
+				3686236E1953EE14004636DF /* sqlite3_unicode.c */,
+				3686236F1953EE14004636DF /* sqlite3_unicode.h */,
+				368623701953EE14004636DF /* sqlite3.c */,
+				368623711953EE14004636DF /* sqlite3.h */,
+				368623721953EE14004636DF /* sqlite3ext.h */,
+			);
+			name = sqlite;
+			sourceTree = "<group>";
+		};
+		368623761953EE26004636DF /* DCManager */ = {
+			isa = PBXGroup;
+			children = (
+				368623771953EFB2004636DF /* DCManager.h */,
+				368623781953EFB2004636DF /* DCManager.m */,
+			);
+			name = DCManager;
+			sourceTree = "<group>";
+		};
+		3686237A1953EFC9004636DF /* afnetworking */ = {
+			isa = PBXGroup;
+			children = (
+				3686237B1953F001004636DF /* AFHTTPRequestOperation.h */,
+				3686237C1953F001004636DF /* AFHTTPRequestOperation.m */,
+				3686237D1953F001004636DF /* AFHTTPRequestOperationManager.h */,
+				3686237E1953F001004636DF /* AFHTTPRequestOperationManager.m */,
+				3686237F1953F001004636DF /* AFHTTPSessionManager.h */,
+				368623801953F001004636DF /* AFHTTPSessionManager.m */,
+				368623811953F001004636DF /* AFNetworking.h */,
+				368623821953F001004636DF /* AFNetworkReachabilityManager.h */,
+				368623831953F001004636DF /* AFNetworkReachabilityManager.m */,
+				368623841953F001004636DF /* AFSecurityPolicy.h */,
+				368623851953F001004636DF /* AFSecurityPolicy.m */,
+				368623861953F001004636DF /* AFURLConnectionOperation.h */,
+				368623871953F001004636DF /* AFURLConnectionOperation.m */,
+				368623881953F001004636DF /* AFURLRequestSerialization.h */,
+				368623891953F001004636DF /* AFURLRequestSerialization.m */,
+				3686238A1953F001004636DF /* AFURLResponseSerialization.h */,
+				3686238B1953F001004636DF /* AFURLResponseSerialization.m */,
+				3686238C1953F001004636DF /* AFURLSessionManager.h */,
+				3686238D1953F001004636DF /* AFURLSessionManager.m */,
+			);
+			name = afnetworking;
+			sourceTree = "<group>";
+		};
+		368623991953F0DC004636DF /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				3686239A1953F0E2004636DF /* LoggerClient.h */,
+				3686239B1953F0E2004636DF /* LoggerClient.m */,
+				3686239C1953F0E2004636DF /* LoggerCommon.h */,
+			);
+			name = Logger;
+			sourceTree = "<group>";
+		};
 		EA024C33195030B20032CF51 = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +483,12 @@
 		EA024C3E195030B30032CF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				368623A61953F516004636DF /* MobileCoreServices.framework */,
+				368623A41953F3B9004636DF /* libxml2.2.dylib */,
+				368623A21953F1DD004636DF /* GHUnitIOS.framework */,
+				368623A01953F1C1004636DF /* SystemConfiguration.framework */,
+				3686239E1953F1AF004636DF /* CFNetwork.framework */,
+				368623971953F040004636DF /* FacebookSDK.framework */,
 				EA024C3F195030B30032CF51 /* Foundation.framework */,
 				EA024C41195030B30032CF51 /* CoreGraphics.framework */,
 				EA024C43195030B30032CF51 /* UIKit.framework */,
@@ -252,6 +501,7 @@
 		EA024C47195030B30032CF51 /* DemoCoffee */ = {
 			isa = PBXGroup;
 			children = (
+				368623351953EDDB004636DF /* External */,
 				EA024C7C195031220032CF51 /* Ext */,
 				EA024C74195031220032CF51 /* Class */,
 				EA024C8A195031220032CF51 /* ImagesTab */,
@@ -297,13 +547,8 @@
 		EA024C74195031220032CF51 /* Class */ = {
 			isa = PBXGroup;
 			children = (
-				EA024C75195031220032CF51 /* notificationView.xib */,
-				EA024C76195031220032CF51 /* PFCustomBadge.h */,
-				EA024C77195031220032CF51 /* PFCustomBadge.m */,
-				EA024C78195031220032CF51 /* PFTabBarItemButton.h */,
-				EA024C79195031220032CF51 /* PFTabBarItemButton.m */,
-				EA024C7A195031220032CF51 /* PFTabBarViewController.h */,
-				EA024C7B195031220032CF51 /* PFTabBarViewController.m */,
+				368623761953EE26004636DF /* DCManager */,
+				368623331953EC51004636DF /* Tabbar */,
 			);
 			path = Class;
 			sourceTree = SOURCE_ROOT;
@@ -752,30 +997,60 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368623931953F001004636DF /* AFURLConnectionOperation.m in Sources */,
+				368623561953EDEB004636DF /* NSDate+DateFunctions.m in Sources */,
 				EA024CD6195031220032CF51 /* BBBadgeBarButtonItem.m in Sources */,
+				368623551953EDEB004636DF /* FuncionesGlobales.m in Sources */,
+				368623571953EDEB004636DF /* NSString+Clean.m in Sources */,
+				368623521953EDEB004636DF /* DbPool.m in Sources */,
+				368623531953EDEB004636DF /* DebugLog.m in Sources */,
 				EA024C52195030B30032CF51 /* PFAppDelegate.m in Sources */,
 				EA024C4E195030B30032CF51 /* main.m in Sources */,
+				368623941953F001004636DF /* AFURLRequestSerialization.m in Sources */,
 				EA024CF8195031220032CF51 /* PFMapViewController.m in Sources */,
 				EA024CD4195031220032CF51 /* PFTabBarViewController.m in Sources */,
+				368623501953EDEB004636DF /* DbCache.m in Sources */,
+				368623911953F001004636DF /* AFNetworkReachabilityManager.m in Sources */,
+				368623961953F001004636DF /* AFURLSessionManager.m in Sources */,
 				EA024CD3195031220032CF51 /* PFTabBarItemButton.m in Sources */,
+				3686238E1953F001004636DF /* AFHTTPRequestOperation.m in Sources */,
 				EA024CD8195031220032CF51 /* PFMapView.m in Sources */,
 				EA024D01195031220032CF51 /* PFMenuViewController.m in Sources */,
 				EA024CD2195031220032CF51 /* PFCustomBadge.m in Sources */,
+				368623B31953F590004636DF /* FMDatabase.m in Sources */,
+				368623741953EE14004636DF /* sqlite3_unicode.c in Sources */,
+				3686239D1953F0E2004636DF /* LoggerClient.m in Sources */,
+				368623751953EE14004636DF /* sqlite3.c in Sources */,
+				3686234E1953EDEB004636DF /* Db.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
 				EA024CD9195031220032CF51 /* PagedImageScrollView.m in Sources */,
 				EA024D2119503C190032CF51 /* PFNotificationViewController.m in Sources */,
 				EA024D2619503C860032CF51 /* PFNotificationCell.m in Sources */,
+				368623B81953F590004636DF /* FMResultSet.m in Sources */,
 				EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */,
 				EA024CF0195031220032CF51 /* PFContactViewController.m in Sources */,
 				EA024CFD195031220032CF51 /* PFHistoryViewController.m in Sources */,
 				EA024C55195030B30032CF51 /* DemoCoffee.xcdatamodeld in Sources */,
 				EA024CD7195031220032CF51 /* CMMapLauncher.m in Sources */,
+				3686234F1953EDEB004636DF /* DbBackground.m in Sources */,
+				368623791953EFB2004636DF /* DCManager.m in Sources */,
 				EA024CFA195031220032CF51 /* PFWebViewController.m in Sources */,
+				3686238F1953F001004636DF /* AFHTTPRequestOperationManager.m in Sources */,
 				EA024CEC195031220032CF51 /* PFBranchViewController.m in Sources */,
+				368623901953F001004636DF /* AFHTTPSessionManager.m in Sources */,
+				368623591953EDEB004636DF /* Validators.m in Sources */,
+				368623921953F001004636DF /* AFSecurityPolicy.m in Sources */,
+				368623951953F001004636DF /* AFURLResponseSerialization.m in Sources */,
 				EA024CD5195031220032CF51 /* AsyncImageView.m in Sources */,
 				EA024D0C195035C00032CF51 /* PFContactCell.m in Sources */,
 				EA024CF6195031220032CF51 /* PFMapAllViewController.m in Sources */,
+				368623B41953F590004636DF /* FMDatabaseAdditions.m in Sources */,
+				368623511953EDEB004636DF /* DbObject.m in Sources */,
+				368623B51953F590004636DF /* FMDatabasePool.m in Sources */,
 				EA024D03195031220032CF51 /* PFUpdateViewController.m in Sources */,
+				368623581953EDEB004636DF /* SqlGenerator.m in Sources */,
+				368623541953EDEB004636DF /* FMResultSet+Additions.m in Sources */,
+				368623B61953F590004636DF /* FMDatabaseQueue.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -890,13 +1165,28 @@
 		EA024C6F195030B40032CF51 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)/External/GHUnit",
+					"$(PROJECT_DIR)/External/Facebook",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoCoffee/DemoCoffee-Prefix.pch";
 				INFOPLIST_FILE = "DemoCoffee/DemoCoffee-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
@@ -906,13 +1196,28 @@
 		EA024C70195030B40032CF51 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/",
+					"$(PROJECT_DIR)/External/GHUnit",
+					"$(PROJECT_DIR)/External/Facebook",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DemoCoffee/DemoCoffee-Prefix.pch";
 				INFOPLIST_FILE = "DemoCoffee/DemoCoffee-Info.plist";
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					UIKit,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
