@@ -47,38 +47,38 @@
     if(IS_WIDESCREEN){
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"update_light"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"update_standby"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"ic_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"ic_update_off"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"menu_light"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"menu_standby"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"ic_menu_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"ic_menu_off"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"member_light"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"member_standby"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"ic_member_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"ic_member_off"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"contact_light"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"contact_standby"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"ic_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"ic_contact_off"]];
         
     }else{
         
         PFTabBarItemButton *item0 = [self.tabBarViewController.itemButtons objectAtIndex:0];
-        [item0 setHighlightedImage:[UIImage imageNamed:@"update_light"]];
-        [item0 setStanbyImage:[UIImage imageNamed:@"update_standby"]];
+        [item0 setHighlightedImage:[UIImage imageNamed:@"ic_update_on"]];
+        [item0 setStanbyImage:[UIImage imageNamed:@"ic_update_off"]];
         
         PFTabBarItemButton *item1 = [self.tabBarViewController.itemButtons objectAtIndex:1];
-        [item1 setHighlightedImage:[UIImage imageNamed:@"menu_light"]];
-        [item1 setStanbyImage:[UIImage imageNamed:@"menu_standby"]];
+        [item1 setHighlightedImage:[UIImage imageNamed:@"ic_menu_on"]];
+        [item1 setStanbyImage:[UIImage imageNamed:@"ic_menu_off"]];
         
         PFTabBarItemButton *item2 = [self.tabBarViewController.itemButtons objectAtIndex:2];
-        [item2 setHighlightedImage:[UIImage imageNamed:@"member_light"]];
-        [item2 setStanbyImage:[UIImage imageNamed:@"member_standby"]];
+        [item2 setHighlightedImage:[UIImage imageNamed:@"ic_member_on"]];
+        [item2 setStanbyImage:[UIImage imageNamed:@"ic_member_off"]];
         
         PFTabBarItemButton *item3 = [self.tabBarViewController.itemButtons objectAtIndex:3];
-        [item3 setHighlightedImage:[UIImage imageNamed:@"contact_light"]];
-        [item3 setStanbyImage:[UIImage imageNamed:@"contact_standby"]];
+        [item3 setHighlightedImage:[UIImage imageNamed:@"ic_contact_on"]];
+        [item3 setStanbyImage:[UIImage imageNamed:@"ic_contact_off"]];
         
     }
     [self.tabBarViewController setSelectedIndex:3];

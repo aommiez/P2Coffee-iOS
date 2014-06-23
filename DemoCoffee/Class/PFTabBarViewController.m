@@ -53,7 +53,7 @@ int oldIndex;
 
 #pragma mark - IBAction
 - (IBAction)tabBarItemTapped:(id)sender {
-    self.tabBarView.alpha = 0.9;
+    //self.tabBarView.alpha = 0.9;
     [self updateTabBarItem:sender];
     if([self.delegate respondsToSelector:@selector(PFTabBarViewController:selectedIndex:)]){
         PFTabBarItemButton *barItemButton = (PFTabBarItemButton*)sender;
@@ -64,7 +64,7 @@ int oldIndex;
 
 #pragma mark - private
 - (void)updateTabBarItem:(id)sender{
-    self.tabBarView.alpha = 0.9;
+    //self.tabBarView.alpha = 0.9;
     int i = 0;
     UIButton *tabBarItemButton = (UIButton*)sender;
     for (UIButton *button in self.itemButtons) {
@@ -92,8 +92,7 @@ int oldIndex;
         }
         i++;
     }
-    self.tabBarView.alpha = 0.9;
-    
+    //self.tabBarView.alpha = 0.9;
     
     [[self.viewControllers objectAtIndex:selectedIndex] setWantsFullScreenLayout:YES];
     [self.mainView addSubview:[[self.viewControllers objectAtIndex:selectedIndex] view]];
