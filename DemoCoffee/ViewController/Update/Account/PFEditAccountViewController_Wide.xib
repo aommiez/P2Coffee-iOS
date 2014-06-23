@@ -102,7 +102,7 @@
                                 <action selector="changepasswordTapped:" destination="-1" eventType="touchUpInside" id="hgY-QL-WSp"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_unlock.png" translatesAutoresizingMaskIntoConstraints="NO" id="ccZ-MC-nBT">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_lock.png" translatesAutoresizingMaskIntoConstraints="NO" id="ccZ-MC-nBT">
                             <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -275,7 +275,7 @@
                     <rect key="frame" x="0.0" y="85" width="300" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_lock.png" translatesAutoresizingMaskIntoConstraints="NO" id="rUH-UL-tiK">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_unlock.png" translatesAutoresizingMaskIntoConstraints="NO" id="rUH-UL-tiK">
                             <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
@@ -296,7 +296,7 @@
                     <rect key="frame" x="0.0" y="131" width="300" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_lock.png" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-cp-yWh">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_unlock.png" translatesAutoresizingMaskIntoConstraints="NO" id="UQZ-cp-yWh">
                             <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
