@@ -80,6 +80,8 @@
 		525AE04119580810005329A1 /* ic_mail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525AE03919580810005329A1 /* ic_mail@2x.png */; };
 		525AE04219580810005329A1 /* ic_unlock@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525AE03A19580810005329A1 /* ic_unlock@2x.png */; };
 		525AE04319580810005329A1 /* ic_web@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525AE03B19580810005329A1 /* ic_web@2x.png */; };
+		525AE04819582DCA005329A1 /* PFOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525AE04619582DCA005329A1 /* PFOrderViewController.m */; };
+		525AE04919582DCA005329A1 /* PFOrderViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525AE04719582DCA005329A1 /* PFOrderViewController_Wide.xib */; };
 		526A34D51954024400D5FAB0 /* bgLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C31954024400D5FAB0 /* bgLight.png */; };
 		526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C41954024400D5FAB0 /* bgLight@2x.png */; };
 		526A34D71954024400D5FAB0 /* button_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C51954024400D5FAB0 /* button_add.png */; };
@@ -285,6 +287,9 @@
 		525AE03919580810005329A1 /* ic_mail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_mail@2x.png"; sourceTree = "<group>"; };
 		525AE03A19580810005329A1 /* ic_unlock@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_unlock@2x.png"; sourceTree = "<group>"; };
 		525AE03B19580810005329A1 /* ic_web@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_web@2x.png"; sourceTree = "<group>"; };
+		525AE04519582DCA005329A1 /* PFOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFOrderViewController.h; sourceTree = "<group>"; };
+		525AE04619582DCA005329A1 /* PFOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFOrderViewController.m; sourceTree = "<group>"; };
+		525AE04719582DCA005329A1 /* PFOrderViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFOrderViewController_Wide.xib; sourceTree = "<group>"; };
 		526A34C31954024400D5FAB0 /* bgLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgLight.png; sourceTree = "<group>"; };
 		526A34C41954024400D5FAB0 /* bgLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgLight@2x.png"; sourceTree = "<group>"; };
 		526A34C51954024400D5FAB0 /* button_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_add.png; sourceTree = "<group>"; };
@@ -600,6 +605,16 @@
 				525AE00B19580489005329A1 /* ic_update_on@2x.png */,
 			);
 			path = ip5;
+			sourceTree = "<group>";
+		};
+		525AE04419582DAE005329A1 /* Order */ = {
+			isa = PBXGroup;
+			children = (
+				525AE04519582DCA005329A1 /* PFOrderViewController.h */,
+				525AE04619582DCA005329A1 /* PFOrderViewController.m */,
+				525AE04719582DCA005329A1 /* PFOrderViewController_Wide.xib */,
+			);
+			path = Order;
 			sourceTree = "<group>";
 		};
 		526A34C21954024400D5FAB0 /* Images */ = {
@@ -957,6 +972,7 @@
 			isa = PBXGroup;
 			children = (
 				EA024CC8195031220032CF51 /* Menu */,
+				525AE04419582DAE005329A1 /* Order */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -1130,6 +1146,7 @@
 				EA024CF2195031220032CF51 /* icon_reload.png in Resources */,
 				EA024CF3195031220032CF51 /* icon_reload@2x.png in Resources */,
 				525AE01A19580489005329A1 /* ic_update_off@2x.png in Resources */,
+				525AE04919582DCA005329A1 /* PFOrderViewController_Wide.xib in Resources */,
 				526A34E31954024400D5FAB0 /* line1.png in Resources */,
 				526A34D91954024400D5FAB0 /* button_minus_select.png in Resources */,
 				525AE030195806DB005329A1 /* ic_telephone.png in Resources */,
@@ -1267,6 +1284,7 @@
 				368623B41953F590004636DF /* FMDatabaseAdditions.m in Sources */,
 				368623511953EDEB004636DF /* DbObject.m in Sources */,
 				368623B51953F590004636DF /* FMDatabasePool.m in Sources */,
+				525AE04819582DCA005329A1 /* PFOrderViewController.m in Sources */,
 				EA024D03195031220032CF51 /* PFUpdateViewController.m in Sources */,
 				368623581953EDEB004636DF /* SqlGenerator.m in Sources */,
 				368623541953EDEB004636DF /* FMResultSet+Additions.m in Sources */,
