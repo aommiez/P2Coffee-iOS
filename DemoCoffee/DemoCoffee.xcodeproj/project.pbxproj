@@ -42,6 +42,8 @@
 		368623B51953F590004636DF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AD1953F590004636DF /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		368623B61953F590004636DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AF1953F590004636DF /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		368623B81953F590004636DF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623B21953F590004636DF /* FMResultSet.m */; };
+		520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */; };
+		520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */; };
 		526A34D51954024400D5FAB0 /* bgLight.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C31954024400D5FAB0 /* bgLight.png */; };
 		526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C41954024400D5FAB0 /* bgLight@2x.png */; };
 		526A34D71954024400D5FAB0 /* button_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34C51954024400D5FAB0 /* button_add.png */; };
@@ -232,6 +234,9 @@
 		368623AF1953F590004636DF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = External/fdbm/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
 		368623B11953F590004636DF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = External/fdbm/FMResultSet.h; sourceTree = SOURCE_ROOT; };
 		368623B21953F590004636DF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = External/fdbm/FMResultSet.m; sourceTree = SOURCE_ROOT; };
+		520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryCell.h; sourceTree = "<group>"; };
+		520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHistoryCell.m; sourceTree = "<group>"; };
+		520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFHistoryCell.xib; sourceTree = "<group>"; };
 		526A34C31954024400D5FAB0 /* bgLight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgLight.png; sourceTree = "<group>"; };
 		526A34C41954024400D5FAB0 /* bgLight@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bgLight@2x.png"; sourceTree = "<group>"; };
 		526A34C51954024400D5FAB0 /* button_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_add.png; sourceTree = "<group>"; };
@@ -531,6 +536,16 @@
 				3686239C1953F0E2004636DF /* LoggerCommon.h */,
 			);
 			name = Logger;
+			sourceTree = "<group>";
+		};
+		520AE0E71955261900BDCCE6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */,
+				520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */,
+				520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		526A34C21954024400D5FAB0 /* Images */ = {
@@ -883,7 +898,7 @@
 		EA024CBF195031220032CF51 /* History */ = {
 			isa = PBXGroup;
 			children = (
-				EA024D05195032FD0032CF51 /* Cell */,
+				520AE0E71955261900BDCCE6 /* Cell */,
 				EA024CC0195031220032CF51 /* PFHistoryViewController.h */,
 				EA024CC1195031220032CF51 /* PFHistoryViewController.m */,
 				EA024CC2195031220032CF51 /* PFHistoryViewController_Wide.xib */,
@@ -939,13 +954,6 @@
 				EA024CD0195031220032CF51 /* PFUpdateViewController_Wide.xib */,
 			);
 			path = Update;
-			sourceTree = "<group>";
-		};
-		EA024D05195032FD0032CF51 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Cell;
 			sourceTree = "<group>";
 		};
 		EA024D06195035420032CF51 /* Reward */ = {
@@ -1089,6 +1097,7 @@
 				EA024CE9195031220032CF51 /* update_standby@2x.png in Resources */,
 				EA024CDC195031220032CF51 /* member_light.png in Resources */,
 				526A351519542B2200D5FAB0 /* Icon_Facebook.png in Resources */,
+				520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */,
 				526A34E11954024400D5FAB0 /* cross_icon@2x.png in Resources */,
 				526A350B1954294200D5FAB0 /* PhoneIcon@2x.png in Resources */,
 				526A350D1954294200D5FAB0 /* ProfileLineText@2x.png in Resources */,
@@ -1206,6 +1215,7 @@
 				EA024CD5195031220032CF51 /* AsyncImageView.m in Sources */,
 				EA024D0C195035C00032CF51 /* PFContactCell.m in Sources */,
 				EA024CF6195031220032CF51 /* PFMapAllViewController.m in Sources */,
+				520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */,
 				368623B41953F590004636DF /* FMDatabaseAdditions.m in Sources */,
 				368623511953EDEB004636DF /* DbObject.m in Sources */,
 				368623B51953F590004636DF /* FMDatabasePool.m in Sources */,

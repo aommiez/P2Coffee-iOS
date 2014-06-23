@@ -67,14 +67,16 @@
     [self viewDidLoad];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
+- (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
-    // Remove progress view
-    // because UINavigationBar is shared with other ViewControllers
-    if (self.navigationController.visibleViewController != self) {
-        [self.delegate PFWebViewControllerBack];
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFWebViewControllerBack)]){
+            [self.delegate PFWebViewControllerBack];
+        }
     }
+    
 }
 
 @end

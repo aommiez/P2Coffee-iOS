@@ -33,4 +33,6 @@
 
 @property (strong, nonatomic) IBOutlet UIView *settingView;
 
+- (IBAction)logoutTapped:(id)sender;
+
 @end

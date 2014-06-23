@@ -6,10 +6,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFMemberViewController">
             <connections>
+                <outlet property="addButton" destination="YrU-Ii-6W2" id="WCs-xd-mrL"/>
                 <outlet property="memberView" destination="AP4-XY-p7Q" id="Vja-Ed-Xlh"/>
                 <outlet property="navController" destination="Y17-aI-E6j" id="HvE-We-MFc"/>
                 <outlet property="navItem" destination="f2k-tP-DPo" id="XbC-a3-axk"/>
                 <outlet property="nomemberView" destination="XCy-1H-Nrx" id="coS-M2-uxJ"/>
+                <outlet property="postermember" destination="7VQ-kT-Qji" id="TgY-Hx-cMT"/>
                 <outlet property="tableView" destination="KF9-lZ-1vr" id="atK-fB-Cgn"/>
                 <outlet property="view" destination="cxd-Y9-Hdb" id="dyw-AO-V9C"/>
             </connections>
@@ -126,8 +128,18 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7VQ-kT-Qji">
                     <rect key="frame" x="10" y="10" width="300" height="175"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" red="0.81568627449999997" green="0.82352941180000006" blue="0.82745098039999998" alpha="1" colorSpace="deviceRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiY-9L-I8J">
+                    <rect key="frame" x="10" y="10" width="300" height="175"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="posterTapped:" destination="-1" eventType="touchUpInside" id="wHA-jm-8Ag"/>
+                    </connections>
+                </button>
                 <view alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lUC-Ta-hFi">
                     <rect key="frame" x="0.0" y="195" width="320" height="55"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

@@ -45,7 +45,11 @@
 }
 
 - (void)getDistance {
-
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Get Direction coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

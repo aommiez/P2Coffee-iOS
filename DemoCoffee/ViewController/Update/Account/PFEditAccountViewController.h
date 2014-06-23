@@ -16,6 +16,14 @@
 
 @property (strong, nonatomic) IBOutlet UIView *imgView;
 @property (strong, nonatomic) IBOutlet UIView *passwordView;
-@property (strong, nonatomic) IBOutlet UIView *settingView;
+@property (strong, nonatomic) IBOutlet UIView *changepasswordView;
+
+@property (strong, nonatomic) IBOutlet UIView *blurView;
+
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+
+- (IBAction)bgTapped:(id)sender;
+- (IBAction)changepasswordTapped:(id)sender;
+- (IBAction)saveTapped:(id)sender;
 
 @end

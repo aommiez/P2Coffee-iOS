@@ -94,6 +94,14 @@
     [self.navigationController pushViewController:editView animated:YES];
 }
 
+- (IBAction)logoutTapped:(id)sender {
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Logout coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {

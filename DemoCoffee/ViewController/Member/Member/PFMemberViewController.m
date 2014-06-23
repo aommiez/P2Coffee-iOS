@@ -42,6 +42,14 @@
     
     UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
     self.tableView.tableFooterView = fv;
+    
+    CALayer *postermember = [self.postermember layer];
+    [postermember setMasksToBounds:YES];
+    [postermember setCornerRadius:7.0f];
+    
+    CALayer *addButton = [self.addButton layer];
+    [addButton setMasksToBounds:YES];
+    [addButton setCornerRadius:7.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +59,21 @@
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (IBAction)posterTapped:(id)sender {
+    
+    [self.delegate HideTabbar];
+    
+    PFHistoryViewController *history = [[PFHistoryViewController alloc] init];
+    
+    if(IS_WIDESCREEN){
+        history = [[PFHistoryViewController alloc] initWithNibName:@"PFHistoryViewController_Wide" bundle:nil];
+    } else {
+        history = [[PFHistoryViewController alloc] initWithNibName:@"PFHistoryViewController" bundle:nil];
+    }
+    history.delegate = self;
+    [self.navController pushViewController:history animated:YES];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
@@ -72,6 +95,14 @@
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    CALayer *bgView = [cell.bgView layer];
+    [bgView setMasksToBounds:YES];
+    [bgView setCornerRadius:7.0f];
+    
+    CALayer *bgPoint = [cell.bgPoint layer];
+    [bgPoint setMasksToBounds:YES];
+    [bgPoint setCornerRadius:7.0f];
     
     return cell;
 }
@@ -101,6 +132,10 @@
 }
 
 - (void) PFRewardViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void) PFHistoryViewControllerBack {
     [self.delegate ShowTabbar];
 }
 

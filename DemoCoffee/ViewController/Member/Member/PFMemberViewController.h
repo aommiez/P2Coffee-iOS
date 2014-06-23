@@ -10,6 +10,7 @@
 
 #import "PFMemberCell.h"
 
+#import "PFHistoryViewController.h"
 #import "PFRewardViewController.h"
 
 @protocol PFMemberViewControllerDelegate <NSObject>
@@ -30,6 +31,10 @@
 @property (weak, nonatomic) IBOutlet UIView *nomemberView;
 @property (weak, nonatomic) IBOutlet UIView *memberView;
 
+@property (weak, nonatomic) IBOutlet UIImageView *postermember;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
+
+- (IBAction)posterTapped:(id)sender;
 - (IBAction)addPointTapped:(id)sender;
 
 @end

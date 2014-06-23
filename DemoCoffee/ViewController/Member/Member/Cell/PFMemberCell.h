@@ -10,4 +10,7 @@
 
 @interface PFMemberCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *bgView;
+@property (weak, nonatomic) IBOutlet UIView *bgPoint;
+
 @end
