@@ -31,7 +31,12 @@
         [self.delegate DCManager:self appRequestErrorResponse:[error localizedDescription]];
     }];
 }
-
+- (void)saveAppKey:(NSString *)app_key {
+    [self.userDefaults setObject:app_key forKey:@"app_key"];
+}
+- (NSString *)getAppKey {
+    return [self.userDefaults objectForKey:@"app_key"];
+}
 - (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur {
     
     if ( width != 0 && height != 0 ) {

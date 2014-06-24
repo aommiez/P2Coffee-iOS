@@ -34,6 +34,8 @@
 @property NSString *urlStr;
 #pragma mark - function
 - (void)appRequest;
+- (void)saveAppKey:(NSString *)app_key;
+- (NSString *)getAppKey;
 - (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur;
 - (void)loginWithFacebookToken:(NSString *)fb_token ios_device_token:(NSString *)ios_device_token;
 - (void)saveAccessToken:(NSString *)access_token;
