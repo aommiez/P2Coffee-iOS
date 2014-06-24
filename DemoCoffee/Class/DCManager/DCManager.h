@@ -14,9 +14,14 @@
 @protocol DCManagerDelegate <NSObject>
 
 #pragma mark - Core Protocal Delegate
-- (void)DCManager:(id)sender getLinkResponse:(NSDictionary *)response;
-- (void)DCManager:(id)sender getLinkErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender appRequestResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender appRequestErrorResponse:(NSString *)errorResponse;
 
+- (void)DCManager:(id)sender getPictureByIdResponse:(UIImage *)response;
+- (void)DCManager:(id)sender getPictureByIdErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender loginWithFacebookTokenResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender loginWithFacebookTokenErrorResponse:(NSString *)errorResponse;
 @end
 
 @interface DCManager : NSObject
@@ -26,8 +31,11 @@
 @property AFHTTPRequestOperationManager *manager;
 @property NSUserDefaults *userDefaults;
 @property (assign, nonatomic) id delegate;
-
-
-
-
+@property NSString *urlStr;
+#pragma mark - function
+- (void)appRequest;
+- (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur;
+- (void)loginWithFacebookToken:(NSString *)fb_token ios_device_token:(NSString *)ios_device_token;
+- (void)saveAccessToken:(NSString *)access_token;
+- (NSString *)getAccessToken;
 @end
