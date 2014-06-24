@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Branch";
+    self.navigationItem.title = NSLocalizedString(@"branch_title", nil);
     self.tableView.tableHeaderView = self.branchView;
 }
 

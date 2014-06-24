@@ -28,6 +28,8 @@
 {
     [super viewDidLoad];
     
+    self.navItem.title = NSLocalizedString(@"DEMO_CONTACT", nil);
+    
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     

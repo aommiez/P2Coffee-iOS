@@ -45,6 +45,7 @@
 		36FE2FF41959360100029051 /* PFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE2FF31959360100029051 /* PFHelper.m */; };
 		520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */; };
 		520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */; };
+		523FD2291959466600B965EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 523FD22B1959466600B965EF /* Localizable.strings */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
 		525AE00D19580489005329A1 /* ic_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFC19580488005329A1 /* ic_contact_on.png */; };
 		525AE00E19580489005329A1 /* ic_member_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFD19580488005329A1 /* ic_member_off.png */; };
@@ -254,6 +255,9 @@
 		520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryCell.h; sourceTree = "<group>"; };
 		520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHistoryCell.m; sourceTree = "<group>"; };
 		520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFHistoryCell.xib; sourceTree = "<group>"; };
+		523FD2281959462E00B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		523FD22A1959466600B965EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		523FD22C1959467200B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		525ADFFB19580488005329A1 /* ic_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_off.png; sourceTree = "<group>"; };
 		525ADFFC19580488005329A1 /* ic_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_on.png; sourceTree = "<group>"; };
 		525ADFFD19580488005329A1 /* ic_member_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_member_off.png; sourceTree = "<group>"; };
@@ -753,6 +757,7 @@
 		EA024C48195030B30032CF51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				523FD22B1959466600B965EF /* Localizable.strings */,
 				EA024C49195030B30032CF51 /* DemoCoffee-Info.plist */,
 				EA024C4A195030B30032CF51 /* InfoPlist.strings */,
 				EA024C4D195030B30032CF51 /* main.m */,
@@ -1115,6 +1120,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				th,
 			);
 			mainGroup = EA024C33195030B20032CF51;
 			productRefGroup = EA024C3D195030B30032CF51 /* Products */;
@@ -1161,6 +1167,7 @@
 				525AE01619580489005329A1 /* ic_member_off@2x.png in Resources */,
 				525AE028195806DB005329A1 /* ic_direction.png in Resources */,
 				EA024CF9195031220032CF51 /* PFMapViewController_Wide.xib in Resources */,
+				523FD2291959466600B965EF /* Localizable.strings in Resources */,
 				525AE02F195806DB005329A1 /* ic_phone@2x.png in Resources */,
 				526A34D51954024400D5FAB0 /* bgLight.png in Resources */,
 				525AE02C195806DB005329A1 /* ic_location.png in Resources */,
@@ -1317,10 +1324,20 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		523FD22B1959466600B965EF /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				523FD22A1959466600B965EF /* en */,
+				523FD22C1959467200B965EF /* th */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		EA024C4A195030B30032CF51 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EA024C4B195030B30032CF51 /* en */,
+				523FD2281959462E00B965EF /* th */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
