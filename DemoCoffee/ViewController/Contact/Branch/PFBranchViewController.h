@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DLImageLoader.h"
 
 #import "PFMapViewController.h"
 
@@ -21,6 +22,12 @@
 @property (assign, nonatomic) id <PFBranchViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *branchView;
+
+@property (strong, nonatomic) NSDictionary *obj;
+
+@property (weak, nonatomic) IBOutlet UIImageView *mapImage;
+@property (strong, nonatomic) NSString *lat;
+@property (strong, nonatomic) NSString *lng;
 
 - (IBAction)mapTapped:(id)sender;
 - (IBAction)callTapped:(id)sender;

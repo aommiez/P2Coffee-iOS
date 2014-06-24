@@ -28,7 +28,26 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(@"map_title", nil);
+    self.navigationItem.title = @"Map";
+    
+    NSLog(@"%@",self.lat);
+    NSLog(@"%@",self.lng);
+    
+    self.lng = [[NSString alloc] init];
+    self.lat = [[NSString alloc] init];
+    
+    CLLocationCoordinate2D location;
+    location.latitude = [self.lat doubleValue];
+    location.longitude = [self.lng doubleValue];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = location;
+    point.title = self.name;
+    
+    
+    [self.mapView addAnnotation:point];
+    [self.mapView selectAnnotation:point animated:NO];
+    [self.mapView setCenterCoordinate:location zoomLevel:13 animated:NO];
 
 }
 

@@ -70,7 +70,7 @@
                             <outlet property="delegate" destination="-1" id="YU6-fq-mk9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f2k-tP-DPo"/>
+                    <navigationItem key="navigationItem" title="Member" id="f2k-tP-DPo"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

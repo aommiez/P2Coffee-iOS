@@ -10,8 +10,16 @@
 #import "PFMapView.h"
 #import "CMMapLauncher.h"
 
-@interface PFMapViewController : UIViewController
+@interface PFMapViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (assign, nonatomic) id delegate;
+
+@property (retain, nonatomic) IBOutlet PFMapView *mapView;
+@property (retain, nonatomic) CLLocationManager *locationManager;
+@property (retain, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) NSString *lat;
+@property (strong, nonatomic) NSString *lng;
+@property (strong, nonatomic) NSString *name;
 
 @end

@@ -297,9 +297,7 @@
 		520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryCell.h; sourceTree = "<group>"; };
 		520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHistoryCell.m; sourceTree = "<group>"; };
 		520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFHistoryCell.xib; sourceTree = "<group>"; };
-		523FD2281959462E00B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		523FD22A1959466600B965EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		523FD22C1959467200B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
 		523FD22F195964EB00B965EF /* DLILCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLILCache.h; sourceTree = "<group>"; };
 		523FD230195964EB00B965EF /* DLILCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLILCache.m; sourceTree = "<group>"; };
 		523FD231195964EB00B965EF /* DLILCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLILCacheManager.h; sourceTree = "<group>"; };
@@ -1678,7 +1676,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				523FD22A1959466600B965EF /* en */,
-				523FD22C1959467200B965EF /* th */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -1687,7 +1684,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				EA024C4B195030B30032CF51 /* en */,
-				523FD2281959462E00B965EF /* th */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";

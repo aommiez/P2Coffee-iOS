@@ -28,8 +28,20 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = NSLocalizedString(@"branch_title", nil);
+    self.navigationItem.title =[self.obj objectForKey:@"name"];
     self.tableView.tableHeaderView = self.branchView;
+    
+    NSLog(@"%@",self.obj);
+    
+    CALayer *mapimg = [self.mapImage layer];
+    [mapimg setMasksToBounds:YES];
+    [mapimg setCornerRadius:7.0f];
+    
+    NSString *urlmap = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",@"http://maps.googleapis.com/maps/api/staticmap?center=",self.lat,@",",self.lng,@"&zoom=16&size=6400x280&sensor=false&markers=color:red%7Clabel:Satit%7C",self.lat,@",",self.lng];
+    
+    NSData *data = [NSData dataWithContentsOfURL:[[NSURL alloc] initWithString:urlmap]];
+    self.mapImage.image = [UIImage imageWithData: data];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -51,6 +63,9 @@
         mapView = [[PFMapViewController alloc] initWithNibName:@"PFMapViewController" bundle:nil];
     }
     
+    mapView.lat = [self.obj objectForKey:@"lat"];
+    mapView.lng = [self.obj objectForKey:@"lng"];
+    mapView.name = [self.obj objectForKey:@"name"];
     mapView.delegate = self;
     [self.navigationController pushViewController:mapView animated:YES];
 }

@@ -35,8 +35,6 @@ BOOL refreshDataContact;
 {
     [super viewDidLoad];
     
-    self.navItem.title = NSLocalizedString(@"DEMO_CONTACT", nil);
-    
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     
@@ -45,9 +43,6 @@ BOOL refreshDataContact;
     
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
-    
-//    self.tableView.tableHeaderView = self.headerView;
-//    self.tableView.tableFooterView = self.footerView;
     
     //map
     CALayer *mapimg = [self.mapImage layer];
@@ -281,6 +276,7 @@ BOOL refreshDataContact;
     } else {
         branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
     }
+    branch.obj = [self.arrObj objectAtIndex:indexPath.row];
     branch.delegate = self;
     [self.navController pushViewController:branch animated:YES];
 }

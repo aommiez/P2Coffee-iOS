@@ -10,12 +10,3 @@
 "edit_title" = "Profile Setting";
 "edit_button" = "Edit";
 "save_button" = "Save";
-
-"DEMO_MENU" = "Menu";
-
-"DEMO_MEMBER" = "Member";
-
-"DEMO_CONTACT" = "Contact";
-"direction_button" = "Get Direction";
-"map_title" = "Map";
-"branch_title" = "Branch";
