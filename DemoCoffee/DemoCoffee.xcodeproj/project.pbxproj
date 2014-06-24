@@ -87,6 +87,7 @@
 		523FD2B41959695100B965EF /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD28E1959695100B965EF /* UIImage+WebP.m */; };
 		523FD2B51959695100B965EF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD2901959695100B965EF /* UIImageView+WebCache.m */; };
 		523FD2B61959695100B965EF /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 523FD2911959695100B965EF /* MWPhotoBrowser.bundle */; };
+		523FD2BA19597E6E00B965EF /* UILabel+UILabelDynamicHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD2B919597E6E00B965EF /* UILabel+UILabelDynamicHeight.m */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
 		525AE00D19580489005329A1 /* ic_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFC19580488005329A1 /* ic_contact_on.png */; };
 		525AE00E19580489005329A1 /* ic_member_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFD19580488005329A1 /* ic_member_off.png */; };
@@ -386,6 +387,8 @@
 		523FD28F1959695100B965EF /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		523FD2901959695100B965EF /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		523FD2911959695100B965EF /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MWPhotoBrowser.bundle; sourceTree = "<group>"; };
+		523FD2B819597E6E00B965EF /* UILabel+UILabelDynamicHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+UILabelDynamicHeight.h"; sourceTree = "<group>"; };
+		523FD2B919597E6E00B965EF /* UILabel+UILabelDynamicHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UILabelDynamicHeight.m"; sourceTree = "<group>"; };
 		525ADFFB19580488005329A1 /* ic_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_off.png; sourceTree = "<group>"; };
 		525ADFFC19580488005329A1 /* ic_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_on.png; sourceTree = "<group>"; };
 		525ADFFD19580488005329A1 /* ic_member_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_member_off.png; sourceTree = "<group>"; };
@@ -879,6 +882,15 @@
 			path = SDWebImage;
 			sourceTree = "<group>";
 		};
+		523FD2B719597E6E00B965EF /* UILabelDynamicHeight */ = {
+			isa = PBXGroup;
+			children = (
+				523FD2B819597E6E00B965EF /* UILabel+UILabelDynamicHeight.h */,
+				523FD2B919597E6E00B965EF /* UILabel+UILabelDynamicHeight.m */,
+			);
+			path = UILabelDynamicHeight;
+			sourceTree = "<group>";
+		};
 		525ADFFA19580488005329A1 /* ip4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -1094,6 +1106,7 @@
 				523FD23C1959695100B965EF /* MWPhotoBrowser */,
 				EA024C80195031220032CF51 /* Other */,
 				EA024C87195031220032CF51 /* PagedImageScrollView */,
+				523FD2B719597E6E00B965EF /* UILabelDynamicHeight */,
 			);
 			path = Ext;
 			sourceTree = SOURCE_ROOT;
@@ -1579,6 +1592,7 @@
 				3686239D1953F0E2004636DF /* LoggerClient.m in Sources */,
 				368623751953EE14004636DF /* sqlite3.c in Sources */,
 				3686234E1953EDEB004636DF /* Db.m in Sources */,
+				523FD2BA19597E6E00B965EF /* UILabel+UILabelDynamicHeight.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
 				526A34F219541FB000D5FAB0 /* PFUpdateCell.m in Sources */,
 				523FD2A61959695100B965EF /* PSTGridLayoutItem.m in Sources */,

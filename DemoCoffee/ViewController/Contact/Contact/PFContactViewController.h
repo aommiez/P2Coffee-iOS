@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MessageUI/MessageUI.h> 
 #import "DLImageLoader.h"
+#import "UILabel+UILabelDynamicHeight.h"
 
 #import "DCManager.h"
 
@@ -45,7 +46,9 @@
 @property (strong, nonatomic) NSString *current;
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
-@property (strong, nonatomic) IBOutlet UILabel *content;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *content;
+
+@property (strong, nonatomic) IBOutlet UIView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *mapButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;
 @property (strong, nonatomic) IBOutlet UILabel *location;

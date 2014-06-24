@@ -9,6 +9,8 @@
 #import "PFContactViewController.h"
 #import "PagedImageScrollView.h"
 
+#define FONT_SIZE 15.0f
+
 @interface PFContactViewController ()
 
 @end
@@ -44,17 +46,17 @@ BOOL refreshDataContact;
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
-    self.tableView.tableHeaderView = self.headerView;
-    self.tableView.tableFooterView = self.footerView;
+//    self.tableView.tableHeaderView = self.headerView;
+//    self.tableView.tableFooterView = self.footerView;
     
     //map
     CALayer *mapimg = [self.mapImage layer];
     [mapimg setMasksToBounds:YES];
     [mapimg setCornerRadius:7.0f];
     
-    CALayer *mapbt = [self.mapButton layer];
-    [mapbt setMasksToBounds:YES];
-    [mapbt setCornerRadius:7.0f];
+    CALayer *mapview = [self.mapView layer];
+    [mapview setMasksToBounds:YES];
+    [mapview setCornerRadius:7.0f];
     
     loadContact = NO;
     noDataContact = NO;
@@ -114,6 +116,7 @@ BOOL refreshDataContact;
     self.obj = response;
     NSLog(@"%@",response);
     
+    //image
     self.arrcontactimg = [[NSMutableArray alloc] init];
     for (int i=0; i<[[response objectForKey:@"pictures"] count]; ++i) {
         [self.arrcontactimg addObject:[[[[response objectForKey:@"pictures"] objectAtIndex:i] objectForKey:@"picture"] objectForKey:@"link"]];
@@ -125,8 +128,46 @@ BOOL refreshDataContact;
     pageScrollView.pageControlPos = PageControlPositionCenterBottom;
     [self.imgscrollview addSubview:pageScrollView];
     
-    self.content.text = [response objectForKey:@"content"];
+    //Content Label
+    self.content.text = [self.obj objectForKey:@"content"];
+    CGRect frame = self.content.frame;
+    frame.size = [self.content sizeOfMultiLineLabel];
+    [self.content sizeOfMultiLineLabel];
+    [self.content setFrame:frame];
+    int lines = self.content.frame.size.height/15;
     
+    UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+    descText.text = self.content.text;
+    
+    if (lines >= 3) {
+        self.content.numberOfLines = 3;
+        descText.numberOfLines = 3;
+        [descText setFont:[UIFont systemFontOfSize:15]];
+        self.content.alpha = 0;
+        [self.contentView addSubview:descText];
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y-10, self.contentView.frame.size.width, descText.frame.size.height-10);
+        
+    } else {
+        self.content.numberOfLines = lines;
+        UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+        descText.text = self.content.text;
+        descText.numberOfLines = lines;
+        [descText setFont:[UIFont systemFontOfSize:15]];
+        self.content.alpha = 0;
+        [self.contentView addSubview:descText];
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y-10, self.contentView.frame.size.width, descText.frame.size.height-10);
+    }
+    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+self.contentView.frame.size.height-47);
+    
+    //map image
+    
+    self.mapView.frame = CGRectMake(self.mapView.frame.origin.x, self.contentView.frame.origin.y+self.contentView.frame.size.height+10, self.mapView.frame.size.width, self.mapView.frame.size.height);
+    
+    self.mapButton.frame = CGRectMake(self.mapButton.frame.origin.x, self.mapButton.frame.origin.y, self.mapButton.frame.size.width, self.mapButton.frame.size.height);
+    
+    self.location.frame = CGRectMake(self.location.frame.origin.x, self.location.frame.origin.y, self.location.frame.size.width, self.location.frame.size.height);
+    
+    //
     NSString *urlmap1 = @"http://maps.googleapis.com/maps/api/staticmap?center=";
     
     NSMutableArray *pointmap = [[NSMutableArray alloc] initWithCapacity:[[response objectForKey:@"locations"] count]];
@@ -186,11 +227,15 @@ BOOL refreshDataContact;
     
     [self reloadData:YES];
     
+    //location
     self.location.text = [response objectForKey:@"location_info"];
-    
+    //footer
     self.phone.text = [response objectForKey:@"phone"];
     self.website.text = [response objectForKey:@"website"];
     self.email.text = [response objectForKey:@"email"];
+    
+    self.tableView.tableHeaderView = self.headerView;
+    self.tableView.tableFooterView = self.footerView;
 }
 
 - (void)DCManager:(id)sender getContactByAppKeyErrorResponse:(NSString *)errorResponse {
