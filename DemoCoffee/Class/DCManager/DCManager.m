@@ -132,10 +132,51 @@
     
 }
 
-
-
-
-
+- (void)getNewsByAppKey:(NSString *)limit next:(NSString *)next app_key:(NSString *)app_key{
+    if (![limit isEqualToString:@"NO"]) {
+        self.urlStr = [[NSString alloc] initWithFormat:@"%@news?app_key=%@&limit=%@",API_URL,[self getAppKey],limit];
+    } else if (![next isEqualToString:@"NO"]) {
+        self.urlStr = [[NSString alloc] initWithFormat:@"%@",next];
+    } else {
+        self.urlStr = [[NSString alloc] initWithFormat:@"%@news?app_key=%@",API_URL,[self getAppKey]];
+    }
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getNewsByAppKeyResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getNewsByAppKeyErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getNewsById:(NSString *)news_id {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@news/%@",API_URL,news_id];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getNewsByIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getNewsByIdErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getCommentObjId:(NSString *)obj_id padding:(NSString *)padding{
+    NSString *urlStr = [[NSString alloc] init];
+    if ([padding isEqualToString:@"NO"]) {
+        urlStr = [[NSString alloc] initWithFormat:@"%@news/comment?object_id=%@&order_type=asc&limit=5",API_URL,obj_id];
+    } else {
+        urlStr = [[NSString alloc] initWithFormat:@"%@",padding];
+    }
+    
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getCommentObjIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getCommentObjIdErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)commentObjId:(NSString *)obj_id content:(NSString *)content {
+    NSDictionary *parameters = @{@"object_id":obj_id , @"content":content  , @"access_token":[self getAccessToken]};
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@news/comment/create",API_URL];
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self commentObjIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self commentObjIdErrorResponse:[error localizedDescription]];
+    }];
+}
 
 
 
