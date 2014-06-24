@@ -74,7 +74,14 @@
     return [self.userDefaults objectForKey:@"access_token"];
 }
 
-
+- (void)getContactByAppKey:(NSInteger *)app_key {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@contact?app_key=%@",API_URL,app_key];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getContactByAppKeyResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getContactByAppKeyErrorResponse:[error localizedDescription]];
+    }];
+}
 
 
 

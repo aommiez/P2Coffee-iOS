@@ -22,6 +22,10 @@
 
 - (void)DCManager:(id)sender loginWithFacebookTokenResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender loginWithFacebookTokenErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender getContactByAppKeyResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getContactByAppKeyErrorResponse:(NSString *)errorResponse;
+
 @end
 
 @interface DCManager : NSObject
@@ -40,4 +44,5 @@
 - (void)loginWithFacebookToken:(NSString *)fb_token ios_device_token:(NSString *)ios_device_token;
 - (void)saveAccessToken:(NSString *)access_token;
 - (NSString *)getAccessToken;
+- (void)getContactByAppKey:(NSInteger *)app_key;
 @end
