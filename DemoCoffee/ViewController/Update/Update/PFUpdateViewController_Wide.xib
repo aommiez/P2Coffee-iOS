@@ -66,7 +66,7 @@
                             <outlet property="delegate" destination="-1" id="gqy-1D-Rvj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Update" id="a0Z-YX-sjY"/>
+                    <navigationItem key="navigationItem" id="a0Z-YX-sjY"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

@@ -28,7 +28,8 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Map";
+    self.navigationItem.title = NSLocalizedString(@"map_title", nil);
+
 }
 
 - (void)didReceiveMemoryWarning

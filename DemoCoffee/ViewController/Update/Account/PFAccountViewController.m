@@ -28,9 +28,9 @@
 {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"Profile Setting";
+    self.navigationItem.title = NSLocalizedString(@"edit_title", nil);
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:self action:@selector(editProfileTapped)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"edit_button", nil) style:UIBarButtonItemStyleDone target:self action:@selector(editProfileTapped)];
     [rightButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                            [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightButton;

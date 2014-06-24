@@ -73,7 +73,7 @@
                             <outlet property="delegate" destination="-1" id="c9U-Op-I9t"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Contact" id="bic-Vh-bFY"/>
+                    <navigationItem key="navigationItem" id="bic-Vh-bFY"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

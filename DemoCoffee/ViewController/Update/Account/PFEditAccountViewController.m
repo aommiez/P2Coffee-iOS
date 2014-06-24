@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Save" style:UIBarButtonItemStyleDone target:self action:@selector(SaveProfile)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:NSLocalizedString(@"save_button", nil) style:UIBarButtonItemStyleDone target:self action:@selector(SaveProfile)];
     [rightButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
                                            [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightButton;
