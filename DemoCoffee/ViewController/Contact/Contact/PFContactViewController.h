@@ -37,6 +37,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;
 @property (strong, nonatomic) IBOutlet UILabel *location;
 
+@property (weak, nonatomic) IBOutlet UILabel *website;
+
 - (IBAction)mapTapped:(id)sender;
 
 - (IBAction)callTapped:(id)sender;

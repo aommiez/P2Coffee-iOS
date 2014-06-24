@@ -60,10 +60,9 @@
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k6c-aQ-5fq">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="k6c-aQ-5fq">
                     <rect key="frame" x="10" y="300" width="300" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gHN-54-3qy">
                     <rect key="frame" x="10" y="430" width="300" height="45"/>
@@ -123,6 +122,7 @@
         </view>
     </objects>
     <resources>
+        <image name="default.jpeg" width="622" height="415"/>
         <image name="ic_direction.png" width="24" height="17"/>
         <image name="ic_location.png" width="17" height="25"/>
         <image name="ic_phone.png" width="25" height="25"/>

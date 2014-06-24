@@ -10,4 +10,6 @@
 
 @interface PFContactCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *branch;
+
 @end

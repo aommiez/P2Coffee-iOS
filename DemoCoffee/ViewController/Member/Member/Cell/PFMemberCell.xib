@@ -17,10 +17,9 @@
                         <rect key="frame" x="10" y="3" width="300" height="59"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-9t-pw1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-9t-pw1">
                                 <rect key="frame" x="0.0" y="0.0" width="65" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mqB-3p-IlE">
                                 <rect key="frame" x="234" y="6" width="60" height="47"/>
@@ -66,4 +65,7 @@
             </connections>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="default.jpeg" width="622" height="415"/>
+    </resources>
 </document>

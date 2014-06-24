@@ -48,6 +48,7 @@
     CALayer *mapbt = [self.mapButton layer];
     [mapbt setMasksToBounds:YES];
     [mapbt setCornerRadius:7.0f];
+    
 }
 
 - (void)didReceiveMemoryWarning

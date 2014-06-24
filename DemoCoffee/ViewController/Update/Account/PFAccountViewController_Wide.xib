@@ -64,10 +64,9 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="630"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-rY-6dL" customClass="AsyncImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-rY-6dL" customClass="AsyncImageView">
                     <rect key="frame" x="10" y="10" width="130" height="130"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-6S-Zf3">
                     <rect key="frame" x="9" y="440" width="280" height="44"/>
@@ -243,6 +242,7 @@
         </view>
     </objects>
     <resources>
+        <image name="default.jpeg" width="622" height="415"/>
         <image name="ic_birthday.png" width="25" height="25"/>
         <image name="ic_fb.png" width="25" height="25"/>
         <image name="ic_gender.png" width="25" height="25"/>
