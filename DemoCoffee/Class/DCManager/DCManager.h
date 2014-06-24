@@ -54,6 +54,26 @@
  */
 - (void)DCManager:(id)sender userUpdateResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender userUpdateErrorResponse:(NSString *)errorResponse;
+/*
+ Protocal Delegate get news from server by app key
+ */
+- (void)DCManager:(id)sender getNewsByAppKeyResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getNewsByAppKeyErrorResponse:(NSString *)errorResponse;
+/*
+ Protocal Delegate get news by id
+ */
+- (void)DCManager:(id)sender getNewsByIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getNewsByIdErrorResponse:(NSString *)errorResponse;
+/*
+  Protocal Delegate get comment by obj id
+ */
+- (void)DCManager:(id)sender getCommentObjIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getCommentObjIdErrorResponse:(NSString *)errorResponse;
+/*
+ Protocal Delegate comment obj id
+ */
+- (void)DCManager:(id)sender commentObjIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender commentObjIdErrorResponse:(NSString *)errorResponse;
 @end
 
 @interface DCManager : NSObject
@@ -136,15 +156,22 @@
  picture : (Base64 image string)
  */
 - (void)userUpdate:(NSString *)display_name birth_date:(NSString *)birth_date gender:(NSString *)gender mobile_phone:(NSString *)mobile_phone website:(NSString *)website ;
-
-
-
-
-
-
-
-
-
+/*
+ get news from server by app key
+ */
+- (void)getNewsByAppKey:(NSString *)limit next:(NSString *)next app_key:(NSString *)app_key;
+/*
+ get news by id
+ */
+- (void)getNewsById:(NSString *)news_id;
+/*
+ get comment by obj id
+ */
+- (void)getCommentObjId:(NSString *)obj_id padding:(NSString *)padding;
+/*
+ comment obj id
+ */
+- (void)commentObjId:(NSString *)obj_id content:(NSString *)content;
 
 
 
