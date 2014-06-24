@@ -45,4 +45,5 @@
 - (void)saveAccessToken:(NSString *)access_token;
 - (NSString *)getAccessToken;
 - (void)getContactByAppKey:(NSInteger *)app_key;
+- (void)me;
 @end
