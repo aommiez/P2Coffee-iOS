@@ -10,4 +10,18 @@
 
 @implementation DCManager
 
+
+- (id) init
+{
+    if (self = [super init])
+    {
+        self.userDefaults = [NSUserDefaults standardUserDefaults];
+        self.manager = [AFHTTPRequestOperationManager manager];
+        self.hp = [[PFHelper alloc] init];
+    }
+    return self;
+}
+
+
+
 @end

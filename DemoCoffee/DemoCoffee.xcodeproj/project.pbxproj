@@ -42,6 +42,7 @@
 		368623B51953F590004636DF /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AD1953F590004636DF /* FMDatabasePool.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		368623B61953F590004636DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AF1953F590004636DF /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		368623B81953F590004636DF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623B21953F590004636DF /* FMResultSet.m */; };
+		36FE2FF41959360100029051 /* PFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE2FF31959360100029051 /* PFHelper.m */; };
 		520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */; };
 		520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
@@ -248,6 +249,8 @@
 		368623AF1953F590004636DF /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMDatabaseQueue.m; path = External/fdbm/FMDatabaseQueue.m; sourceTree = SOURCE_ROOT; };
 		368623B11953F590004636DF /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMResultSet.h; path = External/fdbm/FMResultSet.h; sourceTree = SOURCE_ROOT; };
 		368623B21953F590004636DF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = External/fdbm/FMResultSet.m; sourceTree = SOURCE_ROOT; };
+		36FE2FF21959360100029051 /* PFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFHelper.h; path = DCManager/PFHelper.h; sourceTree = "<group>"; };
+		36FE2FF31959360100029051 /* PFHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHelper.m; path = DCManager/PFHelper.m; sourceTree = "<group>"; };
 		520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryCell.h; sourceTree = "<group>"; };
 		520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHistoryCell.m; sourceTree = "<group>"; };
 		520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFHistoryCell.xib; sourceTree = "<group>"; };
@@ -527,6 +530,8 @@
 			children = (
 				368623771953EFB2004636DF /* DCManager.h */,
 				368623781953EFB2004636DF /* DCManager.m */,
+				36FE2FF21959360100029051 /* PFHelper.h */,
+				36FE2FF31959360100029051 /* PFHelper.m */,
 			);
 			name = DCManager;
 			sourceTree = "<group>";
@@ -1265,6 +1270,7 @@
 				EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */,
 				EA024CF0195031220032CF51 /* PFContactViewController.m in Sources */,
 				EA024CFD195031220032CF51 /* PFHistoryViewController.m in Sources */,
+				36FE2FF41959360100029051 /* PFHelper.m in Sources */,
 				EA024C55195030B30032CF51 /* DemoCoffee.xcdatamodeld in Sources */,
 				EA024CD7195031220032CF51 /* CMMapLauncher.m in Sources */,
 				3686234F1953EDEB004636DF /* DbBackground.m in Sources */,
