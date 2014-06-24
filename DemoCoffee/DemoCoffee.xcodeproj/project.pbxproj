@@ -46,6 +46,10 @@
 		520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */; };
 		520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */; };
 		523FD2291959466600B965EF /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 523FD22B1959466600B965EF /* Localizable.strings */; };
+		523FD238195964EB00B965EF /* DLILCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD230195964EB00B965EF /* DLILCache.m */; };
+		523FD239195964EB00B965EF /* DLILCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD232195964EB00B965EF /* DLILCacheManager.m */; };
+		523FD23A195964EB00B965EF /* DLILOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD235195964EB00B965EF /* DLILOperation.m */; };
+		523FD23B195964EB00B965EF /* DLImageLoader.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD237195964EB00B965EF /* DLImageLoader.m */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
 		525AE00D19580489005329A1 /* ic_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFC19580488005329A1 /* ic_contact_on.png */; };
 		525AE00E19580489005329A1 /* ic_member_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFD19580488005329A1 /* ic_member_off.png */; };
@@ -258,6 +262,14 @@
 		523FD2281959462E00B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		523FD22A1959466600B965EF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		523FD22C1959467200B965EF /* th */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = th; path = th.lproj/Localizable.strings; sourceTree = "<group>"; };
+		523FD22F195964EB00B965EF /* DLILCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLILCache.h; sourceTree = "<group>"; };
+		523FD230195964EB00B965EF /* DLILCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLILCache.m; sourceTree = "<group>"; };
+		523FD231195964EB00B965EF /* DLILCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLILCacheManager.h; sourceTree = "<group>"; };
+		523FD232195964EB00B965EF /* DLILCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLILCacheManager.m; sourceTree = "<group>"; };
+		523FD234195964EB00B965EF /* DLILOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLILOperation.h; sourceTree = "<group>"; };
+		523FD235195964EB00B965EF /* DLILOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLILOperation.m; sourceTree = "<group>"; };
+		523FD236195964EB00B965EF /* DLImageLoader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLImageLoader.h; sourceTree = "<group>"; };
+		523FD237195964EB00B965EF /* DLImageLoader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLImageLoader.m; sourceTree = "<group>"; };
 		525ADFFB19580488005329A1 /* ic_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_off.png; sourceTree = "<group>"; };
 		525ADFFC19580488005329A1 /* ic_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_on.png; sourceTree = "<group>"; };
 		525ADFFD19580488005329A1 /* ic_member_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_member_off.png; sourceTree = "<group>"; };
@@ -586,6 +598,37 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		523FD22D195964EB00B965EF /* DLIL */ = {
+			isa = PBXGroup;
+			children = (
+				523FD22E195964EB00B965EF /* DLILCache */,
+				523FD233195964EB00B965EF /* DLILOperation */,
+				523FD236195964EB00B965EF /* DLImageLoader.h */,
+				523FD237195964EB00B965EF /* DLImageLoader.m */,
+			);
+			path = DLIL;
+			sourceTree = "<group>";
+		};
+		523FD22E195964EB00B965EF /* DLILCache */ = {
+			isa = PBXGroup;
+			children = (
+				523FD22F195964EB00B965EF /* DLILCache.h */,
+				523FD230195964EB00B965EF /* DLILCache.m */,
+				523FD231195964EB00B965EF /* DLILCacheManager.h */,
+				523FD232195964EB00B965EF /* DLILCacheManager.m */,
+			);
+			path = DLILCache;
+			sourceTree = "<group>";
+		};
+		523FD233195964EB00B965EF /* DLILOperation */ = {
+			isa = PBXGroup;
+			children = (
+				523FD234195964EB00B965EF /* DLILOperation.h */,
+				523FD235195964EB00B965EF /* DLILOperation.m */,
+			);
+			path = DLILOperation;
+			sourceTree = "<group>";
+		};
 		525ADFFA19580488005329A1 /* ip4 */ = {
 			isa = PBXGroup;
 			children = (
@@ -797,6 +840,7 @@
 			isa = PBXGroup;
 			children = (
 				EA024C7D195031220032CF51 /* AsyncImageView */,
+				523FD22D195964EB00B965EF /* DLIL */,
 				EA024C80195031220032CF51 /* Other */,
 				EA024C87195031220032CF51 /* PagedImageScrollView */,
 			);
@@ -1241,15 +1285,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				523FD23A195964EB00B965EF /* DLILOperation.m in Sources */,
 				368623931953F001004636DF /* AFURLConnectionOperation.m in Sources */,
 				368623561953EDEB004636DF /* NSDate+DateFunctions.m in Sources */,
 				EA024CD6195031220032CF51 /* BBBadgeBarButtonItem.m in Sources */,
 				368623551953EDEB004636DF /* FuncionesGlobales.m in Sources */,
+				523FD239195964EB00B965EF /* DLILCacheManager.m in Sources */,
 				368623571953EDEB004636DF /* NSString+Clean.m in Sources */,
 				368623521953EDEB004636DF /* DbPool.m in Sources */,
 				368623531953EDEB004636DF /* DebugLog.m in Sources */,
 				526A34F71954281400D5FAB0 /* PFAccountViewController.m in Sources */,
 				EA024C52195030B30032CF51 /* PFAppDelegate.m in Sources */,
+				523FD23B195964EB00B965EF /* DLImageLoader.m in Sources */,
 				EA024C4E195030B30032CF51 /* main.m in Sources */,
 				368623941953F001004636DF /* AFURLRequestSerialization.m in Sources */,
 				EA024CF8195031220032CF51 /* PFMapViewController.m in Sources */,
@@ -1282,6 +1329,7 @@
 				EA024CD7195031220032CF51 /* CMMapLauncher.m in Sources */,
 				3686234F1953EDEB004636DF /* DbBackground.m in Sources */,
 				368623791953EFB2004636DF /* DCManager.m in Sources */,
+				523FD238195964EB00B965EF /* DLILCache.m in Sources */,
 				EA024CFA195031220032CF51 /* PFWebViewController.m in Sources */,
 				526A34EB195402CD00D5FAB0 /* PFMemberCell.m in Sources */,
 				3686238F1953F001004636DF /* AFHTTPRequestOperationManager.m in Sources */,

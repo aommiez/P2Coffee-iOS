@@ -7,13 +7,16 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFContactViewController">
             <connections>
                 <outlet property="content" destination="awT-9C-kLl" id="XH9-Yn-ep3"/>
+                <outlet property="email" destination="zCw-wq-2Er" id="617-Zd-4zD"/>
                 <outlet property="footerView" destination="bEq-Dt-B8y" id="cl8-RG-C9k"/>
                 <outlet property="headerView" destination="Yxi-9Z-rKl" id="9nY-HV-P1N"/>
+                <outlet property="imgscrollview" destination="jXM-Gg-4QW" id="iIu-gh-XiH"/>
                 <outlet property="location" destination="gEg-sj-azI" id="BbP-jG-hM3"/>
                 <outlet property="mapButton" destination="eTG-fg-kU3" id="TD0-e3-j3C"/>
                 <outlet property="mapImage" destination="YvQ-ZZ-Xoc" id="2DS-v7-Tlv"/>
                 <outlet property="navController" destination="5mr-WP-dc1" id="E7r-V1-NVW"/>
                 <outlet property="navItem" destination="bic-Vh-bFY" id="mDy-E9-UOX"/>
+                <outlet property="phone" destination="wnH-iG-r5s" id="f3Z-0Z-eLq"/>
                 <outlet property="tableView" destination="oA4-sj-OOn" id="Fca-7I-QNd"/>
                 <outlet property="view" destination="7zu-Q2-k0h" id="xGO-dj-QBR"/>
                 <outlet property="website" destination="tcf-ex-TZA" id="sOZ-F1-t5r"/>
@@ -124,7 +127,7 @@
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXM-Gg-4QW">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -169,7 +172,7 @@
                         <action selector="webTapped:" destination="-1" eventType="touchUpInside" id="9J4-Rb-klr"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Website" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcf-ex-TZA">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcf-ex-TZA">
                     <rect key="frame" x="60" y="67" width="240" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -187,7 +190,7 @@
                         <action selector="emailTapped:" destination="-1" eventType="touchUpInside" id="GOB-6g-5X9"/>
                     </connections>
                 </button>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="E-mail Account" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCw-wq-2Er">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCw-wq-2Er">
                     <rect key="frame" x="60" y="113" width="240" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -209,7 +212,7 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
-                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-iG-r5s">
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wnH-iG-r5s">
                     <rect key="frame" x="60" y="21" width="240" height="21"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
