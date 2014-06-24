@@ -20,7 +20,7 @@
 #import "MWPhoto.h"
 #import "MWPhotoBrowser.h"
 
-@interface PFAppDelegate : UIResponder <UIApplicationDelegate>
+@interface PFAppDelegate : UIResponder <UIApplicationDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,MWPhotoBrowserDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -30,6 +30,9 @@
 @property (strong, nonatomic) PFMenuViewController *menu;
 @property (strong, nonatomic) PFMemberViewController *member;
 @property (strong, nonatomic) PFContactViewController *contact;
+
+@property (nonatomic, strong) NSMutableArray *photos;
+@property (nonatomic, strong) NSMutableArray *thumbs;
 
 @property (readonly, strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
