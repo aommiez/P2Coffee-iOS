@@ -43,6 +43,7 @@
 @property (retain, nonatomic) NSMutableArray *arrcontactimg;
 @property (strong, nonatomic) NSString *current;
 
+@property (strong, nonatomic) IBOutlet UIView *contentView;
 @property (strong, nonatomic) IBOutlet UILabel *content;
 @property (strong, nonatomic) IBOutlet UIView *mapButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;

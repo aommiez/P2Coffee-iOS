@@ -15,6 +15,11 @@
 #import "PFMemberViewController.h"
 #import "PFContactViewController.h"
 
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "SDImageCache.h"
+#import "MWPhoto.h"
+#import "MWPhotoBrowser.h"
+
 @interface PFAppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
