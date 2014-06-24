@@ -34,6 +34,9 @@
 
 - (void)DCManager:(id)sender loginWithPasswordResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender loginWithPasswordErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender userUpdateResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender userUpdateErrorResponse:(NSString *)errorResponse;
 @end
 
 @interface DCManager : NSObject
@@ -44,21 +47,29 @@
 @property NSUserDefaults *userDefaults;
 @property (assign, nonatomic) id delegate;
 @property NSString *urlStr;
+
+
 #pragma mark - function
 - (void)appRequest;
 - (void)saveAppKey:(NSString *)app_key;
 - (NSString *)getAppKey;
+- (void)removeAppKey;
 - (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur;
 - (void)loginWithFacebookToken:(NSString *)fb_token ios_device_token:(NSString *)ios_device_token;
 - (void)saveAccessToken:(NSString *)access_token;
 - (NSString *)getAccessToken;
 - (void)getContactByAppKey:(NSInteger *)app_key;
 - (void)me;
-- (void)saveUserId:(NSInteger *)user_id;
-- (NSInteger *)getUserId;
+- (void)saveUserId:(NSString *)user_id;
+- (NSString *)getUserId;
 - (void)getUserById:(NSInteger )user_id;
 - (void)loginWithPassword:(NSString *)username password:(NSString *)password;
-
+/*
+ birth_date : Date for mat (Y-m-d) example: 1990-01-20
+ gender : String(male, female)
+ picture : (Base64 image string)
+ */
+- (void)userUpdate:(NSString *)display_name birth_date:(NSString *)birth_date gender:(NSString *)gender mobile_phone:(NSString *)mobile_phone website:(NSString *)website ;
 
 
 

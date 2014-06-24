@@ -37,6 +37,9 @@
 - (NSString *)getAppKey {
     return [self.userDefaults objectForKey:@"app_key"];
 }
+- (void)removeAppKey {
+    [self.userDefaults removeObjectForKey:@"app_key"];
+}
 - (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur {
     
     if ( width != 0 && height != 0 ) {
@@ -93,11 +96,11 @@
 }
 
 
-- (void)saveUserId:(NSInteger *)user_id {
+- (void)saveUserId:(NSString *)user_id {
     [self.userDefaults setObject:user_id forKey:@"user_id"];
 }
 
-- (NSInteger *)getUserId {
+- (NSString *)getUserId {
     return [self.userDefaults objectForKey:@"user_id"];
 }
 
@@ -119,6 +122,15 @@
     }];
 }
 
+- (void)userUpdate:(NSString *)display_name birth_date:(NSString *)birth_date gender:(NSString *)gender mobile_phone:(NSString *)mobile_phone website:(NSString *)website  {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@user/update/%@?display_name=%@&birth_date=%@&gender=%@&mobile_phone=%@&website=%@&access_token=%@",API_URL,[self getUserId],display_name,birth_date,gender,mobile_phone,website,[self getAccessToken]];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self userUpdateResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self userUpdateErrorResponse:[error localizedDescription]];
+    }];
+    
+}
 
 
 
