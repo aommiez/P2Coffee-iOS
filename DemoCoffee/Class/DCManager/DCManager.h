@@ -26,6 +26,14 @@
 - (void)DCManager:(id)sender getContactByAppKeyResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getContactByAppKeyErrorResponse:(NSString *)errorResponse;
 
+- (void)DCManager:(id)sender getUserByIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getUserByIdErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender meResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender loginWithPasswordResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender loginWithPasswordErrorResponse:(NSString *)errorResponse;
 @end
 
 @interface DCManager : NSObject
@@ -46,4 +54,32 @@
 - (NSString *)getAccessToken;
 - (void)getContactByAppKey:(NSInteger *)app_key;
 - (void)me;
+- (void)saveUserId:(NSInteger *)user_id;
+- (NSInteger *)getUserId;
+- (void)getUserById:(NSInteger )user_id;
+- (void)loginWithPassword:(NSString *)username password:(NSString *)password;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

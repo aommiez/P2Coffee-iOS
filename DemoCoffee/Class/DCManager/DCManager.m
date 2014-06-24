@@ -84,7 +84,56 @@
 }
 
 - (void)me {
-    
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@me?access_token=%@",API_URL,[self getAccessToken]];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self meResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self meErrorResponse:[error localizedDescription]];
+    }];
 }
+
+
+- (void)saveUserId:(NSInteger *)user_id {
+    [self.userDefaults setObject:user_id forKey:@"user_id"];
+}
+
+- (NSInteger *)getUserId {
+    return [self.userDefaults objectForKey:@"user_id"];
+}
+
+- (void)getUserById:(NSInteger )user_id {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@user/%ld",API_URL,(unsigned long)user_id];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserByIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserByIdErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)loginWithPassword:(NSString *)username password:(NSString *)password {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@oauth/password?username=%@&password=%@",API_URL,username,password];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self loginWithPasswordResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self loginWithPasswordErrorResponse:[error localizedDescription]];
+    }];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @end
