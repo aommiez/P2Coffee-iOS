@@ -15,6 +15,10 @@
 
 @implementation PFContactViewController
 
+BOOL loadContact;
+BOOL noDataContact;
+BOOL refreshDataContact;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -52,8 +56,14 @@
     [mapbt setMasksToBounds:YES];
     [mapbt setCornerRadius:7.0f];
     
+    loadContact = NO;
+    noDataContact = NO;
+    refreshDataContact = NO;
+    
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
+    
+    self.arrObj = [[NSMutableArray alloc] init];
     
     [self.Demoapi getContactByAppKey:0];
     
@@ -79,15 +89,10 @@
 
 - (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
 {
-//    int sum;
-//    sum = [self.current intValue]/32;
-//    NSString *num = [NSString stringWithFormat:@"%d",sum];
-//    [self.delegate PFGalleryViewController:self sum:self.arrcontactimg current:num];
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Full image coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    int sum;
+    sum = [self.current intValue]/32;
+    NSString *num = [NSString stringWithFormat:@"%d",sum];
+    [self.delegate PFGalleryViewController:self sum:self.arrcontactimg current:num];
 }
 
 - (NSArray *)imageToArray:(NSDictionary *)images {
@@ -168,6 +173,19 @@
                               self.mapImage.image = [UIImage imageWithData:imgData];
                           }];
     
+    if (!refreshDataContact) {
+        for (int i=0; i<[[response objectForKey:@"locations"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"locations"] objectAtIndex:i]];
+        }
+    } else {
+        [self.arrObj removeAllObjects];
+        for (int i=0; i<[[response objectForKey:@"locations"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"locations"] objectAtIndex:i]];
+        }
+    }
+    
+    [self reloadData:YES];
+    
     self.location.text = [response objectForKey:@"location_info"];
     
     self.phone.text = [response objectForKey:@"phone"];
@@ -181,7 +199,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    return [self.arrObj count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -198,6 +216,11 @@
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    NSString *img = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb"] objectForKey:@"link"];
+    NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@",img,@"?width=100&height=100"];
+    cell.imgbranch.imageURL = [[NSURL alloc] initWithString:urlimg];
+    cell.branch.text = [[NSString alloc] initWithString:[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"]];
     
     return cell;
 }
@@ -217,6 +240,16 @@
     [self.navController pushViewController:branch animated:YES];
 }
 
+- (void)reloadData:(BOOL)animated
+{
+    [self.tableView reloadData];
+    if (!noDataContact){
+        self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
+    } else {
+        self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
+    }
+}
+
 - (IBAction) mapTapped:(id)sender {
     
     [self.delegate HideTabbar];
@@ -234,11 +267,8 @@
 }
 
 - (IBAction)callTapped:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Contact coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    NSString *phone = [[NSString alloc] initWithFormat:@"telprompt://%@",[self.obj objectForKey:@"phone"]];
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:phone]];
 }
 
 - (IBAction)webTapped:(id)sender {

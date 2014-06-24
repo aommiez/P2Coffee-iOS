@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface PFContactCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *branch;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imgbranch;
 
 @end

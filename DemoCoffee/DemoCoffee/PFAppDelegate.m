@@ -215,6 +215,11 @@ BOOL newMedia;
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
+- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
+{
+    return (UIInterfaceOrientationMaskAll);
+}
+
 - (void)HideTabbar {
     [self.tabBarViewController hideTabBarWithAnimation:YES];
 }

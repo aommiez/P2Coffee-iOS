@@ -87,11 +87,11 @@
             </viewControllers>
         </navigationController>
         <view contentMode="scaleToFill" id="Yxi-9Z-rKl">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="503"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="440"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="eTG-fg-kU3">
-                    <rect key="frame" x="10" y="288" width="300" height="203"/>
+                    <rect key="frame" x="10" y="225" width="300" height="203"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -100,24 +100,23 @@
                     </connections>
                 </button>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location Info" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gEg-sj-azI">
-                    <rect key="frame" x="20" y="425" width="280" height="63"/>
+                    <rect key="frame" x="20" y="362" width="280" height="63"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpeg" id="YvQ-ZZ-Xoc" customClass="AsyncImageView">
-                    <rect key="frame" x="20" y="300" width="280" height="120"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="YvQ-ZZ-Xoc" customClass="AsyncImageView">
+                    <rect key="frame" x="20" y="237" width="280" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
                 <view contentMode="scaleToFill" id="ltw-aC-8hm">
-                    <rect key="frame" x="0.0" y="180" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="180" width="320" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="awT-9C-kLl">
-                            <rect key="frame" x="10" y="8" width="300" height="84"/>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="awT-9C-kLl">
+                            <rect key="frame" x="10" y="8" width="300" height="21"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">หนึ่งเดียว ที่คุณมั่นใจได้มากกว่า ด้วยความพร้อมทั้งด้านการออกแบบฟังก์ชั่นการทำงาน รวมถึงระบบผู้ดูแลและจัดการข้อมูลแบบ Cloud service ซึ่งให้ความปลอดภัยสูง pla2fusion</string>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                             <nil key="highlightedColor"/>
@@ -227,7 +226,6 @@
     </objects>
     <resources>
         <image name="Powered.png" width="200" height="25"/>
-        <image name="default.jpeg" width="622" height="415"/>
         <image name="ic_email.png" width="25" height="25"/>
         <image name="ic_telephone.png" width="25" height="25"/>
         <image name="ic_website.png" width="25" height="25"/>

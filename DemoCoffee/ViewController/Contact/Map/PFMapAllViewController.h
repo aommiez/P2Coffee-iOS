@@ -10,6 +10,8 @@
 #import "PFMapView.h"
 #import "CMMapLauncher.h"
 
+#import "DCManager.h"
+
 @protocol PFMapAllViewControllerDelegate <NSObject>
 
 - (void) PFMapAllViewControllerBack;
@@ -19,5 +21,15 @@
 @interface PFMapAllViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (assign, nonatomic) id <PFMapAllViewControllerDelegate> delegate;
+@property (retain, nonatomic) IBOutlet PFMapView *allmapView;
+@property (retain, nonatomic) CLLocationManager *locationManager;
+@property (retain, nonatomic) CLLocation *currentLocation;
+
+@property (strong, nonatomic) DCManager *Demoapi;
+@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSDictionary *obj;
+
+@property (strong, nonatomic) NSString *lat;
+@property (strong, nonatomic) NSString *lng;
 
 @end
