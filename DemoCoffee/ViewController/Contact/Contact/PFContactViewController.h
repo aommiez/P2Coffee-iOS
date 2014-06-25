@@ -16,11 +16,13 @@
 #import "PFContactCell.h"
 
 #import "PFBranchViewController.h"
+#import "PFBranch1ViewController.h"
 #import "PFMapAllViewController.h"
 #import "PFWebViewController.h"
 
 @protocol PFContactViewControllerDelegate <NSObject>
 
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link;
 - (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
 - (void)HideTabbar;
 - (void)ShowTabbar;

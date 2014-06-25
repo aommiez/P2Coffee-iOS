@@ -156,6 +156,8 @@
 		526F1D3E195AAA0A000EFEB9 /* chapter_branch_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 526F1D3B195AAA0A000EFEB9 /* chapter_branch_01.png */; };
 		526F1D3F195AAA0A000EFEB9 /* chapter_branch_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 526F1D3C195AAA0A000EFEB9 /* chapter_branch_02.png */; };
 		526F1D40195AAA0A000EFEB9 /* chapter_branch_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 526F1D3D195AAA0A000EFEB9 /* chapter_branch_03.png */; };
+		526F1D4E195AC93F000EFEB9 /* PFBranch1ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 526F1D4C195AC93F000EFEB9 /* PFBranch1ViewController.m */; };
+		526F1D4F195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526F1D4D195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib */; };
 		529AEED31954627F009A46EE /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 529AEED21954627F009A46EE /* default.jpg */; };
 		EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C3F195030B30032CF51 /* Foundation.framework */; };
 		EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C41195030B30032CF51 /* CoreGraphics.framework */; };
@@ -465,6 +467,9 @@
 		526F1D3B195AAA0A000EFEB9 /* chapter_branch_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapter_branch_01.png; sourceTree = "<group>"; };
 		526F1D3C195AAA0A000EFEB9 /* chapter_branch_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapter_branch_02.png; sourceTree = "<group>"; };
 		526F1D3D195AAA0A000EFEB9 /* chapter_branch_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chapter_branch_03.png; sourceTree = "<group>"; };
+		526F1D4B195AC93F000EFEB9 /* PFBranch1ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFBranch1ViewController.h; sourceTree = "<group>"; };
+		526F1D4C195AC93F000EFEB9 /* PFBranch1ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFBranch1ViewController.m; sourceTree = "<group>"; };
+		526F1D4D195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFBranch1ViewController_Wide.xib; sourceTree = "<group>"; };
 		529AEED21954627F009A46EE /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		EA024C3C195030B30032CF51 /* DemoCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA024C3F195030B30032CF51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -1191,6 +1196,9 @@
 				EA024CA2195031220032CF51 /* PFBranchViewController.h */,
 				EA024CA3195031220032CF51 /* PFBranchViewController.m */,
 				EA024CA4195031220032CF51 /* PFBranchViewController_Wide.xib */,
+				526F1D4B195AC93F000EFEB9 /* PFBranch1ViewController.h */,
+				526F1D4C195AC93F000EFEB9 /* PFBranch1ViewController.m */,
+				526F1D4D195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib */,
 				526F1D38195A872D000EFEB9 /* ScrollView.h */,
 				526F1D39195A872D000EFEB9 /* ScrollView.m */,
 			);
@@ -1460,6 +1468,7 @@
 			files = (
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
 				525AE01719580489005329A1 /* ic_member_on@2x.png in Resources */,
+				526F1D4F195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib in Resources */,
 				526A351F1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib in Resources */,
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
 				526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */,
@@ -1645,6 +1654,7 @@
 				523FD29C1959695100B965EF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				523FD2A51959695100B965EF /* PSTGridLayoutInfo.m in Sources */,
 				523FD2AF1959695100B965EF /* SDWebImageManager.m in Sources */,
+				526F1D4E195AC93F000EFEB9 /* PFBranch1ViewController.m in Sources */,
 				368623901953F001004636DF /* AFHTTPSessionManager.m in Sources */,
 				368623591953EDEB004636DF /* Validators.m in Sources */,
 				368623921953F001004636DF /* AFSecurityPolicy.m in Sources */,

@@ -1,18 +1,18 @@
 //
-//  PFBranchViewController.m
+//  PFBranch1ViewController.m
 //  DemoCoffee
 //
-//  Created by Pariwat on 6/16/14.
+//  Created by Pariwat on 6/25/14.
 //  Copyright (c) 2014 Platwo fusion. All rights reserved.
 //
 
-#import "PFBranchViewController.h"
+#import "PFBranch1ViewController.h"
 
-@interface PFBranchViewController ()
+@interface PFBranch1ViewController ()
 
 @end
 
-@implementation PFBranchViewController
+@implementation PFBranch1ViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -60,10 +60,6 @@
     
     [self.Demoapi getBranchById:[self.objContact objectForKey:@"id"]];
     
-    images = [[NSMutableArray alloc]init];
-    
-    UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
-    [scrollView addGestureRecognizer:singleTap];
 }
 
 - (void)didReceiveMemoryWarning
@@ -75,47 +71,8 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
-- (void)singleTapGestureCaptured:(UITapGestureRecognizer *)gesture
-{
-    CGPoint touchPoint=[gesture locationInView:scrollView];
-    for(int index=0;index<[images count];index++)
-	{
-		UIImageView *imgView = [images objectAtIndex:index];
-		
-		if(CGRectContainsPoint([imgView frame], touchPoint))
-		{
-            self.current = [NSString stringWithFormat:@"%d",index];
-			[self ShowDetailView:imgView];
-			break;
-		}
-	}
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	UITouch * touch = [[event allTouches] anyObject];
-	
-	for(int index=0;index<[images count];index++)
-	{
-		UIImageView *imgView = [images objectAtIndex:index];
-		
-		if(CGRectContainsPoint([imgView frame], [touch locationInView:scrollView]))
-		{
-			[self ShowDetailView:imgView];
-			break;
-		}
-	}
-}
-
--(void)ShowDetailView:(UIImageView *)imgView
-{
-	imageView.image = imgView.image;
-    imageView.layer.masksToBounds = YES;
-    imageView.contentMode = UIViewContentModeScaleAspectFill;
-}
-
 - (IBAction)fullimgTapped:(id)sender {
-    [self.delegate PFGalleryViewController:self sum:self.arrgalleryimg current:self.current];
+    [self.delegate PFImageViewController:self viewPicture:self.link];
 }
 
 - (void)DCManager:(id)sender getBranchByIdResponse:(NSDictionary *)response {
@@ -123,44 +80,13 @@
     
     [self.waitView removeFromSuperview];
     
-        scrollView.delegate = self;
-        scrollView.scrollEnabled = YES;
-        int scrollWidth = 70;
-        scrollView.contentSize = CGSizeMake(scrollWidth,70);
+    self.link = [[self.objContact objectForKey:@"thumb"] objectForKey:@"link"];
+
+    NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@",[[self.objContact objectForKey:@"thumb"] objectForKey:@"link"],@"?width=800&height=600"];
+    self.imageView.imageURL = [NSURL URLWithString:urlimg];
     
-        int xOffset = 0;
-    
-        NSString *thumbid = [[[[response objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"] objectForKey:@"id"];
-        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=800&height=600"];
-        imageView.imageURL = [NSURL URLWithString:urlimg];
-    
-        imageView.layer.masksToBounds = YES;
-        imageView.contentMode = UIViewContentModeScaleAspectFill;
-    
-        self.arrgalleryimg = [[NSMutableArray alloc] init];
-    
-        for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
-            //
-            AsyncImageView *img = [[AsyncImageView alloc] init];
-        
-            img.layer.masksToBounds = YES;
-            img.contentMode = UIViewContentModeScaleAspectFill;
-        
-            img.frame = CGRectMake(xOffset, 0, 70, 70);
-        
-            NSString *thumbid = [[[[response objectForKey:@"data"] objectAtIndex:i]     objectForKey:@"picture"] objectForKey:@"id"];
-            NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=800&height=600"];
-            img.imageURL = [[NSURL alloc] initWithString:urlimg];
-        
-            [images insertObject:img atIndex:i];
-        
-            [self.arrgalleryimg addObject:[[[[response objectForKey:@"data"] objectAtIndex:i] objectForKey:@"picture"] objectForKey:@"link"]];
-        
-            scrollView.contentSize = CGSizeMake(scrollWidth+xOffset,70);
-            [scrollView addSubview:[images objectAtIndex:i]];
-		
-            xOffset += 70;
-        }
+    self.imageView.layer.masksToBounds = YES;
+    self.imageView.contentMode = UIViewContentModeScaleAspectFill;
     
 }
 
@@ -230,8 +156,8 @@
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
         // 'Back' button was pressed.  We know this is true because self is no longer
         // in the navigation stack.
-        if([self.delegate respondsToSelector:@selector(PFBranchViewControllerBack)]){
-            [self.delegate PFBranchViewControllerBack];
+        if([self.delegate respondsToSelector:@selector(PFBranch1ViewControllerBack)]){
+            [self.delegate PFBranch1ViewControllerBack];
         }
     }
 }

@@ -115,7 +115,7 @@ BOOL refreshDataContact;
 
 - (void)DCManager:(id)sender getContactByAppKeyResponse:(NSDictionary *)response {
     self.obj = response;
-    NSLog(@"%@",response);
+    NSLog(@"contact %@",response);
     
     [self.waitView removeFromSuperview];
     
@@ -139,16 +139,16 @@ BOOL refreshDataContact;
     [self.content setFrame:frame];
     int lines = self.content.frame.size.height/15;
     
-    if (lines >= 3) {
+    if (lines > 3) {
         self.content.numberOfLines = 3;
-        UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+        UILabel *descText = [[UILabel alloc] initWithFrame:CGRectMake(10.0f, 8.0f, 300.0f, 63.0f)];
         descText.text = self.content.text;
         descText.numberOfLines = 3;
         [descText setFont:[UIFont systemFontOfSize:15]];
         descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
         self.content.alpha = 0;
         [self.contentView addSubview:descText];
-        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, descText.frame.size.height+5);
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, 80);
         
     } else {
         self.content.numberOfLines = lines;
@@ -159,7 +159,7 @@ BOOL refreshDataContact;
                 descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
         self.content.alpha = 0;
         [self.contentView addSubview:descText];
-        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, descText.frame.size.height+20);
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, descText.frame.size.height+18);
     }
     
     //
@@ -289,16 +289,27 @@ BOOL refreshDataContact;
     
     [self.delegate HideTabbar];
     
-    PFBranchViewController *branch = [[PFBranchViewController alloc] init];
+//    PFBranchViewController *branch = [[PFBranchViewController alloc] init];
+//    
+//    if(IS_WIDESCREEN){
+//        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController_Wide" bundle:nil];
+//    } else {
+//        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
+//    }
+//    branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
+//    branch.delegate = self;
+//    [self.navController pushViewController:branch animated:YES];
+    
+    PFBranch1ViewController *branch1 = [[PFBranch1ViewController alloc] init];
     
     if(IS_WIDESCREEN){
-        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController_Wide" bundle:nil];
+        branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController_Wide" bundle:nil];
     } else {
-        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
+        branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController" bundle:nil];
     }
-    branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
-    branch.delegate = self;
-    [self.navController pushViewController:branch animated:YES];
+    branch1.objContact = [self.arrObj objectAtIndex:indexPath.row];
+    branch1.delegate = self;
+    [self.navController pushViewController:branch1 animated:YES];
 }
 
 - (void)reloadData:(BOOL)animated
@@ -429,11 +440,19 @@ BOOL refreshDataContact;
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://pla2fusion.com/"]];
 }
 
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link{
+    [self.delegate PFImageViewController:self viewPicture:link];
+}
+
 - (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current{
     [self.delegate PFGalleryViewController:self sum:sum current:current];
 }
 
 - (void)PFBranchViewControllerBack {
+    [self.delegate ShowTabbar];
+}
+
+- (void)PFBranch1ViewControllerBack {
     [self.delegate ShowTabbar];
 }
 

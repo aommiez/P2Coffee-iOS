@@ -1,8 +1,8 @@
 //
-//  PFBranchViewController.h
+//  PFBranch1ViewController.h
 //  DemoCoffee
 //
-//  Created by Pariwat on 6/16/14.
+//  Created by Pariwat on 6/25/14.
 //  Copyright (c) 2014 Platwo fusion. All rights reserved.
 //
 
@@ -16,23 +16,16 @@
 #import "PFMapViewController.h"
 #import "ScrollView.h"
 
-@protocol PFBranchViewControllerDelegate <NSObject>
+@protocol PFBranch1ViewControllerDelegate <NSObject>
 
-- (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
-- (void)PFBranchViewControllerBack;
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link;
+- (void)PFBranch1ViewControllerBack;
 
 @end
 
-@interface PFBranchViewController : UIViewController < UIScrollViewDelegate > {
-    
-    IBOutlet ScrollView *scrollView;
-    IBOutlet AsyncImageView *imageView;
-    NSMutableArray *images;
-    NSArray *imagesName;
-    
-}
+@interface PFBranch1ViewController : UIViewController
 
-@property (assign, nonatomic) id <PFBranchViewControllerDelegate> delegate;
+@property (assign, nonatomic) id <PFBranch1ViewControllerDelegate> delegate;
 @property (retain, nonatomic) CLLocationManager *locationManager;
 @property (retain, nonatomic) CLLocation *currentLocation;
 
@@ -46,19 +39,20 @@
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *branchView;
 
+@property (weak, nonatomic) IBOutlet UIView *branchView;
+@property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
 @property (weak, nonatomic) IBOutlet AsyncImageView *mapImage;
 @property (weak, nonatomic) IBOutlet UILabel *location;
 @property (weak, nonatomic) IBOutlet UILabel *phone;
+
+@property (strong, nonatomic) NSString *link;
 
 @property (strong, nonatomic) NSString *lat;
 @property (strong, nonatomic) NSString *lng;
 
 @property (strong, nonatomic) NSString *product_id;
 @property (strong, nonatomic) NSString *current;
-
-@property (retain, nonatomic) NSMutableArray *arrgalleryimg;
 
 - (IBAction)fullimgTapped:(id)sender;
 
