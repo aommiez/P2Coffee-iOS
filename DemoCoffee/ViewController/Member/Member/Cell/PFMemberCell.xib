@@ -17,7 +17,7 @@
                         <rect key="frame" x="10" y="3" width="300" height="59"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-9t-pw1">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="qRA-9t-pw1" customClass="AsyncImageView">
                                 <rect key="frame" x="0.0" y="0.0" width="65" height="59"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
@@ -31,7 +31,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4D-1y-xfh">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4D-1y-xfh">
                                         <rect key="frame" x="3" y="7" width="54" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -47,7 +47,7 @@
                                 <color key="textColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Coffee 2 Cups" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhC-o3-6TA">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hhC-o3-6TA">
                                 <rect key="frame" x="115" y="19" width="110" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -62,6 +62,9 @@
             <connections>
                 <outlet property="bgPoint" destination="mqB-3p-IlE" id="KwQ-KU-JB2"/>
                 <outlet property="bgView" destination="SqK-7n-pdj" id="p1c-pZ-jsm"/>
+                <outlet property="image" destination="qRA-9t-pw1" id="lyQ-K0-Tb4"/>
+                <outlet property="name" destination="hhC-o3-6TA" id="Ska-KH-E5k"/>
+                <outlet property="point" destination="L4D-1y-xfh" id="LNq-ZO-yWp"/>
             </connections>
         </tableViewCell>
     </objects>

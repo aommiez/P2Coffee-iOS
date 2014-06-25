@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DLImageLoader.h"
+#import "UILabel+UILabelDynamicHeight.h"
+
+#import "DCManager.h"
 
 #import "PFMemberCell.h"
 
@@ -23,13 +27,29 @@
 @interface PFMemberViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
+@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSDictionary *obj;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (retain, nonatomic) IBOutlet UIView *waitView;
+@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+
+@property (strong, nonatomic) IBOutlet UIImageView *bg;
 
 @property (weak, nonatomic) IBOutlet UIView *nomemberView;
 @property (weak, nonatomic) IBOutlet UIView *memberView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *posternomember;
+@property (weak, nonatomic) IBOutlet UIView *conditionnomemberView;
+@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
+- (IBAction)posternoTapped:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UIButton *signinButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *postermember;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;

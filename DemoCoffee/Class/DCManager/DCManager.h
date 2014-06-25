@@ -79,6 +79,13 @@
  */
 - (void)DCManager:(id)sender commentObjIdResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender commentObjIdErrorResponse:(NSString *)errorResponse;
+
+#pragma mark - Stamp Protocal Delegate
+- (void)DCManager:(id)sender getStampResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getStampErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getStampStyleErrorResponse:(NSString *)errorResponse;
+
 @end
 
 @interface DCManager : NSObject
@@ -182,8 +189,8 @@
  */
 - (void)commentObjId:(NSString *)obj_id content:(NSString *)content;
 
-
-
+- (void)getStamp;
+- (void)getStampStyle;
 
 
 
