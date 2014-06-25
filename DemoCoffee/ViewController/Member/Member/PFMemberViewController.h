@@ -52,6 +52,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *signinButton;
 
 @property (weak, nonatomic) IBOutlet UIImageView *postermember;
+@property (strong, nonatomic) IBOutlet UILabel *showpoint;
 @property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 - (IBAction)posterTapped:(id)sender;

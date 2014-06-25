@@ -30,6 +30,12 @@ BOOL refreshDataMember;
 {
     [super viewDidLoad];
     
+    [self.view addSubview:self.waitView];
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
+    
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     
@@ -79,6 +85,8 @@ BOOL refreshDataMember;
 
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response {
     NSLog(@"Member nomemberview %@",response);
+    
+    [self.waitView removeFromSuperview];
     
     //login
     
@@ -139,6 +147,7 @@ BOOL refreshDataMember;
     
     
     [self.Demoapi getStamp];
+    [self.Demoapi getReward];
     
 }
 
@@ -147,8 +156,20 @@ BOOL refreshDataMember;
 }
 
 - (void)DCManager:(id)sender getStampResponse:(NSDictionary *)response {
-    self.obj = response;
+    //self.obj = response;
     NSLog(@"Member nomemberview getStamp %@",response);
+    
+    self.showpoint.text = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"point"]];
+    
+}
+
+- (void)DCManager:(id)sender getStampErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (void)DCManager:(id)sender getRewardResponse:(NSDictionary *)response {
+    //self.obj = response;
+    NSLog(@"Member nomemberview getReward %@",response);
     
     //login
     if (!refreshDataMember) {
@@ -166,7 +187,7 @@ BOOL refreshDataMember;
     
 }
 
-- (void)DCManager:(id)sender getStampErrorResponse:(NSString *)errorResponse {
+- (void)DCManager:(id)sender getRewardErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
 
@@ -241,22 +262,35 @@ BOOL refreshDataMember;
     NSString *point = [[NSString alloc] initWithFormat:@"%@",[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"point"]];
     cell.point.text = point;
     
+    if ([self.showpoint.text intValue] >= [cell.point.text intValue]) {
+        cell.bgPoint.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:222.0/255.0 blue:23.0/255.0 alpha:1.0];
+    }
+    
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [self.delegate HideTabbar];
+    if ([self.showpoint.text intValue] >= [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"point"] intValue]) {
     
-    PFRewardViewController *reward = [[PFRewardViewController alloc] init];
+        [self.delegate HideTabbar];
     
-    if(IS_WIDESCREEN){
-        reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController_Wide" bundle:nil];
+        PFRewardViewController *reward = [[PFRewardViewController alloc] init];
+    
+        if(IS_WIDESCREEN){
+            reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController_Wide" bundle:nil];
+        } else {
+            reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
+        }
+        reward.delegate = self;
+        [self.navController pushViewController:reward animated:YES];
     } else {
-        reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"แลกกาแฟนี้ไม่ได้ เนื่องจากสแตมป์ของคุณมีน้อยกว่าเงื่อนไข"
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
-    reward.delegate = self;
-    [self.navController pushViewController:reward animated:YES];
 
 }
 

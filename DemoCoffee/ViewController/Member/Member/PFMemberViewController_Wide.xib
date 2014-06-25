@@ -17,6 +17,7 @@
                 <outlet property="popupwaitView" destination="UGO-HB-jW5" id="8LJ-2d-Bzh"/>
                 <outlet property="postermember" destination="7VQ-kT-Qji" id="TgY-Hx-cMT"/>
                 <outlet property="posternomember" destination="1WZ-Ce-6Z4" id="wU3-9o-VPx"/>
+                <outlet property="showpoint" destination="yNN-IA-Pqv" id="CK8-SR-oJu"/>
                 <outlet property="signinButton" destination="QQR-H9-8Gm" id="nQh-qA-GLi"/>
                 <outlet property="tableView" destination="4TX-4q-wwM" id="s6G-2P-elD"/>
                 <outlet property="view" destination="cxd-Y9-Hdb" id="dyw-AO-V9C"/>

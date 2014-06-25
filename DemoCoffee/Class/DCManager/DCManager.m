@@ -188,15 +188,6 @@
 }
 
 #pragma mark - Stamp
-- (void)getStamp {
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@reward",API_URL];
-    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self.delegate DCManager:self getStampResponse:responseObject];
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.delegate DCManager:self getStampErrorResponse:[error localizedDescription]];
-    }];
-}
-
 - (void)getStampStyle {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@stamp/style",API_URL];
     [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
@@ -205,6 +196,28 @@
         [self.delegate DCManager:self getStampStyleErrorResponse:[error localizedDescription]];
     }];
 }
+
+- (void)getStamp {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/stamp/%@",API_URL,@"88"];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getStampResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getStampErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)getReward {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@reward",API_URL];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getRewardResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getRewardErrorResponse:[error localizedDescription]];
+    }];
+}
+
+
+
+
 
 
 

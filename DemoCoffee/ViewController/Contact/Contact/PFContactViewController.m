@@ -289,27 +289,34 @@ BOOL refreshDataContact;
     
     [self.delegate HideTabbar];
     
-//    PFBranchViewController *branch = [[PFBranchViewController alloc] init];
-//    
-//    if(IS_WIDESCREEN){
-//        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController_Wide" bundle:nil];
-//    } else {
-//        branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
-//    }
-//    branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
-//    branch.delegate = self;
-//    [self.navController pushViewController:branch animated:YES];
+    if ([[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"locations"] objectForKey:@"picture_length"] intValue] <= 1) {
+        
+        PFBranch1ViewController *branch1 = [[PFBranch1ViewController alloc] init];
+        
+        if(IS_WIDESCREEN){
+            branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController_Wide" bundle:nil];
+        } else {
+            branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController" bundle:nil];
+        }
+        branch1.objContact = [self.arrObj objectAtIndex:indexPath.row];
+        branch1.delegate = self;
+        [self.navController pushViewController:branch1 animated:YES];
     
-    PFBranch1ViewController *branch1 = [[PFBranch1ViewController alloc] init];
-    
-    if(IS_WIDESCREEN){
-        branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController_Wide" bundle:nil];
     } else {
-        branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController" bundle:nil];
+        
+        PFBranchViewController *branch = [[PFBranchViewController alloc] init];
+        
+        if(IS_WIDESCREEN){
+            branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController_Wide" bundle:nil];
+        } else {
+            branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
+        }
+        branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
+        branch.delegate = self;
+        [self.navController pushViewController:branch animated:YES];
+
     }
-    branch1.objContact = [self.arrObj objectAtIndex:indexPath.row];
-    branch1.delegate = self;
-    [self.navController pushViewController:branch1 animated:YES];
+
 }
 
 - (void)reloadData:(BOOL)animated
