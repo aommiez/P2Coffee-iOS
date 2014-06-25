@@ -13,5 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *branch;
 @property (weak, nonatomic) IBOutlet AsyncImageView *imgbranch;
+@property (weak, nonatomic) IBOutlet UIImageView *bgimg;
 
 @end

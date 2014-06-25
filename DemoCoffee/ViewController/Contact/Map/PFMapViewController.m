@@ -30,12 +30,6 @@
     
     self.navigationItem.title = @"Map";
     
-    NSLog(@"%@",self.lat);
-    NSLog(@"%@",self.lng);
-    
-    self.lng = [[NSString alloc] init];
-    self.lat = [[NSString alloc] init];
-    
     CLLocationCoordinate2D location;
     location.latitude = [self.lat doubleValue];
     location.longitude = [self.lng doubleValue];

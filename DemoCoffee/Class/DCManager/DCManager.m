@@ -86,6 +86,15 @@
     }];
 }
 
+- (void)getBranchById:(NSString *)branch_id {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@location/pictures?location_id=%@",API_URL,branch_id];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getBranchByIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getBranchByIdErrorResponse:[error localizedDescription]];
+    }];
+}
+
 - (void)me {
     self.urlStr = [[NSString alloc] initWithFormat:@"%@me?access_token=%@",API_URL,[self getAccessToken]];
     [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {

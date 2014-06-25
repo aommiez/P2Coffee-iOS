@@ -35,6 +35,11 @@
 - (void)DCManager:(id)sender getContactByAppKeyResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getContactByAppKeyErrorResponse:(NSString *)errorResponse;
 /*
+ Protocal Delegate get branch gallery by id
+*/
+- (void)DCManager:(id)sender getBranchByIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getBranchByIdErrorResponse:(NSString *)errorResponse;
+/*
  Protocal Delegate get user profile by id
  */
 - (void)DCManager:(id)sender getUserByIdResponse:(NSDictionary *)response;
@@ -129,6 +134,10 @@
  get contact by app key
  */
 - (void)getContactByAppKey:(NSInteger *)app_key;
+/*
+ get contact branch by id
+*/
+- (void)getBranchById:(NSString *)branch_id;
 /*
  get user profile me
  */

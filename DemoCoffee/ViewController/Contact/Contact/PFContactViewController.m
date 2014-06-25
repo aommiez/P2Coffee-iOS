@@ -35,6 +35,12 @@ BOOL refreshDataContact;
 {
     [super viewDidLoad];
     
+    [self.view addSubview:self.waitView];
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
+    
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     
@@ -111,6 +117,8 @@ BOOL refreshDataContact;
     self.obj = response;
     NSLog(@"%@",response);
     
+    [self.waitView removeFromSuperview];
+    
     //image
     self.arrcontactimg = [[NSMutableArray alloc] init];
     for (int i=0; i<[[response objectForKey:@"pictures"] count]; ++i) {
@@ -131,16 +139,16 @@ BOOL refreshDataContact;
     [self.content setFrame:frame];
     int lines = self.content.frame.size.height/15;
     
-    UILabel *descText = [[UILabel alloc] initWithFrame:frame];
-    descText.text = self.content.text;
-    
     if (lines >= 3) {
         self.content.numberOfLines = 3;
+        UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+        descText.text = self.content.text;
         descText.numberOfLines = 3;
         [descText setFont:[UIFont systemFontOfSize:15]];
+        descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
         self.content.alpha = 0;
         [self.contentView addSubview:descText];
-        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y-10, self.contentView.frame.size.width, descText.frame.size.height-10);
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, descText.frame.size.height+5);
         
     } else {
         self.content.numberOfLines = lines;
@@ -148,21 +156,14 @@ BOOL refreshDataContact;
         descText.text = self.content.text;
         descText.numberOfLines = lines;
         [descText setFont:[UIFont systemFontOfSize:15]];
+                descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
         self.content.alpha = 0;
         [self.contentView addSubview:descText];
-        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y-10, self.contentView.frame.size.width, descText.frame.size.height-10);
+        self.contentView.frame = CGRectMake(self.contentView.frame.origin.x, self.contentView.frame.origin.y, self.contentView.frame.size.width, descText.frame.size.height+20);
     }
-    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+self.contentView.frame.size.height-47);
-    
-    //map image
-    
-    self.mapView.frame = CGRectMake(self.mapView.frame.origin.x, self.contentView.frame.origin.y+self.contentView.frame.size.height+10, self.mapView.frame.size.width, self.mapView.frame.size.height);
-    
-    self.mapButton.frame = CGRectMake(self.mapButton.frame.origin.x, self.mapButton.frame.origin.y, self.mapButton.frame.size.width, self.mapButton.frame.size.height);
-    
-    self.location.frame = CGRectMake(self.location.frame.origin.x, self.location.frame.origin.y, self.location.frame.size.width, self.location.frame.size.height);
     
     //
+    
     NSString *urlmap1 = @"http://maps.googleapis.com/maps/api/staticmap?center=";
     
     NSMutableArray *pointmap = [[NSMutableArray alloc] initWithCapacity:[[response objectForKey:@"locations"] count]];
@@ -222,9 +223,20 @@ BOOL refreshDataContact;
     
     [self reloadData:YES];
     
+    //map image
+    
+    self.mapView.frame = CGRectMake(self.mapView.frame.origin.x, self.contentView.frame.origin.y+self.contentView.frame.size.height+10, self.mapView.frame.size.width, self.mapView.frame.size.height);
+    
     //location
+    
     self.location.text = [response objectForKey:@"location_info"];
+    
+    //hederview
+    
+    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+self.contentView.frame.size.height-37);
+    
     //footer
+    
     self.phone.text = [response objectForKey:@"phone"];
     self.website.text = [response objectForKey:@"website"];
     self.email.text = [response objectForKey:@"email"];
@@ -257,6 +269,14 @@ BOOL refreshDataContact;
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
+    if (indexPath.row == 0) {
+        cell.bgimg.image = [UIImage imageNamed:@"chapter_branch_01.png"];
+    } else if (indexPath.row == [self.arrObj count]-1) {
+        cell.bgimg.image = [UIImage imageNamed:@"chapter_branch_03.png"];
+    } else {
+        cell.bgimg.image = [UIImage imageNamed:@"chapter_branch_02.png"];
+    }
+    
     NSString *img = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb"] objectForKey:@"link"];
     NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@",img,@"?width=100&height=100"];
     cell.imgbranch.imageURL = [[NSURL alloc] initWithString:urlimg];
@@ -276,7 +296,7 @@ BOOL refreshDataContact;
     } else {
         branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
     }
-    branch.obj = [self.arrObj objectAtIndex:indexPath.row];
+    branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
     branch.delegate = self;
     [self.navController pushViewController:branch animated:YES];
 }
@@ -407,6 +427,10 @@ BOOL refreshDataContact;
 
 - (IBAction)powerbyTapped:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://pla2fusion.com/"]];
+}
+
+- (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current{
+    [self.delegate PFGalleryViewController:self sum:sum current:current];
 }
 
 - (void)PFBranchViewControllerBack {

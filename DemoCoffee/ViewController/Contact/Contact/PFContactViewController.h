@@ -34,6 +34,9 @@
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
+@property (retain, nonatomic) IBOutlet UIView *waitView;
+@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
@@ -51,7 +54,7 @@
 @property (strong, nonatomic) IBOutlet UIView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *mapButton;
 @property (weak, nonatomic) IBOutlet UIImageView *mapImage;
-@property (strong, nonatomic) IBOutlet UILabel *location;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *location;
 
 @property (weak, nonatomic) IBOutlet UILabel *phone;
 @property (weak, nonatomic) IBOutlet UILabel *website;
