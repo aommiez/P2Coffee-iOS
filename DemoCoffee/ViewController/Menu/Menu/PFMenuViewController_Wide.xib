@@ -55,7 +55,7 @@
             <nil key="simulatedBottomBarMetrics"/>
             <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <navigationBar key="navigationBar" contentMode="scaleToFill" id="ED2-IY-fBw" customClass="CustomNavigationBar">
+            <navigationBar key="navigationBar" contentMode="scaleToFill" id="ED2-IY-fBw">
                 <autoresizingMask key="autoresizingMask"/>
             </navigationBar>
             <viewControllers>
@@ -88,7 +88,7 @@
                                             <segment title="Drinks"/>
                                             <segment title="Desserts"/>
                                         </segments>
-                                        <color key="tintColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" red="0.40784313725490196" green="0.27843137254901962" blue="0.2196078431372549" alpha="1" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
