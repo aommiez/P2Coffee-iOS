@@ -99,7 +99,7 @@
 - (void)DCManager:(id)sender getDrinkListByAppKeyResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getDrinkListByAppKeyErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getDessertListByAppKeyResponse:(NSDictionary *)response;
-- (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse
+- (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse;
 
 #pragma mark - Stamp Protocal Delegate
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
