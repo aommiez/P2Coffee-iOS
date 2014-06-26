@@ -132,6 +132,7 @@
 
 
 #pragma mark - function
+- (BOOL)checkLogin;
 /*
  request app key from server
  */
