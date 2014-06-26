@@ -246,7 +246,22 @@
         [self.delegate DCManager:self getDessertListErrorResponse:[error localizedDescription]];
     }];
 }
-
+- (void)getDrinkListByAppKey:(NSString *)app_key {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=38&app_key=%@",API_URL,app_key];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getDrinkListByAppKeyResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getDrinkListByAppKeyErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getDessertListByAppKey:(NSString *)app_key {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=36&app_key=%@",API_URL,app_key];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getDessertListByAppKeyResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getDessertListByAppKeyErrorResponse:[error localizedDescription]];
+    }];
+}
 #pragma mark - Stamp
 - (void)getStampStyle {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@stamp/style",API_URL];
@@ -275,6 +290,15 @@
     }];
 }
 
+- (void)addPoint:(NSString *)point password:(NSString *)password {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/stamp/add_point/%@",API_URL,[self getUserId]];
+    NSDictionary *parameters = @{@"add_point":point , @"password":password  };
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self addPointResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self addPointErrorResponse:[error localizedDescription]];
+    }];
+}
 
 - (void)getLink:(NSString *)link {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@",link];

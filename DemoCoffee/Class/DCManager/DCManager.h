@@ -96,6 +96,10 @@
 - (void)DCManager:(id)sender getDrinkListErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getDessertListResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getDessertListErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getDrinkListByAppKeyResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getDrinkListByAppKeyErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getDessertListByAppKeyResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse
 
 #pragma mark - Stamp Protocal Delegate
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
@@ -104,6 +108,8 @@
 - (void)DCManager:(id)sender getStampErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getRewardResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getRewardErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender addPointResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender addPointErrorResponse:(NSString *)errorResponse;
 
 @end
 
@@ -215,12 +221,14 @@
 - (void)getProductId:(NSString *)product_id;
 - (void)getDrinkList;
 - (void)getDessertList;
+- (void)getDrinkListByAppKey:(NSString *)app_key;
+- (void)getDessertListByAppKey:(NSString *)app_key;
 
 //reward
 - (void)getStampStyle;
 - (void)getStamp;
 - (void)getReward;
-
+- (void)addPoint:(NSString *)point password:(NSString *)password;
 - (void)getLink:(NSString *)link;
 
 
