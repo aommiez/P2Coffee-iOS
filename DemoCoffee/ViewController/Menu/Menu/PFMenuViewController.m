@@ -48,12 +48,12 @@ BOOL refreshDataMenu;
     [self.view addSubview:self.navController.view];
     
     AMBlurView *backgroundView = [[AMBlurView alloc] initWithFrame:CGRectMake(0, 0, CGRectGetWidth(self.navController.navigationBar.frame), 64)];
-    [backgroundView setBlurTintColor:[UIColor colorWithRed:229.0f/255.0f green:172.0f/255.0f blue:48.0f/255.0f alpha:1.0f]];
+    [backgroundView setBlurTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     [self.navController.view insertSubview:backgroundView belowSubview:self.navController.navigationBar];
     
     [self.view addSubview:self.navController.view];
     
-    [self.segmented setBackgroundColor:RGB(230, 230, 230)];
+    [self.segmented setBackgroundColor:RGB(255, 255, 255)];
     [self.segmented setTintColor:RGB(102,102,102)];
     CALayer *segmented = [self.segmented layer];
     [segmented setMasksToBounds:YES];

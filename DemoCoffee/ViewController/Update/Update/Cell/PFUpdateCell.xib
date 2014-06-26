@@ -31,7 +31,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="9VE-Yw-07e" customClass="AsyncImageView">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9VE-Yw-07e" customClass="AsyncImageView">
                                 <rect key="frame" x="-5" y="74" width="310" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -41,9 +41,12 @@
                 </subviews>
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+            <connections>
+                <outlet property="detailNews" destination="eog-HY-WlG" id="sm5-Lg-4Sq"/>
+                <outlet property="detailNewsView" destination="irb-L9-b4e" id="OMk-v1-nkr"/>
+                <outlet property="thumbnails" destination="9VE-Yw-07e" id="E7S-EU-qbe"/>
+                <outlet property="titleNews" destination="thu-rF-NPg" id="5Xc-1U-0jt"/>
+            </connections>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="default.jpeg" width="622" height="415"/>
-    </resources>
 </document>
