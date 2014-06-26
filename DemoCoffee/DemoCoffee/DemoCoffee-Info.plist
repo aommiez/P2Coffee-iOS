@@ -34,6 +34,15 @@
 	<string>309084605920752</string>
 	<key>FacebookDisplayName</key>
 	<string>DemoCoffee</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb309084605920752</string>
+			</array>
+		</dict>
+	</array>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

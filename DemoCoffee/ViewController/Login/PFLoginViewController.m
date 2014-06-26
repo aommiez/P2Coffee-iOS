@@ -55,7 +55,7 @@ NSString *password;
     FBLoginView *fbView = [[FBLoginView alloc] init];
     fbView.delegate = self;
     fbView.frame = CGRectMake(20, 123, 240, 60);
-    fbView.readPermissions = @[@"basic_info", @"email"];
+    //fbView.readPermissions = @[@"basic_info", @"email"];
     FBSession *session = [[FBSession alloc] initWithPermissions:@[@"basic_info", @"email"]];
     [FBSession setActiveSession:session];
     [self.loginView addSubview:fbView];
