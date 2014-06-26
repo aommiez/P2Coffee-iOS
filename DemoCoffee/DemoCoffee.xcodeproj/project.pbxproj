@@ -201,6 +201,14 @@
 		52FBAFBE195BE20A0047FF7C /* NotBoxReadedIp4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB0195BE20A0047FF7C /* NotBoxReadedIp4@2x.png */; };
 		52FBAFBF195BE20A0047FF7C /* NotBoxReadedIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB1195BE20A0047FF7C /* NotBoxReadedIp5@2x.png */; };
 		52FBAFC0195BE20A0047FF7C /* PostBottonIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB2195BE20A0047FF7C /* PostBottonIp5@2x.png */; };
+		52FBAFCC195BE7C90047FF7C /* Create_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC3195BE7C90047FF7C /* Create_Button.png */; };
+		52FBAFCD195BE7C90047FF7C /* icon_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */; };
+		52FBAFCE195BE7C90047FF7C /* login.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC5195BE7C90047FF7C /* login.png */; };
+		52FBAFCF195BE7C90047FF7C /* login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC6195BE7C90047FF7C /* login@2x.png */; };
+		52FBAFD0195BE7C90047FF7C /* Login_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC7195BE7C90047FF7C /* Login_Button.png */; };
+		52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC8195BE7C90047FF7C /* Sign_Button.png */; };
+		52FBAFD2195BE7C90047FF7C /* PFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FBAFCA195BE7C90047FF7C /* PFLoginViewController.m */; };
+		52FBAFD3195BE7C90047FF7C /* PFLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFCB195BE7C90047FF7C /* PFLoginViewController.xib */; };
 		EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C3F195030B30032CF51 /* Foundation.framework */; };
 		EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C41195030B30032CF51 /* CoreGraphics.framework */; };
 		EA024C44195030B30032CF51 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C43195030B30032CF51 /* UIKit.framework */; };
@@ -571,6 +579,15 @@
 		52FBAFB0195BE20A0047FF7C /* NotBoxReadedIp4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotBoxReadedIp4@2x.png"; sourceTree = "<group>"; };
 		52FBAFB1195BE20A0047FF7C /* NotBoxReadedIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotBoxReadedIp5@2x.png"; sourceTree = "<group>"; };
 		52FBAFB2195BE20A0047FF7C /* PostBottonIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PostBottonIp5@2x.png"; sourceTree = "<group>"; };
+		52FBAFC3195BE7C90047FF7C /* Create_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Create_Button.png; sourceTree = "<group>"; };
+		52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@2x.png"; sourceTree = "<group>"; };
+		52FBAFC5195BE7C90047FF7C /* login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = login.png; sourceTree = "<group>"; };
+		52FBAFC6195BE7C90047FF7C /* login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "login@2x.png"; sourceTree = "<group>"; };
+		52FBAFC7195BE7C90047FF7C /* Login_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_Button.png; sourceTree = "<group>"; };
+		52FBAFC8195BE7C90047FF7C /* Sign_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sign_Button.png; sourceTree = "<group>"; };
+		52FBAFC9195BE7C90047FF7C /* PFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLoginViewController.h; sourceTree = "<group>"; };
+		52FBAFCA195BE7C90047FF7C /* PFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLoginViewController.m; sourceTree = "<group>"; };
+		52FBAFCB195BE7C90047FF7C /* PFLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFLoginViewController.xib; sourceTree = "<group>"; };
 		EA024C3C195030B30032CF51 /* DemoCoffee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DemoCoffee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA024C3F195030B30032CF51 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		EA024C41195030B30032CF51 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -1232,6 +1249,30 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		52FBAFC1195BE7C90047FF7C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				52FBAFC2195BE7C90047FF7C /* Images */,
+				52FBAFC9195BE7C90047FF7C /* PFLoginViewController.h */,
+				52FBAFCA195BE7C90047FF7C /* PFLoginViewController.m */,
+				52FBAFCB195BE7C90047FF7C /* PFLoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		52FBAFC2195BE7C90047FF7C /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				52FBAFC3195BE7C90047FF7C /* Create_Button.png */,
+				52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */,
+				52FBAFC5195BE7C90047FF7C /* login.png */,
+				52FBAFC6195BE7C90047FF7C /* login@2x.png */,
+				52FBAFC7195BE7C90047FF7C /* Login_Button.png */,
+				52FBAFC8195BE7C90047FF7C /* Sign_Button.png */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
 		EA024C33195030B20032CF51 = {
 			isa = PBXGroup;
 			children = (
@@ -1386,6 +1427,7 @@
 			isa = PBXGroup;
 			children = (
 				EA024CBC195031220032CF51 /* Images */,
+				52FBAFC1195BE7C90047FF7C /* Login */,
 				EA024CCC195031220032CF51 /* Update */,
 				EA024CC7195031220032CF51 /* Menu */,
 				EA024CBE195031220032CF51 /* Member */,
@@ -1686,7 +1728,9 @@
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
 				526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */,
 				52FBAFBD195BE20A0047FF7C /* NotBoxReadedIp4.png in Resources */,
+				52FBAFD0195BE7C90047FF7C /* Login_Button.png in Resources */,
 				525AE03C19580810005329A1 /* ic_birthday@2x.png in Resources */,
+				52FBAFCC195BE7C90047FF7C /* Create_Button.png in Resources */,
 				52FBAF8C195BD39E0047FF7C /* icon_share@2x.png in Resources */,
 				525AE032195806DB005329A1 /* ic_website.png in Resources */,
 				EA024CEB195031220032CF51 /* Setting_icon@2x.png in Resources */,
@@ -1700,10 +1744,12 @@
 				526A34E21954024400D5FAB0 /* glow@2x.png in Resources */,
 				525AE04019580810005329A1 /* ic_lock@2x.png in Resources */,
 				EA024CF2195031220032CF51 /* icon_reload.png in Resources */,
+				52FBAFD3195BE7C90047FF7C /* PFLoginViewController.xib in Resources */,
 				EA024CF3195031220032CF51 /* icon_reload@2x.png in Resources */,
 				525AE01A19580489005329A1 /* ic_update_off@2x.png in Resources */,
 				525AE04919582DCA005329A1 /* PFOrderViewController_Wide.xib in Resources */,
 				526A34E31954024400D5FAB0 /* line1.png in Resources */,
+				52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */,
 				526A34D91954024400D5FAB0 /* button_minus_select.png in Resources */,
 				52FBAFB7195BE20A0047FF7C /* icon_share@2x.png in Resources */,
 				525AE030195806DB005329A1 /* ic_telephone.png in Resources */,
@@ -1711,6 +1757,7 @@
 				52FBAF96195BDFE60047FF7C /* PFUpdateCommentCell.xib in Resources */,
 				520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */,
 				525AE00F19580489005329A1 /* ic_member_on.png in Resources */,
+				52FBAFCF195BE7C90047FF7C /* login@2x.png in Resources */,
 				52FBAF79195BC64E0047FF7C /* PFF2ViewController_Wide.xib in Resources */,
 				52FBAF6C195BC64E0047FF7C /* PFDetailCell.xib in Resources */,
 				526A34E11954024400D5FAB0 /* cross_icon@2x.png in Resources */,
@@ -1724,6 +1771,7 @@
 				525AE02C195806DB005329A1 /* ic_location.png in Resources */,
 				525AE01219580489005329A1 /* ic_update_off.png in Resources */,
 				52FBAFC0195BE20A0047FF7C /* PostBottonIp5@2x.png in Resources */,
+				52FBAFCE195BE7C90047FF7C /* login.png in Resources */,
 				525AE04319580810005329A1 /* ic_web@2x.png in Resources */,
 				525AE01119580489005329A1 /* ic_menu_on.png in Resources */,
 				526A34E61954024400D5FAB0 /* stamp@2x.png in Resources */,
@@ -1743,6 +1791,7 @@
 				526A34DC1954024400D5FAB0 /* button_point.png in Resources */,
 				525AE02B195806DB005329A1 /* ic_email@2x.png in Resources */,
 				525AE03F19580810005329A1 /* ic_iphone@2x.png in Resources */,
+				52FBAFCD195BE7C90047FF7C /* icon_close@2x.png in Resources */,
 				525AE01419580489005329A1 /* ic_contact_off@2x.png in Resources */,
 				52FBAF3E195BC5F10047FF7C /* PFGalleryViewController_Wide.xib in Resources */,
 				EA024CFE195031220032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
@@ -1914,6 +1963,7 @@
 				523FD2B01959695100B965EF /* SDWebImagePrefetcher.m in Sources */,
 				52FBAFA1195BE0C20047FF7C /* MTMatrixInterpolation.c in Sources */,
 				520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */,
+				52FBAFD2195BE7C90047FF7C /* PFLoginViewController.m in Sources */,
 				368623B41953F590004636DF /* FMDatabaseAdditions.m in Sources */,
 				52FBAF39195BC5F10047FF7C /* PFDetailViewController.m in Sources */,
 				523FD2951959695100B965EF /* MWPhoto.m in Sources */,
