@@ -14,6 +14,8 @@
 @protocol DCManagerDelegate <NSObject>
 
 #pragma mark - Core Protocal Delegate
+- (void)DCManager:(id)sender getLinkResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getLinkErrorResponse:(NSString *)errorResponse;
 /*
  Protocal Delegate request app key from server
  */
@@ -79,6 +81,21 @@
  */
 - (void)DCManager:(id)sender commentObjIdResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender commentObjIdErrorResponse:(NSString *)errorResponse;
+
+#pragma mark - Product Folder Protocal Delegate
+- (void)DCManager:(id)sender getFolderListResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getFolderListErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getFolderByIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getFolderByIdErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getProductListByParentIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getProductListByParentIdErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getProductIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getProductIdErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender getDrinkListResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getDrinkListErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getDessertListResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getDessertListErrorResponse:(NSString *)errorResponse;
 
 #pragma mark - Stamp Protocal Delegate
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
@@ -191,12 +208,20 @@
  */
 - (void)commentObjId:(NSString *)obj_id content:(NSString *)content;
 
+//menu
+- (void)getFolderList:(NSString *)limit padding:(NSString *)padding;
+- (void)getFolderById:(NSString *)folder_id;
+- (void)getProductListByParentId:(NSString *)limit parent_id:(NSString *)parent_id;
+- (void)getProductId:(NSString *)product_id;
+- (void)getDrinkList;
+- (void)getDessertList;
 
+//reward
 - (void)getStampStyle;
 - (void)getStamp;
 - (void)getReward;
 
-
+- (void)getLink:(NSString *)link;
 
 
 

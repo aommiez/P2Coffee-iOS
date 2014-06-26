@@ -42,7 +42,7 @@ BOOL newMedia;
     self.tabBarViewController = [[PFTabBarViewController alloc] initWithBackgroundImage:nil viewControllers:self.update,self.menu,self.member,self.contact,nil];
     
     self.update.delegate = self;
-    //    self.menu.delegate = self;
+    self.menu.delegate = self;
     self.member.delegate = self;
     self.contact.delegate = self;
     

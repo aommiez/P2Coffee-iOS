@@ -187,6 +187,66 @@
     }];
 }
 
+#pragma mark - Product Folder
+- (void)getFolderList:(NSString *)limit padding:(NSString *)padding {
+    NSString *urlStr = [[NSString alloc] init];
+    if (![limit isEqualToString:@"NO"]) {
+        urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=0&limit=%@",API_URL,limit];
+    } else if (![padding isEqualToString:@"NO"]) {
+        urlStr = [[NSString alloc] initWithFormat:@"%@",padding];
+    } else {
+        urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=0",API_URL];
+    }
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getFolderListResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getFolderListErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)getFolderById:(NSString *)folder_id {
+    //NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product?folder_id=%@",API_URL,folder_id];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=%@",API_URL,folder_id];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getFolderByIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getFolderByIdErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getProductListByParentId:(NSString *)limit parent_id:(NSString *)parent_id {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product?folder_id=%@&limit=%@",API_URL,parent_id,limit];
+    //NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=%@&limit=%@",API_URL,parent_id,limit];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getProductListByParentIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getProductListByParentIdErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getProductId:(NSString *)product_id {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/%@",API_URL,product_id];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getProductIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getProductIdErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getDrinkList {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=38",API_URL];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getDrinkListResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getDrinkListErrorResponse:[error localizedDescription]];
+    }];
+}
+- (void)getDessertList {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=36",API_URL];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getDessertListResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getDessertListErrorResponse:[error localizedDescription]];
+    }];
+}
+
 #pragma mark - Stamp
 - (void)getStampStyle {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@stamp/style",API_URL];
@@ -216,7 +276,14 @@
 }
 
 
-
+- (void)getLink:(NSString *)link {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@",link];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getLinkResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getLinkErrorResponse:[error localizedDescription]];
+    }];
+}
 
 
 

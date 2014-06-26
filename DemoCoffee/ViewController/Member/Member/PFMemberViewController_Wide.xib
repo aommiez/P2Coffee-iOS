@@ -10,15 +10,45 @@
                 <outlet property="bg" destination="uKj-N4-eJX" id="0Qk-sd-a1A"/>
                 <outlet property="conditionnomember" destination="Zpr-So-2TS" id="vbj-id-Ohv"/>
                 <outlet property="conditionnomemberView" destination="vMD-yw-GVF" id="4aI-wf-6Sl"/>
+                <outlet property="light1" destination="kTn-aX-BpM" id="H6G-TX-YXX"/>
+                <outlet property="light10" destination="N4m-LN-m2B" id="osn-uN-pi0"/>
+                <outlet property="light2" destination="35B-pP-i4b" id="WfZ-mA-aKF"/>
+                <outlet property="light3" destination="d7Z-KB-GiT" id="qGh-tG-Sx2"/>
+                <outlet property="light4" destination="bT7-oX-uXL" id="aPV-hb-BCj"/>
+                <outlet property="light5" destination="zrQ-BC-RRK" id="5uz-Q1-4xJ"/>
+                <outlet property="light6" destination="6Vu-Mz-FD6" id="51w-v9-6OZ"/>
+                <outlet property="light7" destination="q4c-HA-zbL" id="N7d-bb-jFf"/>
+                <outlet property="light8" destination="GF1-jH-zfq" id="FJb-uA-doK"/>
+                <outlet property="light9" destination="Vw8-6O-mQQ" id="1Jd-PJ-gcn"/>
                 <outlet property="memberView" destination="AP4-XY-p7Q" id="Vja-Ed-Xlh"/>
                 <outlet property="navController" destination="Y17-aI-E6j" id="HvE-We-MFc"/>
                 <outlet property="navItem" destination="f2k-tP-DPo" id="XbC-a3-axk"/>
                 <outlet property="nomemberView" destination="XCy-1H-Nrx" id="coS-M2-uxJ"/>
+                <outlet property="num1" destination="KEp-DK-qxt" id="rqr-lD-smr"/>
+                <outlet property="num10" destination="LHX-PN-tST" id="dm2-fc-dro"/>
+                <outlet property="num2" destination="9JP-ft-sAi" id="p0d-Xx-fnd"/>
+                <outlet property="num3" destination="14y-KO-poq" id="LZk-6P-fOY"/>
+                <outlet property="num4" destination="FL6-Kv-JWI" id="86t-Oe-5pu"/>
+                <outlet property="num5" destination="pMm-k5-hU4" id="MhB-JJ-uvn"/>
+                <outlet property="num6" destination="oca-aS-JSg" id="N03-zy-f6P"/>
+                <outlet property="num7" destination="cV5-pr-KDo" id="DTq-aZ-hUa"/>
+                <outlet property="num8" destination="X9l-pe-Jtf" id="G36-v6-SOO"/>
+                <outlet property="num9" destination="7x3-AG-hKg" id="RjV-bG-QdY"/>
                 <outlet property="popupwaitView" destination="UGO-HB-jW5" id="8LJ-2d-Bzh"/>
                 <outlet property="postermember" destination="7VQ-kT-Qji" id="TgY-Hx-cMT"/>
                 <outlet property="posternomember" destination="1WZ-Ce-6Z4" id="wU3-9o-VPx"/>
                 <outlet property="showpoint" destination="yNN-IA-Pqv" id="CK8-SR-oJu"/>
                 <outlet property="signinButton" destination="QQR-H9-8Gm" id="nQh-qA-GLi"/>
+                <outlet property="stamp1" destination="Dfp-JU-lT0" id="5ss-In-CWJ"/>
+                <outlet property="stamp10" destination="I1V-Oq-e69" id="alB-Y6-WZn"/>
+                <outlet property="stamp2" destination="j4w-O5-mr6" id="jG7-N8-QjF"/>
+                <outlet property="stamp3" destination="nJa-rg-Ukk" id="j1t-b8-NuX"/>
+                <outlet property="stamp4" destination="hwH-7B-ToY" id="9Tb-pc-LP2"/>
+                <outlet property="stamp5" destination="VG6-ov-7u6" id="nWu-AZ-CaD"/>
+                <outlet property="stamp6" destination="g4R-Cc-ID5" id="7Vv-St-XKU"/>
+                <outlet property="stamp7" destination="UP8-y2-RMf" id="lLy-8W-EXm"/>
+                <outlet property="stamp8" destination="Vgf-zh-N3K" id="9O6-J5-Djn"/>
+                <outlet property="stamp9" destination="CTR-mx-ALX" id="w7y-vK-G36"/>
                 <outlet property="tableView" destination="4TX-4q-wwM" id="s6G-2P-elD"/>
                 <outlet property="view" destination="cxd-Y9-Hdb" id="dyw-AO-V9C"/>
                 <outlet property="waitView" destination="b3A-bA-hRB" id="IpS-ub-kdE"/>
@@ -48,7 +78,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="cxd-Y9-Hdb">
@@ -102,7 +132,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="404"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1WZ-Ce-6Z4">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpeg" id="1WZ-Ce-6Z4">
                     <rect key="frame" x="10" y="74" width="300" height="175"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -153,7 +183,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="460"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7VQ-kT-Qji">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="default.jpeg" id="7VQ-kT-Qji">
                     <rect key="frame" x="10" y="74" width="300" height="175"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
@@ -355,6 +385,7 @@
     </objects>
     <resources>
         <image name="button_point.png" width="51" height="51"/>
+        <image name="default.jpeg" width="622" height="415"/>
         <image name="glow.png" width="60" height="60"/>
     </resources>
 </document>

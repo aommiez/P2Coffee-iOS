@@ -90,6 +90,8 @@ BOOL refreshDataMember;
     
     //login
     
+    self.stampurl = [response objectForKey:@"stamp_icon"];
+    
     [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
                           completed:^(NSError *error, NSData *imgData) {
                               self.postermember.image = [UIImage imageWithData:imgData];
@@ -103,6 +105,9 @@ BOOL refreshDataMember;
                           }];
     self.bg.layer.masksToBounds = YES;
     self.bg.contentMode = UIViewContentModeScaleAspectFill;
+    
+    [self.Demoapi getStamp];
+    [self.Demoapi getReward];
     
     //no login
     /*
@@ -145,10 +150,6 @@ BOOL refreshDataMember;
     */
     //login
     
-    
-    [self.Demoapi getStamp];
-    [self.Demoapi getReward];
-    
 }
 
 - (void)DCManager:(id)sender getStampStyleErrorResponse:(NSString *)errorResponse {
@@ -160,6 +161,531 @@ BOOL refreshDataMember;
     NSLog(@"Member nomemberview getStamp %@",response);
     
     self.showpoint.text = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"point"]];
+    
+    //
+    //stamp
+    self.light1.hidden = YES;   self.light2.hidden = YES;
+    self.light3.hidden = YES;   self.light4.hidden = YES;
+    self.light5.hidden = YES;   self.light6.hidden = YES;
+    self.light7.hidden = YES;   self.light8.hidden = YES;
+    self.light9.hidden = YES;   self.light10.hidden = YES;
+    
+    self.num1.hidden = NO;      self.num2.hidden = NO;
+    self.num3.hidden = NO;      self.num4.hidden = NO;
+    self.num5.hidden = NO;      self.num6.hidden = NO;
+    self.num7.hidden = NO;      self.num8.hidden = NO;
+    self.num9.hidden = NO;      self.num10.hidden = NO;
+    
+    [UIView animateWithDuration:0.70f delay:0 options:UIViewAnimationOptionAutoreverse | UIViewAnimationOptionRepeat animations:^{
+        [self.light1 setAlpha:0.2]; [self.light1 setAlpha:1.5];
+        [self.light2 setAlpha:0.2]; [self.light2 setAlpha:1.5];
+        [self.light3 setAlpha:0.2]; [self.light3 setAlpha:1.5];
+        [self.light4 setAlpha:0.2]; [self.light4 setAlpha:1.5];
+        [self.light5 setAlpha:0.2]; [self.light5 setAlpha:1.5];
+        [self.light6 setAlpha:0.2]; [self.light6 setAlpha:1.5];
+        [self.light7 setAlpha:0.2]; [self.light7 setAlpha:1.5];
+        [self.light8 setAlpha:0.2]; [self.light8 setAlpha:1.5];
+        [self.light9 setAlpha:0.2]; [self.light9 setAlpha:1.5];
+        [self.light10 setAlpha:0.2]; [self.light10 setAlpha:1.5];
+    } completion:nil];
+    
+    //
+    
+    int pointValue = [self.showpoint.text intValue];
+    int count = pointValue % 10;
+    //if pointValue = ? --> point-count
+    int mod = pointValue - count;
+    
+    int num1 = mod+1;   int num2 = mod+2;   int num3 = mod+3;   int num4 = mod+4;   int num5 = mod+5;
+    int num6 = mod+6;   int num7 = mod+7;   int num8 = mod+8;   int num9 = mod+9;   int num10 = mod+10;
+    
+    self.num1.text = [NSString stringWithFormat:@"%d",num1];
+    self.num2.text = [NSString stringWithFormat:@"%d",num2];
+    self.num3.text = [NSString stringWithFormat:@"%d",num3];
+    self.num4.text = [NSString stringWithFormat:@"%d",num4];
+    self.num5.text = [NSString stringWithFormat:@"%d",num5];
+    self.num6.text = [NSString stringWithFormat:@"%d",num6];
+    self.num7.text = [NSString stringWithFormat:@"%d",num7];
+    self.num8.text = [NSString stringWithFormat:@"%d",num8];
+    self.num9.text = [NSString stringWithFormat:@"%d",num9];
+    self.num10.text = [NSString stringWithFormat:@"%d",num10];
+    
+    if (pointValue != 0) {
+        if (count == 1) {
+            
+            NSURL *url = [NSURL URLWithString:[response objectForKey:@"stamp_icon"]];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp3.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp4.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp5.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.light1.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count1 = [newest intValue];
+            if (count1 == 0) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 2) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp4.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp5.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count2 = [newest intValue];
+            if (count2 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count2 == 1) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 3) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp5.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.light1.hidden = NO;
+            self.light2.hidden = NO;    self.light3.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count3 = [newest intValue];
+            if (count3 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count3 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count3 == 2) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 4) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.num4.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            self.light3.hidden = NO;    self.light4.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count4 = [newest intValue];
+            if (count4 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count4 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count4 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count4 == 3) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 5) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.num4.hidden = YES;
+            self.num5.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            self.light3.hidden = NO;    self.light4.hidden = NO;
+            self.light5.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count5 = [newest intValue];
+            if (count5 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;
+            } else if (count5 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count5 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count5 == 3) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count5 == 4) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 6) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageWithData: data];
+            self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.num4.hidden = YES;
+            self.num5.hidden = YES;     self.num6.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            self.light3.hidden = NO;    self.light4.hidden = NO;
+            self.light5.hidden = NO;    self.light6.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count6 = [newest intValue];
+            if (count6 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+            } else if (count6 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;
+            } else if (count6 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count6 == 3) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count6 == 4) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count6 == 5) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 7) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageWithData: data];
+            self.stamp7.image = [UIImage imageWithData: data];
+            self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;   self.num2.hidden = YES;
+            self.num3.hidden = YES;   self.num4.hidden = YES;
+            self.num5.hidden = YES;   self.num6.hidden = YES;
+            self.num7.hidden = YES;   self.light1.hidden = NO;
+            
+            self.light2.hidden = NO;    self.light3.hidden = NO;
+            self.light4.hidden = NO;    self.light5.hidden = NO;
+            self.light6.hidden = NO;    self.light7.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count7 = [newest intValue];
+            if (count7 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;
+            } else if (count7 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+            } else if (count7 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;
+            } else if (count7 == 3) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count7 == 4) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count7 == 5) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count7 == 6) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 8) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageWithData: data];
+            self.stamp7.image = [UIImage imageWithData: data];
+            self.stamp8.image = [UIImage imageWithData: data];
+            self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.num4.hidden = YES;
+            self.num5.hidden = YES;     self.num6.hidden = YES;
+            self.num7.hidden = YES;     self.num8.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            self.light3.hidden = NO;    self.light4.hidden = NO;
+            self.light5.hidden = NO;    self.light6.hidden = NO;
+            self.light7.hidden = NO;    self.light8.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count8 = [newest intValue];
+            if (count8 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;    self.light8.hidden = YES;
+            } if (count8 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;
+            } else if (count8 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+            } else if (count8 == 3) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;
+            } else if (count8 == 4) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count8 == 5) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count8 == 6) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count8 == 7) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 9) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageWithData: data];
+            self.stamp7.image = [UIImage imageWithData: data];
+            self.stamp8.image = [UIImage imageWithData: data];
+            self.stamp9.image = [UIImage imageWithData: data];
+            self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+            
+            self.num1.hidden = YES;
+            self.num2.hidden = YES;
+            self.num3.hidden = YES;
+            self.num4.hidden = YES;
+            self.num5.hidden = YES;
+            self.num6.hidden = YES;
+            self.num7.hidden = YES;
+            self.num8.hidden = YES;
+            self.num9.hidden = YES;
+            
+            self.light1.hidden = NO;
+            self.light2.hidden = NO;
+            self.light3.hidden = NO;
+            self.light4.hidden = NO;
+            self.light5.hidden = NO;
+            self.light6.hidden = NO;
+            self.light7.hidden = NO;
+            self.light8.hidden = NO;
+            self.light9.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count9 = [newest intValue];
+            if (count9 == 0) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;    self.light8.hidden = YES;
+                self.light9.hidden = YES;
+            } else if (count9 == 1) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;    self.light8.hidden = YES;
+            } else if (count9 == 2) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+                self.light7.hidden = YES;
+            } else if (count9 == 3) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;    self.light6.hidden = YES;
+            } else if (count9 == 4) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+                self.light5.hidden = YES;
+            } else if (count9 == 5) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;    self.light4.hidden = YES;
+            } else if (count9 == 6) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+                self.light3.hidden = YES;
+            } else if (count9 == 7) {
+                self.light1.hidden = YES;    self.light2.hidden = YES;
+            } else if (count9 == 8) {
+                self.light1.hidden = YES;
+            }
+            
+        } else if (count == 0) {
+            
+            NSURL *url = [NSURL URLWithString:self.stampurl];
+            NSData *data = [NSData dataWithContentsOfURL : url];
+            
+            self.stamp1.image = [UIImage imageWithData: data];
+            self.stamp2.image = [UIImage imageWithData: data];
+            self.stamp3.image = [UIImage imageWithData: data];
+            self.stamp4.image = [UIImage imageWithData: data];
+            self.stamp5.image = [UIImage imageWithData: data];
+            self.stamp6.image = [UIImage imageWithData: data];
+            self.stamp7.image = [UIImage imageWithData: data];
+            self.stamp8.image = [UIImage imageWithData: data];
+            self.stamp9.image = [UIImage imageWithData: data];
+            self.stamp10.image = [UIImage imageWithData: data];
+            
+            self.num1.hidden = YES;     self.num2.hidden = YES;
+            self.num3.hidden = YES;     self.num4.hidden = YES;
+            self.num5.hidden = YES;     self.num6.hidden = YES;
+            self.num7.hidden = YES;     self.num8.hidden = YES;
+            self.num9.hidden = YES;     self.num10.hidden = YES;
+            
+            self.light1.hidden = NO;    self.light2.hidden = NO;
+            self.light3.hidden = NO;    self.light4.hidden = NO;
+            self.light5.hidden = NO;    self.light6.hidden = NO;
+            self.light7.hidden = NO;    self.light8.hidden = NO;
+            self.light9.hidden = NO;    self.light10.hidden = NO;
+            
+            NSString *newest = [response objectForKey:@"newest"];
+            int count10 = [newest intValue];
+            if (count10 == 0) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light4.hidden = YES;    _light5.hidden = YES;
+                _light6.hidden = YES;    _light7.hidden = YES;    _light8.hidden = YES;    _light9.hidden = YES;    _light10.hidden = YES;
+            } else if (count10 == 1) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light4.hidden = YES;    _light5.hidden = YES;
+                _light6.hidden = YES;    _light7.hidden = YES;    _light8.hidden = YES;    _light9.hidden = YES;
+            } else if (count10 == 2) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light4.hidden = YES;    _light5.hidden = YES;
+                _light6.hidden = YES;    _light7.hidden = YES;    _light8.hidden = YES;
+            } else if (count10 == 3) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light4.hidden = YES;    _light5.hidden = YES;
+                _light6.hidden = YES;    _light7.hidden = YES;
+            } else if (count10 == 4) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light4.hidden = YES;    _light5.hidden = YES;
+                _light6.hidden = YES;
+            } else if (count10 == 5) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light3.hidden = YES;    _light5.hidden = YES;
+            } else if (count10 == 6) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;    _light3.hidden = YES;
+            } else if (count10 == 7) {
+                _light1.hidden = YES;    _light2.hidden = YES;    _light3.hidden = YES;
+            } else if (count10 == 8) {
+                _light1.hidden = YES;    _light2.hidden = YES;
+            } else if (count10 == 9) {
+                _light1.hidden = YES;
+            }
+        }
+        
+    } else {
+        self.stamp1.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp2.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp3.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp4.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp5.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp6.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp7.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp8.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp9.image = [UIImage imageNamed:@"button_point.png"];
+        self.stamp10.image = [UIImage imageNamed:@"button_point.png"];
+        
+        self.num1.hidden = NO;      self.num2.hidden = NO;
+        self.num3.hidden = NO;      self.num4.hidden = NO;
+        self.num5.hidden = NO;      self.num6.hidden = NO;
+        self.num7.hidden = NO;      self.num8.hidden = NO;
+        self.num9.hidden = NO;      self.num10.hidden = NO;
+        
+        self.light1.hidden = YES;   self.light2.hidden = YES;
+        self.light3.hidden = YES;   self.light4.hidden = YES;
+        self.light5.hidden = YES;   self.light6.hidden = YES;
+        self.light7.hidden = YES;   self.light8.hidden = YES;
+        self.light9.hidden = YES;   self.light10.hidden = YES;
+    }
+
+    //
     
 }
 
