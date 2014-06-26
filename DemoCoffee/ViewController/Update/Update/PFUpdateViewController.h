@@ -12,6 +12,7 @@
 
 #import "PFUpdateCell.h"
 
+#import "PFUpdateDetailViewController.h"
 #import "PFAccountViewController.h"
 #import "PFNotificationViewController.h"
 
