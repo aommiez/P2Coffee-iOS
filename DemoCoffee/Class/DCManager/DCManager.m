@@ -328,7 +328,15 @@
     }];
 }
 
-
+- (void)userPictureUpload:(NSString *)picture_base64 {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@user/update/%@",API_URL,[self getUserId]];
+    NSDictionary *parameters = @{@"picture": picture_base64};
+    [self.manager POST:self.urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self userPictureUploadResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self userPictureUploadErrorResponse:[error localizedDescription]];
+    }];
+}
 
 
 

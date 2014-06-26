@@ -116,6 +116,8 @@
 - (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender registerWithUsernameResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender userPictureUploadResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender userPictureUploadErrorResponse:(NSString *)errorResponse;
 
 @end
 
@@ -240,7 +242,7 @@
 #pragma mark - user
 - (void)getUserSetting;
 - (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture;
-
+- (void)userPictureUpload:(NSString *)picture_base64;
 
 
 
