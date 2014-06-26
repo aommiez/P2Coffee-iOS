@@ -99,7 +99,7 @@
 - (void)DCManager:(id)sender getDrinkListByAppKeyResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getDrinkListByAppKeyErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getDessertListByAppKeyResponse:(NSDictionary *)response;
-- (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse
+- (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse;
 
 #pragma mark - Stamp Protocal Delegate
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
@@ -110,6 +110,12 @@
 - (void)DCManager:(id)sender getRewardErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender addPointResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender addPointErrorResponse:(NSString *)errorResponse;
+
+#pragma mark - user
+- (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender registerWithUsernameResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse;
 
 @end
 
@@ -231,7 +237,9 @@
 - (void)addPoint:(NSString *)point password:(NSString *)password;
 - (void)getLink:(NSString *)link;
 
-
+#pragma mark - user
+- (void)getUserSetting;
+- (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture;
 
 
 

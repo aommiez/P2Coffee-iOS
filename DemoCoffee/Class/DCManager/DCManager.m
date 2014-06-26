@@ -308,10 +308,25 @@
         [self.delegate DCManager:self getLinkErrorResponse:[error localizedDescription]];
     }];
 }
+#pragma mark - user 
+- (void)getUserSetting {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/%@",API_URL,[self getUserId]];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserSettingResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserSettingErrorResponse:[error localizedDescription]];
+    }];
+}
 
-
-
-
+- (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/register",API_URL];
+    NSDictionary *parameters = @{@"username":username , @"password":password , @"email":email ,@"birth_date":birth_date , @"gender":gender  , @"picture":picture};
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self registerWithUsernameResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self registerWithUsernameErrorResponse:[error localizedDescription]];
+    }];
+}
 
 
 
