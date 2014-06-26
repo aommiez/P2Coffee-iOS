@@ -6,16 +6,28 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFAccountViewController">
             <connections>
+                <outlet property="birthday" destination="Nek-Fq-A8R" id="tSm-Lx-dRC"/>
                 <outlet property="birthdayView" destination="NlJ-zH-znD" id="4qz-v3-Pez"/>
+                <outlet property="display_name" destination="zPu-ox-OuM" id="sIL-zg-Nn7"/>
+                <outlet property="email" destination="67F-Qv-cGO" id="3xN-ag-ndc"/>
                 <outlet property="emailView" destination="5z4-s0-SzA" id="U5M-3G-DN0"/>
+                <outlet property="facebook" destination="fo2-cg-7pW" id="08M-xc-woW"/>
                 <outlet property="facebookView" destination="psU-Hh-UYI" id="2m7-bm-X2h"/>
                 <outlet property="formView" destination="NY6-lQ-kH6" id="HY5-Px-JF2"/>
+                <outlet property="gender" destination="VSM-kL-jtO" id="ReC-IP-IrR"/>
                 <outlet property="genderView" destination="cbM-Av-6yn" id="iw4-78-qhX"/>
                 <outlet property="logoutButton" destination="e5g-6S-Zf3" id="AT8-qx-ua0"/>
                 <outlet property="phoneView" destination="t9O-aT-gbL" id="HgQ-xP-lJr"/>
+                <outlet property="popupwaitView" destination="3a2-rP-Fz6" id="WnI-Lu-Ujo"/>
                 <outlet property="scrollView" destination="HBn-BX-IS6" id="XkT-Ix-XBQ"/>
                 <outlet property="settingView" destination="lSe-61-VQ8" id="7kh-XV-Suy"/>
+                <outlet property="switchMessage" destination="9Wt-Eh-Ehw" id="3Rx-Uy-pQQ"/>
+                <outlet property="switchNews" destination="7g0-iu-9hc" id="e0s-GO-MPJ"/>
+                <outlet property="tel" destination="2BE-5s-vJy" id="TZe-vG-qai"/>
+                <outlet property="thumUser" destination="yYp-rY-6dL" id="BW5-fu-Vfl"/>
                 <outlet property="view" destination="Qe7-a1-5rJ" id="Unv-Om-JSj"/>
+                <outlet property="waitView" destination="9ot-tr-S7a" id="UCK-YR-dbY"/>
+                <outlet property="website" destination="ihH-Ik-H54" id="Dhe-c8-ZtQ"/>
                 <outlet property="websiteView" destination="PZL-hd-tCl" id="mLY-Bh-U5w"/>
             </connections>
         </placeholder>
@@ -64,10 +76,21 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="630"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="default.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-rY-6dL" customClass="AsyncImageView">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yYp-rY-6dL" customClass="AsyncImageView">
                     <rect key="frame" x="10" y="10" width="130" height="130"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-x2-1Af">
+                    <rect key="frame" x="10" y="10" width="130" height="130"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="fullimgTapped:" destination="-1" eventType="touchUpInside" id="Z2Q-r1-J3S"/>
+                    </connections>
+                </button>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e5g-6S-Zf3">
                     <rect key="frame" x="9" y="440" width="280" height="44"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -86,14 +109,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ilV-x2-1Af">
-                    <rect key="frame" x="10" y="10" width="130" height="130"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                </button>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lSe-61-VQ8">
                     <rect key="frame" x="8" y="522" width="280" height="97"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -107,6 +122,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Wt-Eh-Ehw">
                             <rect key="frame" x="219" y="56" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="switchMessageonoff:" destination="-1" eventType="valueChanged" id="K5G-rk-tBi"/>
+                            </connections>
                         </switch>
                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Message from shop" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KOl-SN-KFM">
                             <rect key="frame" x="10" y="61" width="173" height="21"/>
@@ -117,6 +135,9 @@
                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7g0-iu-9hc">
                             <rect key="frame" x="219" y="10" width="51" height="31"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <connections>
+                                <action selector="switchNewsonoff:" destination="-1" eventType="valueChanged" id="kbW-UP-jhV"/>
+                            </connections>
                         </switch>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -242,7 +263,6 @@
         </view>
     </objects>
     <resources>
-        <image name="default.jpeg" width="622" height="415"/>
         <image name="ic_birthday.png" width="25" height="25"/>
         <image name="ic_fb.png" width="25" height="25"/>
         <image name="ic_gender.png" width="25" height="25"/>

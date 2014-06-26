@@ -28,6 +28,12 @@
 {
     [super viewDidLoad];
     
+    [self.view addSubview:self.waitView];
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
+    
     self.navigationItem.title = @"Profile Setting";
     
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Edit" style:UIBarButtonItemStyleDone target:self action:@selector(editProfileTapped)];
@@ -74,6 +80,7 @@
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
     [self.Demoapi me];
+    [self.Demoapi getUserSetting];
 }
 
 - (void)didReceiveMemoryWarning
@@ -86,14 +93,81 @@
 }
 
 - (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
-    //self.obj = response;
+    self.obj = response;
     NSLog(@"Me %@",response);
     
-    //[self.waitView removeFromSuperview];
+    [self.waitView removeFromSuperview];
+    
+    self.display_name.text = [response objectForKey:@"display_name"];
+    
+    NSString *picStr = [[response objectForKey:@"picture"] objectForKey:@"link"];
+    self.thumUser.layer.masksToBounds = YES;
+    self.thumUser.contentMode = UIViewContentModeScaleAspectFill;
+    self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
+    
+    self.facebook.text = [response objectForKey:@"display_name"];
+    self.email.text = [response objectForKey:@"email"];
+    self.website.text = [response objectForKey:@"website"];
+    self.tel.text = [response objectForKey:@"mobile_phone"];
+    self.gender.text = [response objectForKey:@"gender"];
+    self.birthday.text = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
     
 }
 
 - (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
+    NSLog(@"getUserSetting %@",response);
+    
+    if ([[response objectForKey:@"notify_news"] intValue] == 1) {
+        self.switchNews.on = YES;
+    } else {
+        self.switchNews.on = NO;
+    }
+    
+    if ([[response objectForKey:@"notify_message"] intValue] == 1) {
+        self.switchMessage.on = YES;
+    } else {
+        self.switchMessage.on = NO;
+    }
+    
+}
+
+- (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (IBAction)switchNewsonoff:(id)sender{
+    
+    if(self.switchNews.on) {
+        NSLog(@"NewsOn");
+        [self.Demoapi settingNews:@"1"];
+    } else {
+        NSLog(@"NewsOff");
+        [self.Demoapi settingNews:@"0"];
+    }
+    
+}
+
+- (IBAction)switchMessageonoff:(id)sender{
+    
+    if(self.switchMessage.on) {
+        NSLog(@"MessageOn");
+        [self.Demoapi settingMessage:@"1"];
+    } else {
+        NSLog(@"MessageOff");
+        [self.Demoapi settingMessage:@"0"];
+    }
+    
+}
+
+- (void)DCManager:(id)sender settingNewsResponse:(NSDictionary *)response {
+    NSLog(@"%@",response);
+}
+
+- (void)DCManager:(id)sender settingNewsErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
 
@@ -107,15 +181,27 @@
     }
     
     editView.delegate = self;
+    editView.objAccount = self.obj;
     [self.navigationController pushViewController:editView animated:YES];
 }
 
+- (IBAction)fullimgTapped:(id)sender {
+    
+    NSString *picStr = [[NSString alloc] initWithString:[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
+    [self.delegate PFAccountViewController:self viewPicture:picStr];
+    
+}
+
 - (IBAction)logoutTapped:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Logout coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    
+    [FBSession.activeSession closeAndClearTokenInformation];
+    [self.Demoapi logOut];
+    [self.navigationController popViewControllerAnimated:YES];
+    
+}
+
+- (void) PFEditAccountViewControllerBack {
+    [self viewDidLoad];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

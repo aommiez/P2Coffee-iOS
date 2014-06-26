@@ -138,7 +138,20 @@ BOOL refreshDataNews;
 }
 
 - (void)PFAccountViewController:(id)sender{
-    NSLog(@"account");
+    
+    [self.delegate HideTabbar];
+    
+    PFAccountViewController *account = [[PFAccountViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        account = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController_Wide" bundle:nil];
+    } else {
+        account = [[PFAccountViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
+    }
+    
+    account.delegate = self;
+    [self.navController pushViewController:account animated:YES];
+    
 }
 
 - (void)DCManager:(id)sender getNewsByAppKeyResponse:(NSDictionary *)response {

@@ -279,7 +279,7 @@
 }
 
 - (void)getStamp {
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/stamp/%@",API_URL,@"88"];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/stamp/%@",API_URL,[self getUserId]];
     [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self.delegate DCManager:self getStampResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -343,6 +343,30 @@
     }];
 }
 
+- (void)logOut {
+    [self.userDefaults removeObjectForKey:@"access_token"];
+    [self.userDefaults removeObjectForKey:@"user_id"];
+    self.userDefaults = nil;
+}
 
+- (void)settingNews:(NSString *)status {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/update/%@?access_token=%@",API_URL,[self getUserId],[self getAccessToken]];
+    NSDictionary *parameters = @{@"notify_news":status };
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self settingNewsResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self settingNewsErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)settingMessage:(NSString *)status {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/update/%@?access_token=%@",API_URL,[self getUserId],[self getAccessToken]];
+    NSDictionary *parameters = @{@"notify_message":status };
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self settingNewsResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self settingNewsErrorResponse:[error localizedDescription]];
+    }];
+}
 
 @end

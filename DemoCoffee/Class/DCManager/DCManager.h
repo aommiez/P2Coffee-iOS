@@ -119,6 +119,11 @@
 - (void)DCManager:(id)sender userPictureUploadResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender userPictureUploadErrorResponse:(NSString *)errorResponse;
 
+- (void)DCManager:(id)sender settingNewsResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender settingNewsErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender settingMessageResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender settingMessageErrorResponse:(NSString *)errorResponse;
+
 @end
 
 @interface DCManager : NSObject
@@ -242,10 +247,12 @@
 
 #pragma mark - user
 - (void)getUserSetting;
+- (void)settingNews:(NSString *)status;
+- (void)settingMessage:(NSString *)status;
 - (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture;
 - (void)userPictureUpload:(NSString *)picture_base64;
 
-
+- (void)logOut;
 
 
 
