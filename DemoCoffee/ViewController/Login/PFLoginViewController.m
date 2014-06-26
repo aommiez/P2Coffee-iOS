@@ -298,8 +298,8 @@ NSString *password;
         [self.Demoapi registerWithUsername:self.username.text password:self.passwordSignUp.text email:self.emailSignUp.text birth_date:self.dateOfBirthSignUp.text gender:self.gender.text picture:@""];
     }
 }
-#pragma mark - Satit Api Delegate
-- (void)PFMingMitrSDK:(id)sender LoginWithUsernameResponse:(NSDictionary *)response {
+#pragma mark - Demo Api Delegate
+- (void)DCManager:(id)sender loginWithPasswordResponse:(NSDictionary *)response {
     NSLog(@"%@",response);
     
     if ([[[response objectForKey:@"error"] objectForKey:@"code"] intValue] == 401 ) {
@@ -332,14 +332,14 @@ NSString *password;
         }
     }
 }
-- (void)PFMingMitrSDK:(id)sender LoginWithUsernameErrorResponse:(NSString *)errorResponse {
+- (void)DCManager:(id)sender LoginWithPasswordErrorResponse:(NSString *)errorResponse {
     [[[UIAlertView alloc] initWithTitle:@"Login failed"
                                 message:errorResponse
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
-- (void)PFMingMitrSDK:(id)sender registerWithUsernameResponse:(NSDictionary *)response {
+- (void)DCManager:(id)sender registerWithUsernameResponse:(NSDictionary *)response {
     NSLog(@"%@",response);
     
     if ([response objectForKey:@"error"] != nil ) {
@@ -356,14 +356,14 @@ NSString *password;
         [self.Demoapi loginWithPassword:[response objectForKey:@"username"] password:password];
     }
 }
-- (void)PFMingMitrSDK:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse {
+- (void)DCManager:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse {
     [[[UIAlertView alloc] initWithTitle:@"Signup failed"
                                 message:errorResponse
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
 }
-- (void)PFMingMitrSDK:(id)sender LoginWithFacebookResponse:(NSDictionary *)response {
+- (void)DCManager:(id)sender loginWithFacebookTokenResponse:(NSDictionary *)response {
     NSLog(@"%@",response);
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -387,7 +387,7 @@ NSString *password;
         
     }
 }
-- (void)PFMingMitrSDK:(id)sender LoginWithFacebookErrorResponse:(NSString *)errorResponse {
+- (void)DCManager:(id)sender LoginWithFacebookTokenErrorResponse:(NSString *)errorResponse {
     [[[UIAlertView alloc] initWithTitle:@"Login failed"
                                 message:errorResponse
                                delegate:nil
@@ -403,7 +403,7 @@ NSString *password;
     NSString *fbAccessToken = [FBSession activeSession].accessTokenData.accessToken;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    NSLog(@"%@",[defaults objectForKey:@"deviceToken"]);
+    NSLog(@"deviceToken %@",[defaults objectForKey:@"deviceToken"]);
     NSString *devicetoken = [NSString stringWithFormat:@"%@",[defaults objectForKey:@"deviceToken"]];
     
     if ([devicetoken isEqualToString:@""]) {

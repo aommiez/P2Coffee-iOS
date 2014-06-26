@@ -10,6 +10,7 @@
                 <outlet property="loadLabel" destination="Z5X-o4-zUx" id="Oa3-FB-b2R"/>
                 <outlet property="navController" destination="Ywu-n4-oTd" id="MAH-V3-lFs"/>
                 <outlet property="navItem" destination="a0Z-YX-sjY" id="gxq-rM-dyT"/>
+                <outlet property="pagecontrollerView" destination="XPf-Vk-6u4" id="aNF-lf-aVi"/>
                 <outlet property="popupwaitView" destination="kMe-nX-4C9" id="IOU-9F-fBC"/>
                 <outlet property="tableView" destination="CfT-8h-Ood" id="Jyg-MA-b2J"/>
                 <outlet property="view" destination="JXM-Yd-OPI" id="LWQ-4D-BMa"/>
@@ -92,5 +93,11 @@
                 </viewController>
             </viewControllers>
         </navigationController>
+        <view contentMode="scaleToFill" id="XPf-Vk-6u4">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+        </view>
     </objects>
 </document>

@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DCManager.h"
+
 #import "PFEditAccountViewController.h"
 
 @protocol PFAccountViewControllerDelegate <NSObject>
@@ -18,6 +20,7 @@
 
 @interface PFAccountViewController : UIViewController
 
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFAccountViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *formView;

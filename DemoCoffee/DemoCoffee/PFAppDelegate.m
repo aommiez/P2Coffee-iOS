@@ -87,6 +87,7 @@ BOOL newMedia;
     [self.tabBarViewController setSelectedIndex:2];
     [self.tabBarViewController setSelectedIndex:1];
     [self.tabBarViewController setSelectedIndex:0];
+    
     [self.window setRootViewController:self.tabBarViewController];
     [self.window makeKeyAndVisible];
     return YES;

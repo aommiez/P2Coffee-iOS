@@ -70,6 +70,10 @@
     CALayer *settingView = [self.settingView layer];
     [settingView setMasksToBounds:YES];
     [settingView setCornerRadius:5.0f];
+    
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    [self.Demoapi me];
 }
 
 - (void)didReceiveMemoryWarning
@@ -79,6 +83,18 @@
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
+    //self.obj = response;
+    NSLog(@"Me %@",response);
+    
+    //[self.waitView removeFromSuperview];
+    
+}
+
+- (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 - (void)editProfileTapped {
