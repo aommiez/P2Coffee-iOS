@@ -6,10 +6,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFUpdateViewController">
             <connections>
+                <outlet property="act" destination="Qkv-Xn-E6W" id="SKp-tk-ijZ"/>
+                <outlet property="loadLabel" destination="Z5X-o4-zUx" id="Oa3-FB-b2R"/>
                 <outlet property="navController" destination="Ywu-n4-oTd" id="MAH-V3-lFs"/>
                 <outlet property="navItem" destination="a0Z-YX-sjY" id="gxq-rM-dyT"/>
+                <outlet property="popupwaitView" destination="kMe-nX-4C9" id="IOU-9F-fBC"/>
                 <outlet property="tableView" destination="CfT-8h-Ood" id="Jyg-MA-b2J"/>
                 <outlet property="view" destination="JXM-Yd-OPI" id="LWQ-4D-BMa"/>
+                <outlet property="waitView" destination="0F9-vJ-EQR" id="iPP-lH-5U4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -36,12 +40,25 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="JXM-Yd-OPI">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5X-o4-zUx">
+                    <rect key="frame" x="57" y="91" width="233" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <activityIndicatorView opaque="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Qkv-Xn-E6W">
+                    <rect key="frame" x="29" y="92" width="20" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </activityIndicatorView>
+            </subviews>
             <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -66,7 +83,7 @@
                             <outlet property="delegate" destination="-1" id="gqy-1D-Rvj"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="a0Z-YX-sjY"/>
+                    <navigationItem key="navigationItem" title="Update" id="a0Z-YX-sjY"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

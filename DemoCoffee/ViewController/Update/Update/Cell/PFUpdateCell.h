@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface PFUpdateCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UIView *detailNewsView;
+@property (weak, nonatomic) IBOutlet UILabel *titleNews;
+@property (weak, nonatomic) IBOutlet UILabel *detailNews;
+
+@property (weak, nonatomic) IBOutlet AsyncImageView *thumbnails;
 
 @end

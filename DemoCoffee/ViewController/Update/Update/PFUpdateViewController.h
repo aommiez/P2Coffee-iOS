@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+#import "DCManager.h"
+
 #import "PFUpdateCell.h"
 
 #import "PFAccountViewController.h"
@@ -15,6 +17,7 @@
 
 @protocol PFUpdateViewControllerDelegate <NSObject>
 
+- (void)PFImageViewController:(id)sender viewPicture:(NSString *)link;
 - (void)HideTabbar;
 - (void)ShowTabbar;
 
@@ -23,9 +26,21 @@
 @interface PFUpdateViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
+@property (retain, nonatomic) IBOutlet UIView *waitView;
+@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSDictionary *obj;
+
+@property (retain, nonatomic) NSString *paging;
+
+@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *act;
+@property (retain, nonatomic) IBOutlet UILabel *loadLabel;
 
 @end
