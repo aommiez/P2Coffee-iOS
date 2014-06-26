@@ -208,7 +208,7 @@ BOOL newMediaDetail;
                      }];
     [self.textComment resignFirstResponder];
     
-//    if ([[self.mingmitrSDK getAuth] isEqualToString:@"Guest Login"] || [[self.mingmitrSDK getAuth] isEqualToString:@"NO"]){
+//    if ([[self.Demoapi getAuth] isEqualToString:@"Guest Login"] || [[self.Demoapi getAuth] isEqualToString:@"NO"]){
 //        
 //        self.loginView = [PFLoginViewController alloc];
 //        [self.view addSubview:self.loginView.view];
@@ -222,6 +222,8 @@ BOOL newMediaDetail;
 //            
 //        }
 //    }
+    self.loginView = [PFLoginViewController alloc];
+    [self.view addSubview:self.loginView.view];
     
 }
 //

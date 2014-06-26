@@ -10,7 +10,7 @@
 #import "UILabel+UILabelDynamicHeight.h"
 #import "AsyncImageView.h"
 #import "PFUpdateCommentCell.h"
-//#import "PFLoginViewController.h"
+#import "PFLoginViewController.h"
 #import <Social/Social.h>
 
 #import "DCManager.h"
@@ -30,7 +30,7 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *textCommentView;
 
-//@property (retain, nonatomic) PFLoginViewController *loginView;
+@property (retain, nonatomic) PFLoginViewController *loginView;
 
 @property (weak, nonatomic) IBOutlet UILabel *titlenews;
 @property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *detailnews;

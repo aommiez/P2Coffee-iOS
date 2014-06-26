@@ -197,7 +197,7 @@ NSString *password;
 - (IBAction)signinTapped:(id)sender {
     
     [self hideKeyboard];
-    [self.mingmitrSDK LoginWithUsername:self.emailSignIn.text password:self.passwordSignIn.text];
+    [self.Demoapi loginWithPassword:self.emailSignIn.text password:self.passwordSignIn.text];
     
 }
 - (IBAction)dateBTapped:(id)sender {
@@ -295,7 +295,7 @@ NSString *password;
         [message show];
         return;
     } else {
-        [self.Demoapi registerWithUsername:self.username.text password:self.passwordSignUp.text email:self.emailSignUp.text gender:self.gender.text birth_date:self.dateOfBirthSignUp.text];
+        [self.Demoapi registerWithUsername:self.username.text password:self.passwordSignUp.text email:self.emailSignUp.text birth_date:self.dateOfBirthSignUp.text gender:self.gender.text picture:@""];
     }
 }
 #pragma mark - Satit Api Delegate
