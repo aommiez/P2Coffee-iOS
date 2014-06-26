@@ -198,11 +198,19 @@ BOOL refreshDataNews;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Update detail coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    [self.delegate HideTabbar];
+    
+    PFUpdateDetailViewController *mmdetail = [[PFUpdateDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN){
+        mmdetail = [[PFUpdateDetailViewController alloc] initWithNibName:@"PFUpdateDetailViewController_Wide" bundle:nil];
+    } else {
+        mmdetail = [[PFUpdateDetailViewController alloc] initWithNibName:@"PFUpdateDetailViewController" bundle:nil];
+    }
+    
+    mmdetail.obj = [self.arrObj objectAtIndex:indexPath.row];
+    mmdetail.delegate = self;
+    [self.navController pushViewController:mmdetail animated:YES];
 }
 
 #pragma mark -
