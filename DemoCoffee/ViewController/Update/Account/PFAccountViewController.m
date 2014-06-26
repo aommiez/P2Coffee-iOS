@@ -79,8 +79,12 @@
     
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
+    
+    self.obj = [[NSDictionary alloc] init];
+    //self.objUsersetting = [[NSDictionary alloc] init];
+    
     [self.Demoapi me];
-    [self.Demoapi getUserSetting];
+//    [self.Demoapi getUserSetting];
 }
 
 - (void)didReceiveMemoryWarning
@@ -105,12 +109,7 @@
     self.thumUser.contentMode = UIViewContentModeScaleAspectFill;
     self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
     
-    self.facebook.text = [response objectForKey:@"display_name"];
-    self.email.text = [response objectForKey:@"email"];
-    self.website.text = [response objectForKey:@"website"];
-    self.tel.text = [response objectForKey:@"mobile_phone"];
-    self.gender.text = [response objectForKey:@"gender"];
-    self.birthday.text = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    [self.Demoapi getUserSetting];
     
 }
 
@@ -119,7 +118,41 @@
 }
 
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
+    self.objUsersetting = response;
     NSLog(@"getUserSetting %@",response);
+    
+    if ([[response objectForKey:@"show_facebook"] intValue] == 1) {
+        self.facebook.text = [self.obj objectForKey:@"display_name"];
+    } else {
+        self.facebook.text = @"";
+    }
+    if ([[response objectForKey:@"show_email"] intValue] == 1) {
+        self.email.text = [self.obj objectForKey:@"email"];
+    } else {
+        self.email.text = @"";
+    }
+    if ([[response objectForKey:@"show_website"] intValue] == 1) {
+        self.website.text = [self.obj objectForKey:@"website"];
+    } else {
+        self.website.text = @"";
+    }
+    if ([[response objectForKey:@"show_mobile"] intValue] == 1) {
+        self.tel.text = [self.obj objectForKey:@"mobile_phone"];
+    } else {
+        self.tel.text = @"";
+    }
+    if ([[response objectForKey:@"show_gender"] intValue] == 1) {
+        self.gender.text = [self.obj objectForKey:@"gender"];
+    } else {
+        self.gender.text = @"";
+    }
+    if ([[response objectForKey:@"show_birth_date"] intValue] == 1) {
+        self.birthday.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+    } else {
+        self.birthday.text = @"";
+    }
+    
+    //switch
     
     if ([[response objectForKey:@"notify_news"] intValue] == 1) {
         self.switchNews.on = YES;
@@ -182,6 +215,7 @@
     
     editView.delegate = self;
     editView.objAccount = self.obj;
+    editView.objUsersetting = self.objUsersetting;
     [self.navigationController pushViewController:editView animated:YES];
 }
 

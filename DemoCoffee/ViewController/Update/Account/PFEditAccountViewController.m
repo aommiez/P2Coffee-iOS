@@ -41,6 +41,9 @@
     [saveButton setMasksToBounds:YES];
     [saveButton setCornerRadius:5.0f];
     
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    
     self.display_name.text = [self.objAccount objectForKey:@"display_name"];
     
     NSString *picStr = [[self.objAccount objectForKey:@"picture"] objectForKey:@"link"];
@@ -54,6 +57,49 @@
     self.tel.text = [self.objAccount objectForKey:@"mobile_phone"];
     self.gender.text = [self.objAccount objectForKey:@"gender"];
     self.birthday.text = [[self.objAccount objectForKey:@"birth_date"] objectForKey:@"date"];
+    
+    if ([[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 1) {
+        [self.facebook_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.facebook_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.facebook_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.facebook_bt setTintColor:RGB(167, 169, 172)];
+    }
+    if ([[self.objUsersetting objectForKey:@"show_email"] intValue] == 1) {
+        [self.email_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.email_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.email_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.email_bt setTintColor:RGB(167, 169, 172)];
+    }
+    if ([[self.objUsersetting objectForKey:@"show_website"] intValue] == 1) {
+        [self.website_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.website_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.website_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.website_bt setTintColor:RGB(167, 169, 172)];
+    }
+    if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+        [self.tel_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.tel_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.tel_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.tel_bt setTintColor:RGB(167, 169, 172)];
+    }
+    if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
+        [self.gender_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.gender_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.gender_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.gender_bt setTintColor:RGB(167, 169, 172)];
+    }
+    if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+        [self.birthday_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.birthday_bt setTintColor:RGB(0, 174, 239)];
+    } else {
+        [self.birthday_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.birthday_bt setTintColor:RGB(167, 169, 172)];
+    }
     
     CALayer *facebook_bt = [self.facebook_bt layer];
     [facebook_bt setMasksToBounds:YES];
@@ -78,6 +124,7 @@
     CALayer *birthday_bt = [self.birthday_bt layer];
     [birthday_bt setMasksToBounds:YES];
     [birthday_bt setCornerRadius:5.0f];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -107,6 +154,66 @@
 - (IBAction)bgTapped:(id)sender {
     [self.blurView removeFromSuperview];
     [self.changepasswordView removeFromSuperview];
+}
+
+- (IBAction)facebookTapped:(id)sender {
+    if ([self.facebook_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.facebook_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.facebook_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.facebook_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.facebook_bt setTintColor:RGB(0, 174, 239)];
+    }
+}
+
+- (IBAction)emailTapped:(id)sender {
+    if ([self.email_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.email_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.email_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.email_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.email_bt setTintColor:RGB(0, 174, 239)];
+    }
+}
+
+- (IBAction)websiteTapped:(id)sender {
+    if ([self.website_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.website_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.website_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.website_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.website_bt setTintColor:RGB(0, 174, 239)];
+    }
+}
+
+- (IBAction)telTapped:(id)sender {
+    if ([self.tel_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.tel_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.tel_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.tel_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.tel_bt setTintColor:RGB(0, 174, 239)];
+    }
+}
+
+- (IBAction)genderTapped:(id)sender {
+    if ([self.gender_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.gender_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.gender_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.gender_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.gender_bt setTintColor:RGB(0, 174, 239)];
+    }
+}
+
+- (IBAction)birthdayTapped:(id)sender {
+    if ([self.birthday_bt.titleLabel.text isEqualToString:@"Show"]) {
+        [self.birthday_bt setTitle:@"Hide" forState:UIControlStateNormal];
+        [self.birthday_bt setTintColor:RGB(167, 169, 172)];
+    } else {
+        [self.birthday_bt setTitle:@"Show" forState:UIControlStateNormal];
+        [self.birthday_bt setTintColor:RGB(0, 174, 239)];
+    }
 }
 
 - (IBAction)saveTapped:(id)sender {

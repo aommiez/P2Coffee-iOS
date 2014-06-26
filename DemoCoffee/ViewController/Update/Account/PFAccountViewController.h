@@ -28,6 +28,7 @@
 @property (strong, nonatomic) IBOutlet UIView *formView;
 
 @property (strong, nonatomic) NSDictionary *obj;
+@property (strong, nonatomic) NSDictionary *objUsersetting;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;

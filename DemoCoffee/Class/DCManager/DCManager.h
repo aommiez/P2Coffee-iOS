@@ -124,6 +124,9 @@
 - (void)DCManager:(id)sender settingMessageResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender settingMessageErrorResponse:(NSString *)errorResponse;
 
+- (void)PESatitApiManager:(id)sender settingUserResponse:(NSDictionary *)response;
+- (void)PESatitApiManager:(id)sender settingUserErrorResponse:(NSString *)errorResponse;
+
 @end
 
 @interface DCManager : NSObject
@@ -251,6 +254,8 @@
 - (void)settingMessage:(NSString *)status;
 - (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture;
 - (void)userPictureUpload:(NSString *)picture_base64;
+
+- (void)settingUser:(NSString *)objId;
 
 - (void)logOut;
 

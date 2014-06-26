@@ -19,10 +19,13 @@
 @interface PFEditAccountViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (strong, nonatomic) IBOutlet UIView *formView;
 
 @property (strong, nonatomic) NSDictionary *objAccount;
+@property (strong, nonatomic) NSDictionary *objUsersetting;
+
 
 @property (strong, nonatomic) IBOutlet UIView *imgView;
 @property (strong, nonatomic) IBOutlet UIView *passwordView;
@@ -50,9 +53,23 @@
 @property (weak, nonatomic) IBOutlet UIButton *gender_bt;
 @property (weak, nonatomic) IBOutlet UIButton *birthday_bt;
 
-- (IBAction)fullimgTapped:(id)sender;
+@property (strong, nonatomic) NSString *facebookSetting;
+@property (strong, nonatomic) NSString *emailSetting;
+@property (strong, nonatomic) NSString *websiteSetting;
+@property (strong, nonatomic) NSString *telSetting;
+@property (strong, nonatomic) NSString *genderSetting;
+@property (strong, nonatomic) NSString *birthdaySetting;
+
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)changepasswordTapped:(id)sender;
+
+- (IBAction)facebookTapped:(id)sender;
+- (IBAction)emailTapped:(id)sender;
+- (IBAction)websiteTapped:(id)sender;
+- (IBAction)telTapped:(id)sender;
+- (IBAction)genderTapped:(id)sender;
+- (IBAction)birthdayTapped:(id)sender;
+
 - (IBAction)saveTapped:(id)sender;
 
 @end
