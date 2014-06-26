@@ -15,6 +15,8 @@
 
 #import "DCManager.h"
 
+#import "PFOrderViewController.h"
+
 @protocol PFDetailViewControllerDelegate <NSObject>
 
 - (void)PFDetailViewController:(id)sender viewPicture:(NSString *)link;
@@ -43,11 +45,15 @@
 @property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *productdetail;
 
 @property (weak, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
+@property (weak, nonatomic) IBOutlet UIButton *orderButton;
+
 - (IBAction)fullimgTapped:(id)sender;
+- (IBAction)orderTapped:(id)sender;
 
 @end

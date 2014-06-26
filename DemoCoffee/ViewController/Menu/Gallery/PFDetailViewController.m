@@ -76,6 +76,11 @@
     self.detailView.frame = CGRectMake(self.detailView.frame.origin.x, self.detailView.frame.origin.y, self.detailView.frame.size.width, self.productdetail.frame.size.height + self.productdetail.frame.origin.y+10);
     
     self.tableView.tableHeaderView = self.detailView;
+    self.tableView.tableFooterView = self.footerView;
+    
+    CALayer *orderButton = [self.orderButton layer];
+    [orderButton setMasksToBounds:YES];
+    [orderButton setCornerRadius:7.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -146,6 +151,19 @@
 
 - (IBAction)fullimgTapped:(id)sender {
     [self.delegate PFDetailViewController:self viewPicture:self.link];
+}
+
+- (IBAction)orderTapped:(id)sender {
+    
+    PFOrderViewController *order =[[PFOrderViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController_Wide" bundle:nil];
+    } else {
+        order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController" bundle:nil];
+    }
+    [self.navigationController pushViewController:order animated:YES];
+
 }
 
 @end

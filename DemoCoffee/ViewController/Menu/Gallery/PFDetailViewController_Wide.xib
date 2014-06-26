@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -8,8 +8,10 @@
             <connections>
                 <outlet property="baht" destination="Y8c-3S-7md" id="eEI-LA-Nbd"/>
                 <outlet property="detailView" destination="Y4Q-XB-08u" id="vnj-q8-E6y"/>
+                <outlet property="footerView" destination="TCX-ql-TUt" id="es0-BP-jtf"/>
                 <outlet property="image" destination="zME-bF-1NL" id="5Vd-rt-zfZ"/>
                 <outlet property="name" destination="Q9Z-Sy-Elh" id="ndJ-l0-cNa"/>
+                <outlet property="orderButton" destination="m6x-8I-pOt" id="PQd-C3-Ugg"/>
                 <outlet property="popupwaitView" destination="8G9-CB-lwC" id="nY9-Zw-JMY"/>
                 <outlet property="price" destination="scT-Pi-9Wd" id="yAo-mU-hql"/>
                 <outlet property="productdetail" destination="qGG-55-vCQ" id="keM-GP-Rez"/>
@@ -42,7 +44,7 @@
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.98823529409999999" green="0.93725490199999995" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="x1C-of-uAL">
@@ -58,7 +60,7 @@
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <view multipleTouchEnabled="YES" contentMode="scaleToFill" id="Y4Q-XB-08u">
+        <view contentMode="scaleToFill" id="Y4Q-XB-08u">
             <rect key="frame" x="0.0" y="0.0" width="320" height="290"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
@@ -107,6 +109,26 @@
                 </label>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+        </view>
+        <view contentMode="scaleToFill" id="TCX-ql-TUt">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="45"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6x-8I-pOt">
+                    <rect key="frame" x="110" y="0.0" width="100" height="35"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="deviceRGB"/>
+                    <state key="normal" title="Order">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="orderTapped:" destination="-1" eventType="touchUpInside" id="JUO-e7-H68"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>

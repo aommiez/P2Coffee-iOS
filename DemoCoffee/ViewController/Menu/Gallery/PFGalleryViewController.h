@@ -15,6 +15,8 @@
 
 #import "DCManager.h"
 
+#import "PFOrderViewController.h"
+
 @protocol PFGalleryViewControllerDelegate <NSObject>
 
 - (void)PFGalleryViewController:(id)sender sum:(NSMutableArray *)sum current:(NSString *)current;
@@ -52,6 +54,7 @@
 @property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *productdetail;
 
 @property (weak, nonatomic) IBOutlet UIView *detailView;
+@property (weak, nonatomic) IBOutlet UIView *footerView;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
@@ -59,6 +62,9 @@
 
 -(void)ShowDetailView:(UIImageView *)imgView;
 
+@property (weak, nonatomic) IBOutlet UIButton *orderButton;
+
 - (IBAction)fullimgalbumTapped:(id)sender;
+- (IBAction)orderGalleryTapped:(id)sender;
 
 @end

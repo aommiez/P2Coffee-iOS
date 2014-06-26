@@ -208,22 +208,20 @@ BOOL newMediaDetail;
                      }];
     [self.textComment resignFirstResponder];
     
-//    if ([[self.Demoapi getAuth] isEqualToString:@"Guest Login"] || [[self.Demoapi getAuth] isEqualToString:@"NO"]){
-//        
-//        self.loginView = [PFLoginViewController alloc];
-//        [self.view addSubview:self.loginView.view];
-//        
-//    }else{
-//        if (![self.textComment.text isEqualToString:@""]) {
-//            
-//            [self.Demoapi commentObjId:[self.obj objectForKey:@"id"] content:self.textComment.text];
-//            
-//        }else {
-//            
-//        }
-//    }
-    self.loginView = [PFLoginViewController alloc];
-    [self.view addSubview:self.loginView.view];
+    if ([self.Demoapi checkLogin] == false){
+        
+        self.loginView = [PFLoginViewController alloc];
+        [self.view addSubview:self.loginView.view];
+        
+    }else{
+        if (![self.textComment.text isEqualToString:@""]) {
+            
+            [self.Demoapi commentObjId:[self.obj objectForKey:@"id"] content:self.textComment.text];
+            
+        }else {
+            
+        }
+    }
     
 }
 //
@@ -562,20 +560,20 @@ BOOL newMediaDetail;
         self.textComment.text = @"Add Comment";
     }
     
-//    NSString *urlString = [[NSString alloc]init];
-//    urlString = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"node"] objectForKey:@"share_url"]];
-//    
-//    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-//        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-//        [controller addURL:[NSURL URLWithString:urlString]];
-//        [self presentViewController:controller animated:YES completion:Nil];
-//    } else {
-//        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
-//                                    message:@"Please login facebook on Settings."
-//                                   delegate:nil
-//                          cancelButtonTitle:@"OK"
-//                          otherButtonTitles:nil] show];
-//    }
+    NSString *urlString = [[NSString alloc]init];
+    urlString = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"node"] objectForKey:@"share_url"]];
+    
+    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [controller addURL:[NSURL URLWithString:urlString]];
+        [self presentViewController:controller animated:YES completion:Nil];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
+                                    message:@"Please login facebook on Settings."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
     
 }
 

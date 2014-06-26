@@ -76,10 +76,15 @@
     self.detailView.frame = CGRectMake(self.detailView.frame.origin.x, self.detailView.frame.origin.y, self.detailView.frame.size.width, self.productdetail.frame.size.height + self.productdetail.frame.origin.y+10);
     
     self.tableView.tableHeaderView = self.detailView;
+    self.tableView.tableFooterView = self.footerView;
     //
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [scrollView addGestureRecognizer:singleTap];
+    
+    CALayer *orderButton = [self.orderButton layer];
+    [orderButton setMasksToBounds:YES];
+    [orderButton setCornerRadius:7.0f];
 }
 
 - (void)didReceiveMemoryWarning
@@ -89,12 +94,6 @@
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (void)shareupdatedetail {
@@ -214,9 +213,20 @@
 }
 
 - (IBAction)fullimgalbumTapped:(id)sender {
-    
     [self.delegate PFGalleryViewController:self sum:self.arrgalleryimg current:self.current];
+}
+
+- (IBAction)orderGalleryTapped:(id)sender {
     
+    PFOrderViewController *order =[[PFOrderViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController_Wide" bundle:nil];
+    } else {
+        order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController" bundle:nil];
+    }
+    [self.navigationController pushViewController:order animated:YES];
+ 
 }
 
 @end
