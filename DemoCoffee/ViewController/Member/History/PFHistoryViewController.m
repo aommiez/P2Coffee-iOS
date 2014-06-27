@@ -30,6 +30,25 @@
     
     self.navigationItem.title = @"History";
     
+    self.conditionnomember.text = self.detailhistory;
+    
+    CGRect frame = self.conditionnomember.frame;
+    frame.size = [self.conditionnomember sizeOfMultiLineLabel];
+    [self.conditionnomember sizeOfMultiLineLabel];
+    [self.conditionnomember setFrame:frame];
+    int lines = self.conditionnomember.frame.size.height/15;
+    self.conditionnomember.numberOfLines = lines;
+    UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+    descText.text = self.conditionnomember.text;
+    descText.numberOfLines = lines;
+    [descText setFont:[UIFont systemFontOfSize:15]];
+    descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
+    self.conditionnomember.alpha = 0;
+    [self.headerView addSubview:descText];
+    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+descText.frame.size.height-15);
+    
+    self.historyView.frame = CGRectMake(self.historyView.frame.origin.x, self.headerView.frame.size.height+descText.frame.size.height-60, self.historyView.frame.size.width, self.historyView.frame.size.height);
+    
     self.tableView.tableHeaderView = self.headerView;
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UILabel+UILabelDynamicHeight.h"
 
 #import "PFHistoryCell.h"
 
@@ -21,5 +22,11 @@
 @property (assign, nonatomic) id <PFHistoryViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
+@property (weak, nonatomic) IBOutlet UIView *historyView;
+
+@property (strong, nonatomic) NSString *detailhistory;
+
+@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
+
 
 @end

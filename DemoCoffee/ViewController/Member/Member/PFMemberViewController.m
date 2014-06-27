@@ -77,6 +77,7 @@ BOOL refreshDataMember;
     
     self.obj = [[NSDictionary alloc] init];
     self.objStamp = [[NSDictionary alloc] init];
+    self.objStyle = [[NSMutableArray alloc] init];
     self.arrObj = [[NSMutableArray alloc] init];
     
     [self.Demoapi getStampStyle];
@@ -92,6 +93,7 @@ BOOL refreshDataMember;
 }
 
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response {
+    self.objStyle = response;
     NSLog(@"Member nomemberview %@",response);
     
     [self.waitView removeFromSuperview];
@@ -743,6 +745,7 @@ BOOL refreshDataMember;
         history = [[PFHistoryViewController alloc] initWithNibName:@"PFHistoryViewController" bundle:nil];
     }
     history.delegate = self;
+    history.detailhistory = [self.objStyle objectForKey:@"condition_info"];
     [self.navController pushViewController:history animated:YES];
 }
 
