@@ -45,9 +45,10 @@
     descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
     self.conditionnomember.alpha = 0;
     [self.headerView addSubview:descText];
-    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+descText.frame.size.height-15);
     
     self.historyView.frame = CGRectMake(self.historyView.frame.origin.x, self.headerView.frame.size.height+descText.frame.size.height-60, self.historyView.frame.size.width, self.historyView.frame.size.height);
+    
+    self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+descText.frame.size.height-15);
     
     self.tableView.tableHeaderView = self.headerView;
 }
