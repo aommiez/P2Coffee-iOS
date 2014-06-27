@@ -76,6 +76,7 @@ BOOL refreshDataMember;
     [addButton setCornerRadius:7.0f];
     
     self.obj = [[NSDictionary alloc] init];
+    self.objStamp = [[NSDictionary alloc] init];
     self.arrObj = [[NSMutableArray alloc] init];
     
     [self.Demoapi getStampStyle];
@@ -166,7 +167,7 @@ BOOL refreshDataMember;
 }
 
 - (void)DCManager:(id)sender getStampResponse:(NSDictionary *)response {
-    //self.obj = response;
+    self.objStamp = response;
     NSLog(@"Member nomemberview getStamp %@",response);
     
     self.showpoint.text = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"point"]];
@@ -222,7 +223,7 @@ BOOL refreshDataMember;
     if (pointValue != 0) {
         if (count == 1) {
             
-            NSURL *url = [NSURL URLWithString:[response objectForKey:@"stamp_icon"]];
+            NSURL *url = [NSURL URLWithString:self.stampurl];
             NSData *data = [NSData dataWithContentsOfURL : url];
             
             self.stamp1.image = [UIImage imageWithData: data];
@@ -703,8 +704,7 @@ BOOL refreshDataMember;
 }
 
 - (void)DCManager:(id)sender getRewardResponse:(NSDictionary *)response {
-    //self.obj = response;
-    NSLog(@"Member nomemberview getReward %@",response);
+    NSLog(@"Member memberview getReward %@",response);
     
     //login
     if (!refreshDataMember) {
@@ -822,6 +822,8 @@ BOOL refreshDataMember;
             reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
         }
         reward.delegate = self;
+        reward.objStamp = self.objStamp;
+        reward.reward_id = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"];
         [self.navController pushViewController:reward animated:YES];
     } else {
         [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"

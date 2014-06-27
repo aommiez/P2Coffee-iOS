@@ -37,6 +37,7 @@
 
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
+@property (strong, nonatomic) NSDictionary *objStamp;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 

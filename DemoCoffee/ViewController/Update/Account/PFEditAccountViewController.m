@@ -293,8 +293,8 @@ BOOL newMedia;
         imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage, nil];
         imagePicker.allowsEditing = YES;
         imagePicker.editing = YES;
-        imagePicker.navigationBarHidden=YES;
-        imagePicker.view.userInteractionEnabled=YES;
+        imagePicker.navigationBarHidden = YES;
+        imagePicker.view.userInteractionEnabled = YES;
         [self presentViewController:imagePicker animated:YES completion:nil];
         newMedia = YES;
     }
@@ -318,8 +318,12 @@ BOOL newMedia;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
     image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
-    NSData *imageData1 = UIImageJPEGRepresentation(image, 75);
-    [self.Demoapi userPictureUpload:imageData1];
+    //NSData *imageData = UIImageJPEGRepresentation(image, 75);
+    
+    NSData * data = [UIImageJPEGRepresentation(image, 75) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+    NSString *strEncoded = [NSString stringWithUTF8String:[data bytes]];
+    
+    [self.Demoapi userPictureUpload:strEncoded];
     [picker dismissViewControllerAnimated:YES completion:^{
         self.thumUser.image = image;
         
@@ -386,6 +390,14 @@ BOOL newMedia;
     [self.birthday resignFirstResponder];
     
     return YES;
+}
+
+- (void)DCManager:(id)sender userPictureUploadResponse:(NSDictionary *)response {
+    NSLog(@"userPictureUpload %@",response);
+}
+
+- (void)DCManager:(id)sender userPictureUploadErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

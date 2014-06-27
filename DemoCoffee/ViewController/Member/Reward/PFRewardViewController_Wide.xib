@@ -6,7 +6,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFRewardViewController">
             <connections>
+                <outlet property="popupwaitView" destination="BdX-RY-Nhi" id="i8R-lX-ScX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="waitView" destination="aJ5-36-l8i" id="1KL-Wl-cr8"/>
+                <outlet property="webView" destination="4m6-wO-jge" id="hK3-Eq-kRa"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

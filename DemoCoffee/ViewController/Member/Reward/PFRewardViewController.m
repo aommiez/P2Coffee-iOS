@@ -29,6 +29,21 @@
     [super viewDidLoad];
     
     self.navigationItem.title = @"Reward";
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
+    
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    
+    self.token = [self.Demoapi getAccessToken];
+    
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@",@"http://www.pla2.com/webview/stamp/page2.php?id=",self.reward_id,@"&user=",[self.objStamp objectForKey:@"id"],@"&domain=coffee&token=",self.token];
+    NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    self.webView.delegate = self;
+    self.webView.scalesPageToFit = YES;
+    [self.webView loadRequest:req];
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,6 +53,16 @@
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)webViewDidStartLoad:(UIWebView *)webView
+{
+    [self.view addSubview:self.waitView];
+}
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+    [self.waitView removeFromSuperview];
 }
 
 -(void)viewWillDisappear:(BOOL)animated

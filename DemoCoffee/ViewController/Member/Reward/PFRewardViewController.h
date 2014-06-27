@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DCManager.h"
 
 @protocol PFRewardViewControllerDelegate <NSObject>
 
@@ -16,6 +17,16 @@
 
 @interface PFRewardViewController : UIViewController
 
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFRewardViewControllerDelegate> delegate;
+@property (retain, nonatomic) IBOutlet UIView *waitView;
+@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+
+@property (strong, nonatomic) NSDictionary *objStamp;
+
+@property (weak, nonatomic) IBOutlet UIWebView *webView;
+
+@property (strong, nonatomic) NSString *token;
+@property (strong, nonatomic) NSString *reward_id;
 
 @end
