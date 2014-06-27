@@ -369,4 +369,14 @@
     }];
 }
 
+- (void)settingUser:(NSString *)obj1 email:(NSString *)obj2 website:(NSString *)obj3 tel:(NSString *)obj4 gender:(NSString *)obj5 birthday:(NSString *)obj6 {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/update/%@?access_token=%@",API_URL,[self getUserId],[self getAccessToken]];
+    NSDictionary *parameters = @{@"show_facebook":obj1 , @"show_email":obj2 , @"show_website":obj3 , @"show_mobile":obj4 , @"show_gender":obj5 , @"show_birth_date":obj6};
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserSettingResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserSettingErrorResponse:[error localizedDescription]];
+    }];
+}
+
 @end

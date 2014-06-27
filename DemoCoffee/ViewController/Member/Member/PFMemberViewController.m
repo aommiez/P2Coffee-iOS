@@ -45,13 +45,19 @@ BOOL refreshDataMember;
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
-    //no login
-    //self.tableView.tableHeaderView = self.nomemberView;
-    //login
-    self.tableView.tableHeaderView = self.memberView;
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
     
-    UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
-    self.tableView.tableFooterView = fv;
+    //no login
+    if ([self.Demoapi checkLogin] == true){
+        self.tableView.tableHeaderView = self.memberView;
+        UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
+        self.tableView.tableFooterView = fv;
+    }else{
+    //login
+        self.tableView.tableHeaderView = self.nomemberView;
+        self.tableView.tableFooterView = self.footernomemberView;
+    }
     
     CALayer *postermember = [self.postermember layer];
     [postermember setMasksToBounds:YES];
@@ -61,12 +67,13 @@ BOOL refreshDataMember;
     [posternomember setMasksToBounds:YES];
     [posternomember setCornerRadius:7.0f];
     
+    CALayer *signinButton = [self.signinButton layer];
+    [signinButton setMasksToBounds:YES];
+    [signinButton setCornerRadius:7.0f];
+    
     CALayer *addButton = [self.addButton layer];
     [addButton setMasksToBounds:YES];
     [addButton setCornerRadius:7.0f];
-    
-    self.Demoapi = [[DCManager alloc] init];
-    self.Demoapi.delegate = self;
     
     self.obj = [[NSDictionary alloc] init];
     self.arrObj = [[NSMutableArray alloc] init];
@@ -89,66 +96,68 @@ BOOL refreshDataMember;
     [self.waitView removeFromSuperview];
     
     //login
+    if ([self.Demoapi checkLogin] == true){
     
-    self.stampurl = [response objectForKey:@"stamp_icon"];
+        self.stampurl = [response objectForKey:@"stamp_icon"];
     
-    [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
+        [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
                           completed:^(NSError *error, NSData *imgData) {
                               self.postermember.image = [UIImage imageWithData:imgData];
                           }];
+        
+        NSLog(@"%@",[response objectForKey:@"poster"]);
     
-    NSString *urlbg = [NSString stringWithFormat:@"%@%@",[response objectForKey:@"background"],@"?blur=30"];
+        NSString *urlbg = [NSString stringWithFormat:@"%@%@",[response objectForKey:@"background"],@"?blur=30"];
     
-    [DLImageLoader loadImageFromURL:urlbg
+        [DLImageLoader loadImageFromURL:urlbg
                           completed:^(NSError *error, NSData *imgData) {
                               self.bg.image = [UIImage imageWithData:imgData];
                           }];
-    self.bg.layer.masksToBounds = YES;
-    self.bg.contentMode = UIViewContentModeScaleAspectFill;
+        self.bg.layer.masksToBounds = YES;
+        self.bg.contentMode = UIViewContentModeScaleAspectFill;
     
-    [self.Demoapi getStamp];
-    [self.Demoapi getReward];
-    
+        [self.Demoapi getStamp];
+        [self.Demoapi getReward];
+    } else {
     //no login
-    /*
-    [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
-     completed:^(NSError *error, NSData *imgData) {
-     self.posternomember.image = [UIImage imageWithData:imgData];
-     }];
+        
+        [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
+                            completed:^(NSError *error, NSData *imgData) {
+                                self.posternomember.image = [UIImage imageWithData:imgData];
+                              }];
      
-     NSString *urlbg = [NSString stringWithFormat:@"%@%@",[response objectForKey:@"background"],@"?blur=30"];
+        NSLog(@"%@",[response objectForKey:@"poster"]);
+        
+        NSString *urlbg = [NSString stringWithFormat:@"%@%@",[response objectForKey:@"background"],@"?blur=30"];
      
-    [DLImageLoader loadImageFromURL:urlbg
+        [DLImageLoader loadImageFromURL:urlbg
                           completed:^(NSError *error, NSData *imgData) {
                               self.bg.image = [UIImage imageWithData:imgData];
                           }];
-    self.bg.layer.masksToBounds = YES;
-    self.bg.contentMode = UIViewContentModeScaleAspectFill;
+        
+        self.bg.layer.masksToBounds = YES;
+        self.bg.contentMode = UIViewContentModeScaleAspectFill;
     
-    self.conditionnomember.text = [[NSString alloc] initWithString:[response objectForKey:@"condition_info"]];
+        self.conditionnomember.text = [[NSString alloc] initWithString:[response objectForKey:@"condition_info"]];
 
-    CGRect frame = self.conditionnomember.frame;
-    frame.size = [self.conditionnomember sizeOfMultiLineLabel];
-    [self.conditionnomember sizeOfMultiLineLabel];
-    [self.conditionnomember setFrame:frame];
-    int lines = self.conditionnomember.frame.size.height/15;
-    self.conditionnomember.numberOfLines = lines;
-    UILabel *descText = [[UILabel alloc] initWithFrame:frame];
-    descText.text = self.conditionnomember.text;
-    descText.numberOfLines = lines;
-    [descText setFont:[UIFont systemFontOfSize:15]];
-    descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
-    self.conditionnomember.alpha = 0;
-    [self.conditionnomemberView addSubview:descText];
-    self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
+        CGRect frame = self.conditionnomember.frame;
+        frame.size = [self.conditionnomember sizeOfMultiLineLabel];
+        [self.conditionnomember sizeOfMultiLineLabel];
+        [self.conditionnomember setFrame:frame];
+        int lines = self.conditionnomember.frame.size.height/15;
+        self.conditionnomember.numberOfLines = lines;
+        UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+        descText.text = self.conditionnomember.text;
+        descText.numberOfLines = lines;
+        [descText setFont:[UIFont systemFontOfSize:15]];
+        descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
+        self.conditionnomember.alpha = 0;
+        [self.conditionnomemberView addSubview:descText];
+        self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
     
-    self.signinButton.frame = CGRectMake(self.signinButton.frame.origin.x, self.signinButton.frame.origin.y+descText.frame.size.height-25, self.signinButton.frame.size.width, self.signinButton.frame.size.height);
-    
-    CALayer *signinButton = [self.signinButton layer];
-    [signinButton setMasksToBounds:YES];
-    [signinButton setCornerRadius:7.0f];
-    */
-    //login
+        //self.signinButton.frame = CGRectMake(self.signinButton.frame.origin.x, self.signinButton.frame.origin.y+descText.frame.size.height-25, self.signinButton.frame.size.width, self.signinButton.frame.size.height);
+        self.footernomemberView.frame = CGRectMake(self.footernomemberView.frame.origin.x, self.footernomemberView.frame.origin.y+descText.frame.size.height-25, self.footernomemberView.frame.size.width, self.footernomemberView.frame.size.height);
+    }
     
 }
 
@@ -755,7 +764,11 @@ BOOL refreshDataMember;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.arrObj count];
+    if ([self.Demoapi checkLogin] == true){
+        return [self.arrObj count];
+    } else {
+        return 0;
+    }
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -820,12 +833,113 @@ BOOL refreshDataMember;
 
 }
 
-- (IBAction)addPointTapped:(id)sender {
+- (IBAction)signinTapped:(id)sender {
     [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Add point coming soon."
+                                message:@"signin coming soon."
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+- (IBAction)addPointTapped:(id)sender {
+    [self.view addSubview:self.blurView];
+    [self.addPointView.layer setCornerRadius:4.0f];
+    [self.addPointView setBackgroundColor:RGB(248, 246, 244)];
+    self.addPointView.frame = CGRectMake(35, 120, self.addPointView.frame.size.width, self.addPointView.frame.size.height);
+    [self.view addSubview:self.addPointView];
+}
+
+- (IBAction)removeAmountTapped:(id)sender {
+    NSString *amount;
+    int amountValue = [self.amountLabel.text intValue];
+    if (amountValue>1) {
+        int amountTotal = amountValue - 1;
+        amount = [[NSString alloc] initWithFormat:@"%d",amountTotal];
+        self.amountLabel.text = amount;
+    } else  {
+        amount = [[NSString alloc] initWithFormat:@"%d",amountValue];
+        self.amountLabel.text = amount;
+    }
+}
+
+- (IBAction)addAmountTapped:(id)sender {
+    int amountValue = [self.amountLabel.text intValue];
+    int amountTotal = amountValue + 1;
+    NSString *amount = [[NSString alloc] initWithFormat:@"%d",amountTotal];
+    self.amountLabel.text = amount;
+}
+
+- (IBAction)confirmTapped:(id)sender {
+    [self.Demoapi addPoint:self.amountLabel.text password:self.password.text];
+}
+
+- (IBAction)cancelTapped:(id)sender {
+    [self.addPointView removeFromSuperview];
+    [self.blurView removeFromSuperview];
+    
+    self.amountLabel.text = @"1";
+    self.password.text = @"";
+    
+}
+
+- (IBAction)amountFinishOkTapped:(id)sender {
+    [self.amountFinishView removeFromSuperview];
+    [self.blurView removeFromSuperview];
+    
+    self.amountLabel.text = @"1";
+    self.password.text = @"";
+    [self viewDidLoad];
+}
+
+- (IBAction)FailTapped:(id)sender {
+    [self.amountFailView removeFromSuperview];
+    [self.blurView removeFromSuperview];
+    
+    self.amountLabel.text = @"1";
+    self.password.text = @"";
+    [self viewDidLoad];
+}
+
+- (void)DCManager:(id)sender addPointResponse:(NSDictionary *)response {
+    self.obj = response;
+    
+    if ([[[response objectForKey:@"error"] objectForKey:@"type"] isEqualToString:@"Main\\CTL\\Exception\\InvalidPasswordException"]) {
+        
+        [self.addPointView removeFromSuperview];
+        [self.amountFailView.layer setCornerRadius:4.0f];
+        [self.amountFailView setBackgroundColor:RGB(248, 246, 244)];
+        self.amountFailView.frame = CGRectMake(20, 180, self.amountFailView.frame.size.width, self.amountFailView.frame.size.height);
+        [self.view addSubview:self.amountFailView];
+        
+    } else {
+        
+        NSString *show = [[NSString alloc] initWithFormat:@"Add %@ Stamp FINISH",self.amountLabel.text];
+        [self.finishamount setText:show];
+        
+        [self.addPointView removeFromSuperview];
+        [self.amountFinishView.layer setCornerRadius:4.0f];
+        [self.amountFinishView setBackgroundColor:RGB(248, 246, 244)];
+        self.amountFinishView.frame = CGRectMake(20, 120, self.amountFinishView.frame.size.width, self.amountFinishView.frame.size.height);
+        [self.view addSubview:self.amountFinishView];
+        
+    }
+}
+
+- (void)DCManager:(id)sender addPointErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (IBAction)bgTapped:(id)sender {
+    [self hideKeyboard];
+}
+
+- (void)hideKeyboard {
+    [self.password resignFirstResponder];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField  {
+    [self.password resignFirstResponder];
+    return YES;
 }
 
 - (void) PFRewardViewControllerBack {

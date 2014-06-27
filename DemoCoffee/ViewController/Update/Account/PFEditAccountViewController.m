@@ -14,6 +14,8 @@
 
 @implementation PFEditAccountViewController
 
+BOOL newMedia;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -61,44 +63,56 @@
     if ([[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 1) {
         [self.facebook_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.facebook_bt setTintColor:RGB(0, 174, 239)];
+        self.facebookSetting = @"1";
     } else {
         [self.facebook_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.facebook_bt setTintColor:RGB(167, 169, 172)];
+        self.facebookSetting = @"0";
     }
     if ([[self.objUsersetting objectForKey:@"show_email"] intValue] == 1) {
         [self.email_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.email_bt setTintColor:RGB(0, 174, 239)];
+            self.emailSetting = @"1";
     } else {
         [self.email_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.email_bt setTintColor:RGB(167, 169, 172)];
+        self.emailSetting = @"0";
     }
     if ([[self.objUsersetting objectForKey:@"show_website"] intValue] == 1) {
         [self.website_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.website_bt setTintColor:RGB(0, 174, 239)];
+        self.websiteSetting = @"1";
     } else {
         [self.website_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.website_bt setTintColor:RGB(167, 169, 172)];
+        self.websiteSetting = @"0";
     }
     if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
         [self.tel_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.tel_bt setTintColor:RGB(0, 174, 239)];
+        self.telSetting = @"1";
     } else {
         [self.tel_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.tel_bt setTintColor:RGB(167, 169, 172)];
+        self.telSetting = @"0";
     }
     if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
         [self.gender_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.gender_bt setTintColor:RGB(0, 174, 239)];
+        self.genderSetting = @"1";
     } else {
         [self.gender_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.gender_bt setTintColor:RGB(167, 169, 172)];
+        self.genderSetting = @"0";
     }
     if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
         [self.birthday_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.birthday_bt setTintColor:RGB(0, 174, 239)];
+        self.birthdaySetting = @"1";
     } else {
         [self.birthday_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.birthday_bt setTintColor:RGB(167, 169, 172)];
+        self.birthdaySetting = @"0";
     }
     
     CALayer *facebook_bt = [self.facebook_bt layer];
@@ -137,8 +151,9 @@
 }
 
 - (void)SaveProfile {
+    [self.Demoapi settingUser:self.facebookSetting email:self.emailSetting website:self.websiteSetting tel:self.telSetting gender:self.genderSetting birthday:self.birthdaySetting];
     [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Save profile coming soon."
+                                message:@"Update profile complete."
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
@@ -160,9 +175,11 @@
     if ([self.facebook_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.facebook_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.facebook_bt setTintColor:RGB(167, 169, 172)];
+        self.facebookSetting = @"0";
     } else {
         [self.facebook_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.facebook_bt setTintColor:RGB(0, 174, 239)];
+        self.facebookSetting = @"1";
     }
 }
 
@@ -170,9 +187,11 @@
     if ([self.email_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.email_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.email_bt setTintColor:RGB(167, 169, 172)];
+        self.emailSetting = @"0";
     } else {
         [self.email_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.email_bt setTintColor:RGB(0, 174, 239)];
+        self.emailSetting = @"1";
     }
 }
 
@@ -180,9 +199,11 @@
     if ([self.website_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.website_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.website_bt setTintColor:RGB(167, 169, 172)];
+        self.websiteSetting = @"0";
     } else {
         [self.website_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.website_bt setTintColor:RGB(0, 174, 239)];
+        self.websiteSetting = @"1";
     }
 }
 
@@ -190,9 +211,11 @@
     if ([self.tel_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.tel_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.tel_bt setTintColor:RGB(167, 169, 172)];
+        self.telSetting = @"0";
     } else {
         [self.tel_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.tel_bt setTintColor:RGB(0, 174, 239)];
+        self.telSetting = @"1";
     }
 }
 
@@ -200,9 +223,11 @@
     if ([self.gender_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.gender_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.gender_bt setTintColor:RGB(167, 169, 172)];
+        self.genderSetting = @"0";
     } else {
         [self.gender_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.gender_bt setTintColor:RGB(0, 174, 239)];
+        self.genderSetting = @"1";
     }
 }
 
@@ -210,9 +235,11 @@
     if ([self.birthday_bt.titleLabel.text isEqualToString:@"Show"]) {
         [self.birthday_bt setTitle:@"Hide" forState:UIControlStateNormal];
         [self.birthday_bt setTintColor:RGB(167, 169, 172)];
+        self.birthdaySetting = @"0";
     } else {
         [self.birthday_bt setTitle:@"Show" forState:UIControlStateNormal];
         [self.birthday_bt setTintColor:RGB(0, 174, 239)];
+        self.birthdaySetting = @"1";
     }
 }
 
@@ -222,6 +249,130 @@
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+}
+
+- (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
+    NSLog(@"settingUser %@",response);
+}
+
+- (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (IBAction)uploadPictureTapped:(id)sender {
+    [self alertUpload];
+}
+
+- (void)alertUpload {
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Select Profile Picture"
+                                  delegate:self
+                                  cancelButtonTitle:@"cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Camera", @"Camera Roll", nil];
+    [actionSheet showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+    
+    if ( buttonIndex == 0 ) {
+        [self useCamera];
+    } else if ( buttonIndex == 1 ) {
+        [self useCameraRoll];
+        
+    }
+}
+
+- (void) useCamera
+{
+    if ([UIImagePickerController isSourceTypeAvailable:   UIImagePickerControllerSourceTypeCamera])
+    {
+        UIImagePickerController *imagePicker =   [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+        imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage, nil];
+        imagePicker.allowsEditing = YES;
+        imagePicker.editing = YES;
+        imagePicker.navigationBarHidden=YES;
+        imagePicker.view.userInteractionEnabled=YES;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        newMedia = YES;
+    }
+}
+
+- (void) useCameraRoll
+{
+    if ([UIImagePickerController isSourceTypeAvailable: UIImagePickerControllerSourceTypeSavedPhotosAlbum])
+    {
+        UIImagePickerController *imagePicker =   [[UIImagePickerController alloc] init];
+        imagePicker.delegate = self;
+        imagePicker.sourceType =   UIImagePickerControllerSourceTypePhotoLibrary;
+        imagePicker.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage,nil];
+        imagePicker.allowsEditing = YES;
+        imagePicker.editing = YES;
+        [self presentViewController:imagePicker animated:YES completion:nil];
+        newMedia = NO;
+    }
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
+    
+    image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
+    NSData *imageData1 = UIImageJPEGRepresentation(image, 75);
+    [self.Demoapi userPictureUpload:imageData1];
+    [picker dismissViewControllerAnimated:YES completion:^{
+        self.thumUser.image = image;
+        
+        SDImageCache *imageCache = [SDImageCache sharedImageCache];
+        [imageCache clearMemory];
+        [imageCache clearDisk];
+        [imageCache cleanDisk];
+    }];
+    
+}
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (UIImage *)squareImageWithImage:(UIImage *)image scaledToSize:(CGSize)newSize {
+    double ratio;
+    double delta;
+    CGPoint offset;
+    
+    //make a new square size, that is the resized imaged width
+    CGSize sz = CGSizeMake(newSize.width, newSize.width);
+    
+    //figure out if the picture is landscape or portrait, then
+    //calculate scale factor and offset
+    if (image.size.width > image.size.height) {
+        ratio = newSize.width / image.size.width;
+        delta = (ratio*image.size.width - ratio*image.size.height);
+        offset = CGPointMake(delta/2, 0);
+    } else {
+        ratio = newSize.width / image.size.height;
+        delta = (ratio*image.size.height - ratio*image.size.width);
+        offset = CGPointMake(0, delta/2);
+    }
+    
+    //make the final clipping rect based on the calculated values
+    CGRect clipRect = CGRectMake(-offset.x, -offset.y,
+                                 (ratio * image.size.width) + delta,
+                                 (ratio * image.size.height) + delta);
+    
+    
+    //start a new context, with scale factor 0.0 so retina displays get
+    //high quality image
+    if ([[UIScreen mainScreen] respondsToSelector:@selector(scale)]) {
+        UIGraphicsBeginImageContextWithOptions(sz, YES, 0.0);
+    } else {
+        UIGraphicsBeginImageContext(sz);
+    }
+    UIRectClip(clipRect);
+    [image drawInRect:clipRect];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField  {

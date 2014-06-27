@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "AsyncImageView.h"
+#import <MobileCoreServices/UTCoreTypes.h>
+#import "SDImageCache.h"
 #import "DCManager.h"
 
 @protocol PFEditAccountViewControllerDelegate <NSObject>
@@ -16,7 +18,7 @@
 
 @end
 
-@interface PFEditAccountViewController : UIViewController
+@interface PFEditAccountViewController : UIViewController <UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
@@ -25,7 +27,6 @@
 
 @property (strong, nonatomic) NSDictionary *objAccount;
 @property (strong, nonatomic) NSDictionary *objUsersetting;
-
 
 @property (strong, nonatomic) IBOutlet UIView *imgView;
 @property (strong, nonatomic) IBOutlet UIView *passwordView;
@@ -59,6 +60,8 @@
 @property (strong, nonatomic) NSString *telSetting;
 @property (strong, nonatomic) NSString *genderSetting;
 @property (strong, nonatomic) NSString *birthdaySetting;
+
+- (IBAction)uploadPictureTapped:(id)sender;
 
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)changepasswordTapped:(id)sender;

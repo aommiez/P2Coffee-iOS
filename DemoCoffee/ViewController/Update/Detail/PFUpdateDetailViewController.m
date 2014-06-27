@@ -29,6 +29,7 @@ BOOL newMediaDetail;
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
     return self;
 }
@@ -112,12 +113,6 @@ BOOL newMediaDetail;
 
 -(NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
-}
-
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
@@ -560,6 +555,7 @@ BOOL newMediaDetail;
         self.textComment.text = @"Add Comment";
     }
     
+    /*
     NSString *urlString = [[NSString alloc]init];
     urlString = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"node"] objectForKey:@"share_url"]];
     
@@ -574,6 +570,12 @@ BOOL newMediaDetail;
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
     }
+     */
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Share coming soon."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
     
 }
 

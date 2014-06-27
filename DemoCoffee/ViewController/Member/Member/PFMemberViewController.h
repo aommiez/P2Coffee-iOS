@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "DLImageLoader.h"
 #import "UILabel+UILabelDynamicHeight.h"
+#import "UIERealTimeBlurView.h"
+#import "AMBlurView.h"
 
 #import "DCManager.h"
 
@@ -31,6 +33,8 @@
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
+@property (strong, nonatomic) IBOutlet AMBlurView *blurView;
+
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
@@ -43,11 +47,14 @@
 
 @property (weak, nonatomic) IBOutlet UIView *nomemberView;
 @property (weak, nonatomic) IBOutlet UIView *memberView;
+@property (weak, nonatomic) IBOutlet UIView *footernomemberView;
 
 @property (weak, nonatomic) IBOutlet UIImageView *posternomember;
 @property (weak, nonatomic) IBOutlet UIView *conditionnomemberView;
 @property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
+
 - (IBAction)posternoTapped:(id)sender;
+- (IBAction)signinTapped:(id)sender;
 
 @property (weak, nonatomic) IBOutlet UIButton *signinButton;
 
@@ -92,5 +99,30 @@
 @property (strong, nonatomic) IBOutlet UILabel *num8;
 @property (strong, nonatomic) IBOutlet UILabel *num9;
 @property (strong, nonatomic) IBOutlet UILabel *num10;
+
+- (IBAction)bgTapped:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *addPointView;
+@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UIButton *removeAmountButton;
+@property (strong, nonatomic) IBOutlet UIButton *addAmountButton;
+@property (strong, nonatomic) IBOutlet UIButton *cancelButton;
+@property (strong, nonatomic) IBOutlet UIButton *confirmButton;
+
+- (IBAction)removeAmountTapped:(id)sender;
+- (IBAction)addAmountTapped:(id)sender;
+- (IBAction)cancelTapped:(id)sender;
+- (IBAction)confirmTapped:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *amountFinishView;
+@property (strong, nonatomic) IBOutlet UILabel *finishamount;
+@property (strong, nonatomic) IBOutlet UIButton *amountFinishButton;
+
+- (IBAction)amountFinishOkTapped:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *amountFailView;
+
+- (IBAction)FailTapped:(id)sender;
 
 @end
