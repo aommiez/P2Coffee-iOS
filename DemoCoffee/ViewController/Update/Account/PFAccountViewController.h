@@ -11,7 +11,9 @@
 
 #import "DCManager.h"
 
+#import "PFAccountCell.h"
 #import "PFEditAccountViewController.h"
+#import "PFTutorialViewController.h"
 
 @protocol PFAccountViewControllerDelegate <NSObject>
 
@@ -24,23 +26,24 @@
 
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFAccountViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (strong, nonatomic) IBOutlet UIView *formView;
+
+@property (retain, nonatomic) PFTutorialViewController *tutorialView;
+
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @property (strong, nonatomic) NSDictionary *obj;
 @property (strong, nonatomic) NSDictionary *objUsersetting;
 
+@property (strong, nonatomic) NSString *rowCount;
+
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (strong, nonatomic) IBOutlet UIView *facebookView;
-@property (strong, nonatomic) IBOutlet UIView *emailView;
-@property (strong, nonatomic) IBOutlet UIView *websiteView;
-@property (strong, nonatomic) IBOutlet UIView *phoneView;
-@property (strong, nonatomic) IBOutlet UIView *genderView;
-@property (strong, nonatomic) IBOutlet UIView *birthdayView;
-
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
 
 @property (strong, nonatomic) IBOutlet UIView *settingView;
 
@@ -63,5 +66,6 @@
 
 - (IBAction)fullimgTapped:(id)sender;
 - (IBAction)logoutTapped:(id)sender;
+- (IBAction)tutorialTapped:(id)sender;
 
 @end

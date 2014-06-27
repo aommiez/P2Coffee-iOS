@@ -61,6 +61,8 @@
 @property (strong, nonatomic) NSString *genderSetting;
 @property (strong, nonatomic) NSString *birthdaySetting;
 
+- (IBAction)selectgenderTapped:(id)sender;
+
 - (IBAction)uploadPictureTapped:(id)sender;
 
 - (IBAction)bgTapped:(id)sender;

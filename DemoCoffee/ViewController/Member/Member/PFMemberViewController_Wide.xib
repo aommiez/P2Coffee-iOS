@@ -199,10 +199,10 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="YrU-Ii-6W2">
-                            <rect key="frame" x="259" y="7" width="50" height="41"/>
+                            <rect key="frame" x="248" y="10" width="55" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="Add">
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <state key="normal" image="ic_bt_add.png">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -584,6 +584,7 @@
         <image name="cross_icon.png" width="30" height="30"/>
         <image name="default.jpeg" width="622" height="415"/>
         <image name="glow.png" width="60" height="60"/>
+        <image name="ic_bt_add.png" width="75" height="46"/>
         <image name="line1.png" width="2" height="89"/>
         <image name="line2.png" width="541" height="2"/>
     </resources>

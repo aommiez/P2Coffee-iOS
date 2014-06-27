@@ -34,8 +34,6 @@
 
 @property (retain, nonatomic) PFLoginViewController *loginView;
 
-@property (retain, nonatomic) IBOutlet UIView *pagecontrollerView;
-
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 

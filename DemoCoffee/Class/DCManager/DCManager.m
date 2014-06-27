@@ -379,4 +379,15 @@
     }];
 }
 
+- (void)updateSetting:(NSString *)profilename facebook:(NSString *)facebook email:(NSString *)email website:(NSString *)website tel:(NSString *)tel gender:(NSString *)gender birthday:(NSString *)birthday {
+
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/update/%@?access_token=%@",API_URL,[self getUserId],[self getAccessToken]];
+    NSDictionary *parameters = @{@"display_name":profilename , @"facebook_name":facebook , @"email":email , @"website":website , @"mobile_phone":tel , @"gender":gender , @"birth_date":birthday};
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserSettingResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserSettingErrorResponse:[error localizedDescription]];
+    }];
+}
+
 @end

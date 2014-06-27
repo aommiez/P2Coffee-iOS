@@ -163,6 +163,7 @@
     } else {
         order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController" bundle:nil];
     }
+    order.product_id = self.product_id;
     [self.navigationController pushViewController:order animated:YES];
 
 }

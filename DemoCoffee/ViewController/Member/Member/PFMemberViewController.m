@@ -156,7 +156,6 @@ BOOL refreshDataMember;
         [self.conditionnomemberView addSubview:descText];
         self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
     
-        //self.signinButton.frame = CGRectMake(self.signinButton.frame.origin.x, self.signinButton.frame.origin.y+descText.frame.size.height-25, self.signinButton.frame.size.width, self.signinButton.frame.size.height);
         self.footernomemberView.frame = CGRectMake(self.footernomemberView.frame.origin.x, self.footernomemberView.frame.origin.y+descText.frame.size.height-25, self.footernomemberView.frame.size.width, self.footernomemberView.frame.size.height);
     }
     
@@ -822,7 +821,6 @@ BOOL refreshDataMember;
             reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
         }
         reward.delegate = self;
-        reward.objStamp = self.objStamp;
         reward.reward_id = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"];
         [self.navController pushViewController:reward animated:YES];
     } else {
@@ -833,6 +831,16 @@ BOOL refreshDataMember;
                           otherButtonTitles:nil] show];
     }
 
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+    
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
+    if ( scrollView.contentOffset.y < 0.0f ) {
+        [self viewDidLoad];
+    }
 }
 
 - (IBAction)signinTapped:(id)sender {

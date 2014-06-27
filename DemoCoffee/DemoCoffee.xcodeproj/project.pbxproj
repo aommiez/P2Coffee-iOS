@@ -141,8 +141,6 @@
 		526A34E21954024400D5FAB0 /* glow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D01954024400D5FAB0 /* glow@2x.png */; };
 		526A34E31954024400D5FAB0 /* line1.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D11954024400D5FAB0 /* line1.png */; };
 		526A34E41954024400D5FAB0 /* line2.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D21954024400D5FAB0 /* line2.png */; };
-		526A34E51954024400D5FAB0 /* stamp.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D31954024400D5FAB0 /* stamp.png */; };
-		526A34E61954024400D5FAB0 /* stamp@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 526A34D41954024400D5FAB0 /* stamp@2x.png */; };
 		526A34EB195402CD00D5FAB0 /* PFMemberCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A34E9195402CD00D5FAB0 /* PFMemberCell.m */; };
 		526A34EC195402CD00D5FAB0 /* PFMemberCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 526A34EA195402CD00D5FAB0 /* PFMemberCell.xib */; };
 		526A34F219541FB000D5FAB0 /* PFUpdateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 526A34F019541FB000D5FAB0 /* PFUpdateCell.m */; };
@@ -160,6 +158,22 @@
 		529AEED31954627F009A46EE /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 529AEED21954627F009A46EE /* default.jpg */; };
 		52A60ABD195D2A0800A88D99 /* PFAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A60ABB195D2A0800A88D99 /* PFAccountCell.m */; };
 		52A60ABE195D2A0800A88D99 /* PFAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */; };
+		52A60AC1195D639400A88D99 /* ic_bt_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABF195D639400A88D99 /* ic_bt_add.png */; };
+		52A60AC2195D639400A88D99 /* ic_bt_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AC0195D639400A88D99 /* ic_bt_add@2x.png */; };
+		52A60AC7195D6FEF00A88D99 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */; };
+		52A60AC8195D6FEF00A88D99 /* PFTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AC6195D6FEF00A88D99 /* PFTutorialViewController.xib */; };
+		52A60AD6195D71B500A88D99 /* 01_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACA195D71B500A88D99 /* 01_vector_box.png */; };
+		52A60AD7195D71B500A88D99 /* 01_vector_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACB195D71B500A88D99 /* 01_vector_box@2x.png */; };
+		52A60AD8195D71B500A88D99 /* 02_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACC195D71B500A88D99 /* 02_vector_box.png */; };
+		52A60AD9195D71B500A88D99 /* 02_vector_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACD195D71B500A88D99 /* 02_vector_box@2x.png */; };
+		52A60ADA195D71B500A88D99 /* 03_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACE195D71B500A88D99 /* 03_vector_box.png */; };
+		52A60ADB195D71B500A88D99 /* 03_vector_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACF195D71B500A88D99 /* 03_vector_box@2x.png */; };
+		52A60ADC195D71B500A88D99 /* 04_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD0195D71B500A88D99 /* 04_vector_box.png */; };
+		52A60ADD195D71B500A88D99 /* 04_vector_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD1195D71B500A88D99 /* 04_vector_box@2x.png */; };
+		52A60ADE195D71B500A88D99 /* bg_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD2195D71B500A88D99 /* bg_intro.png */; };
+		52A60ADF195D71B500A88D99 /* bg_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD3195D71B500A88D99 /* bg_intro@2x.png */; };
+		52A60AE0195D71B500A88D99 /* line_intro.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD4195D71B500A88D99 /* line_intro.png */; };
+		52A60AE1195D71B500A88D99 /* line_intro@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AD5195D71B500A88D99 /* line_intro@2x.png */; };
 		52FBAF39195BC5F10047FF7C /* PFDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FBAF18195BC5F10047FF7C /* PFDetailViewController.m */; };
 		52FBAF3B195BC5F10047FF7C /* PFDetailViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAF1A195BC5F10047FF7C /* PFDetailViewController_Wide.xib */; };
 		52FBAF3C195BC5F10047FF7C /* PFGalleryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FBAF1C195BC5F10047FF7C /* PFGalleryViewController.m */; };
@@ -497,8 +511,6 @@
 		526A34D01954024400D5FAB0 /* glow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "glow@2x.png"; sourceTree = "<group>"; };
 		526A34D11954024400D5FAB0 /* line1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line1.png; sourceTree = "<group>"; };
 		526A34D21954024400D5FAB0 /* line2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line2.png; sourceTree = "<group>"; };
-		526A34D31954024400D5FAB0 /* stamp.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stamp.png; sourceTree = "<group>"; };
-		526A34D41954024400D5FAB0 /* stamp@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stamp@2x.png"; sourceTree = "<group>"; };
 		526A34E8195402CD00D5FAB0 /* PFMemberCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFMemberCell.h; sourceTree = "<group>"; };
 		526A34E9195402CD00D5FAB0 /* PFMemberCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFMemberCell.m; sourceTree = "<group>"; };
 		526A34EA195402CD00D5FAB0 /* PFMemberCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFMemberCell.xib; sourceTree = "<group>"; };
@@ -523,6 +535,23 @@
 		52A60ABA195D2A0800A88D99 /* PFAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAccountCell.h; sourceTree = "<group>"; };
 		52A60ABB195D2A0800A88D99 /* PFAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAccountCell.m; sourceTree = "<group>"; };
 		52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAccountCell.xib; sourceTree = "<group>"; };
+		52A60ABF195D639400A88D99 /* ic_bt_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bt_add.png; sourceTree = "<group>"; };
+		52A60AC0195D639400A88D99 /* ic_bt_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bt_add@2x.png"; sourceTree = "<group>"; };
+		52A60AC4195D6FEF00A88D99 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
+		52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
+		52A60AC6195D6FEF00A88D99 /* PFTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController.xib; sourceTree = "<group>"; };
+		52A60ACA195D71B500A88D99 /* 01_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01_vector_box.png; sourceTree = "<group>"; };
+		52A60ACB195D71B500A88D99 /* 01_vector_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01_vector_box@2x.png"; sourceTree = "<group>"; };
+		52A60ACC195D71B500A88D99 /* 02_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02_vector_box.png; sourceTree = "<group>"; };
+		52A60ACD195D71B500A88D99 /* 02_vector_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "02_vector_box@2x.png"; sourceTree = "<group>"; };
+		52A60ACE195D71B500A88D99 /* 03_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 03_vector_box.png; sourceTree = "<group>"; };
+		52A60ACF195D71B500A88D99 /* 03_vector_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "03_vector_box@2x.png"; sourceTree = "<group>"; };
+		52A60AD0195D71B500A88D99 /* 04_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 04_vector_box.png; sourceTree = "<group>"; };
+		52A60AD1195D71B500A88D99 /* 04_vector_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "04_vector_box@2x.png"; sourceTree = "<group>"; };
+		52A60AD2195D71B500A88D99 /* bg_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_intro.png; sourceTree = "<group>"; };
+		52A60AD3195D71B500A88D99 /* bg_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bg_intro@2x.png"; sourceTree = "<group>"; };
+		52A60AD4195D71B500A88D99 /* line_intro.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = line_intro.png; sourceTree = "<group>"; };
+		52A60AD5195D71B500A88D99 /* line_intro@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "line_intro@2x.png"; sourceTree = "<group>"; };
 		52FBAF17195BC5F10047FF7C /* PFDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFDetailViewController.h; sourceTree = "<group>"; };
 		52FBAF18195BC5F10047FF7C /* PFDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFDetailViewController.m; sourceTree = "<group>"; };
 		52FBAF1A195BC5F10047FF7C /* PFDetailViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFDetailViewController_Wide.xib; sourceTree = "<group>"; };
@@ -1065,6 +1094,8 @@
 		526A34C21954024400D5FAB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				52A60ABF195D639400A88D99 /* ic_bt_add.png */,
+				52A60AC0195D639400A88D99 /* ic_bt_add@2x.png */,
 				526A34C31954024400D5FAB0 /* bgLight.png */,
 				526A34C41954024400D5FAB0 /* bgLight@2x.png */,
 				526A34C51954024400D5FAB0 /* button_add.png */,
@@ -1081,8 +1112,6 @@
 				526A34D01954024400D5FAB0 /* glow@2x.png */,
 				526A34D11954024400D5FAB0 /* line1.png */,
 				526A34D21954024400D5FAB0 /* line2.png */,
-				526A34D31954024400D5FAB0 /* stamp.png */,
-				526A34D41954024400D5FAB0 /* stamp@2x.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1145,6 +1174,36 @@
 				52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		52A60AC3195D695700A88D99 /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				52A60AC9195D71B500A88D99 /* Images */,
+				52A60AC4195D6FEF00A88D99 /* PFTutorialViewController.h */,
+				52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */,
+				52A60AC6195D6FEF00A88D99 /* PFTutorialViewController.xib */,
+			);
+			path = Tutorial;
+			sourceTree = "<group>";
+		};
+		52A60AC9195D71B500A88D99 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				52A60ACA195D71B500A88D99 /* 01_vector_box.png */,
+				52A60ACB195D71B500A88D99 /* 01_vector_box@2x.png */,
+				52A60ACC195D71B500A88D99 /* 02_vector_box.png */,
+				52A60ACD195D71B500A88D99 /* 02_vector_box@2x.png */,
+				52A60ACE195D71B500A88D99 /* 03_vector_box.png */,
+				52A60ACF195D71B500A88D99 /* 03_vector_box@2x.png */,
+				52A60AD0195D71B500A88D99 /* 04_vector_box.png */,
+				52A60AD1195D71B500A88D99 /* 04_vector_box@2x.png */,
+				52A60AD2195D71B500A88D99 /* bg_intro.png */,
+				52A60AD3195D71B500A88D99 /* bg_intro@2x.png */,
+				52A60AD4195D71B500A88D99 /* line_intro.png */,
+				52A60AD5195D71B500A88D99 /* line_intro@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		52FBAF16195BC5F10047FF7C /* Gallery */ = {
@@ -1443,6 +1502,7 @@
 			isa = PBXGroup;
 			children = (
 				EA024CBC195031220032CF51 /* Images */,
+				52A60AC3195D695700A88D99 /* Tutorial */,
 				52FBAFC1195BE7C90047FF7C /* Login */,
 				EA024CCC195031220032CF51 /* Update */,
 				EA024CC7195031220032CF51 /* Menu */,
@@ -1735,29 +1795,38 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
+				52A60ADA195D71B500A88D99 /* 03_vector_box.png in Resources */,
 				52FBAFB4195BE20A0047FF7C /* FootCommentBoxEndIp5@2x.png in Resources */,
 				525AE01719580489005329A1 /* ic_member_on@2x.png in Resources */,
 				526F1D4F195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib in Resources */,
+				52A60ADB195D71B500A88D99 /* 03_vector_box@2x.png in Resources */,
 				526A351F1954375200D5FAB0 /* PFEditAccountViewController_Wide.xib in Resources */,
 				52FBAFB9195BE20A0047FF7C /* linePrev.png in Resources */,
+				52A60AD7195D71B500A88D99 /* 01_vector_box@2x.png in Resources */,
 				52FBAF73195BC64E0047FF7C /* PFD1ViewController_Wide.xib in Resources */,
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
 				526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */,
 				52FBAFBD195BE20A0047FF7C /* NotBoxReadedIp4.png in Resources */,
 				52FBAFD0195BE7C90047FF7C /* Login_Button.png in Resources */,
 				525AE03C19580810005329A1 /* ic_birthday@2x.png in Resources */,
+				52A60AC1195D639400A88D99 /* ic_bt_add.png in Resources */,
 				52FBAFCC195BE7C90047FF7C /* Create_Button.png in Resources */,
 				52FBAF8C195BD39E0047FF7C /* icon_share@2x.png in Resources */,
 				525AE032195806DB005329A1 /* ic_website.png in Resources */,
+				52A60ADE195D71B500A88D99 /* bg_intro.png in Resources */,
 				EA024CEB195031220032CF51 /* Setting_icon@2x.png in Resources */,
+				52A60AE1195D71B500A88D99 /* line_intro@2x.png in Resources */,
 				525AE031195806DB005329A1 /* ic_telephone@2x.png in Resources */,
+				52A60AE0195D71B500A88D99 /* line_intro.png in Resources */,
 				525AE02E195806DB005329A1 /* ic_phone.png in Resources */,
 				EA024CFC195031220032CF51 /* default.jpeg in Resources */,
 				526A34F81954281400D5FAB0 /* PFAccountViewController_Wide.xib in Resources */,
 				EA024CF7195031220032CF51 /* PFMapAllViewController_Wide.xib in Resources */,
 				52FBAFBC195BE20A0047FF7C /* NotBoxNoReadIp5@2x.png in Resources */,
 				529AEED31954627F009A46EE /* default.jpg in Resources */,
+				52A60ADF195D71B500A88D99 /* bg_intro@2x.png in Resources */,
 				526A34E21954024400D5FAB0 /* glow@2x.png in Resources */,
+				52A60AD9195D71B500A88D99 /* 02_vector_box@2x.png in Resources */,
 				525AE04019580810005329A1 /* ic_lock@2x.png in Resources */,
 				EA024CF2195031220032CF51 /* icon_reload.png in Resources */,
 				52FBAFD3195BE7C90047FF7C /* PFLoginViewController.xib in Resources */,
@@ -1768,6 +1837,7 @@
 				52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */,
 				526A34D91954024400D5FAB0 /* button_minus_select.png in Resources */,
 				52FBAFB7195BE20A0047FF7C /* icon_share@2x.png in Resources */,
+				52A60AC8195D6FEF00A88D99 /* PFTutorialViewController.xib in Resources */,
 				525AE030195806DB005329A1 /* ic_telephone.png in Resources */,
 				52FBAFBE195BE20A0047FF7C /* NotBoxReadedIp4@2x.png in Resources */,
 				52FBAF96195BDFE60047FF7C /* PFUpdateCommentCell.xib in Resources */,
@@ -1787,10 +1857,10 @@
 				525AE02C195806DB005329A1 /* ic_location.png in Resources */,
 				525AE01219580489005329A1 /* ic_update_off.png in Resources */,
 				52FBAFC0195BE20A0047FF7C /* PostBottonIp5@2x.png in Resources */,
+				52A60AD6195D71B500A88D99 /* 01_vector_box.png in Resources */,
 				52FBAFCE195BE7C90047FF7C /* login.png in Resources */,
 				525AE04319580810005329A1 /* ic_web@2x.png in Resources */,
 				525AE01119580489005329A1 /* ic_menu_on.png in Resources */,
-				526A34E61954024400D5FAB0 /* stamp@2x.png in Resources */,
 				526A34D81954024400D5FAB0 /* button_minus.png in Resources */,
 				EA024D04195031220032CF51 /* PFUpdateViewController_Wide.xib in Resources */,
 				523FD2B61959695100B965EF /* MWPhotoBrowser.bundle in Resources */,
@@ -1800,10 +1870,13 @@
 				EA024C57195030B30032CF51 /* Images.xcassets in Resources */,
 				526A34E01954024400D5FAB0 /* cross_icon.png in Resources */,
 				525AE04219580810005329A1 /* ic_unlock@2x.png in Resources */,
+				52A60AC2195D639400A88D99 /* ic_bt_add@2x.png in Resources */,
 				525AE02A195806DB005329A1 /* ic_email.png in Resources */,
+				52A60ADC195D71B500A88D99 /* 04_vector_box.png in Resources */,
 				EA024D12195037EB0032CF51 /* PFRewardViewController_Wide.xib in Resources */,
 				525AE03D19580810005329A1 /* ic_fb@2x.png in Resources */,
 				525AE01B19580489005329A1 /* ic_update_on@2x.png in Resources */,
+				52A60AD8195D71B500A88D99 /* 02_vector_box.png in Resources */,
 				526A34DC1954024400D5FAB0 /* button_point.png in Resources */,
 				52A60ABE195D2A0800A88D99 /* PFAccountCell.xib in Resources */,
 				525AE02B195806DB005329A1 /* ic_email@2x.png in Resources */,
@@ -1811,6 +1884,7 @@
 				52FBAFCD195BE7C90047FF7C /* icon_close@2x.png in Resources */,
 				525AE01419580489005329A1 /* ic_contact_off@2x.png in Resources */,
 				52FBAF3E195BC5F10047FF7C /* PFGalleryViewController_Wide.xib in Resources */,
+				52A60ADD195D71B500A88D99 /* 04_vector_box@2x.png in Resources */,
 				EA024CFE195031220032CF51 /* PFHistoryViewController_Wide.xib in Resources */,
 				525AE01519580489005329A1 /* ic_contact_on@2x.png in Resources */,
 				52FBAF6E195BC64E0047FF7C /* PFFranchiseCell.xib in Resources */,
@@ -1824,7 +1898,6 @@
 				525AE04119580810005329A1 /* ic_mail@2x.png in Resources */,
 				526F1D3E195AAA0A000EFEB9 /* chapter_branch_01.png in Resources */,
 				526A34EC195402CD00D5FAB0 /* PFMemberCell.xib in Resources */,
-				526A34E51954024400D5FAB0 /* stamp.png in Resources */,
 				525AE01319580489005329A1 /* ic_update_on.png in Resources */,
 				EA024D2719503C860032CF51 /* PFNotificationCell.xib in Resources */,
 				525AE033195806DB005329A1 /* ic_website@2x.png in Resources */,
@@ -1934,6 +2007,7 @@
 				EA024D2619503C860032CF51 /* PFNotificationCell.m in Sources */,
 				368623B81953F590004636DF /* FMResultSet.m in Sources */,
 				523FD2A71959695100B965EF /* PSTGridLayoutRow.m in Sources */,
+				52A60AC7195D6FEF00A88D99 /* PFTutorialViewController.m in Sources */,
 				EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */,
 				523FD2971959695100B965EF /* MWTapDetectingImageView.m in Sources */,
 				523FD2941959695100B965EF /* MWGridViewController.m in Sources */,
