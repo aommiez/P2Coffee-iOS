@@ -302,7 +302,7 @@ NSString *password;
 - (void)DCManager:(id)sender loginWithPasswordResponse:(NSDictionary *)response {
     NSLog(@"%@",response);
     
-    if ([[[response objectForKey:@"error"] objectForKey:@"code"] intValue] == 401 ) {
+    if ([[[response objectForKey:@"error"] objectForKey:@"type"] isEqualToString:@"Main\\CTL\\Exception\\NeedParameterException"]) {
         [[[UIAlertView alloc] initWithTitle:@"Login failed"
                                     message:[[response objectForKey:@"error"] objectForKey:@"message"]
                                    delegate:nil

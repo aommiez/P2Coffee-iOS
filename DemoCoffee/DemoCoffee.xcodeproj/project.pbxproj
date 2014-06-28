@@ -31,7 +31,6 @@
 		368623941953F001004636DF /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623891953F001004636DF /* AFURLRequestSerialization.m */; };
 		368623951953F001004636DF /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686238B1953F001004636DF /* AFURLResponseSerialization.m */; };
 		368623961953F001004636DF /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686238D1953F001004636DF /* AFURLSessionManager.m */; };
-		368623981953F040004636DF /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623971953F040004636DF /* FacebookSDK.framework */; };
 		3686239D1953F0E2004636DF /* LoggerClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686239B1953F0E2004636DF /* LoggerClient.m */; };
 		3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3686239E1953F1AF004636DF /* CFNetwork.framework */; };
 		368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 368623A01953F1C1004636DF /* SystemConfiguration.framework */; };
@@ -160,6 +159,7 @@
 		52A20C1A195E7F0500D67BED /* intro-2.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A20C16195E7F0500D67BED /* intro-2.png */; };
 		52A20C1B195E7F0500D67BED /* intro-3.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A20C17195E7F0500D67BED /* intro-3.png */; };
 		52A20C1C195E7F0500D67BED /* intro-4.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A20C18195E7F0500D67BED /* intro-4.png */; };
+		52A20C66195E8AE100D67BED /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52A20C65195E8AE100D67BED /* FacebookSDK.framework */; };
 		52A60ABD195D2A0800A88D99 /* PFAccountCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A60ABB195D2A0800A88D99 /* PFAccountCell.m */; };
 		52A60ABE195D2A0800A88D99 /* PFAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */; };
 		52A60AC1195D639400A88D99 /* ic_bt_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABF195D639400A88D99 /* ic_bt_add.png */; };
@@ -347,7 +347,6 @@
 		3686238B1953F001004636DF /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = External/afnetworking/AFURLResponseSerialization.m; sourceTree = SOURCE_ROOT; };
 		3686238C1953F001004636DF /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = External/afnetworking/AFURLSessionManager.h; sourceTree = SOURCE_ROOT; };
 		3686238D1953F001004636DF /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = External/afnetworking/AFURLSessionManager.m; sourceTree = SOURCE_ROOT; };
-		368623971953F040004636DF /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = External/Facebook/FacebookSDK.framework; sourceTree = "<group>"; };
 		3686239A1953F0E2004636DF /* LoggerClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerClient.h; path = External/Logger/LoggerClient.h; sourceTree = SOURCE_ROOT; };
 		3686239B1953F0E2004636DF /* LoggerClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoggerClient.m; path = External/Logger/LoggerClient.m; sourceTree = SOURCE_ROOT; };
 		3686239C1953F0E2004636DF /* LoggerCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoggerCommon.h; path = External/Logger/LoggerCommon.h; sourceTree = SOURCE_ROOT; };
@@ -540,6 +539,7 @@
 		52A20C16195E7F0500D67BED /* intro-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-2.png"; sourceTree = "<group>"; };
 		52A20C17195E7F0500D67BED /* intro-3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-3.png"; sourceTree = "<group>"; };
 		52A20C18195E7F0500D67BED /* intro-4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "intro-4.png"; sourceTree = "<group>"; };
+		52A20C65195E8AE100D67BED /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FacebookSDK.framework; path = External/Facebook/FacebookSDK.framework; sourceTree = "<group>"; };
 		52A60ABA195D2A0800A88D99 /* PFAccountCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFAccountCell.h; sourceTree = "<group>"; };
 		52A60ABB195D2A0800A88D99 /* PFAccountCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFAccountCell.m; sourceTree = "<group>"; };
 		52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAccountCell.xib; sourceTree = "<group>"; };
@@ -715,12 +715,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				368623981953F040004636DF /* FacebookSDK.framework in Frameworks */,
 				368623A71953F516004636DF /* MobileCoreServices.framework in Frameworks */,
 				368623A51953F3B9004636DF /* libxml2.2.dylib in Frameworks */,
 				368623A11953F1C1004636DF /* SystemConfiguration.framework in Frameworks */,
 				3686239F1953F1AF004636DF /* CFNetwork.framework in Frameworks */,
 				EA024C42195030B30032CF51 /* CoreGraphics.framework in Frameworks */,
+				52A20C66195E8AE100D67BED /* FacebookSDK.framework in Frameworks */,
 				EA024C46195030B30032CF51 /* CoreData.framework in Frameworks */,
 				EA024C44195030B30032CF51 /* UIKit.framework in Frameworks */,
 				EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */,
@@ -1382,12 +1382,12 @@
 		EA024C3E195030B30032CF51 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52A20C65195E8AE100D67BED /* FacebookSDK.framework */,
 				368623A61953F516004636DF /* MobileCoreServices.framework */,
 				368623A41953F3B9004636DF /* libxml2.2.dylib */,
 				368623A21953F1DD004636DF /* GHUnitIOS.framework */,
 				368623A01953F1C1004636DF /* SystemConfiguration.framework */,
 				3686239E1953F1AF004636DF /* CFNetwork.framework */,
-				368623971953F040004636DF /* FacebookSDK.framework */,
 				EA024C3F195030B30032CF51 /* Foundation.framework */,
 				EA024C41195030B30032CF51 /* CoreGraphics.framework */,
 				EA024C43195030B30032CF51 /* UIKit.framework */,

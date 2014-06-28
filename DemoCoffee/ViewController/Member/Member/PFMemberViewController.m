@@ -48,17 +48,6 @@ BOOL refreshDataMember;
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
     
-    //no login
-    if ([self.Demoapi checkLogin] == true){
-        self.tableView.tableHeaderView = self.memberView;
-        UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
-        self.tableView.tableFooterView = fv;
-    }else{
-    //login
-        self.tableView.tableHeaderView = self.nomemberView;
-        self.tableView.tableFooterView = self.footernomemberView;
-    }
-    
     CALayer *postermember = [self.postermember layer];
     [postermember setMasksToBounds:YES];
     [postermember setCornerRadius:7.0f];
@@ -74,13 +63,25 @@ BOOL refreshDataMember;
     CALayer *addButton = [self.addButton layer];
     [addButton setMasksToBounds:YES];
     [addButton setCornerRadius:7.0f];
-    
-    self.obj = [[NSDictionary alloc] init];
-    self.objStamp = [[NSDictionary alloc] init];
-    self.objStyle = [[NSMutableArray alloc] init];
-    self.arrObj = [[NSMutableArray alloc] init];
-    
+        
     [self.Demoapi getStampStyle];
+    
+    //login
+    if ([self.Demoapi checkLogin] == true){
+        
+        self.obj = [[NSDictionary alloc] init];
+        self.objStamp = [[NSDictionary alloc] init];
+        self.objStyle = [[NSDictionary alloc] init];
+        self.arrObj = [[NSMutableArray alloc] init];
+        
+        self.tableView.tableHeaderView = self.memberView;
+        UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
+        self.tableView.tableFooterView = fv;
+    }else{
+        //no login
+        self.tableView.tableHeaderView = self.nomemberView;
+        self.tableView.tableFooterView = self.footernomemberView;
+    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -761,6 +762,7 @@ BOOL refreshDataMember;
         history = [[PFHistoryViewController alloc] initWithNibName:@"PFHistoryViewController" bundle:nil];
     }
     history.delegate = self;
+    history.detailhistory = [self.objStyle objectForKey:@"condition_info"];
     [self.navController pushViewController:history animated:YES];
 }
 
@@ -836,30 +838,26 @@ BOOL refreshDataMember;
 
 }
 
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-    
-}
-
-- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView {
-    if ( scrollView.contentOffset.y < 0.0f ) {
-        [self viewDidLoad];
-    }
-}
-
 - (IBAction)signinTapped:(id)sender {
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"signin coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    self.loginView = [PFLoginViewController alloc];
+    self.loginView.menu = @"member";
+    self.loginView.delegate = self;
+    [self.view addSubview:self.loginView.view];
+}
+
+- (void)PFMemberViewController:(id)sender{
+    [self viewDidLoad];
+    [self.delegate ShowTabbar];
 }
 
 - (IBAction)addPointTapped:(id)sender {
+
     [self.view addSubview:self.blurView];
     [self.addPointView.layer setCornerRadius:4.0f];
     [self.addPointView setBackgroundColor:RGB(248, 246, 244)];
     self.addPointView.frame = CGRectMake(35, 120, self.addPointView.frame.size.width, self.addPointView.frame.size.height);
     [self.view addSubview:self.addPointView];
+    
 }
 
 - (IBAction)removeAmountTapped:(id)sender {

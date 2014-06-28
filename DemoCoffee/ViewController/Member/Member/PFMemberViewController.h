@@ -16,6 +16,8 @@
 
 #import "PFMemberCell.h"
 
+#import "PFTabBarViewController.h"
+#import "PFLoginViewController.h"
 #import "PFHistoryViewController.h"
 #import "PFRewardViewController.h"
 
@@ -33,6 +35,9 @@
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
+@property (strong, nonatomic) PFTabBarViewController *tabBarViewController;
+
+@property (retain, nonatomic) PFLoginViewController *loginView;
 @property (strong, nonatomic) IBOutlet AMBlurView *blurView;
 
 @property (retain, nonatomic) NSMutableArray *arrObj;

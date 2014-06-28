@@ -40,7 +40,7 @@
     self.token = [self.Demoapi getAccessToken];
     self.user_id = [self.Demoapi getUserId];
     
-    NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@",@"http://www.pla2.com/webview/preorder/page2.php?product_id=",self.product_id,@"&user=",self.user_id,@"&domain=coffee&token=",self.token];
+    NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@",@"http://apps.pla2.com/webview/preorder/page2.php?product_id=",self.product_id,@"&user=",self.user_id,@"&domain=coffee&token=",self.token];
     NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     self.webView.delegate = self;
     self.webView.scalesPageToFit = YES;

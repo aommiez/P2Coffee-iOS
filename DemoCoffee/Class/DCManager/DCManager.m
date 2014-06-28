@@ -348,6 +348,7 @@
 - (void)logOut {
     [self.userDefaults removeObjectForKey:@"access_token"];
     [self.userDefaults removeObjectForKey:@"user_id"];
+
     self.userDefaults = nil;
 }
 
