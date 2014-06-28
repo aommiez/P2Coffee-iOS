@@ -314,16 +314,19 @@ BOOL newMedia;
         newMedia = NO;
     }
 }
-
+- (NSString *)encodeToBase64String:(UIImage *)image {
+    if(image){
+		NSData * data = [UIImagePNGRepresentation(image) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
+        return [NSString stringWithUTF8String:[data bytes]];
+	} else {
+		return @"";
+	}
+}
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
     image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
-    //NSData *imageData = UIImageJPEGRepresentation(image, 75);
-    
-    NSData * data = [UIImageJPEGRepresentation(image, 75) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-    NSString *strEncoded = [NSString stringWithUTF8String:[data bytes]];
-    
-    [self.Demoapi userPictureUpload:strEncoded];
+    UIImage *img = image;
+    [self.Demoapi userPictureUpload:[self encodeToBase64String:img]];
     [picker dismissViewControllerAnimated:YES completion:^{
         self.thumUser.image = image;
         
