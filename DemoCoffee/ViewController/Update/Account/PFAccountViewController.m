@@ -41,37 +41,16 @@
                                            [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
     self.navigationItem.rightBarButtonItem = rightButton;
     
-    self.scrollView.contentSize = CGSizeMake(self.formView.frame.size.width, self.formView.frame.size.height+20);
-    self.formView.frame = CGRectMake(10, 10, self.formView.frame.size.width,self.formView.frame.size.height);
-    [self.scrollView addSubview:self.formView];
-    
-    CALayer *facebookView = [self.facebookView layer];
-    [facebookView setMasksToBounds:YES];
-    [facebookView setCornerRadius:5.0f];
-    
-    CALayer *emailView = [self.emailView layer];
-    [emailView setMasksToBounds:YES];
-    [emailView setCornerRadius:5.0f];
-    
-    CALayer *websiteView = [self.websiteView layer];
-    [websiteView setMasksToBounds:YES];
-    [websiteView setCornerRadius:5.0f];
-    
-    CALayer *phoneView = [self.phoneView layer];
-    [phoneView setMasksToBounds:YES];
-    [phoneView setCornerRadius:5.0f];
-    
-    CALayer *genderView = [self.genderView layer];
-    [genderView setMasksToBounds:YES];
-    [genderView setCornerRadius:5.0f];
-    
-    CALayer *birthdayView = [self.birthdayView layer];
-    [birthdayView setMasksToBounds:YES];
-    [birthdayView setCornerRadius:5.0f];
+    self.tableView.tableHeaderView = self.headerView;
+    self.tableView.tableFooterView = self.footerView;
     
     CALayer *logoutButton = [self.logoutButton layer];
     [logoutButton setMasksToBounds:YES];
     [logoutButton setCornerRadius:5.0f];
+    
+    CALayer *tutorialButton = [self.tutorialButton layer];
+    [tutorialButton setMasksToBounds:YES];
+    [tutorialButton setCornerRadius:5.0f];
     
     CALayer *settingView = [self.settingView layer];
     [settingView setMasksToBounds:YES];
@@ -81,10 +60,10 @@
     self.Demoapi.delegate = self;
     
     self.obj = [[NSDictionary alloc] init];
-    //self.objUsersetting = [[NSDictionary alloc] init];
+   
+    self.rowCount = [[NSString alloc] init];
     
     [self.Demoapi me];
-//    [self.Demoapi getUserSetting];
 }
 
 - (void)didReceiveMemoryWarning
@@ -122,7 +101,7 @@
     NSLog(@"getUserSetting %@",response);
     
     if ([[response objectForKey:@"show_facebook"] intValue] == 1) {
-        self.facebook.text = [self.obj objectForKey:@"display_name"];
+        self.facebook.text = [self.obj objectForKey:@"facebook_name"];
     } else {
         self.facebook.text = @"";
     }
@@ -151,6 +130,10 @@
     } else {
         self.birthday.text = @"";
     }
+    
+    int count = [[response objectForKey:@"show_facebook"] intValue]+[[response objectForKey:@"show_email"] intValue]+[[response objectForKey:@"show_website"] intValue]+[[response objectForKey:@"show_mobile"] intValue]+[[response objectForKey:@"show_gender"] intValue]+[[response objectForKey:@"show_birth_date"] intValue];
+    self.rowCount = [NSString stringWithFormat:@"%d",count];
+    [self.tableView reloadData];
     
     //switch
     
@@ -204,6 +187,158 @@
     NSLog(@"%@",errorResponse);
 }
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [self.rowCount intValue];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 45;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    PFAccountCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFAccountCell"];
+    if(cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFAccountCell" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+
+    CALayer *bgView = [cell.bgView layer];
+    [bgView setMasksToBounds:YES];
+    [bgView setCornerRadius:5.0f];
+    
+    if (indexPath.row == 0) {
+        if ([[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 1) {
+            cell.imgrow.image = [UIImage imageNamed:@"ic_fb.png"];
+            cell.detailrow.text = [self.obj objectForKey:@"facebook_name"];
+        } else {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_mail.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"email"];
+            } else {
+                if ([[self.objUsersetting objectForKey:@"show_website"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_email"] intValue] == 0) {
+                    cell.imgrow.image = [UIImage imageNamed:@"ic_web.png"];
+                    cell.detailrow.text = [self.obj objectForKey:@"website"];
+                } else {
+                    if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_email"] intValue] == 0  && [[self.objUsersetting objectForKey:@"show_website"] intValue] == 0) {
+                        cell.imgrow.image = [UIImage imageNamed:@"ic_iphone.png"];
+                        cell.detailrow.text = [self.obj objectForKey:@"mobile_phone"];
+                    } else {
+                        if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_email"] intValue] == 0  && [[self.objUsersetting objectForKey:@"show_website"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 0) {
+                            cell.imgrow.image = [UIImage imageNamed:@"ic_gender.png"];
+                            cell.detailrow.text = [self.obj objectForKey:@"gender"];
+                        } else {
+                            if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_email"] intValue] == 0  && [[self.objUsersetting objectForKey:@"show_website"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_gender"] intValue] == 0) {
+                                    cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+                                    cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    } else if (indexPath.row == 1) {
+        if ([[self.objUsersetting objectForKey:@"show_email"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 1) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_mail.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"email"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_website"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 1) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_web.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"website"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] == 1) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_iphone.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"mobile_phone"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_gender.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"gender"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+                cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+            }
+        }
+    } else if (indexPath.row == 2) {
+        if ([[self.objUsersetting objectForKey:@"show_website"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 2) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_web.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"website"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] == 2) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_iphone.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"mobile_phone"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 2) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_gender.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"gender"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 2) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+                cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+            }
+        }
+    } else if (indexPath.row == 3) {
+        if ([[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] == 3) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_iphone.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"mobile_phone"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 3) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_gender.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"gender"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 3) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+                cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+            }
+        }
+    } else if (indexPath.row == 4) {
+        if ([[self.objUsersetting objectForKey:@"show_gender"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 4) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_gender.png"];
+                cell.detailrow.text = [self.obj objectForKey:@"gender"];
+            }
+        }
+        if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+            if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 4) {
+                cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+                cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+            }
+        }
+    } else if (indexPath.row == 5) {
+        if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
+            cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
+            cell.detailrow.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+        }
+    }
+    
+    return cell;
+}
+
 - (void)editProfileTapped {
     PFEditAccountViewController *editView = [[PFEditAccountViewController alloc] init];
     
@@ -232,6 +367,11 @@
     [self.Demoapi logOut];
     [self.navigationController popViewControllerAnimated:YES];
     
+}
+
+- (IBAction)tutorialTapped:(id)sender {
+    self.tutorialView = [PFTutorialViewController alloc];
+    [self.view addSubview:self.tutorialView.view];
 }
 
 - (void) PFEditAccountViewControllerBack {

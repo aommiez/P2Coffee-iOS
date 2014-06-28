@@ -162,7 +162,7 @@
 
 - (void)DCManager:(id)sender getProductIdResponse:(NSDictionary *)response {
     self.obj = response;
-    //NSLog(@"%@",self.obj);
+    NSLog(@"Gallery %@",self.obj);
     
     [self.waitView removeFromSuperview];
     
@@ -226,6 +226,7 @@
     } else {
         order =[[PFOrderViewController alloc] initWithNibName:@"PFOrderViewController" bundle:nil];
     }
+    order.product_id = self.product_id;
     [self.navigationController pushViewController:order animated:YES];
  
 }

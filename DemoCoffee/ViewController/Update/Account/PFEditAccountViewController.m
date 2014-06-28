@@ -150,8 +150,29 @@ BOOL newMedia;
     return UIInterfaceOrientationMaskPortrait;
 }
 
+- (IBAction)selectgenderTapped:(id)sender {
+    [self hideKeyboard];
+    
+    UIAlertView *message = [[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                                      message:@"Select gender."
+                                                     delegate:self
+                                            cancelButtonTitle:@"Cancel"
+                                            otherButtonTitles:@"Male", @"Female", nil];
+    [message show];
+}
+- (void) alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        self.gender.text = @"Male";
+    } else if (buttonIndex == 2) {
+        self.gender.text = @"Female";
+    }
+}
+
 - (void)SaveProfile {
     [self.Demoapi settingUser:self.facebookSetting email:self.emailSetting website:self.websiteSetting tel:self.telSetting gender:self.genderSetting birthday:self.birthdaySetting];
+    
+    [self.Demoapi updateSetting:self.display_name.text facebook:self.facebook.text email:self.email.text website:self.website.text tel:self.tel.text gender:self.gender.text birthday:self.birthday.text];
+    
     [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
                                 message:@"Update profile complete."
                                delegate:nil
@@ -249,6 +270,8 @@ BOOL newMedia;
                                delegate:nil
                       cancelButtonTitle:@"OK"
                       otherButtonTitles:nil] show];
+    [self.blurView removeFromSuperview];
+    [self.changepasswordView removeFromSuperview];
 }
 
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
@@ -380,6 +403,16 @@ BOOL newMedia;
     UIGraphicsEndImageContext();
     
     return newImage;
+}
+
+- (void)hideKeyboard {
+    [self.display_name resignFirstResponder];
+    [self.facebook resignFirstResponder];
+    [self.email resignFirstResponder];
+    [self.website resignFirstResponder];
+    [self.tel resignFirstResponder];
+    [self.gender resignFirstResponder];
+    [self.birthday resignFirstResponder];
 }
 
 - (BOOL) textFieldShouldReturn:(UITextField *)textField  {
