@@ -8,8 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol PFTutorialViewControllerDelegate <NSObject>
+
+@end
+
 @interface PFTutorialViewController : UIViewController
 
+@property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) NSArray *pageImages;
+
+- (IBAction)closeTapped:(id)sender;
 
 @end

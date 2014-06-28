@@ -7,7 +7,6 @@
 //
 
 #import "PFTutorialViewController.h"
-#import "PagedImageScrollView.h"
 
 @interface PFTutorialViewController ()
 
@@ -28,18 +27,20 @@
 {
     [super viewDidLoad];
     
-//    self.pageImages = @[@"01_vector_box.png", @"02_vector_box.png", @"03_vector_box.png", @"04_vector_box.png"];
-//    
-//    PagedImageScrollView *pageScrollView = [[PagedImageScrollView alloc] initWithFrame:CGRectMake(0, 0, 320, 180)];
-//    pageScrollView.delegate = self;
-//    [pageScrollView setScrollViewContents:self.pageImages];
-//    pageScrollView.pageControlPos = PageControlPositionCenterBottom;
-//    [self.view addSubview:pageScrollView];
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+-(IBAction)closeTapped:(id)sender{
+    [self.view removeFromSuperview];
 }
 
 @end

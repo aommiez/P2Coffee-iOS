@@ -370,8 +370,14 @@
 }
 
 - (IBAction)tutorialTapped:(id)sender {
-    self.tutorialView = [PFTutorialViewController alloc];
-    [self.view addSubview:self.tutorialView.view];
+    PFTutorialViewController *editView = [[PFTutorialViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editView = [[PFTutorialViewController alloc] initWithNibName:@"PFTutorialViewController_Wide" bundle:nil];
+    } else {
+        editView = [[PFTutorialViewController alloc] initWithNibName:@"PFTutorialViewController" bundle:nil];
+    }
+    [self.navigationController pushViewController:editView animated:NO];
 }
 
 - (void) PFEditAccountViewControllerBack {

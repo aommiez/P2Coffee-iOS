@@ -19,6 +19,7 @@
 
 - (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link;
 - (void)PFAccountViewControllerBack;
+- (void)Tutorial;
 
 @end
 
