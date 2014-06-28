@@ -339,19 +339,73 @@ BOOL newMedia;
 }
 - (NSString *)encodeToBase64String:(UIImage *)image {
     if(image){
+        /*
 		NSData * data = [UIImagePNGRepresentation(image) base64EncodedDataWithOptions:NSDataBase64Encoding64CharacterLineLength];
-        return [NSString stringWithUTF8String:[data bytes]];
+        return [NSString stringWithUTF8String:[data bytes]];*/
+        NSData *imageData = UIImageJPEGRepresentation(image, 1.0);
+        
+        //And then apply Base64 encoding to convert it into a base-64 encoded string:
+        NSString *encodedString = [self base64forData:imageData];
+        return encodedString;
 	} else {
 		return @"";
 	}
 }
+- (NSString *)contentTypeForImageData:(NSData *)data {
+    uint8_t c;
+    [data getBytes:&c length:1];
+    
+    switch (c) {
+        case 0xFF:
+            return @"image/jpeg";
+        case 0x89:
+            return @"image/png";
+        case 0x47:
+            return @"image/gif";
+        case 0x49:
+        case 0x4D:
+            return @"image/tiff";
+    }
+    return nil;
+}
+
+- (NSString*)base64forData:(NSData*)theData {
+    
+    const uint8_t* input = (const uint8_t*)[theData bytes];
+    NSInteger length = [theData length];
+    
+    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    
+    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t* output = (uint8_t*)data.mutableBytes;
+    
+    NSInteger i;
+    for (i=0; i < length; i += 3) {
+        NSInteger value = 0;
+        NSInteger j;
+        for (j = i; j < (i + 3); j++) {
+            value <<= 8;
+            
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        
+        NSInteger theIndex = (i / 3) * 4;
+        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
+        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
+        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
+        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
+    }
+    
+    return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
+}
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
-    image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
-    UIImage *img = image;
+    UIImage *img = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
     [self.Demoapi userPictureUpload:[self encodeToBase64String:img]];
     [picker dismissViewControllerAnimated:YES completion:^{
-        self.thumUser.image = image;
+        self.thumUser.image = img;
         
         SDImageCache *imageCache = [SDImageCache sharedImageCache];
         [imageCache clearMemory];
