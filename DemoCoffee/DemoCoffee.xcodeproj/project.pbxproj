@@ -164,8 +164,6 @@
 		52A60ABE195D2A0800A88D99 /* PFAccountCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */; };
 		52A60AC1195D639400A88D99 /* ic_bt_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ABF195D639400A88D99 /* ic_bt_add.png */; };
 		52A60AC2195D639400A88D99 /* ic_bt_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AC0195D639400A88D99 /* ic_bt_add@2x.png */; };
-		52A60AC7195D6FEF00A88D99 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */; };
-		52A60AC8195D6FEF00A88D99 /* PFTutorialViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52A60AC6195D6FEF00A88D99 /* PFTutorialViewController_Wide.xib */; };
 		52A60AD6195D71B500A88D99 /* 01_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACA195D71B500A88D99 /* 01_vector_box.png */; };
 		52A60AD7195D71B500A88D99 /* 01_vector_box@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACB195D71B500A88D99 /* 01_vector_box@2x.png */; };
 		52A60AD8195D71B500A88D99 /* 02_vector_box.png in Resources */ = {isa = PBXBuildFile; fileRef = 52A60ACC195D71B500A88D99 /* 02_vector_box.png */; };
@@ -545,9 +543,6 @@
 		52A60ABC195D2A0800A88D99 /* PFAccountCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFAccountCell.xib; sourceTree = "<group>"; };
 		52A60ABF195D639400A88D99 /* ic_bt_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_bt_add.png; sourceTree = "<group>"; };
 		52A60AC0195D639400A88D99 /* ic_bt_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ic_bt_add@2x.png"; sourceTree = "<group>"; };
-		52A60AC4195D6FEF00A88D99 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
-		52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
-		52A60AC6195D6FEF00A88D99 /* PFTutorialViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController_Wide.xib; sourceTree = "<group>"; };
 		52A60ACA195D71B500A88D99 /* 01_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 01_vector_box.png; sourceTree = "<group>"; };
 		52A60ACB195D71B500A88D99 /* 01_vector_box@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "01_vector_box@2x.png"; sourceTree = "<group>"; };
 		52A60ACC195D71B500A88D99 /* 02_vector_box.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 02_vector_box.png; sourceTree = "<group>"; };
@@ -1188,9 +1183,6 @@
 			isa = PBXGroup;
 			children = (
 				52A60AC9195D71B500A88D99 /* Images */,
-				52A60AC4195D6FEF00A88D99 /* PFTutorialViewController.h */,
-				52A60AC5195D6FEF00A88D99 /* PFTutorialViewController.m */,
-				52A60AC6195D6FEF00A88D99 /* PFTutorialViewController_Wide.xib */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1850,7 +1842,6 @@
 				52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */,
 				526A34D91954024400D5FAB0 /* button_minus_select.png in Resources */,
 				52FBAFB7195BE20A0047FF7C /* icon_share@2x.png in Resources */,
-				52A60AC8195D6FEF00A88D99 /* PFTutorialViewController_Wide.xib in Resources */,
 				525AE030195806DB005329A1 /* ic_telephone.png in Resources */,
 				52FBAFBE195BE20A0047FF7C /* NotBoxReadedIp4@2x.png in Resources */,
 				52FBAF96195BDFE60047FF7C /* PFUpdateCommentCell.xib in Resources */,
@@ -2023,7 +2014,6 @@
 				EA024D2619503C860032CF51 /* PFNotificationCell.m in Sources */,
 				368623B81953F590004636DF /* FMResultSet.m in Sources */,
 				523FD2A71959695100B965EF /* PSTGridLayoutRow.m in Sources */,
-				52A60AC7195D6FEF00A88D99 /* PFTutorialViewController.m in Sources */,
 				EA024D11195037EB0032CF51 /* PFRewardViewController.m in Sources */,
 				523FD2971959695100B965EF /* MWTapDetectingImageView.m in Sources */,
 				523FD2941959695100B965EF /* MWGridViewController.m in Sources */,

@@ -67,7 +67,7 @@ BOOL refreshDataMember;
     [self.Demoapi getStampStyle];
     
     //login
-    if ([self.Demoapi checkLogin] == true){
+    if ([self.Demoapi checkLogin] != false){
         
         self.obj = [[NSDictionary alloc] init];
         self.objStamp = [[NSDictionary alloc] init];
@@ -100,7 +100,7 @@ BOOL refreshDataMember;
     [self.waitView removeFromSuperview];
     
     //login
-    if ([self.Demoapi checkLogin] == true){
+    if ([self.Demoapi checkLogin] != false){
     
         self.stampurl = [response objectForKey:@"stamp_icon"];
     
@@ -768,7 +768,7 @@ BOOL refreshDataMember;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self.Demoapi checkLogin] == true){
+    if ([self.Demoapi checkLogin] != false){
         return [self.arrObj count];
     } else {
         return 0;
@@ -814,49 +814,63 @@ BOOL refreshDataMember;
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if ([self.showpoint.text intValue] >= [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"point"] intValue]) {
+    if ([self.Demoapi checkLogin] != false){
     
-        [self.delegate HideTabbar];
+        if ([self.showpoint.text intValue] >= [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"point"] intValue]) {
     
-        PFRewardViewController *reward = [[PFRewardViewController alloc] init];
+            [self.delegate HideTabbar];
     
-        if(IS_WIDESCREEN){
-            reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController_Wide" bundle:nil];
-        } else {
+            PFRewardViewController *reward = [[PFRewardViewController alloc] init];
+    
+            if(IS_WIDESCREEN){
+                reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController_Wide" bundle:nil];
+            } else {
             reward = [[PFRewardViewController alloc] initWithNibName:@"PFRewardViewController" bundle:nil];
-        }
-        reward.delegate = self;
-        reward.reward_id = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"];
-        [self.navController pushViewController:reward animated:YES];
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+            }
+            reward.delegate = self;
+            reward.reward_id = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"];
+            [self.navController pushViewController:reward animated:YES];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
                                     message:@"แลกกาแฟนี้ไม่ได้ เนื่องจากสแตมป์ของคุณมีน้อยกว่าเงื่อนไข"
                                    delegate:nil
                           cancelButtonTitle:@"OK"
                           otherButtonTitles:nil] show];
+        }
+    } else {
+        self.loginView = [PFLoginViewController alloc];
+        self.loginView.menu = @"member";
+        self.loginView.delegate = self;
+        [self.view addSubview:self.loginView.view];
     }
 
 }
 
 - (IBAction)signinTapped:(id)sender {
     self.loginView = [PFLoginViewController alloc];
-    self.loginView.menu = @"member";
+    //self.loginView.menu = @"member";
     self.loginView.delegate = self;
     [self.view addSubview:self.loginView.view];
 }
 
 - (void)PFMemberViewController:(id)sender{
-    [self viewDidLoad];
     [self.delegate ShowTabbar];
 }
 
 - (IBAction)addPointTapped:(id)sender {
-
-    [self.view addSubview:self.blurView];
-    [self.addPointView.layer setCornerRadius:4.0f];
-    [self.addPointView setBackgroundColor:RGB(248, 246, 244)];
-    self.addPointView.frame = CGRectMake(35, 120, self.addPointView.frame.size.width, self.addPointView.frame.size.height);
-    [self.view addSubview:self.addPointView];
+    if ([self.Demoapi checkLogin] != false){
+        
+        [self.view addSubview:self.blurView];
+        [self.addPointView.layer setCornerRadius:4.0f];
+        [self.addPointView setBackgroundColor:RGB(248, 246, 244)];
+        self.addPointView.frame = CGRectMake(35, 120, self.addPointView.frame.size.width, self.addPointView.frame.size.height);
+        [self.view addSubview:self.addPointView];
+    } else {
+        self.loginView = [PFLoginViewController alloc];
+        self.loginView.menu = @"member";
+        self.loginView.delegate = self;
+        [self.view addSubview:self.loginView.view];
+    }
     
 }
 

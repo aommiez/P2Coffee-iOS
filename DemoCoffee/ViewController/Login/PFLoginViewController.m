@@ -78,7 +78,6 @@ NSString *password;
     } completion:^{
         //NSLog(@"animation ok");
     }];
-
 }
 
 - (void)didReceiveMemoryWarning

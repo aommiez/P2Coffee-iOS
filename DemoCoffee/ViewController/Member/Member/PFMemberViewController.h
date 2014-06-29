@@ -38,7 +38,7 @@
 @property (strong, nonatomic) PFTabBarViewController *tabBarViewController;
 
 @property (retain, nonatomic) PFLoginViewController *loginView;
-@property (strong, nonatomic) IBOutlet AMBlurView *blurView;
+@property (strong, nonatomic) IBOutlet UIView *blurView;
 
 @property (retain, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;

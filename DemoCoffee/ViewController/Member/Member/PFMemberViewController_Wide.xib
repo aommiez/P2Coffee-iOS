@@ -14,6 +14,7 @@
                 <outlet property="amountFinishView" destination="d0a-gj-Ugj" id="ie4-IG-A4D"/>
                 <outlet property="amountLabel" destination="krI-pb-Ypc" id="39y-qf-Rxv"/>
                 <outlet property="bg" destination="uKj-N4-eJX" id="0Qk-sd-a1A"/>
+                <outlet property="blurView" destination="08A-QU-MfR" id="iKC-zw-UpP"/>
                 <outlet property="cancelButton" destination="Rdv-5M-blF" id="3Ur-L8-Qt3"/>
                 <outlet property="conditionnomember" destination="Zpr-So-2TS" id="vbj-id-Ohv"/>
                 <outlet property="conditionnomemberView" destination="vMD-yw-GVF" id="4aI-wf-6Sl"/>
@@ -100,13 +101,14 @@
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <view contentMode="scaleToFill" id="08A-QU-MfR" customClass="AMBlurView">
+        <view alpha="0.20000000000000001" contentMode="scaleToFill" id="08A-QU-MfR" customClass="AMBlurView">
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="tP5-FC-ql3">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <state key="normal">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -115,7 +117,7 @@
                     </connections>
                 </button>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
         <navigationController definesPresentationContext="YES" id="Y17-aI-E6j">
