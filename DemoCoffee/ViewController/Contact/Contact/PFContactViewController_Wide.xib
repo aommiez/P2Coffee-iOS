@@ -158,7 +158,7 @@
                     </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Powered.png" id="U1u-3S-9id">
-                    <rect key="frame" x="60" y="153" width="200" height="28"/>
+                    <rect key="frame" x="60" y="153" width="200" height="25"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="ncF-EP-eaN">

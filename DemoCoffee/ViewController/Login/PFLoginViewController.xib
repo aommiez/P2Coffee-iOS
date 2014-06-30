@@ -80,10 +80,10 @@
                         <action selector="signupTapeed:" destination="-1" eventType="touchUpInside" id="TxY-fw-djy"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="CiY-ha-tBq">
-                    <rect key="frame" x="105" y="20" width="70" height="70"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login.png" id="CiY-ha-tBq">
+                    <rect key="frame" x="105" y="20" width="70" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DemoCoffee User Login" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="tud-4N-lZe">
                     <rect key="frame" x="20" y="98" width="240" height="21"/>
@@ -184,10 +184,10 @@
                         <outlet property="delegate" destination="-1" id="T10-8Q-b1D"/>
                     </connections>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="yN2-9H-tM1">
-                    <rect key="frame" x="105" y="10" width="70" height="70"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo_login.png" id="yN2-9H-tM1">
+                    <rect key="frame" x="105" y="20" width="70" height="56"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="qfU-iR-lvc">
                     <rect key="frame" x="20" y="312" width="240" height="45"/>
@@ -229,5 +229,6 @@
         <image name="Login_Button.png" width="240" height="80"/>
         <image name="Sign_Button.png" width="240" height="80"/>
         <image name="icon_close.png" width="20" height="20"/>
+        <image name="logo_login.png" width="100" height="80"/>
     </resources>
 </document>

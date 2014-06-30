@@ -13,8 +13,7 @@
 #import "DCManager.h"
 
 #import "PFAccountCell.h"
-#import "PFEditAccountViewController.h"
-#import "PFTutorialViewController.h"
+#import "PFProfileViewController.h"
 
 @protocol PFAccountViewControllerDelegate <NSObject>
 
@@ -29,8 +28,6 @@
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFAccountViewControllerDelegate> delegate;
 
-@property (retain, nonatomic) PFTutorialViewController *tutorialView;
-
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
@@ -44,7 +41,7 @@
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
 
 @property (strong, nonatomic) IBOutlet UIView *settingView;
@@ -53,12 +50,7 @@
 
 @property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
 
-@property (weak, nonatomic) IBOutlet UITextField *facebook;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *website;
-@property (weak, nonatomic) IBOutlet UITextField *tel;
-@property (weak, nonatomic) IBOutlet UITextField *gender;
-@property (weak, nonatomic) IBOutlet UITextField *birthday;
+- (IBAction)editProfile:(id)sender;
 
 - (IBAction)switchNewsonoff:(id)sender;
 - (IBAction)switchMessageonoff:(id)sender;
