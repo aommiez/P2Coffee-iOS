@@ -88,7 +88,6 @@
 }
 
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
-    self.objUsersetting = response;
     NSLog(@"getUserSetting %@",response);
     
     //switch
@@ -154,15 +153,12 @@
     
     profileView.delegate = self;
     profileView.objAccount = self.obj;
-    profileView.objUsersetting = self.objUsersetting;
-    [self presentModalViewController:profileView animated:YES];
+    [self.navigationController pushViewController:profileView animated:YES];
+    //[self presentModalViewController:profileView animated:YES];
 }
 
-- (IBAction)fullimgTapped:(id)sender {
-    
-    NSString *picStr = [[NSString alloc] initWithString:[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
-    [self.delegate PFAccountViewController:self viewPicture:picStr];
-    
+- (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link{
+    [self.delegate PFAccountViewController:self viewPicture:link];
 }
 
 - (IBAction)logoutTapped:(id)sender {

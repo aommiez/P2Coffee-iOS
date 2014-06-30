@@ -17,6 +17,11 @@
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
 
+@property (strong, nonatomic) NSDictionary *objEdit;
+
+@property (retain, nonatomic) IBOutlet UIView *waitView;
+@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
@@ -28,7 +33,6 @@
 
 @property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
 
-@property (weak, nonatomic) IBOutlet UITextField *facebook;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *website;
 @property (weak, nonatomic) IBOutlet UITextField *tel;

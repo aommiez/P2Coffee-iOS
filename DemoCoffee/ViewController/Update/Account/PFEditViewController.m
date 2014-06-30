@@ -27,6 +27,12 @@
 {
     [super viewDidLoad];
     
+    [self.view addSubview:self.waitView];
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
+    
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     
@@ -43,6 +49,13 @@
     self.navItem.rightBarButtonItem = rightButton;
     
     self.tableView.tableHeaderView = self.headerView;
+    
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    
+    self.objEdit = [[NSDictionary alloc] init];
+    
+    [self.Demoapi me];
 }
 
 - (void)didReceiveMemoryWarning
@@ -56,6 +69,31 @@
 
 -(void)close {
     [self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
+    self.objEdit = response;
+    NSLog(@"Me %@",response);
+    
+    [self.waitView removeFromSuperview];
+    
+    self.display_name.text = [response objectForKey:@"display_name"];
+    
+    NSString *picStr = [[response objectForKey:@"picture"] objectForKey:@"link"];
+    self.thumUser.layer.masksToBounds = YES;
+    self.thumUser.contentMode = UIViewContentModeScaleAspectFill;
+    self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
+    
+    self.email.text = [response objectForKey:@"email"];
+    self.website.text = [response objectForKey:@"website"];
+    self.tel.text = [response objectForKey:@"mobile_phone"];
+    self.gender.text = [response objectForKey:@"gender"];
+    self.birthday.text = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    
+}
+
+- (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 @end

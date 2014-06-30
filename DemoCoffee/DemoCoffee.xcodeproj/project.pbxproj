@@ -95,6 +95,8 @@
 		525885C019614FD00084F390 /* PFEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525885BE19614FD00084F390 /* PFEditViewController.m */; };
 		525885C119614FD10084F390 /* PFEditViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525885BF19614FD00084F390 /* PFEditViewController_Wide.xib */; };
 		525885C3196165970084F390 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = 525885C2196165970084F390 /* next.png */; };
+		525885C7196170A80084F390 /* PFEditDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525885C5196170A80084F390 /* PFEditDetailViewController.m */; };
+		525885C8196170A80084F390 /* PFEditDetailViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525885C6196170A80084F390 /* PFEditDetailViewController_Wide.xib */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
 		525AE00D19580489005329A1 /* ic_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFC19580488005329A1 /* ic_contact_on.png */; };
 		525AE00E19580489005329A1 /* ic_member_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFD19580488005329A1 /* ic_member_off.png */; };
@@ -474,6 +476,9 @@
 		525885BE19614FD00084F390 /* PFEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFEditViewController.m; sourceTree = "<group>"; };
 		525885BF19614FD00084F390 /* PFEditViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFEditViewController_Wide.xib; sourceTree = "<group>"; };
 		525885C2196165970084F390 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		525885C4196170A80084F390 /* PFEditDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFEditDetailViewController.h; sourceTree = "<group>"; };
+		525885C5196170A80084F390 /* PFEditDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFEditDetailViewController.m; sourceTree = "<group>"; };
+		525885C6196170A80084F390 /* PFEditDetailViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFEditDetailViewController_Wide.xib; sourceTree = "<group>"; };
 		525ADFFB19580488005329A1 /* ic_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_off.png; sourceTree = "<group>"; };
 		525ADFFC19580488005329A1 /* ic_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_on.png; sourceTree = "<group>"; };
 		525ADFFD19580488005329A1 /* ic_member_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_member_off.png; sourceTree = "<group>"; };
@@ -1158,6 +1163,9 @@
 				525885BD19614FD00084F390 /* PFEditViewController.h */,
 				525885BE19614FD00084F390 /* PFEditViewController.m */,
 				525885BF19614FD00084F390 /* PFEditViewController_Wide.xib */,
+				525885C4196170A80084F390 /* PFEditDetailViewController.h */,
+				525885C5196170A80084F390 /* PFEditDetailViewController.m */,
+				525885C6196170A80084F390 /* PFEditDetailViewController_Wide.xib */,
 			);
 			path = Account;
 			sourceTree = "<group>";
@@ -1858,6 +1866,7 @@
 				52FBAFD3195BE7C90047FF7C /* PFLoginViewController.xib in Resources */,
 				EA024CF3195031220032CF51 /* icon_reload@2x.png in Resources */,
 				525AE01A19580489005329A1 /* ic_update_off@2x.png in Resources */,
+				525885C8196170A80084F390 /* PFEditDetailViewController_Wide.xib in Resources */,
 				525AE04919582DCA005329A1 /* PFOrderViewController_Wide.xib in Resources */,
 				526A34E31954024400D5FAB0 /* line1.png in Resources */,
 				52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */,
@@ -2048,6 +2057,7 @@
 				EA024CFD195031220032CF51 /* PFHistoryViewController.m in Sources */,
 				523FD2AE1959695100B965EF /* SDWebImageDownloaderOperation.m in Sources */,
 				52FBAF95195BDFE60047FF7C /* PFUpdateCommentCell.m in Sources */,
+				525885C7196170A80084F390 /* PFEditDetailViewController.m in Sources */,
 				52FBAF84195BC8E90047FF7C /* AMBlurView.m in Sources */,
 				523FD2921959695100B965EF /* MWCaptionView.m in Sources */,
 				36FE2FF41959360100029051 /* PFHelper.m in Sources */,

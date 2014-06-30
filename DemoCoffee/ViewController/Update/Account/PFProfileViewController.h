@@ -14,6 +14,12 @@
 
 #import "PFEditViewController.h"
 
+@protocol PFProfileViewControllerDelegate <NSObject>
+
+- (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link;
+
+@end
+
 @interface PFProfileViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;
@@ -26,7 +32,6 @@
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
 @property (strong, nonatomic) NSDictionary *objAccount;
-@property (strong, nonatomic) NSDictionary *objUsersetting;
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 
@@ -58,6 +63,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *tel_bt;
 @property (weak, nonatomic) IBOutlet UIButton *gender_bt;
 @property (weak, nonatomic) IBOutlet UIButton *birthday_bt;
+
+- (IBAction)fullimgTapped:(id)sender;
 
 - (IBAction)editTapped:(id)sender;
 

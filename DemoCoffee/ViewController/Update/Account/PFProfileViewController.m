@@ -34,21 +34,6 @@
     [popup setMasksToBounds:YES];
     [popup setCornerRadius:7.0f];
     
-    // Navbar setup
-    [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
-    
-    [[self.navController navigationBar] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
-                                                                 [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0], NSForegroundColorAttributeName, nil]];
-    
-    [[self.navController navigationBar] setTranslucent:YES];
-    [self.view addSubview:self.navController.view];
-    
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc] initWithTitle:@"Close" style:UIBarButtonItemStyleDone target:self action:@selector(close)];
-    [rightButton setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:
-                                         [UIFont fontWithName:@"Helvetica" size:17.0],NSFontAttributeName,nil] forState:UIControlStateNormal];
-    
-    self.navItem.rightBarButtonItem = rightButton;
-    
     self.tableView.tableHeaderView = self.headerView;
     
     CALayer *edit_bt = [self.edit_bt layer];
@@ -83,7 +68,6 @@
     self.Demoapi.delegate = self;
     
     self.objAccount = [[NSDictionary alloc] init];
-    self.objUsersetting = [[NSDictionary alloc] init];
 
     [self.Demoapi me];
 
@@ -98,8 +82,11 @@
     return UIInterfaceOrientationMaskPortrait;
 }
 
--(void)close {
-    [self dismissModalViewControllerAnimated:YES];
+- (IBAction)fullimgTapped:(id)sender {
+    
+    NSString *picStr = [[NSString alloc] initWithString:[[self.objAccount objectForKey:@"picture"] objectForKey:@"link"]];
+    [self.delegate PFAccountViewController:self viewPicture:picStr];
+    
 }
 
 - (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
@@ -131,7 +118,6 @@
 }
 
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
-    self.objUsersetting = response;
     NSLog(@"getUserSetting %@",response);
     
     //switch
@@ -201,8 +187,6 @@
     } else {
         editView = [[PFEditViewController alloc] initWithNibName:@"PFEditViewController" bundle:nil];
     }
-    
-    //account.delegate = self;
     [self presentModalViewController:editView animated:YES];
 }
 

@@ -17,10 +17,8 @@
                 <outlet property="gender" destination="s6o-dA-5go" id="WDU-o5-xiB"/>
                 <outlet property="gender_bt" destination="840-sw-xvq" id="d1f-dl-AfQ"/>
                 <outlet property="headerView" destination="bdR-wO-QVS" id="QAb-pj-rp4"/>
-                <outlet property="navController" destination="Q32-8W-fjF" id="RJq-jx-pxT"/>
-                <outlet property="navItem" destination="Vr0-KO-7cy" id="4Cc-Fx-8nx"/>
                 <outlet property="popupwaitView" destination="ic9-hf-lub" id="8s9-Eh-RJ5"/>
-                <outlet property="tableView" destination="ycq-e3-tCg" id="eJ9-tt-wfx"/>
+                <outlet property="tableView" destination="Hj3-9h-hBE" id="XBU-UQ-qs6"/>
                 <outlet property="tel" destination="EUN-Qf-dgE" id="If5-hB-e2q"/>
                 <outlet property="tel_bt" destination="yOa-3L-7Pt" id="LOr-HU-Mfz"/>
                 <outlet property="thumUser" destination="Uex-c4-tEY" id="OnA-30-Z2F"/>
@@ -72,42 +70,22 @@
                     <rect key="frame" x="29" y="92" width="20" height="20"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </activityIndicatorView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Hj3-9h-hBE">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
             <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
         </view>
-        <navigationController definesPresentationContext="YES" id="Q32-8W-fjF">
-            <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-            <nil key="simulatedTopBarMetrics"/>
-            <nil key="simulatedBottomBarMetrics"/>
-            <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-            <navigationBar key="navigationBar" contentMode="scaleToFill" id="K2A-GC-cbf">
-                <autoresizingMask key="autoresizingMask"/>
-            </navigationBar>
-            <viewControllers>
-                <viewController id="Phm-2Z-iEY">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ycq-e3-tCg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Profile" id="Vr0-KO-7cy"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
-                    <nil key="simulatedDestinationMetrics"/>
-                </viewController>
-            </viewControllers>
-        </navigationController>
         <view contentMode="scaleToFill" id="bdR-wO-QVS">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="420"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="484"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gWf-xd-Wev">
-                    <rect key="frame" x="0.0" y="20" width="320" height="100"/>
+                    <rect key="frame" x="0.0" y="84" width="320" height="100"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uex-c4-tEY" customClass="AsyncImageView">
@@ -121,6 +99,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="fullimgTapped:" destination="-1" eventType="touchUpInside" id="hg2-4b-HbI"/>
+                            </connections>
                         </button>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Profile name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-le-fSc">
                             <rect key="frame" x="110" y="35" width="170" height="30"/>
@@ -145,7 +126,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jXd-mt-ssH">
-                    <rect key="frame" x="0.0" y="140" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="204" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Facebook" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9Jw-Dp-WF9">
@@ -175,7 +156,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="G3o-b0-ZvN">
-                    <rect key="frame" x="0.0" y="186" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="250" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PgJ-aH-Xc7">
@@ -205,7 +186,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kWi-oH-Ba8">
-                    <rect key="frame" x="0.0" y="232" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="296" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Website" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZPL-zg-5xe">
@@ -235,7 +216,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xkQ-yk-7DS">
-                    <rect key="frame" x="0.0" y="278" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="342" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tel" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EUN-Qf-dgE">
@@ -265,7 +246,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4AB-J6-bCJ">
-                    <rect key="frame" x="0.0" y="324" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="388" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="s6o-dA-5go">
@@ -295,7 +276,7 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CIY-6Y-iwi">
-                    <rect key="frame" x="0.0" y="370" width="320" height="45"/>
+                    <rect key="frame" x="0.0" y="434" width="320" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Birthday" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fWp-uw-uUA">
