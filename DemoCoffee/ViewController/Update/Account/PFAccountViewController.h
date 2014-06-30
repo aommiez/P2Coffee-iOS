@@ -62,4 +62,9 @@
 - (IBAction)logoutTapped:(id)sender;
 - (IBAction)tutorialTapped:(id)sender;
 
+#pragma mark - tut
+@property (strong, nonatomic) IBOutlet UIView *tutorialMainView;
+@property (strong, nonatomic) IBOutlet UIScrollView *tutorialScrollView;
+@property (strong, nonatomic) IBOutlet UIView *tutorialDetailView;
+- (IBAction)closeTutorialView:(id)sender;
 @end
