@@ -152,9 +152,9 @@
         profileView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController" bundle:nil];
     }
     
-//    editView.delegate = self;
-//    editView.objAccount = self.obj;
-//    editView.objUsersetting = self.objUsersetting;
+    profileView.delegate = self;
+    profileView.objAccount = self.obj;
+    profileView.objUsersetting = self.objUsersetting;
     [self presentModalViewController:profileView animated:YES];
 }
 

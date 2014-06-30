@@ -6,16 +6,27 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFProfileViewController">
             <connections>
+                <outlet property="birthday" destination="fWp-uw-uUA" id="UD8-o1-zWC"/>
                 <outlet property="birthday_bt" destination="EGD-Jf-hMK" id="TsN-4a-dJT"/>
+                <outlet property="display_name" destination="Rql-le-fSc" id="1Ls-U9-MSj"/>
+                <outlet property="edit_bt" destination="Zi6-LT-Qsz" id="Dlo-BG-EkD"/>
+                <outlet property="email" destination="PgJ-aH-Xc7" id="e0h-7J-61V"/>
                 <outlet property="email_bt" destination="lgl-zb-5iO" id="ecr-kX-sp1"/>
+                <outlet property="facebook" destination="9Jw-Dp-WF9" id="6F6-zX-fXK"/>
                 <outlet property="facebook_bt" destination="28W-cw-0TT" id="UC0-kg-IGe"/>
+                <outlet property="gender" destination="s6o-dA-5go" id="WDU-o5-xiB"/>
                 <outlet property="gender_bt" destination="840-sw-xvq" id="d1f-dl-AfQ"/>
                 <outlet property="headerView" destination="bdR-wO-QVS" id="QAb-pj-rp4"/>
                 <outlet property="navController" destination="Q32-8W-fjF" id="RJq-jx-pxT"/>
                 <outlet property="navItem" destination="Vr0-KO-7cy" id="4Cc-Fx-8nx"/>
+                <outlet property="popupwaitView" destination="ic9-hf-lub" id="8s9-Eh-RJ5"/>
                 <outlet property="tableView" destination="ycq-e3-tCg" id="eJ9-tt-wfx"/>
+                <outlet property="tel" destination="EUN-Qf-dgE" id="If5-hB-e2q"/>
                 <outlet property="tel_bt" destination="yOa-3L-7Pt" id="LOr-HU-Mfz"/>
+                <outlet property="thumUser" destination="Uex-c4-tEY" id="OnA-30-Z2F"/>
                 <outlet property="view" destination="Tv2-2X-Wif" id="bdq-eW-NO5"/>
+                <outlet property="waitView" destination="ggp-qG-2Jn" id="HvS-gv-GGc"/>
+                <outlet property="website" destination="ZPL-zg-5xe" id="hUY-e5-xsF"/>
                 <outlet property="website_bt" destination="9c0-G8-LMP" id="Hxt-5p-vf3"/>
             </connections>
         </placeholder>
@@ -80,7 +91,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ycq-e3-tCg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tableView>
                     <navigationItem key="navigationItem" title="Profile" id="Vr0-KO-7cy"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -111,13 +122,25 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                         </button>
-                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Profile name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-le-fSc">
+                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Profile name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Rql-le-fSc">
                             <rect key="frame" x="110" y="35" width="170" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zi6-LT-Qsz">
+                            <rect key="frame" x="260" y="65" width="50" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                            <state key="normal" title="Edit">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="editTapped:" destination="-1" eventType="touchUpInside" id="nga-tl-hc3"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                 </view>
@@ -133,7 +156,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_fb.png" translatesAutoresizingMaskIntoConstraints="NO" id="zv0-wt-Jja">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="28W-cw-0TT">
@@ -144,6 +167,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="facebookTapped:" destination="-1" eventType="touchUpInside" id="vxO-Kd-jg6"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -160,7 +186,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_mail.png" translatesAutoresizingMaskIntoConstraints="NO" id="3Ko-ae-Q3r">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lgl-zb-5iO">
@@ -171,6 +197,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="emailTapped:" destination="-1" eventType="touchUpInside" id="NGF-dU-YWw"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -187,7 +216,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="URL"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_web.png" translatesAutoresizingMaskIntoConstraints="NO" id="tO5-vC-Nlc">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9c0-G8-LMP">
@@ -198,6 +227,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="websiteTapped:" destination="-1" eventType="touchUpInside" id="wl5-Sv-gSM"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -214,7 +246,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_iphone.png" translatesAutoresizingMaskIntoConstraints="NO" id="4h3-Gd-6au">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yOa-3L-7Pt">
@@ -225,6 +257,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="telTapped:" destination="-1" eventType="touchUpInside" id="sg1-nf-urz"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -241,7 +276,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_gender.png" translatesAutoresizingMaskIntoConstraints="NO" id="fG0-3R-u3M">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="840-sw-xvq">
@@ -252,6 +287,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="genderTapped:" destination="-1" eventType="touchUpInside" id="FHm-WR-Aa0"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -268,7 +306,7 @@
                             <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                         </textField>
                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ic_birthday.png" translatesAutoresizingMaskIntoConstraints="NO" id="7fD-Td-WJO">
-                            <rect key="frame" x="12" y="9" width="25" height="25"/>
+                            <rect key="frame" x="12" y="10" width="25" height="25"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EGD-Jf-hMK">
@@ -279,6 +317,9 @@
                             <state key="normal">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <connections>
+                                <action selector="birthdayTapped:" destination="-1" eventType="touchUpInside" id="4vL-En-ZMr"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
