@@ -144,18 +144,18 @@
 }
 
 - (IBAction)editProfile:(id)sender {
-    PFProfileViewController *editView = [[PFProfileViewController alloc] init];
+    PFProfileViewController *profileView = [[PFProfileViewController alloc] init];
     
     if(IS_WIDESCREEN) {
-        editView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController_Wide" bundle:nil];
+        profileView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController_Wide" bundle:nil];
     } else {
-        editView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController" bundle:nil];
+        profileView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController" bundle:nil];
     }
     
 //    editView.delegate = self;
 //    editView.objAccount = self.obj;
 //    editView.objUsersetting = self.objUsersetting;
-    [self presentModalViewController:editView animated:YES];
+    [self presentModalViewController:profileView animated:YES];
 }
 
 - (IBAction)fullimgTapped:(id)sender {

@@ -90,6 +90,8 @@
 		525885AD19610DFC0084F390 /* logo_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525885AB19610DFC0084F390 /* logo_login@2x.png */; };
 		525885B1196124B70084F390 /* PFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525885AF196124B70084F390 /* PFProfileViewController.m */; };
 		525885B2196124B70084F390 /* PFProfileViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525885B0196124B70084F390 /* PFProfileViewController_Wide.xib */; };
+		525885BB196145160084F390 /* PFEditAccountViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 525885B8196145160084F390 /* PFEditAccountViewController_Wide.xib */; };
+		525885BC196145160084F390 /* PFEditAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525885BA196145160084F390 /* PFEditAccountViewController.m */; };
 		525AE00C19580489005329A1 /* ic_contact_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFB19580488005329A1 /* ic_contact_off.png */; };
 		525AE00D19580489005329A1 /* ic_contact_on.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFC19580488005329A1 /* ic_contact_on.png */; };
 		525AE00E19580489005329A1 /* ic_member_off.png in Resources */ = {isa = PBXBuildFile; fileRef = 525ADFFD19580488005329A1 /* ic_member_off.png */; };
@@ -462,6 +464,9 @@
 		525885AE196124B70084F390 /* PFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileViewController.h; sourceTree = "<group>"; };
 		525885AF196124B70084F390 /* PFProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFProfileViewController.m; sourceTree = "<group>"; };
 		525885B0196124B70084F390 /* PFProfileViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFProfileViewController_Wide.xib; sourceTree = "<group>"; };
+		525885B8196145160084F390 /* PFEditAccountViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFEditAccountViewController_Wide.xib; sourceTree = "<group>"; };
+		525885B9196145160084F390 /* PFEditAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFEditAccountViewController.h; sourceTree = "<group>"; };
+		525885BA196145160084F390 /* PFEditAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFEditAccountViewController.m; sourceTree = "<group>"; };
 		525ADFFB19580488005329A1 /* ic_contact_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_off.png; sourceTree = "<group>"; };
 		525ADFFC19580488005329A1 /* ic_contact_on.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_contact_on.png; sourceTree = "<group>"; };
 		525ADFFD19580488005329A1 /* ic_member_off.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ic_member_off.png; sourceTree = "<group>"; };
@@ -1132,6 +1137,9 @@
 		526A34ED19541F9400D5FAB0 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				525885B9196145160084F390 /* PFEditAccountViewController.h */,
+				525885BA196145160084F390 /* PFEditAccountViewController.m */,
+				525885B8196145160084F390 /* PFEditAccountViewController_Wide.xib */,
 				52A60AB9195D29F200A88D99 /* Cell */,
 				526A34F91954294200D5FAB0 /* Images */,
 				526A34F41954281400D5FAB0 /* PFAccountViewController.h */,
@@ -1801,6 +1809,7 @@
 				52A20C19195E7F0500D67BED /* intro-1.png in Resources */,
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
 				52A60ADA195D71B500A88D99 /* 03_vector_box.png in Resources */,
+				525885BB196145160084F390 /* PFEditAccountViewController_Wide.xib in Resources */,
 				52FBAFB4195BE20A0047FF7C /* FootCommentBoxEndIp5@2x.png in Resources */,
 				525AE01719580489005329A1 /* ic_member_on@2x.png in Resources */,
 				526F1D4F195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib in Resources */,
@@ -2036,6 +2045,7 @@
 				52FBAF7A195BC64E0047FF7C /* PFMenuViewController.m in Sources */,
 				523FD2A11959695100B965EF /* PSTCollectionViewFlowLayout.m in Sources */,
 				52FBAFA2195BE0C20047FF7C /* MTTimingFunctions.c in Sources */,
+				525885BC196145160084F390 /* PFEditAccountViewController.m in Sources */,
 				523FD2981959695100B965EF /* MWTapDetectingView.m in Sources */,
 				52FBAF6D195BC64E0047FF7C /* PFFranchiseCell.m in Sources */,
 				EA024CFA195031220032CF51 /* PFWebViewController.m in Sources */,
