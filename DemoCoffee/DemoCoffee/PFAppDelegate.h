@@ -31,6 +31,7 @@
 @property (strong, nonatomic) PFMemberViewController *member;
 @property (strong, nonatomic) PFContactViewController *contact;
 
+
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;
 
