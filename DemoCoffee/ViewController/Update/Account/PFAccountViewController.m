@@ -176,7 +176,7 @@
 //    [self.view addSubview:self.tutorialView.view];
     [self.tutorialScrollView addSubview:self.tutorialDetailView];
     self.tutorialScrollView.contentSize = CGSizeMake(self.tutorialDetailView.frame.size.width,self.tutorialDetailView.frame.size.height);
-    [self.navigationController.view addSubview:self.tutorialMainView];
+    [[[[UIApplication sharedApplication] delegate] window] addSubview:self.tutorialMainView];
 }
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
