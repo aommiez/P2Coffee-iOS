@@ -6,14 +6,20 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFEditDetailViewController">
             <connections>
+                <outlet property="birthday" destination="Lpz-ge-UdD" id="fSO-MO-a5G"/>
                 <outlet property="birthdayView" destination="Npg-fW-2JR" id="Gzt-3W-qil"/>
+                <outlet property="displayname" destination="RV3-zi-V2V" id="uJ2-6g-FL3"/>
                 <outlet property="displaynameView" destination="GXj-1I-Zea" id="Ufw-Yi-9e5"/>
+                <outlet property="email" destination="Mjs-6s-aZ3" id="cD6-cR-OOR"/>
                 <outlet property="emailView" destination="FTt-go-9PQ" id="Las-aH-kfa"/>
+                <outlet property="gender" destination="pEP-oe-pyP" id="JMs-M8-HP1"/>
                 <outlet property="genserView" destination="oVj-bs-YXP" id="DRW-TG-mhO"/>
                 <outlet property="passwordView" destination="wVb-Pb-zbf" id="Ydc-z3-S2H"/>
+                <outlet property="phone" destination="SvB-y3-omb" id="nfk-dy-1DX"/>
                 <outlet property="phoneView" destination="4uv-T6-yuD" id="cQD-k2-M5q"/>
                 <outlet property="tableView" destination="FwW-Kb-uiz" id="wwL-oL-d9s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="website" destination="g35-dc-XMI" id="lkd-WD-uoa"/>
                 <outlet property="websiteView" destination="sPa-TG-ZSO" id="zYq-d6-RTT"/>
             </connections>
         </placeholder>
@@ -62,7 +68,7 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="138"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-zi-V2V">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Display Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RV3-zi-V2V">
                     <rect key="frame" x="20" y="20" width="280" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>

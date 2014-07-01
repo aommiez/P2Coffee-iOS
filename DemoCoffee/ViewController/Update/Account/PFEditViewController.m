@@ -107,6 +107,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"displayname";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -119,6 +120,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"password";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -131,6 +133,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"email";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -143,6 +146,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"website";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -155,6 +159,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"phone";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -167,6 +172,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"gender";
     [self.navController pushViewController:editdetail animated:YES];
 }
@@ -179,6 +185,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"birthday";
     [self.navController pushViewController:editdetail animated:YES];
 }
