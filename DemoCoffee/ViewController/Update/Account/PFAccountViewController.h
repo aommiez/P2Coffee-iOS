@@ -34,7 +34,6 @@
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @property (strong, nonatomic) NSDictionary *obj;
-@property (strong, nonatomic) NSDictionary *objUsersetting;
 
 @property (strong, nonatomic) NSString *rowCount;
 
@@ -58,7 +57,6 @@
 @property (strong, nonatomic) IBOutlet UISwitch *switchNews;
 @property (strong, nonatomic) IBOutlet UISwitch *switchMessage;
 
-- (IBAction)fullimgTapped:(id)sender;
 - (IBAction)logoutTapped:(id)sender;
 - (IBAction)tutorialTapped:(id)sender;
 

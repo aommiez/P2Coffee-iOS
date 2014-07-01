@@ -88,7 +88,6 @@
 }
 
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
-    self.objUsersetting = response;
     NSLog(@"getUserSetting %@",response);
     
     //switch
@@ -144,25 +143,22 @@
 }
 
 - (IBAction)editProfile:(id)sender {
-    PFProfileViewController *editView = [[PFProfileViewController alloc] init];
+    PFProfileViewController *profileView = [[PFProfileViewController alloc] init];
     
     if(IS_WIDESCREEN) {
-        editView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController_Wide" bundle:nil];
+        profileView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController_Wide" bundle:nil];
     } else {
-        editView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController" bundle:nil];
+        profileView = [[PFProfileViewController alloc] initWithNibName:@"PFProfileViewController" bundle:nil];
     }
     
-//    editView.delegate = self;
-//    editView.objAccount = self.obj;
-//    editView.objUsersetting = self.objUsersetting;
-    [self presentModalViewController:editView animated:YES];
+    profileView.delegate = self;
+    profileView.objAccount = self.obj;
+    [self.navigationController pushViewController:profileView animated:YES];
+    //[self presentModalViewController:profileView animated:YES];
 }
 
-- (IBAction)fullimgTapped:(id)sender {
-    
-    NSString *picStr = [[NSString alloc] initWithString:[[self.obj objectForKey:@"picture"] objectForKey:@"link"]];
-    [self.delegate PFAccountViewController:self viewPicture:picStr];
-    
+- (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link{
+    [self.delegate PFAccountViewController:self viewPicture:link];
 }
 
 - (IBAction)logoutTapped:(id)sender {
