@@ -83,4 +83,11 @@
     [super didReceiveMemoryWarning];
 }
 
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (IBAction)displaynameTapped:(id)sender{
+}
+
 @end
