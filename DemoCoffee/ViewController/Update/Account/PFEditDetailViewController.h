@@ -20,6 +20,23 @@
 @property (strong, nonatomic) IBOutlet UIView *genserView;
 @property (strong, nonatomic) IBOutlet UIView *birthdayView;
 
+
+@property (weak, nonatomic) IBOutlet UITextField *displayname;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *website;
+@property (weak, nonatomic) IBOutlet UITextField *phone;
+@property (weak, nonatomic) IBOutlet UITextField *gender;
+@property (weak, nonatomic) IBOutlet UITextField *birthday;
+
+@property (strong, nonatomic) NSDictionary *obj;
 @property (strong, nonatomic) NSString *checkstatus;
+
+- (IBAction)displaynameTapped:(id)sender;
+- (IBAction)passwordTapped:(id)sender;
+- (IBAction)emailTapped:(id)sender;
+- (IBAction)websiteTapped:(id)sender;
+- (IBAction)phoneTapped:(id)sender;
+- (IBAction)genderTapped:(id)sender;
+- (IBAction)birthdayTapped:(id)sender;
 
 @end
