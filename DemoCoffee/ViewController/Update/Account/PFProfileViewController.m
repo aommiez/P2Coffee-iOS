@@ -34,6 +34,8 @@
     [popup setMasksToBounds:YES];
     [popup setCornerRadius:7.0f];
     
+    self.navigationItem.title = @"Profile";
+    
     self.tableView.tableHeaderView = self.headerView;
     
     CALayer *edit_bt = [self.edit_bt layer];

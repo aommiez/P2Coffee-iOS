@@ -19,6 +19,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     }
     return self;
 }
@@ -32,6 +33,8 @@
     CALayer *popup = [self.popupwaitView layer];
     [popup setMasksToBounds:YES];
     [popup setCornerRadius:7.0f];
+    
+    self.navItem.title = @"";
     
     // Navbar setup
     [[self.navController navigationBar] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
@@ -94,6 +97,90 @@
 
 - (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
+}
+
+- (IBAction)displaynameTapped:(id)sender{
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"displayname";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)passwordTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"password";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)emailTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"email";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)websiteTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"website";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)telTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"phone";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)genderTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"gender";
+    [self.navController pushViewController:editdetail animated:YES];
+}
+
+- (IBAction)birthdayTapped:(id)sender {
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.checkstatus = @"birthday";
+    [self.navController pushViewController:editdetail animated:YES];
 }
 
 @end

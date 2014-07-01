@@ -12,6 +12,8 @@
 #import "SDImageCache.h"
 #import "DCManager.h"
 
+#import "PFEditDetailViewController.h"
+
 @interface PFEditViewController : UIViewController
 
 @property (assign, nonatomic) id delegate;
@@ -38,5 +40,13 @@
 @property (weak, nonatomic) IBOutlet UITextField *tel;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *birthday;
+
+- (IBAction)displaynameTapped:(id)sender;
+- (IBAction)passwordTapped:(id)sender;
+- (IBAction)emailTapped:(id)sender;
+- (IBAction)websiteTapped:(id)sender;
+- (IBAction)telTapped:(id)sender;
+- (IBAction)genderTapped:(id)sender;
+- (IBAction)birthdayTapped:(id)sender;
 
 @end
