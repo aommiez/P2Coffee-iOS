@@ -17,6 +17,7 @@
 @protocol PFProfileViewControllerDelegate <NSObject>
 
 - (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link;
+- (void)PFProfileViewControllerBack;
 
 @end
 

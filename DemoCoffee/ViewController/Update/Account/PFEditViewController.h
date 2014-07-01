@@ -10,9 +10,16 @@
 #import "AsyncImageView.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "SDImageCache.h"
+
 #import "DCManager.h"
 
 #import "PFEditDetailViewController.h"
+
+@protocol PFEditViewControllerDelegate <NSObject>
+
+- (void)PFEditViewControllerBack;
+
+@end
 
 @interface PFEditViewController : UIViewController
 
@@ -48,5 +55,12 @@
 - (IBAction)telTapped:(id)sender;
 - (IBAction)genderTapped:(id)sender;
 - (IBAction)birthdayTapped:(id)sender;
+
+@property (strong, nonatomic) IBOutlet UIView *blurView;
+@property (strong, nonatomic) IBOutlet UIView *birthdayView;
+@property (weak, nonatomic) IBOutlet UIDatePicker *Date;
+
+- (IBAction)savebirthdayTapped:(id)sender;
+- (IBAction)bgTapped:(id)sender;
 
 @end

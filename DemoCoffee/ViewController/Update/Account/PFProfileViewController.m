@@ -104,12 +104,16 @@
     self.thumUser.contentMode = UIViewContentModeScaleAspectFill;
     self.thumUser.imageURL = [[NSURL alloc] initWithString:picStr];
     
-    self.facebook.text = [response objectForKey:@"display_name"];
+    self.facebook.text = [response objectForKey:@"facebook_name"];
     self.email.text = [response objectForKey:@"email"];
     self.website.text = [response objectForKey:@"website"];
     self.tel.text = [response objectForKey:@"mobile_phone"];
     self.gender.text = [response objectForKey:@"gender"];
-    self.birthday.text = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    
+    NSString *myString = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    NSString *mySmallerString = [myString substringToIndex:10];
+    
+    self.birthday.text = mySmallerString;
     
     [self.Demoapi getUserSetting];
     
@@ -189,6 +193,7 @@
     } else {
         editView = [[PFEditViewController alloc] initWithNibName:@"PFEditViewController" bundle:nil];
     }
+    editView.delegate = self;
     [self presentModalViewController:editView animated:YES];
 }
 
@@ -268,6 +273,22 @@
         self.birthdaySetting = @"1";
     }
     [self.Demoapi settingUser:self.facebookSetting email:self.emailSetting website:self.websiteSetting tel:self.telSetting gender:self.genderSetting birthday:self.birthdaySetting];
+}
+
+- (void) PFEditViewControllerBack {
+    [self viewDidLoad];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFProfileViewControllerBack)]){
+            [self.delegate PFProfileViewControllerBack];
+        }
+    }
+    
 }
 
 @end

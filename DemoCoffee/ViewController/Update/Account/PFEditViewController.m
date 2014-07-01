@@ -91,11 +91,23 @@
     self.website.text = [response objectForKey:@"website"];
     self.tel.text = [response objectForKey:@"mobile_phone"];
     self.gender.text = [response objectForKey:@"gender"];
-    self.birthday.text = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    
+    NSString *myString = [[response objectForKey:@"birth_date"] objectForKey:@"date"];
+    NSString *mySmallerString = [myString substringToIndex:10];
+    
+    self.birthday.text = mySmallerString;
     
 }
 
 - (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
+    NSLog(@"settingUser %@",response);
+}
+
+- (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
 
@@ -107,6 +119,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.delegate = self;
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"displayname";
     [self.navController pushViewController:editdetail animated:YES];
@@ -120,6 +133,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.delegate = self;
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"password";
     [self.navController pushViewController:editdetail animated:YES];
@@ -133,6 +147,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.delegate = self;
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"email";
     [self.navController pushViewController:editdetail animated:YES];
@@ -146,6 +161,7 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.delegate = self;
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"website";
     [self.navController pushViewController:editdetail animated:YES];
@@ -159,35 +175,116 @@
     } else {
         editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
     }
+    editdetail.delegate = self;
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"phone";
     [self.navController pushViewController:editdetail animated:YES];
 }
 
 - (IBAction)genderTapped:(id)sender {
-    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]
+                                  initWithTitle:@"Select Gender."
+                                  delegate:self
+                                  cancelButtonTitle:@"cancel"
+                                  destructiveButtonTitle:nil
+                                  otherButtonTitles:@"Male", @"Female",nil];
+    [actionSheet showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
     
-    if(IS_WIDESCREEN) {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
-    } else {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    //Get the name of the current pressed button
+    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+    
+    if  ([buttonTitle isEqualToString:@"Male"]) {
+        self.gender.text = @"Male";
+        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
+                           facebook:[self.objEdit objectForKey:@"facebook_name"]
+                              email:[self.objEdit objectForKey:@"email"]
+                            website:[self.objEdit objectForKey:@"website"]
+                                tel:[self.objEdit objectForKey:@"mobile_phone"]
+                             gender:@"Male"
+                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
+        
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"Save complete."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
-    editdetail.obj = self.objEdit;
-    editdetail.checkstatus = @"gender";
-    [self.navController pushViewController:editdetail animated:YES];
+    
+    if  ([buttonTitle isEqualToString:@"Female"]) {
+        self.gender.text = @"Female";
+        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
+                           facebook:[self.objEdit objectForKey:@"facebook_name"]
+                              email:[self.objEdit objectForKey:@"email"]
+                            website:[self.objEdit objectForKey:@"website"]
+                                tel:[self.objEdit objectForKey:@"mobile_phone"]
+                             gender:@"Female"
+                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
+        
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"Save complete."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+    
 }
 
 - (IBAction)birthdayTapped:(id)sender {
-    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    [self.view addSubview:self.blurView];
+    [self.birthdayView.layer setCornerRadius:4.0f];
+    self.birthdayView.frame = CGRectMake(10, 120, self.birthdayView.frame.size.width, self.birthdayView.frame.size.height);
+    [self.view addSubview:self.birthdayView];
+}
+
+- (IBAction)savebirthdayTapped:(id)sender {
     
-    if(IS_WIDESCREEN) {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
-    } else {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    NSDateFormatter *date = [[NSDateFormatter alloc] init];
+    date.dateFormat = @"yyyy/MM/dd";
+    NSArray *temp = [[NSString stringWithFormat:@"%@",[date stringFromDate:self.Date.date]] componentsSeparatedByString:@""];
+    NSString *dateString = [[NSString alloc] init];
+    dateString = [[NSString alloc] initWithString:[temp objectAtIndex:0]];
+
+    self.birthday.text = dateString;
+    [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
+                       facebook:[self.objEdit objectForKey:@"facebook_name"]
+                          email:[self.objEdit objectForKey:@"email"]
+                        website:[self.objEdit objectForKey:@"website"]
+                            tel:[self.objEdit objectForKey:@"mobile_phone"]
+                         gender:[self.objEdit objectForKey:@"gender"]
+                       birthday:dateString];
+    
+    [self.blurView removeFromSuperview];
+    [self.birthdayView removeFromSuperview];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:nil
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (IBAction)bgTapped:(id)sender {
+    [self.blurView removeFromSuperview];
+    [self.birthdayView removeFromSuperview];
+}
+
+- (void) PFEditDetailViewControllerBack {
+    [self viewDidLoad];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.navigationController.viewControllers indexOfObject:self] != NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFEditViewControllerBack)]){
+            [self.delegate PFEditViewControllerBack];
+        }
     }
-    editdetail.obj = self.objEdit;
-    editdetail.checkstatus = @"birthday";
-    [self.navController pushViewController:editdetail animated:YES];
+    
 }
 
 @end
