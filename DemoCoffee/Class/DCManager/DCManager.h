@@ -114,6 +114,10 @@
 #pragma mark - user
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse;
+
+- (void)DCManager:(id)sender getUserSettingByIdResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getUserSettingByIdErrorResponse:(NSString *)errorResponse;
+
 - (void)DCManager:(id)sender registerWithUsernameResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender userPictureUploadResponse:(NSDictionary *)response;
@@ -188,6 +192,9 @@
  get user profile me
  */
 - (void)me;
+
+- (void)profile:(NSString *)user_id;
+
 /*
  save user id to NSUserDefaults
  */
@@ -247,6 +254,7 @@
 
 #pragma mark - user
 - (void)getUserSetting;
+- (void)getUserSettingById:(NSString *)user_id;
 - (void)settingNews:(NSString *)status;
 - (void)settingMessage:(NSString *)status;
 - (void)registerWithUsername:(NSString *)username password:(NSString *)password email:(NSString *)email birth_date:(NSString *)birth_date gender:(NSString *)gender picture:(NSString *)picture;

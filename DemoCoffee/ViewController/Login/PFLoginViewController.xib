@@ -8,6 +8,7 @@
             <connections>
                 <outlet property="blurView" destination="2oX-I9-Yus" id="8GD-WE-EYw"/>
                 <outlet property="confirmSignUp" destination="5ZB-qh-osB" id="BjA-3L-8jY"/>
+                <outlet property="create_bt" destination="RdS-rK-XV8" id="f7x-my-czw"/>
                 <outlet property="dateOfBirthSignUp" destination="J6i-re-GS5" id="RLa-nD-eF2"/>
                 <outlet property="emailSignIn" destination="NaO-2i-08X" id="gvx-3a-A4N"/>
                 <outlet property="emailSignUp" destination="b0U-oh-qTl" id="3xM-NB-JsQ"/>
@@ -16,6 +17,8 @@
                 <outlet property="passwordSignIn" destination="xQ6-mC-qd2" id="uqu-ma-aLZ"/>
                 <outlet property="passwordSignUp" destination="cr8-De-3oY" id="Z0o-AY-wGS"/>
                 <outlet property="registerView" destination="y10-8K-UEH" id="2OM-02-MQw"/>
+                <outlet property="signin_bt" destination="FSd-wJ-JLa" id="3sH-xw-POr"/>
+                <outlet property="signup_bt" destination="Ekf-CV-8sf" id="yfx-5Q-SXC"/>
                 <outlet property="username" destination="vHJ-ix-99L" id="7wf-rh-9b2"/>
                 <outlet property="view" destination="jQt-Uf-dsN" id="tIX-EQ-eJJ"/>
             </connections>
@@ -63,7 +66,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="FSd-wJ-JLa">
                     <rect key="frame" x="20" y="264" width="115" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Login" backgroundImage="Login_Button.png">
+                    <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Login">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -73,7 +77,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="Ekf-CV-8sf">
                     <rect key="frame" x="145" y="264" width="115" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Sign up" backgroundImage="Sign_Button.png">
+                    <color key="backgroundColor" red="1" green="0.1764705882352941" blue="0.33333333333333331" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Sign up">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
@@ -118,7 +123,8 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="RdS-rK-XV8">
                     <rect key="frame" x="20" y="360" width="240" height="40"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal" title="Create New Account" backgroundImage="Create_Button.png">
+                    <color key="backgroundColor" red="0.29803921570000003" green="0.85098039219999999" blue="0.3921568627" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="Create New Account">
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -225,9 +231,6 @@
         </view>
     </objects>
     <resources>
-        <image name="Create_Button.png" width="480" height="80"/>
-        <image name="Login_Button.png" width="240" height="80"/>
-        <image name="Sign_Button.png" width="240" height="80"/>
         <image name="icon_close.png" width="20" height="20"/>
         <image name="logo_login.png" width="100" height="80"/>
     </resources>

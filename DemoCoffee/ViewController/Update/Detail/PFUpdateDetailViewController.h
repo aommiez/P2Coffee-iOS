@@ -9,11 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "UILabel+UILabelDynamicHeight.h"
 #import "AsyncImageView.h"
-#import "PFUpdateCommentCell.h"
-#import "PFLoginViewController.h"
 #import <Social/Social.h>
 
 #import "DCManager.h"
+
+#import "PFUpdateCommentCell.h"
+#import "PFLoginViewController.h"
+#import "PFSeeprofileViewController.h"
 
 @protocol PFUpdateDetailViewControllerDelegate <NSObject>
 

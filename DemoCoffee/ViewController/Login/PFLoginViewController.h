@@ -33,6 +33,10 @@
 @property (weak, nonatomic) IBOutlet UITextField *emailSignIn;
 @property (weak, nonatomic) IBOutlet UITextField *passwordSignIn;
 
+@property (weak, nonatomic) IBOutlet UIButton *signin_bt;
+@property (weak, nonatomic) IBOutlet UIButton *signup_bt;
+@property (weak, nonatomic) IBOutlet UIButton *create_bt;
+
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)signinTapped:(id)sender;
 - (IBAction)signupTapeed:(id)sender;

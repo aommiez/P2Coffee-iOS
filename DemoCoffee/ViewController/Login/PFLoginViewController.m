@@ -29,6 +29,18 @@ NSString *password;
 {
     [super viewDidLoad];
     
+    CALayer *signin_bt = [self.signin_bt layer];
+    [signin_bt setMasksToBounds:YES];
+    [signin_bt setCornerRadius:5.0f];
+    
+    CALayer *signup_bt = [self.signup_bt layer];
+    [signup_bt setMasksToBounds:YES];
+    [signup_bt setCornerRadius:5.0f];
+    
+    CALayer *create_bt = [self.create_bt layer];
+    [create_bt setMasksToBounds:YES];
+    [create_bt setCornerRadius:5.0f];
+    
     self.pick = [[UIDatePicker alloc] init];
     self.pickDone = [UIButton buttonWithType:UIButtonTypeRoundedRect];
     [self.pickDone setFrame:CGRectMake(50, 370, 200, 44)];

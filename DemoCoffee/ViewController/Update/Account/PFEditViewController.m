@@ -182,55 +182,59 @@
 }
 
 - (IBAction)genderTapped:(id)sender {
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]
-                                  initWithTitle:@"Select Gender."
-                                  delegate:self
-                                  cancelButtonTitle:@"cancel"
-                                  destructiveButtonTitle:nil
-                                  otherButtonTitles:@"Male", @"Female",nil];
-    [actionSheet showInView:[[[[UIApplication sharedApplication] keyWindow] subviews] lastObject]];
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.delegate = self;
+    editdetail.obj = self.objEdit;
+    editdetail.checkstatus = @"gender";
+    [self.navController pushViewController:editdetail animated:YES];
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
-    
-    //Get the name of the current pressed button
-    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
-    
-    if  ([buttonTitle isEqualToString:@"Male"]) {
-        self.gender.text = @"Male";
-        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
-                           facebook:[self.objEdit objectForKey:@"facebook_name"]
-                              email:[self.objEdit objectForKey:@"email"]
-                            website:[self.objEdit objectForKey:@"website"]
-                                tel:[self.objEdit objectForKey:@"mobile_phone"]
-                             gender:@"Male"
-                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
-        
-        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                    message:@"Save complete."
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
-    
-    if  ([buttonTitle isEqualToString:@"Female"]) {
-        self.gender.text = @"Female";
-        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
-                           facebook:[self.objEdit objectForKey:@"facebook_name"]
-                              email:[self.objEdit objectForKey:@"email"]
-                            website:[self.objEdit objectForKey:@"website"]
-                                tel:[self.objEdit objectForKey:@"mobile_phone"]
-                             gender:@"Female"
-                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
-        
-        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                    message:@"Save complete."
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
-    
-}
+//- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    
+//    //Get the name of the current pressed button
+//    NSString *buttonTitle = [actionSheet buttonTitleAtIndex:buttonIndex];
+//    
+//    if  ([buttonTitle isEqualToString:@"Male"]) {
+//        self.gender.text = @"Male";
+//        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
+//                           facebook:[self.objEdit objectForKey:@"facebook_name"]
+//                              email:[self.objEdit objectForKey:@"email"]
+//                            website:[self.objEdit objectForKey:@"website"]
+//                                tel:[self.objEdit objectForKey:@"mobile_phone"]
+//                             gender:@"Male"
+//                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
+//        
+//        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+//                                    message:@"Save complete."
+//                                   delegate:nil
+//                          cancelButtonTitle:@"OK"
+//                          otherButtonTitles:nil] show];
+//    }
+//    
+//    if  ([buttonTitle isEqualToString:@"Female"]) {
+//        self.gender.text = @"Female";
+//        [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
+//                           facebook:[self.objEdit objectForKey:@"facebook_name"]
+//                              email:[self.objEdit objectForKey:@"email"]
+//                            website:[self.objEdit objectForKey:@"website"]
+//                                tel:[self.objEdit objectForKey:@"mobile_phone"]
+//                             gender:@"Female"
+//                           birthday:[[self.objEdit objectForKey:@"birth_date"] objectForKey:@"date"]];
+//        
+//        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+//                                    message:@"Save complete."
+//                                   delegate:nil
+//                          cancelButtonTitle:@"OK"
+//                          otherButtonTitles:nil] show];
+//    }
+//    
+//}
 
 - (IBAction)birthdayTapped:(id)sender {
     PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
@@ -244,38 +248,6 @@
     editdetail.obj = self.objEdit;
     editdetail.checkstatus = @"birthday";
     [self.navController pushViewController:editdetail animated:YES];
-}
-
-- (IBAction)savebirthdayTapped:(id)sender {
-    
-    NSDateFormatter *date = [[NSDateFormatter alloc] init];
-    date.dateFormat = @"yyyy/MM/dd";
-    NSArray *temp = [[NSString stringWithFormat:@"%@",[date stringFromDate:self.Date.date]] componentsSeparatedByString:@""];
-    NSString *dateString = [[NSString alloc] init];
-    dateString = [[NSString alloc] initWithString:[temp objectAtIndex:0]];
-
-    self.birthday.text = dateString;
-    [self.Demoapi updateSetting:[self.objEdit objectForKey:@"display_name"]
-                       facebook:[self.objEdit objectForKey:@"facebook_name"]
-                          email:[self.objEdit objectForKey:@"email"]
-                        website:[self.objEdit objectForKey:@"website"]
-                            tel:[self.objEdit objectForKey:@"mobile_phone"]
-                         gender:[self.objEdit objectForKey:@"gender"]
-                       birthday:dateString];
-    
-    [self.blurView removeFromSuperview];
-    [self.birthdayView removeFromSuperview];
-    
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Save complete."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
-}
-
-- (IBAction)bgTapped:(id)sender {
-    [self.blurView removeFromSuperview];
-    [self.birthdayView removeFromSuperview];
 }
 
 - (void) PFEditDetailViewControllerBack {

@@ -82,18 +82,42 @@
         [phone_bt setCornerRadius:5.0f];
     }
     
+    if ([self.checkstatus isEqualToString:@"gender"]) {
+        self.navigationItem.title = @"Gender";
+        self.tableView.tableHeaderView = self.genderView;
+        
+        if ([[self.obj objectForKey:@"gender"] isEqualToString:@"Male"]) {
+            [self.male_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+            [self.female_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+            self.checkgender = @"Male";
+        } else {
+            [self.male_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+            [self.female_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+            self.checkgender = @"Female";
+        }
+        
+        CALayer *gender_bt = [self.gender_bt layer];
+        [gender_bt setMasksToBounds:YES];
+        [gender_bt setCornerRadius:5.0f];
+    }
+    
     if ([self.checkstatus isEqualToString:@"birthday"]) {
         self.navigationItem.title = @"Birthday";
         self.tableView.tableHeaderView = self.birthdayView;
         
         NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
-        NSString *string = @"2534-12-11";
+        NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+        NSString *mySmallerString = [myString substringToIndex:10];
     
-        NSString *finalstr = [NSString stringWithFormat:@"%@",string];
+        NSString *finalstr = [NSString stringWithFormat:@"%@",mySmallerString];
         [dateFormat setDateFormat:@"yyyy-MM-dd"];
     
         NSDate *date = [dateFormat dateFromString:finalstr];
         [self.Date setDate:date];
+        
+        CALayer *birthday_bt = [self.birthday_bt layer];
+        [birthday_bt setMasksToBounds:YES];
+        [birthday_bt setCornerRadius:5.0f];
     }
     
 }
@@ -199,6 +223,34 @@
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (IBAction)maleTapped:(id)sender {
+    [self.male_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+    [self.female_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+    self.checkgender = @"Male";
+}
+
+- (IBAction)femaleTapped:(id)sender {
+    [self.male_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+    [self.female_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+    self.checkgender = @"Female";
+}
+
+- (IBAction)genderTapped:(id)sender {
+        [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                            facebook:[self.obj objectForKey:@"facebook_name"]
+                                email:[self.obj objectForKey:@"email"]
+                            website:[self.obj objectForKey:@"website"]
+                                tel:[self.obj objectForKey:@"mobile_phone"]
+                                gender:self.checkgender
+                            birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"Save complete."
+                                    delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil] show];
 }
 
 - (IBAction)birthdayTapped:(id)sender {

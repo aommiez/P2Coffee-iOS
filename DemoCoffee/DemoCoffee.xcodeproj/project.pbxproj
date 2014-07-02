@@ -42,6 +42,12 @@
 		368623B61953F590004636DF /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623AF1953F590004636DF /* FMDatabaseQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		368623B81953F590004636DF /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623B21953F590004636DF /* FMResultSet.m */; };
 		36FE2FF41959360100029051 /* PFHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 36FE2FF31959360100029051 /* PFHelper.m */; };
+		52033CB81963C77600904664 /* checked.png in Resources */ = {isa = PBXBuildFile; fileRef = 52033CB41963C77600904664 /* checked.png */; };
+		52033CB91963C77600904664 /* checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52033CB51963C77600904664 /* checked@2x.png */; };
+		52033CBA1963C77600904664 /* unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 52033CB61963C77600904664 /* unchecked.png */; };
+		52033CBB1963C77600904664 /* unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52033CB71963C77600904664 /* unchecked@2x.png */; };
+		52033CD01963D30B00904664 /* PFSeeprofileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52033CCE1963D30B00904664 /* PFSeeprofileViewController.m */; };
+		52033CD11963D30B00904664 /* PFSeeprofileViewController_Wide.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52033CCF1963D30B00904664 /* PFSeeprofileViewController_Wide.xib */; };
 		520AE0EB1955262A00BDCCE6 /* PFHistoryCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */; };
 		520AE0EC1955262A00BDCCE6 /* PFHistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */; };
 		523FD238195964EB00B965EF /* DLILCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD230195964EB00B965EF /* DLILCache.m */; };
@@ -226,10 +232,7 @@
 		52FBAFBE195BE20A0047FF7C /* NotBoxReadedIp4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB0195BE20A0047FF7C /* NotBoxReadedIp4@2x.png */; };
 		52FBAFBF195BE20A0047FF7C /* NotBoxReadedIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB1195BE20A0047FF7C /* NotBoxReadedIp5@2x.png */; };
 		52FBAFC0195BE20A0047FF7C /* PostBottonIp5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFB2195BE20A0047FF7C /* PostBottonIp5@2x.png */; };
-		52FBAFCC195BE7C90047FF7C /* Create_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC3195BE7C90047FF7C /* Create_Button.png */; };
 		52FBAFCD195BE7C90047FF7C /* icon_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */; };
-		52FBAFD0195BE7C90047FF7C /* Login_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC7195BE7C90047FF7C /* Login_Button.png */; };
-		52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFC8195BE7C90047FF7C /* Sign_Button.png */; };
 		52FBAFD2195BE7C90047FF7C /* PFLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FBAFCA195BE7C90047FF7C /* PFLoginViewController.m */; };
 		52FBAFD3195BE7C90047FF7C /* PFLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52FBAFCB195BE7C90047FF7C /* PFLoginViewController.xib */; };
 		EA024C40195030B30032CF51 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA024C3F195030B30032CF51 /* Foundation.framework */; };
@@ -370,6 +373,13 @@
 		368623B21953F590004636DF /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FMResultSet.m; path = External/fdbm/FMResultSet.m; sourceTree = SOURCE_ROOT; };
 		36FE2FF21959360100029051 /* PFHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PFHelper.h; path = DCManager/PFHelper.h; sourceTree = "<group>"; };
 		36FE2FF31959360100029051 /* PFHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PFHelper.m; path = DCManager/PFHelper.m; sourceTree = "<group>"; };
+		52033CB41963C77600904664 /* checked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checked.png; sourceTree = "<group>"; };
+		52033CB51963C77600904664 /* checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checked@2x.png"; sourceTree = "<group>"; };
+		52033CB61963C77600904664 /* unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unchecked.png; sourceTree = "<group>"; };
+		52033CB71963C77600904664 /* unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unchecked@2x.png"; sourceTree = "<group>"; };
+		52033CCD1963D30B00904664 /* PFSeeprofileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFSeeprofileViewController.h; sourceTree = "<group>"; };
+		52033CCE1963D30B00904664 /* PFSeeprofileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFSeeprofileViewController.m; sourceTree = "<group>"; };
+		52033CCF1963D30B00904664 /* PFSeeprofileViewController_Wide.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFSeeprofileViewController_Wide.xib; sourceTree = "<group>"; };
 		520AE0E81955262A00BDCCE6 /* PFHistoryCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFHistoryCell.h; sourceTree = "<group>"; };
 		520AE0E91955262A00BDCCE6 /* PFHistoryCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFHistoryCell.m; sourceTree = "<group>"; };
 		520AE0EA1955262A00BDCCE6 /* PFHistoryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFHistoryCell.xib; sourceTree = "<group>"; };
@@ -630,10 +640,7 @@
 		52FBAFB0195BE20A0047FF7C /* NotBoxReadedIp4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotBoxReadedIp4@2x.png"; sourceTree = "<group>"; };
 		52FBAFB1195BE20A0047FF7C /* NotBoxReadedIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NotBoxReadedIp5@2x.png"; sourceTree = "<group>"; };
 		52FBAFB2195BE20A0047FF7C /* PostBottonIp5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PostBottonIp5@2x.png"; sourceTree = "<group>"; };
-		52FBAFC3195BE7C90047FF7C /* Create_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Create_Button.png; sourceTree = "<group>"; };
 		52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "icon_close@2x.png"; sourceTree = "<group>"; };
-		52FBAFC7195BE7C90047FF7C /* Login_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Login_Button.png; sourceTree = "<group>"; };
-		52FBAFC8195BE7C90047FF7C /* Sign_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Sign_Button.png; sourceTree = "<group>"; };
 		52FBAFC9195BE7C90047FF7C /* PFLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFLoginViewController.h; sourceTree = "<group>"; };
 		52FBAFCA195BE7C90047FF7C /* PFLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFLoginViewController.m; sourceTree = "<group>"; };
 		52FBAFCB195BE7C90047FF7C /* PFLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFLoginViewController.xib; sourceTree = "<group>"; };
@@ -880,6 +887,16 @@
 				3686239C1953F0E2004636DF /* LoggerCommon.h */,
 			);
 			name = Logger;
+			sourceTree = "<group>";
+		};
+		52033CC71963D0B800904664 /* SeeProfile */ = {
+			isa = PBXGroup;
+			children = (
+				52033CCD1963D30B00904664 /* PFSeeprofileViewController.h */,
+				52033CCE1963D30B00904664 /* PFSeeprofileViewController.m */,
+				52033CCF1963D30B00904664 /* PFSeeprofileViewController_Wide.xib */,
+			);
+			path = SeeProfile;
 			sourceTree = "<group>";
 		};
 		520AE0E71955261900BDCCE6 /* Cell */ = {
@@ -1144,8 +1161,8 @@
 		526A34ED19541F9400D5FAB0 /* Account */ = {
 			isa = PBXGroup;
 			children = (
+				52033CC71963D0B800904664 /* SeeProfile */,
 				52A60AB9195D29F200A88D99 /* Cell */,
-				527EC3E61962C218006B2B3C /* Seeprofile */,
 				526A34F91954294200D5FAB0 /* Images */,
 				526A34F41954281400D5FAB0 /* PFAccountViewController.h */,
 				526A34F51954281400D5FAB0 /* PFAccountViewController.m */,
@@ -1176,6 +1193,10 @@
 		526A34F91954294200D5FAB0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				52033CB41963C77600904664 /* checked.png */,
+				52033CB51963C77600904664 /* checked@2x.png */,
+				52033CB61963C77600904664 /* unchecked.png */,
+				52033CB71963C77600904664 /* unchecked@2x.png */,
 				525885C2196165970084F390 /* next.png */,
 				525AE03419580810005329A1 /* ic_birthday@2x.png */,
 				525AE03519580810005329A1 /* ic_fb@2x.png */,
@@ -1187,13 +1208,6 @@
 				525AE03B19580810005329A1 /* ic_web@2x.png */,
 			);
 			path = Images;
-			sourceTree = "<group>";
-		};
-		527EC3E61962C218006B2B3C /* Seeprofile */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Seeprofile;
 			sourceTree = "<group>";
 		};
 		52A60AB9195D29F200A88D99 /* Cell */ = {
@@ -1371,10 +1385,7 @@
 			children = (
 				525885AA19610DFC0084F390 /* logo_login.png */,
 				525885AB19610DFC0084F390 /* logo_login@2x.png */,
-				52FBAFC3195BE7C90047FF7C /* Create_Button.png */,
 				52FBAFC4195BE7C90047FF7C /* icon_close@2x.png */,
-				52FBAFC7195BE7C90047FF7C /* Login_Button.png */,
-				52FBAFC8195BE7C90047FF7C /* Sign_Button.png */,
 			);
 			path = Images;
 			sourceTree = "<group>";
@@ -1830,6 +1841,7 @@
 				EA024CEA195031220032CF51 /* Notification_icon@2x.png in Resources */,
 				52A60ADA195D71B500A88D99 /* 03_vector_box.png in Resources */,
 				52FBAFB4195BE20A0047FF7C /* FootCommentBoxEndIp5@2x.png in Resources */,
+				52033CB91963C77600904664 /* checked@2x.png in Resources */,
 				525AE01719580489005329A1 /* ic_member_on@2x.png in Resources */,
 				526F1D4F195AC93F000EFEB9 /* PFBranch1ViewController_Wide.xib in Resources */,
 				52A60ADB195D71B500A88D99 /* 03_vector_box@2x.png in Resources */,
@@ -1839,10 +1851,8 @@
 				EA024C4C195030B30032CF51 /* InfoPlist.strings in Resources */,
 				526A34D61954024400D5FAB0 /* bgLight@2x.png in Resources */,
 				52FBAFBD195BE20A0047FF7C /* NotBoxReadedIp4.png in Resources */,
-				52FBAFD0195BE7C90047FF7C /* Login_Button.png in Resources */,
 				525AE03C19580810005329A1 /* ic_birthday@2x.png in Resources */,
 				52A60AC1195D639400A88D99 /* ic_bt_add.png in Resources */,
-				52FBAFCC195BE7C90047FF7C /* Create_Button.png in Resources */,
 				52FBAF8C195BD39E0047FF7C /* icon_share@2x.png in Resources */,
 				525AE032195806DB005329A1 /* ic_website.png in Resources */,
 				52A60ADE195D71B500A88D99 /* bg_intro.png in Resources */,
@@ -1868,7 +1878,6 @@
 				525885C8196170A80084F390 /* PFEditDetailViewController_Wide.xib in Resources */,
 				525AE04919582DCA005329A1 /* PFOrderViewController_Wide.xib in Resources */,
 				526A34E31954024400D5FAB0 /* line1.png in Resources */,
-				52FBAFD1195BE7C90047FF7C /* Sign_Button.png in Resources */,
 				526A34D91954024400D5FAB0 /* button_minus_select.png in Resources */,
 				525885B2196124B70084F390 /* PFProfileViewController_Wide.xib in Resources */,
 				52FBAFB7195BE20A0047FF7C /* icon_share@2x.png in Resources */,
@@ -1888,6 +1897,7 @@
 				EA024CF9195031220032CF51 /* PFMapViewController_Wide.xib in Resources */,
 				525AE02F195806DB005329A1 /* ic_phone@2x.png in Resources */,
 				526A34D51954024400D5FAB0 /* bgLight.png in Resources */,
+				52033CB81963C77600904664 /* checked.png in Resources */,
 				525AE02C195806DB005329A1 /* ic_location.png in Resources */,
 				525AE01219580489005329A1 /* ic_update_off.png in Resources */,
 				52FBAFC0195BE20A0047FF7C /* PostBottonIp5@2x.png in Resources */,
@@ -1896,6 +1906,7 @@
 				525AE01119580489005329A1 /* ic_menu_on.png in Resources */,
 				526A34D81954024400D5FAB0 /* button_minus.png in Resources */,
 				EA024D04195031220032CF51 /* PFUpdateViewController_Wide.xib in Resources */,
+				52033CD11963D30B00904664 /* PFSeeprofileViewController_Wide.xib in Resources */,
 				523FD2B61959695100B965EF /* MWPhotoBrowser.bundle in Resources */,
 				526A34DE1954024400D5FAB0 /* correct_icon.png in Resources */,
 				525AE029195806DB005329A1 /* ic_direction@2x.png in Resources */,
@@ -1905,6 +1916,7 @@
 				526A34E01954024400D5FAB0 /* cross_icon.png in Resources */,
 				525AE04219580810005329A1 /* ic_unlock@2x.png in Resources */,
 				52A60AC2195D639400A88D99 /* ic_bt_add@2x.png in Resources */,
+				52033CBB1963C77600904664 /* unchecked@2x.png in Resources */,
 				525AE02A195806DB005329A1 /* ic_email.png in Resources */,
 				52A60ADC195D71B500A88D99 /* 04_vector_box.png in Resources */,
 				EA024D12195037EB0032CF51 /* PFRewardViewController_Wide.xib in Resources */,
@@ -1929,6 +1941,7 @@
 				52FBAF76195BC64E0047FF7C /* PFF1ViewController_Wide.xib in Resources */,
 				525AE02D195806DB005329A1 /* ic_location@2x.png in Resources */,
 				EA024CF5195031220032CF51 /* Powered@2x.png in Resources */,
+				52033CBA1963C77600904664 /* unchecked.png in Resources */,
 				525AE04119580810005329A1 /* ic_mail@2x.png in Resources */,
 				526F1D3E195AAA0A000EFEB9 /* chapter_branch_01.png in Resources */,
 				526A34EC195402CD00D5FAB0 /* PFMemberCell.xib in Resources */,
@@ -2012,6 +2025,7 @@
 				523FD2AA1959695100B965EF /* SDImageCache.m in Sources */,
 				EA024CD4195031220032CF51 /* PFTabBarViewController.m in Sources */,
 				523FD2A91959695100B965EF /* NSData+GIF.m in Sources */,
+				52033CD01963D30B00904664 /* PFSeeprofileViewController.m in Sources */,
 				368623501953EDEB004636DF /* DbCache.m in Sources */,
 				368623911953F001004636DF /* AFNetworkReachabilityManager.m in Sources */,
 				525885B1196124B70084F390 /* PFProfileViewController.m in Sources */,

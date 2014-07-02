@@ -221,7 +221,7 @@ BOOL newMediaDetail;
 }
 //
 - (void)DCManager:(id)sender getCommentObjIdResponse:(NSDictionary *)response {
-    //NSLog(@"%@",response);
+    //NSLog(@"getCommentObjId %@",response);
     if (!refreshDataDetail) {
         for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
             [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
@@ -404,9 +404,8 @@ BOOL newMediaDetail;
     
     cell.timeComment.frame = CGRectMake(cell.timeComment.frame.origin.x,heightLable + 14, cell.timeComment.frame.size.width, cell.timeComment.frame.size.height);
     cell.timeComment.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"updated_at"] objectForKey:@"date"];
-    //cell.timeComment.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"created_text"];
     
-    cell.imgBut.tag = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"id"] intValue];
+    cell.imgBut.tag = [[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"id"] intValue];
     cell.commentLabel.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"content"];
     cell.nameLabel.text = [[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"display_name"];
     
@@ -614,6 +613,23 @@ BOOL newMediaDetail;
         [self.textComment setTextColor:[UIColor lightGrayColor]];
         self.textComment.text = @"Add Comment";
     }
+}
+
+- (void)profile:(NSString *)userId {
+    PFSeeprofileViewController *seeAct = [[PFSeeprofileViewController alloc] init];
+    
+    if (IS_WIDESCREEN) {
+        seeAct = [[PFSeeprofileViewController alloc] initWithNibName:@"PFSeeprofileViewController_Wide" bundle:nil];
+    } else {
+        seeAct = [[PFSeeprofileViewController alloc] initWithNibName:@"PFSeeprofileViewController" bundle:nil];
+    }
+    seeAct.delegate = self;
+    seeAct.user_id = userId;
+    [self.navigationController pushViewController:seeAct animated:YES];
+}
+
+- (void)PFSeeprofileViewController:(id)sender viewPicture:(NSString *)link {
+    [self.delegate PFUpdateDetailViewController:self viewPicture:link];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
