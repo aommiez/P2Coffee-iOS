@@ -233,10 +233,17 @@
 }
 
 - (IBAction)birthdayTapped:(id)sender {
-    [self.view addSubview:self.blurView];
-    [self.birthdayView.layer setCornerRadius:4.0f];
-    self.birthdayView.frame = CGRectMake(10, 120, self.birthdayView.frame.size.width, self.birthdayView.frame.size.height);
-    [self.view addSubview:self.birthdayView];
+    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+    } else {
+        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+    }
+    editdetail.delegate = self;
+    editdetail.obj = self.objEdit;
+    editdetail.checkstatus = @"birthday";
+    [self.navController pushViewController:editdetail animated:YES];
 }
 
 - (IBAction)savebirthdayTapped:(id)sender {

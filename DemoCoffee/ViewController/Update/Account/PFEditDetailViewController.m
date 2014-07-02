@@ -81,7 +81,21 @@
         [phone_bt setMasksToBounds:YES];
         [phone_bt setCornerRadius:5.0f];
     }
-
+    
+    if ([self.checkstatus isEqualToString:@"birthday"]) {
+        self.navigationItem.title = @"Birthday";
+        self.tableView.tableHeaderView = self.birthdayView;
+        
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        NSString *string = @"2534-12-11";
+    
+        NSString *finalstr = [NSString stringWithFormat:@"%@",string];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+        NSDate *date = [dateFormat dateFromString:finalstr];
+        [self.Date setDate:date];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -185,6 +199,29 @@
     if (buttonIndex == [alertView cancelButtonIndex]) {
         [self.navigationController popViewControllerAnimated:YES];
     }
+}
+
+- (IBAction)birthdayTapped:(id)sender {
+    
+    NSDateFormatter *date = [[NSDateFormatter alloc] init];
+    date.dateFormat = @"yyyy/MM/dd";
+    NSArray *temp = [[NSString stringWithFormat:@"%@",[date stringFromDate:self.Date.date]] componentsSeparatedByString:@""];
+    NSString *dateString = [[NSString alloc] init];
+    dateString = [[NSString alloc] initWithString:[temp objectAtIndex:0]];
+    
+    [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:[self.obj objectForKey:@"email"]
+                        website:[self.obj objectForKey:@"website"]
+                            tel:[self.obj objectForKey:@"mobile_phone"]
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:dateString];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

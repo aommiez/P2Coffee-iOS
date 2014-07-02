@@ -56,11 +56,4 @@
 - (IBAction)genderTapped:(id)sender;
 - (IBAction)birthdayTapped:(id)sender;
 
-@property (strong, nonatomic) IBOutlet UIView *blurView;
-@property (strong, nonatomic) IBOutlet UIView *birthdayView;
-@property (weak, nonatomic) IBOutlet UIDatePicker *Date;
-
-- (IBAction)savebirthdayTapped:(id)sender;
-- (IBAction)bgTapped:(id)sender;
-
 @end
