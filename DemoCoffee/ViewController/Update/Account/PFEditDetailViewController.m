@@ -276,6 +276,14 @@
                       otherButtonTitles:nil] show];
 }
 
+- (BOOL) textFieldShouldReturn:(UITextField *)textField  {
+    [self.email resignFirstResponder];
+    [self.website resignFirstResponder];
+    [self.phone resignFirstResponder];
+    
+    return YES;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
     [super viewWillDisappear:animated];
     if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {

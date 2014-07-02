@@ -16,6 +16,7 @@
 @protocol PFSeeprofileViewControllerDelegate <NSObject>
 
 - (void)PFSeeprofileViewController:(id)sender viewPicture:(NSString *)link;
+- (void)PFSeeprofileViewControllerBack;
 
 @end
 

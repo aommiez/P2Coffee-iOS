@@ -21,7 +21,7 @@
 
 @end
 
-@interface PFEditViewController : UIViewController
+@interface PFEditViewController : UIViewController <UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
@@ -47,6 +47,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tel;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *birthday;
+
+- (IBAction)uploadPictureTapped:(id)sender;
 
 - (IBAction)displaynameTapped:(id)sender;
 - (IBAction)passwordTapped:(id)sender;

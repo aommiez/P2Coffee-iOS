@@ -38,6 +38,8 @@ BOOL newMediaDetail;
 {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"";
+    
     UIBarButtonItem *shareButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icon_share"] style:UIBarButtonItemStyleDone target:self action:@selector(shareupdatedetail)];
     self.navigationItem.rightBarButtonItem = shareButton;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
@@ -461,39 +463,39 @@ BOOL newMediaDetail;
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.textComment resignFirstResponder];
-    
-    [UIView mt_animateViews:@[self.textCommentView] duration:0.34 timingFunction:kMTEaseOutSine animations:^{
-        if ( IS_WIDESCREEN) {
-            self.textCommentView.frame = CGRectMake(0, 464+60, 320, 44);
-        } else {
-            self.textCommentView.frame = CGRectMake(0, 440, 320, 44);
-        }
-        self.textComment.frame = CGRectMake(10, 7, 236, 30);
-        self.postBut.frame = CGRectMake(254, 7, 54, 30);
-    } completion:^{
-        
-    }];
-    
-    [UIView animateWithDuration:0.50
-                          delay:0.1  /* starts the animation after 3 seconds */
-                        options:UIViewAnimationCurveEaseOut
-                     animations:^ {
-                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
-                         if ([self.arrObj count] > 0)
-                             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
-    
-    if ([self.textComment.text isEqualToString:@""]) {
-        [self.textComment setTextColor:[UIColor lightGrayColor]];
-        self.textComment.text = @"Add Comment";
-    }
-}
+//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+//{
+//    [self.textComment resignFirstResponder];
+//    
+//    [UIView mt_animateViews:@[self.textCommentView] duration:0.34 timingFunction:kMTEaseOutSine animations:^{
+//        if ( IS_WIDESCREEN) {
+//            self.textCommentView.frame = CGRectMake(0, 464+60, 320, 44);
+//        } else {
+//            self.textCommentView.frame = CGRectMake(0, 440, 320, 44);
+//        }
+//        self.textComment.frame = CGRectMake(10, 7, 236, 30);
+//        self.postBut.frame = CGRectMake(254, 7, 54, 30);
+//    } completion:^{
+//        
+//    }];
+//    
+//    [UIView animateWithDuration:0.50
+//                          delay:0.1  /* starts the animation after 3 seconds */
+//                        options:UIViewAnimationCurveEaseOut
+//                     animations:^ {
+//                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
+//                         if ([self.arrObj count] > 0)
+//                             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+//                     }
+//                     completion:^(BOOL finished) {
+//                         
+//                     }];
+//    
+//    if ([self.textComment.text isEqualToString:@""]) {
+//        [self.textComment setTextColor:[UIColor lightGrayColor]];
+//        self.textComment.text = @"Add Comment";
+//    }
+//}
 
 - (UIImage *)imageRotatedByDegrees:(UIImage*)oldImage deg:(CGFloat)degrees{
     // calculate the size of the rotated view's containing box for our drawing space
@@ -630,6 +632,10 @@ BOOL newMediaDetail;
 
 - (void)PFSeeprofileViewController:(id)sender viewPicture:(NSString *)link {
     [self.delegate PFUpdateDetailViewController:self viewPicture:link];
+}
+
+- (void) PFSeeprofileViewControllerBack {
+    [self.tableView reloadData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
