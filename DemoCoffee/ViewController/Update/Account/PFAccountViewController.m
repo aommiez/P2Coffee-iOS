@@ -278,7 +278,6 @@
     NSString *contentOffSet = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(self.tutorialScrollView.contentOffset)];
     removeBreckets = [contentOffSet stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"{ ,0}"]];
     
-    
     if ([removeBreckets intValue] <= 0) {
         self.pageControl.currentPage = 0;
     }
