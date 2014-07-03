@@ -368,6 +368,7 @@ NSString *password;
     }
 }
 - (void)DCManager:(id)sender registerWithUsernameErrorResponse:(NSString *)errorResponse {
+    NSLog(@"error%@",errorResponse);
     [[[UIAlertView alloc] initWithTitle:@"Signup failed"
                                 message:errorResponse
                                delegate:nil

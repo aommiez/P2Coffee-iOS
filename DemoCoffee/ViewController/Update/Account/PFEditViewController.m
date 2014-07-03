@@ -99,6 +99,9 @@ BOOL newMedia;
     
     self.birthday.text = mySmallerString;
     
+    if ([[response objectForKey:@"facebook_id"] isEqualToString:@""]) {
+        self.password.hidden = YES;
+    }
 }
 
 - (void)DCManager:(id)sender meErrorResponse:(NSString *)errorResponse {
@@ -128,17 +131,19 @@ BOOL newMedia;
 }
 
 - (IBAction)passwordTapped:(id)sender {
-    PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
+    if (![[self.objEdit objectForKey:@"facebook_id"] isEqualToString:@""]) {
+        PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
     
-    if(IS_WIDESCREEN) {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
-    } else {
-        editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+        if(IS_WIDESCREEN) {
+            editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController_Wide" bundle:nil];
+        } else {
+            editdetail = [[PFEditDetailViewController alloc] initWithNibName:@"PFEditDetailViewController" bundle:nil];
+        }
+        editdetail.delegate = self;
+        editdetail.obj = self.objEdit;
+        editdetail.checkstatus = @"password";
+        [self.navController pushViewController:editdetail animated:YES];
     }
-    editdetail.delegate = self;
-    editdetail.obj = self.objEdit;
-    editdetail.checkstatus = @"password";
-    [self.navController pushViewController:editdetail animated:YES];
 }
 
 - (IBAction)emailTapped:(id)sender {

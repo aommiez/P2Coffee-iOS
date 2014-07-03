@@ -13,6 +13,7 @@
                 <outlet property="headerView" destination="QSp-NF-bI0" id="GOA-ne-Wzh"/>
                 <outlet property="navController" destination="NqR-IL-4ow" id="csb-EP-w1I"/>
                 <outlet property="navItem" destination="Idk-xv-ZlE" id="geT-rQ-SVO"/>
+                <outlet property="password" destination="qcc-ur-9LW" id="GfQ-73-TI7"/>
                 <outlet property="popupwaitView" destination="mnY-Nm-wv9" id="sek-U6-G6k"/>
                 <outlet property="tableView" destination="4Fn-yY-Dc8" id="Sxx-CI-3ZC"/>
                 <outlet property="tel" destination="DaR-aL-rjW" id="UUg-AU-XnZ"/>

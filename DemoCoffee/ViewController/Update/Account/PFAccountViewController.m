@@ -202,17 +202,45 @@
 
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
-    [self.Demoapi saveAppKey:self.testcode.text ];
+    [self.Demoapi saveAppKey:self.testcode.text];
+    [self viewDidLoad];
 }
 
 - (IBAction)linkTutorial:(id)sender {
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://app.pla2.com/"]];
 }
 
-- (IBAction)bgTutorial:(id)sender {
-    [self.testcode resignFirstResponder];
+- (IBAction)appkeyTextTutorial:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Test Code" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"Test code";
+    [alertTextField setText:self.appkey.text];
+    [alert show];
 }
 
+- (IBAction)testcodeTextTutorial:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Test Code" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"Test code";
+    [alertTextField setText:self.appkey.text];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        UITextField *appkey = [alertView textFieldAtIndex:0];
+        [self.Demoapi saveAppKey:appkey.text];
+        [self viewDidLoad];
+    }
+}
+
+- (IBAction)newappkeyTutorial:(id)sender {
+    [self.Demoapi appRequest];
+}
 
 - (IBAction)newtestcodeTutorial:(id)sender {
     [self.Demoapi appRequest];
@@ -222,6 +250,8 @@
     NSLog(@"%@",response);
     NSString *app_key = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"app_key"]];
     self.testcode.text = app_key;
+    self.appkey.text = app_key;
+    [self.Demoapi saveAppKey:app_key];
 }
 
 - (void)DCManager:(id)sender appRequestErrorResponse:(NSString *)errorResponse {
@@ -230,25 +260,6 @@
 
 - (void) PFProfileViewControllerBack {
     [self viewDidLoad];
-}
-
-- (BOOL) textFieldShouldReturn:(UITextField *)textField  {
-    [self.testcode resignFirstResponder];
-    
-    return YES;
-}
-
-- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
-    
-    NSLog(@"test");
-    
-    [UIView mt_animateViews:@[self.tutorialMainView] duration:0.33 timingFunction:kMTEaseOutSine animations:^{
-        self.tutorialMainView.frame = CGRectMake(0, -60, self.tutorialMainView.frame.size.width, self.tutorialMainView.frame.size.height);
-    } completion:^{
-    
-    }];
-    
-    return YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

@@ -190,6 +190,9 @@
                     <state key="normal" title="New">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="newappkeyTutorial:" destination="-1" eventType="touchUpInside" id="gzn-Nb-x14"/>
+                    </connections>
                 </button>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test code" minimumFontSize="17" id="Sic-dn-ozH">
                     <rect key="frame" x="20" y="219" width="168" height="30"/>
@@ -197,6 +200,16 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="04T-2h-Km8">
+                    <rect key="frame" x="20" y="218" width="168" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="appkeyTextTutorial:" destination="-1" eventType="touchUpInside" id="HYn-Z7-Ftd"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
         </view>
@@ -224,16 +237,6 @@
             <rect key="frame" x="0.0" y="0.0" width="1280" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iLT-OU-Caq">
-                    <rect key="frame" x="0.0" y="0.0" width="1280" height="568"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <state key="normal">
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="bgTutorial:" destination="-1" eventType="touchUpInside" id="lxI-j8-aWN"/>
-                    </connections>
-                </button>
                 <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MVk-Qm-cKm">
                     <rect key="frame" x="565" y="40" width="55" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -280,14 +283,11 @@
                     <rect key="frame" x="20" y="90" width="280" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test code" minimumFontSize="17" id="lkY-Dt-QHt">
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test code" minimumFontSize="17" id="lkY-Dt-QHt">
                     <rect key="frame" x="1026" y="435" width="127" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                    <connections>
-                        <outlet property="delegate" destination="-1" id="2Kv-QL-h5s"/>
-                    </connections>
+                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
                 <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y14-9O-LSz">
                     <rect key="frame" x="885" y="40" width="55" height="30"/>
@@ -316,6 +316,16 @@
                     </state>
                     <connections>
                         <action selector="newtestcodeTutorial:" destination="-1" eventType="touchUpInside" id="1nP-BN-6FY"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="g9X-OR-VUD">
+                    <rect key="frame" x="1026" y="435" width="127" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="testcodeTextTutorial:" destination="-1" eventType="touchUpInside" id="duj-j8-2RB"/>
                     </connections>
                 </button>
             </subviews>
