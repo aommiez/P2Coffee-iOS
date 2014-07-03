@@ -7,6 +7,7 @@
 //
 
 #import "PFAccountViewController.h"
+#import "UIView+MTAnimation.h"
 
 @interface PFAccountViewController ()
 
@@ -43,6 +44,26 @@
     [tutorialButton setMasksToBounds:YES];
     [tutorialButton setCornerRadius:5.0f];
     
+    CALayer *next1tutorialButton = [self.next1tutorialButton layer];
+    [next1tutorialButton setMasksToBounds:YES];
+    [next1tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *next2tutorialButton = [self.next2tutorialButton layer];
+    [next2tutorialButton setMasksToBounds:YES];
+    [next2tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *next3tutorialButton = [self.next3tutorialButton layer];
+    [next3tutorialButton setMasksToBounds:YES];
+    [next3tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *donetutorialButton = [self.donetutorialButton layer];
+    [donetutorialButton setMasksToBounds:YES];
+    [donetutorialButton setCornerRadius:5.0f];
+    
+    CALayer *logoutButton = [self.logoutButton layer];
+    [logoutButton setMasksToBounds:YES];
+    [logoutButton setCornerRadius:5.0f];
+    
     CALayer *settingView = [self.settingView layer];
     [settingView setMasksToBounds:YES];
     [settingView setCornerRadius:5.0f];
@@ -55,6 +76,7 @@
     self.rowCount = [[NSString alloc] init];
     
     [self.Demoapi me];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -170,20 +192,60 @@
 }
 
 - (IBAction)tutorialTapped:(id)sender {
-    
-//    self.tutorialView = [PFTutorialViewController alloc];
-//    self.tutorialView.delegate = self;
-//    [self.view addSubview:self.tutorialView.view];
+    [self.tutorialScrollView addSubview:self.tutorialDetailView];
     [self.tutorialScrollView addSubview:self.tutorialDetailView];
     self.tutorialScrollView.contentSize = CGSizeMake(self.tutorialDetailView.frame.size.width,self.tutorialDetailView.frame.size.height);
     [[[[UIApplication sharedApplication] delegate] window] addSubview:self.tutorialMainView];
 }
+
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
 }
 
+- (IBAction)linkTutorial:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://app.pla2.com/"]];
+}
+
+- (IBAction)bgTutorial:(id)sender {
+    [self.testcode resignFirstResponder];
+}
+
+
+- (IBAction)newtestcodeTutorial:(id)sender {
+    [self.Demoapi creattestcode];
+}
+
+- (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response {
+    NSLog(@"%@",response);
+    NSString *app_key = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"app_key"]];
+    self.testcode.text = app_key;
+}
+
+- (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
 - (void) PFProfileViewControllerBack {
     [self viewDidLoad];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField  {
+    [self.testcode resignFirstResponder];
+    
+    return YES;
+}
+
+- (BOOL)textViewShouldBeginEditing:(UITextView *)textView {
+    
+    NSLog(@"test");
+    
+    [UIView mt_animateViews:@[self.tutorialMainView] duration:0.33 timingFunction:kMTEaseOutSine animations:^{
+        self.tutorialMainView.frame = CGRectMake(0, -60, self.tutorialMainView.frame.size.width, self.tutorialMainView.frame.size.height);
+    } completion:^{
+    
+    }];
+    
+    return YES;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

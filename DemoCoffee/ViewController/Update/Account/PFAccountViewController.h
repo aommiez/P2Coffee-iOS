@@ -23,7 +23,7 @@
 
 @end
 
-@interface PFAccountViewController : UIViewController
+@interface PFAccountViewController : UIViewController < UITextViewDelegate >
 
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFAccountViewControllerDelegate> delegate;
@@ -40,12 +40,17 @@
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UIButton *editButton;
 @property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next1tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next2tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @property (strong, nonatomic) IBOutlet UIView *settingView;
 
 @property (weak, nonatomic) IBOutlet UITextField *display_name;
+@property (weak, nonatomic) IBOutlet UITextField *testcode;
 
 @property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
 
@@ -65,4 +70,9 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *tutorialScrollView;
 @property (strong, nonatomic) IBOutlet UIView *tutorialDetailView;
 - (IBAction)closeTutorialView:(id)sender;
+
+- (IBAction)linkTutorial:(id)sender;
+- (IBAction)newtestcodeTutorial:(id)sender;
+- (IBAction)bgTutorial:(id)sender;
+
 @end

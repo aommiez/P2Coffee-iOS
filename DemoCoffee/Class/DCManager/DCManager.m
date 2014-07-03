@@ -411,4 +411,15 @@
     }];
 }
 
+//test code
+
+- (void)creattestcode {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@app/request",API_URL];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getCodeResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getCodeErrorResponse:[error localizedDescription]];
+    }];
+}
+
 @end
