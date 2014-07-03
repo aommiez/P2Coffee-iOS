@@ -110,6 +110,15 @@
     }];
 }
 
+- (void)profile:(NSString *)userId {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/%@",API_URL,userId];
+    self.manager = [AFHTTPRequestOperationManager manager];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserByIdResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserByIdErrorResponse:[error localizedDescription]];
+    }];
+}
 
 - (void)saveUserId:(NSString *)user_id {
     [self.userDefaults setObject:user_id forKey:@"user_id"];
@@ -317,6 +326,15 @@
 #pragma mark - user 
 - (void)getUserSetting {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/%@",API_URL,[self getUserId]];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getUserSettingResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getUserSettingErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)getUserSettingById:(NSString *)user_id {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/%@",API_URL,user_id];
     [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self.delegate DCManager:self getUserSettingResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {

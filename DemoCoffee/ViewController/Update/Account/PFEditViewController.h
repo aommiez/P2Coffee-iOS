@@ -10,11 +10,18 @@
 #import "AsyncImageView.h"
 #import <MobileCoreServices/UTCoreTypes.h>
 #import "SDImageCache.h"
+
 #import "DCManager.h"
 
 #import "PFEditDetailViewController.h"
 
-@interface PFEditViewController : UIViewController
+@protocol PFEditViewControllerDelegate <NSObject>
+
+- (void)PFEditViewControllerBack;
+
+@end
+
+@interface PFEditViewController : UIViewController <UITextFieldDelegate,UIActionSheetDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
@@ -40,6 +47,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *tel;
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *birthday;
+
+- (IBAction)uploadPictureTapped:(id)sender;
 
 - (IBAction)displaynameTapped:(id)sender;
 - (IBAction)passwordTapped:(id)sender;

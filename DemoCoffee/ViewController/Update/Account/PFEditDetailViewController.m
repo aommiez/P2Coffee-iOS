@@ -28,16 +28,24 @@
 {
     [super viewDidLoad];
     
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    
     if ([self.checkstatus isEqualToString:@"displayname"]) {
         self.navigationItem.title = @"Display Name";
         self.tableView.tableHeaderView = self.displaynameView;
         
         self.displayname.text = [self.obj objectForKey:@"display_name"];
+        
+        CALayer *displayname_bt = [self.displayname_bt layer];
+        [displayname_bt setMasksToBounds:YES];
+        [displayname_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"password"]) {
         self.navigationItem.title = @"Password";
         self.tableView.tableHeaderView = self.passwordView;
+        
         
     }
     
@@ -46,6 +54,10 @@
         self.tableView.tableHeaderView = self.emailView;
         
         self.email.text = [self.obj objectForKey:@"email"];
+        
+        CALayer *email_bt = [self.email_bt layer];
+        [email_bt setMasksToBounds:YES];
+        [email_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"website"]) {
@@ -53,6 +65,10 @@
         self.tableView.tableHeaderView = self.websiteView;
         
         self.website.text = [self.obj objectForKey:@"website"];
+        
+        CALayer *website_bt = [self.website_bt layer];
+        [website_bt setMasksToBounds:YES];
+        [website_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"phone"]) {
@@ -60,27 +76,224 @@
         self.tableView.tableHeaderView = self.phoneView;
         
         self.phone.text = [self.obj objectForKey:@"mobile_phone"];
+        
+        CALayer *phone_bt = [self.phone_bt layer];
+        [phone_bt setMasksToBounds:YES];
+        [phone_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"gender"]) {
         self.navigationItem.title = @"Gender";
-        self.tableView.tableHeaderView = self.genserView;
+        self.tableView.tableHeaderView = self.genderView;
         
-        self.gender.text = [self.obj objectForKey:@"gender"];
+        if ([[self.obj objectForKey:@"gender"] isEqualToString:@"Male"]) {
+            [self.male_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+            [self.female_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+            self.checkgender = @"Male";
+        } else {
+            [self.male_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+            [self.female_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+            self.checkgender = @"Female";
+        }
+        
+        CALayer *gender_bt = [self.gender_bt layer];
+        [gender_bt setMasksToBounds:YES];
+        [gender_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"birthday"]) {
         self.navigationItem.title = @"Birthday";
         self.tableView.tableHeaderView = self.birthdayView;
         
-        self.birthday.text = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+        NSDateFormatter *dateFormat = [[NSDateFormatter alloc] init];
+        NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
+        NSString *mySmallerString = [myString substringToIndex:10];
+    
+        NSString *finalstr = [NSString stringWithFormat:@"%@",mySmallerString];
+        [dateFormat setDateFormat:@"yyyy-MM-dd"];
+    
+        NSDate *date = [dateFormat dateFromString:finalstr];
+        [self.Date setDate:date];
+        
+        CALayer *birthday_bt = [self.birthday_bt layer];
+        [birthday_bt setMasksToBounds:YES];
+        [birthday_bt setCornerRadius:5.0f];
     }
-
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response {
+    NSLog(@"settingUser %@",response);
+}
+
+- (void)DCManager:(id)sender getUserSettingErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (IBAction)displaynameTapped:(id)sender{
+    
+    [self.displayname resignFirstResponder];
+    
+    [self.Demoapi updateSetting:self.displayname.text
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:[self.obj objectForKey:@"email"]
+                        website:[self.obj objectForKey:@"website"]
+                            tel:[self.obj objectForKey:@"mobile_phone"]
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (IBAction)passwordTapped:(id)sender{
+
+}
+
+- (IBAction)emailTapped:(id)sender{
+    
+    [self.email resignFirstResponder];
+    
+    [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:self.email.text
+                        website:[self.obj objectForKey:@"website"]
+                            tel:[self.obj objectForKey:@"mobile_phone"]
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (IBAction)websiteTapped:(id)sender{
+    
+    [self.website resignFirstResponder];
+    
+    [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:[self.obj objectForKey:@"email"]
+                        website:self.website.text
+                            tel:[self.obj objectForKey:@"mobile_phone"]
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (IBAction)phoneTapped:(id)sender{
+    
+    [self.phone resignFirstResponder];
+    
+    [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:[self.obj objectForKey:@"email"]
+                        website:[self.obj objectForKey:@"website"]
+                            tel:self.phone.text
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+}
+
+- (IBAction)maleTapped:(id)sender {
+    [self.male_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+    [self.female_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+    self.checkgender = @"Male";
+}
+
+- (IBAction)femaleTapped:(id)sender {
+    [self.male_bt setImage:[UIImage imageNamed:@"unchecked.png"] forState:UIControlStateNormal];
+    [self.female_bt setImage:[UIImage imageNamed:@"checked.png"] forState:UIControlStateNormal];
+    self.checkgender = @"Female";
+}
+
+- (IBAction)genderTapped:(id)sender {
+        [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                            facebook:[self.obj objectForKey:@"facebook_name"]
+                                email:[self.obj objectForKey:@"email"]
+                            website:[self.obj objectForKey:@"website"]
+                                tel:[self.obj objectForKey:@"mobile_phone"]
+                                gender:self.checkgender
+                            birthday:[[self.obj objectForKey:@"birth_date"] objectForKey:@"date"]];
+    
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"Save complete."
+                                    delegate:self
+                            cancelButtonTitle:@"OK"
+                            otherButtonTitles:nil] show];
+}
+
+- (IBAction)birthdayTapped:(id)sender {
+    
+    NSDateFormatter *date = [[NSDateFormatter alloc] init];
+    date.dateFormat = @"yyyy/MM/dd";
+    NSArray *temp = [[NSString stringWithFormat:@"%@",[date stringFromDate:self.Date.date]] componentsSeparatedByString:@""];
+    NSString *dateString = [[NSString alloc] init];
+    dateString = [[NSString alloc] initWithString:[temp objectAtIndex:0]];
+    
+    [self.Demoapi updateSetting:[self.obj objectForKey:@"display_name"]
+                       facebook:[self.obj objectForKey:@"facebook_name"]
+                          email:[self.obj objectForKey:@"email"]
+                        website:[self.obj objectForKey:@"website"]
+                            tel:[self.obj objectForKey:@"mobile_phone"]
+                         gender:[self.obj objectForKey:@"gender"]
+                       birthday:dateString];
+    
+    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                message:@"Save complete."
+                               delegate:self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil] show];
+}
+
+- (BOOL) textFieldShouldReturn:(UITextField *)textField  {
+    [self.email resignFirstResponder];
+    [self.website resignFirstResponder];
+    [self.phone resignFirstResponder];
+    
+    return YES;
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    if ([self.navigationController.viewControllers indexOfObject:self] == NSNotFound) {
+        // 'Back' button was pressed.  We know this is true because self is no longer
+        // in the navigation stack.
+        if([self.delegate respondsToSelector:@selector(PFEditDetailViewControllerBack)]){
+            [self.delegate PFEditDetailViewControllerBack];
+        }
+    }
+    
 }
 
 @end

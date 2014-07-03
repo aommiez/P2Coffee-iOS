@@ -22,4 +22,9 @@
     // Configure the view for the selected state
 }
 
+- (IBAction)userImgTapped:(id)sender {
+    NSString *userId = [[NSString alloc] initWithFormat:@"%ld",(long)self.imgBut.tag];
+    [self.delegate profile:userId];
+}
+
 @end

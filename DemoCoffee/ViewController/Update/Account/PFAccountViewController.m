@@ -183,7 +183,8 @@
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
 }
-- (void) PFEditAccountViewControllerBack {
+
+- (void) PFProfileViewControllerBack {
     [self viewDidLoad];
 }
 

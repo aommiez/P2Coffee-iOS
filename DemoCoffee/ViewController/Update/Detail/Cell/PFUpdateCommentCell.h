@@ -11,7 +11,7 @@
 
 @protocol PFUpdateCommentCellDelegate <NSObject>
 
-- (void)DidUserId:(NSString *)userId;
+- (void)profile:(NSString *)userId;
 
 @end
 
@@ -29,5 +29,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headImg;
 
 @property (weak, nonatomic) IBOutlet UILabel *timeComment;
+
+- (IBAction)userImgTapped:(id)sender;
 
 @end

@@ -17,6 +17,7 @@
 @protocol PFProfileViewControllerDelegate <NSObject>
 
 - (void)PFAccountViewController:(id)sender viewPicture:(NSString *)link;
+- (void)PFProfileViewControllerBack;
 
 @end
 
@@ -27,9 +28,6 @@
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
-
-@property (strong, nonatomic) IBOutlet UINavigationController *navController;
-@property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
 @property (strong, nonatomic) NSDictionary *objAccount;
 
