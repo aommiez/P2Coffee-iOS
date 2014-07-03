@@ -7,6 +7,7 @@
 //
 
 #import "PFAccountViewController.h"
+#import "UIView+MTAnimation.h"
 
 @interface PFAccountViewController ()
 
@@ -43,6 +44,26 @@
     [tutorialButton setMasksToBounds:YES];
     [tutorialButton setCornerRadius:5.0f];
     
+    CALayer *next1tutorialButton = [self.next1tutorialButton layer];
+    [next1tutorialButton setMasksToBounds:YES];
+    [next1tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *next2tutorialButton = [self.next2tutorialButton layer];
+    [next2tutorialButton setMasksToBounds:YES];
+    [next2tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *next3tutorialButton = [self.next3tutorialButton layer];
+    [next3tutorialButton setMasksToBounds:YES];
+    [next3tutorialButton setCornerRadius:5.0f];
+    
+    CALayer *donetutorialButton = [self.donetutorialButton layer];
+    [donetutorialButton setMasksToBounds:YES];
+    [donetutorialButton setCornerRadius:5.0f];
+    
+    CALayer *logoutButton = [self.logoutButton layer];
+    [logoutButton setMasksToBounds:YES];
+    [logoutButton setCornerRadius:5.0f];
+    
     CALayer *settingView = [self.settingView layer];
     [settingView setMasksToBounds:YES];
     [settingView setCornerRadius:5.0f];
@@ -55,6 +76,9 @@
     self.rowCount = [[NSString alloc] init];
     
     [self.Demoapi me];
+    
+    self.appkey.text = [self.Demoapi getAppKey];
+    self.testcode.text = [self.Demoapi getAppKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -180,8 +204,63 @@
     [[[[UIApplication sharedApplication] delegate] window] addSubview:self.tutorialMainView];
 
 }
+
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
+    [self.Demoapi saveAppKey:self.testcode.text];
+    [self viewDidLoad];
+}
+
+- (IBAction)linkTutorial:(id)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://app.pla2.com/"]];
+}
+
+- (IBAction)appkeyTextTutorial:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Test Code" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"Test code";
+    [alertTextField setText:self.appkey.text];
+    [alert show];
+}
+
+- (IBAction)testcodeTextTutorial:(id)sender {
+    UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Test Code" message:nil delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField * alertTextField = [alert textFieldAtIndex:0];
+    alertTextField.keyboardType = UIKeyboardTypeNumberPad;
+    alertTextField.placeholder = @"Test code";
+    [alertTextField setText:self.appkey.text];
+    [alert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        UITextField *appkey = [alertView textFieldAtIndex:0];
+        [self.Demoapi saveAppKey:appkey.text];
+        [self viewDidLoad];
+    }
+}
+
+- (IBAction)newappkeyTutorial:(id)sender {
+    [self.Demoapi appRequest];
+}
+
+- (IBAction)newtestcodeTutorial:(id)sender {
+    [self.Demoapi appRequest];
+}
+
+- (void)DCManager:(id)sender appRequestResponse:(NSDictionary *)response {
+    NSLog(@"%@",response);
+    NSString *app_key = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"app_key"]];
+    self.testcode.text = app_key;
+    self.appkey.text = app_key;
+    [self.Demoapi saveAppKey:app_key];
+}
+
+- (void)DCManager:(id)sender appRequestErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 - (void) PFProfileViewControllerBack {

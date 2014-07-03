@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "AsyncImageView.h"
 
 #import "DCManager.h"
@@ -20,7 +21,7 @@
 
 @end
 
-@interface PFSeeprofileViewController : UIViewController
+@interface PFSeeprofileViewController : UIViewController < MFMailComposeViewControllerDelegate >
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;

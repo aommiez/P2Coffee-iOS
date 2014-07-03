@@ -129,6 +129,10 @@
 - (void)DCManager:(id)sender settingMessageResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender settingMessageErrorResponse:(NSString *)errorResponse;
 
+//test code
+- (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse;
+
 @end
 
 @interface DCManager : NSObject

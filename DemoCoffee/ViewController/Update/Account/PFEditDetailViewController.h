@@ -36,6 +36,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 
 @property (weak, nonatomic) IBOutlet UIButton *displayname_bt;
+@property (weak, nonatomic) IBOutlet UIButton *password_bt;
 @property (weak, nonatomic) IBOutlet UIButton *email_bt;
 @property (weak, nonatomic) IBOutlet UIButton *website_bt;
 @property (weak, nonatomic) IBOutlet UIButton *phone_bt;

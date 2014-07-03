@@ -46,7 +46,9 @@
         self.navigationItem.title = @"Password";
         self.tableView.tableHeaderView = self.passwordView;
         
-        
+        CALayer *password_bt = [self.password_bt layer];
+        [password_bt setMasksToBounds:YES];
+        [password_bt setCornerRadius:5.0f];
     }
     
     if ([self.checkstatus isEqualToString:@"email"]) {

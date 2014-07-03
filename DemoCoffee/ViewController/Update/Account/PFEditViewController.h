@@ -48,6 +48,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *gender;
 @property (weak, nonatomic) IBOutlet UITextField *birthday;
 
+@property (weak, nonatomic) IBOutlet UIImageView *password;
+
 - (IBAction)uploadPictureTapped:(id)sender;
 
 - (IBAction)displaynameTapped:(id)sender;

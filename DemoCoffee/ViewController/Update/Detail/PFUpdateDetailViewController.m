@@ -413,6 +413,9 @@ BOOL newMediaDetail;
     
     NSString *urlStr = [[NSString alloc] initWithString:[[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"user"] objectForKey:@"picture"] objectForKey:@"link"]];
     NSURL *url = [NSURL URLWithString:urlStr];
+    
+    cell.myImageView.layer.masksToBounds = YES;
+    cell.myImageView.contentMode = UIViewContentModeScaleAspectFill;
     cell.myImageView.imageURL = url;
     
     NSInteger sectionsAmount = [tableView numberOfSections];
