@@ -9,7 +9,7 @@
 #import "PFAccountViewController.h"
 #import "UIView+MTAnimation.h"
 
-@interface PFAccountViewController ()
+@interface PFAccountViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -79,6 +79,8 @@
     
     self.appkey.text = [self.Demoapi getAppKey];
     self.testcode.text = [self.Demoapi getAppKey];
+    
+    self.tutorialScrollView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -260,6 +262,23 @@
 
 - (void) PFProfileViewControllerBack {
     [self viewDidLoad];
+}
+
+#pragma scrollviewdelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"1");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSLog(@"2");
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    NSLog(@"3");
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

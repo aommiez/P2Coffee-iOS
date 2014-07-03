@@ -141,6 +141,27 @@
     NSLog(@"%@",errorResponse);
 }
 
+- (void)DCManager:(id)sender changPasswordResponse:(NSDictionary *)response {
+    NSLog(@"changPassword %@",response);
+    if ([[[response objectForKey:@"error"] objectForKey:@"type"] isEqualToString:@"Main\\CTL\\Exception\\NeedParameterException"] || [[[response objectForKey:@"error"] objectForKey:@"type"] isEqualToString:@"Main\\CTL\\Exception\\UnAuthorizedException"]) {
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:[[response objectForKey:@"error"] objectForKey:@"message"]
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"Save complete."
+                                   delegate:self
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    }
+}
+
+- (void)DCManager:(id)sender changPasswordErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
 - (IBAction)displaynameTapped:(id)sender{
     
     [self.displayname resignFirstResponder];
@@ -161,7 +182,15 @@
 }
 
 - (IBAction)passwordTapped:(id)sender{
-
+    if (![self.newpassword.text isEqualToString:self.confirmpassword.text]) {
+        [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                    message:@"You must enter the same password twice in order to confirm it."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
+    } else {
+        [self.Demoapi changePassword:self.password.text new_password:self.newpassword.text];
+    }
 }
 
 - (IBAction)emailTapped:(id)sender{

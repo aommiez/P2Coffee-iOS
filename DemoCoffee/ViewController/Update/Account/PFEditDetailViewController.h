@@ -32,6 +32,11 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *displayname;
 @property (weak, nonatomic) IBOutlet UITextField *email;
+
+@property (weak, nonatomic) IBOutlet UITextField *password;
+@property (weak, nonatomic) IBOutlet UITextField *newpassword;
+@property (weak, nonatomic) IBOutlet UITextField *confirmpassword;
+
 @property (weak, nonatomic) IBOutlet UITextField *website;
 @property (weak, nonatomic) IBOutlet UITextField *phone;
 

@@ -99,7 +99,7 @@ BOOL newMedia;
     
     self.birthday.text = mySmallerString;
     
-    if ([[response objectForKey:@"facebook_id"] isEqualToString:@""]) {
+    if (![[response objectForKey:@"facebook_id"] isEqualToString:@""]) {
         self.password.hidden = YES;
     }
 }
@@ -131,7 +131,7 @@ BOOL newMedia;
 }
 
 - (IBAction)passwordTapped:(id)sender {
-    if (![[self.objEdit objectForKey:@"facebook_id"] isEqualToString:@""]) {
+    if ([[self.objEdit objectForKey:@"facebook_id"] isEqualToString:@""]) {
         PFEditDetailViewController *editdetail = [[PFEditDetailViewController alloc] init];
     
         if(IS_WIDESCREEN) {
