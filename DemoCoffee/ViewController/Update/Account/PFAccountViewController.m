@@ -76,7 +76,9 @@
     self.rowCount = [[NSString alloc] init];
     
     [self.Demoapi me];
-
+    
+    self.appkey.text = [self.Demoapi getAppKey];
+    self.testcode.text = [self.Demoapi getAppKey];
 }
 
 - (void)didReceiveMemoryWarning
@@ -200,6 +202,7 @@
 
 - (IBAction)closeTutorialView:(id)sender {
     [self.tutorialMainView removeFromSuperview];
+    [self.Demoapi saveAppKey:self.testcode.text ];
 }
 
 - (IBAction)linkTutorial:(id)sender {
@@ -212,16 +215,16 @@
 
 
 - (IBAction)newtestcodeTutorial:(id)sender {
-    [self.Demoapi creattestcode];
+    [self.Demoapi appRequest];
 }
 
-- (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response {
+- (void)DCManager:(id)sender appRequestResponse:(NSDictionary *)response {
     NSLog(@"%@",response);
     NSString *app_key = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"app_key"]];
     self.testcode.text = app_key;
 }
 
-- (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse {
+- (void)DCManager:(id)sender appRequestErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
 

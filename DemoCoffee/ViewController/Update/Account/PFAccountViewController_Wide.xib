@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFAccountViewController">
             <connections>
+                <outlet property="appkey" destination="Sic-dn-ozH" id="SOF-9d-ioX"/>
                 <outlet property="display_name" destination="51D-8v-EKE" id="UGK-AE-q7n"/>
                 <outlet property="donetutorialButton" destination="zZN-Ic-dZf" id="ucw-dD-3EF"/>
                 <outlet property="footerView" destination="kyA-Dl-qRp" id="B41-c2-n7q"/>
@@ -110,11 +111,11 @@
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
         </view>
         <view contentMode="scaleToFill" id="kyA-Dl-qRp">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="282"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="336"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="e5g-6S-Zf3">
-                    <rect key="frame" x="10" y="217" width="300" height="45"/>
+                    <rect key="frame" x="10" y="271" width="300" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                     <state key="normal" title="Logout">
@@ -183,6 +184,19 @@
                         <action selector="tutorialTapped:" destination="-1" eventType="touchUpInside" id="EFc-uh-p2m"/>
                     </connections>
                 </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pDI-cv-WeG">
+                    <rect key="frame" x="196" y="219" width="100" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="New">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                </button>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Test code" minimumFontSize="17" id="Sic-dn-ozH">
+                    <rect key="frame" x="20" y="219" width="168" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
             </subviews>
             <color key="backgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
         </view>

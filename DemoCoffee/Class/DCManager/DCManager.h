@@ -269,8 +269,5 @@
 
 - (void)logOut;
 
-#pragma test code
-- (void)creattestcode;
-
 
 @end

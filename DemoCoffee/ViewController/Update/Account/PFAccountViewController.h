@@ -40,19 +40,11 @@
 @property (retain, nonatomic) IBOutlet UIView *waitView;
 @property (retain, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next1tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next2tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
-
 @property (strong, nonatomic) IBOutlet UIView *settingView;
-
-@property (weak, nonatomic) IBOutlet UITextField *display_name;
-@property (weak, nonatomic) IBOutlet UITextField *testcode;
-
 @property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
+@property (weak, nonatomic) IBOutlet UITextField *display_name;
+
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 - (IBAction)editProfile:(id)sender;
 
@@ -63,12 +55,22 @@
 @property (strong, nonatomic) IBOutlet UISwitch *switchMessage;
 
 - (IBAction)logoutTapped:(id)sender;
-- (IBAction)tutorialTapped:(id)sender;
 
 #pragma mark - tut
+
 @property (strong, nonatomic) IBOutlet UIView *tutorialMainView;
 @property (strong, nonatomic) IBOutlet UIScrollView *tutorialScrollView;
 @property (strong, nonatomic) IBOutlet UIView *tutorialDetailView;
+
+@property (weak, nonatomic) IBOutlet UITextField *testcode;
+@property (weak, nonatomic) IBOutlet UITextField *appkey;
+@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next1tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next2tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
+@property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
+
+- (IBAction)tutorialTapped:(id)sender;
 - (IBAction)closeTutorialView:(id)sender;
 
 - (IBAction)linkTutorial:(id)sender;
