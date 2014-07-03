@@ -15,6 +15,7 @@
                 <outlet property="next1tutorialButton" destination="Kok-He-BJE" id="dq2-Au-ySH"/>
                 <outlet property="next2tutorialButton" destination="MVk-Qm-cKm" id="8Kh-Lr-v4x"/>
                 <outlet property="next3tutorialButton" destination="Y14-9O-LSz" id="QnU-2C-zNM"/>
+                <outlet property="pageControl" destination="BOW-2z-UYV" id="zoU-Mv-7eV"/>
                 <outlet property="popupwaitView" destination="3a2-rP-Fz6" id="WnI-Lu-Ujo"/>
                 <outlet property="settingView" destination="lSe-61-VQ8" id="7kh-XV-Suy"/>
                 <outlet property="switchMessage" destination="9Wt-Eh-Ehw" id="3Rx-Uy-pQQ"/>

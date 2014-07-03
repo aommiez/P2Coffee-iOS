@@ -70,6 +70,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
 @property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
 
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+
 - (IBAction)tutorialTapped:(id)sender;
 - (IBAction)closeTutorialView:(id)sender;
 

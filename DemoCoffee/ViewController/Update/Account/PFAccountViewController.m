@@ -272,12 +272,32 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    NSLog(@"2");
+    NSString *removeBreckets = [[NSString alloc] init];
+    removeBreckets = @"0";
+    
+    NSString *contentOffSet = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(self.tutorialScrollView.contentOffset)];
+    removeBreckets = [contentOffSet stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"{ ,0}"]];
+    
+    
+    if ([removeBreckets intValue] <= 0) {
+        self.pageControl.currentPage = 0;
+    }
+    if ([removeBreckets intValue] == 32) {
+        self.pageControl.currentPage = 1;
+    }
+    if ([removeBreckets intValue] == 64) {
+        self.pageControl.currentPage = 2;
+    }
+    if ([removeBreckets intValue] == 96) {
+        self.pageControl.currentPage = 3;
+    }
+    
+    NSLog(@"%@",removeBreckets);
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
-    NSLog(@"3");
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
