@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360B1A7719651A67004CF7BD /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 360B1A7619651A67004CF7BD /* Reachability.m */; };
+		36401ABE1965473D00DE8BDF /* Sync.m in Sources */ = {isa = PBXBuildFile; fileRef = 36401ABD1965473D00DE8BDF /* Sync.m */; };
 		3686234E1953EDEB004636DF /* Db.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623371953EDEB004636DF /* Db.m */; };
 		3686234F1953EDEB004636DF /* DbBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 368623391953EDEB004636DF /* DbBackground.m */; };
 		368623501953EDEB004636DF /* DbCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 3686233B1953EDEB004636DF /* DbCache.m */; };
@@ -303,6 +305,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		360B1A7519651A67004CF7BD /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Reachability.h; path = Reachability/Reachability.h; sourceTree = "<group>"; };
+		360B1A7619651A67004CF7BD /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Reachability.m; path = Reachability/Reachability.m; sourceTree = "<group>"; };
+		36401ABC1965473D00DE8BDF /* Sync.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sync.h; path = Class/DCManager/Sync.h; sourceTree = SOURCE_ROOT; };
+		36401ABD1965473D00DE8BDF /* Sync.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Sync.m; path = Class/DCManager/Sync.m; sourceTree = SOURCE_ROOT; };
 		368623361953EDEB004636DF /* Db.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Db.h; path = External/orm/Db.h; sourceTree = SOURCE_ROOT; };
 		368623371953EDEB004636DF /* Db.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Db.m; path = External/orm/Db.m; sourceTree = SOURCE_ROOT; };
 		368623381953EDEB004636DF /* DbBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DbBackground.h; path = External/orm/DbBackground.h; sourceTree = SOURCE_ROOT; };
@@ -755,6 +761,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		360B1A7419651A5E004CF7BD /* Reachability */ = {
+			isa = PBXGroup;
+			children = (
+				360B1A7519651A67004CF7BD /* Reachability.h */,
+				360B1A7619651A67004CF7BD /* Reachability.m */,
+			);
+			name = Reachability;
+			sourceTree = "<group>";
+		};
 		368623331953EC51004636DF /* Tabbar */ = {
 			isa = PBXGroup;
 			children = (
@@ -1439,6 +1454,8 @@
 				EA024C51195030B30032CF51 /* PFAppDelegate.m */,
 				EA024C56195030B30032CF51 /* Images.xcassets */,
 				EA024C53195030B30032CF51 /* DemoCoffee.xcdatamodeld */,
+				36401ABC1965473D00DE8BDF /* Sync.h */,
+				36401ABD1965473D00DE8BDF /* Sync.m */,
 				EA024C48195030B30032CF51 /* Supporting Files */,
 			);
 			path = DemoCoffee;
@@ -1485,6 +1502,7 @@
 		EA024C7C195031220032CF51 /* Ext */ = {
 			isa = PBXGroup;
 			children = (
+				360B1A7419651A5E004CF7BD /* Reachability */,
 				EA024C7D195031220032CF51 /* AsyncImageView */,
 				52FBAF7D195BC8E90047FF7C /* Blur */,
 				523FD22D195964EB00B965EF /* DLIL */,
@@ -2049,6 +2067,7 @@
 				3686234E1953EDEB004636DF /* Db.m in Sources */,
 				523FD2BA19597E6E00B965EF /* UILabel+UILabelDynamicHeight.m in Sources */,
 				52FBAF86195BC8E90047FF7C /* UIImage+BoxBlur.m in Sources */,
+				360B1A7719651A67004CF7BD /* Reachability.m in Sources */,
 				EA024CFF195031220032CF51 /* PFMemberViewController.m in Sources */,
 				526A34F219541FB000D5FAB0 /* PFUpdateCell.m in Sources */,
 				523FD2A61959695100B965EF /* PSTGridLayoutItem.m in Sources */,
@@ -2117,6 +2136,7 @@
 				368623B51953F590004636DF /* FMDatabasePool.m in Sources */,
 				525AE04819582DCA005329A1 /* PFOrderViewController.m in Sources */,
 				523FD29D1959695100B965EF /* PSTCollectionView.m in Sources */,
+				36401ABE1965473D00DE8BDF /* Sync.m in Sources */,
 				523FD2AD1959695100B965EF /* SDWebImageDownloader.m in Sources */,
 				EA024D03195031220032CF51 /* PFUpdateViewController.m in Sources */,
 				368623581953EDEB004636DF /* SqlGenerator.m in Sources */,

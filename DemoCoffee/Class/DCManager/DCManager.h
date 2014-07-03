@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "AFNetworking.h"
 #import "PFHelper.h"
+#import "Reachability.h"
 
 
 @protocol DCManagerDelegate <NSObject>
@@ -138,8 +139,10 @@
 @property NSUserDefaults *userDefaults;
 @property (assign, nonatomic) id delegate;
 @property NSString *urlStr;
-
-
+@property NSManagedObjectContext *managedObjectContext;
+@property NSManagedObjectModel *managedObjectModel;
+@property NSPersistentStoreCoordinator *persistentStoreCoordinator;
+@property NSFetchRequest *fetchRequest;
 #pragma mark - function
 - (BOOL)checkLogin;
 /*
@@ -262,10 +265,9 @@
 
 - (void)settingUser:(NSString *)obj1 email:(NSString *)obj2 website:(NSString *)obj3 tel:(NSString *)obj4 gender:(NSString *)obj5 birthday:(NSString *)obj6;
 - (void)updateSetting:(NSString *)profilename facebook:(NSString *)facebook email:(NSString *)email website:(NSString *)website tel:(NSString *)tel gender:(NSString *)gender birthday:(NSString *)birthday;
-
 - (void)logOut;
-
-
-
-
+- (BOOL)checkInternet;
+- (BOOL)checkSyncTimeStamp;
+- (BOOL)checkSyncFromDB:(NSString *)folderTime product:(NSString *)product ;
+- (void)getDrinkListFromLocal;
 @end

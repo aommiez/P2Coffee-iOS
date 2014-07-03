@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DCManager.h"
 #import "PFTabBarViewController.h"
 
 #import "PFUpdateViewController.h"
