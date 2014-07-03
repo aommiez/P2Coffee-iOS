@@ -196,9 +196,8 @@
 }
 
 - (IBAction)tutorialTapped:(id)sender {
-    [self.tutorialScrollView addSubview:self.tutorialDetailView];
-    [self.tutorialScrollView addSubview:self.tutorialDetailView];
     self.tutorialScrollView.contentSize = CGSizeMake(self.tutorialDetailView.frame.size.width,self.tutorialDetailView.frame.size.height);
+    [self.tutorialScrollView addSubview:self.tutorialDetailView];
     [[[[UIApplication sharedApplication] delegate] window] addSubview:self.tutorialMainView];
 }
 

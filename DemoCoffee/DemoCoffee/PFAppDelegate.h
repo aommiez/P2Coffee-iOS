@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DCManager.h"
 #import "PFTabBarViewController.h"
 
 #import "PFUpdateViewController.h"
@@ -30,6 +30,7 @@
 @property (strong, nonatomic) PFMenuViewController *menu;
 @property (strong, nonatomic) PFMemberViewController *member;
 @property (strong, nonatomic) PFContactViewController *contact;
+
 
 @property (nonatomic, strong) NSMutableArray *photos;
 @property (nonatomic, strong) NSMutableArray *thumbs;

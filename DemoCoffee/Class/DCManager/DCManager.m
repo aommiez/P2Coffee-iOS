@@ -7,6 +7,7 @@
 //
 
 #import "DCManager.h"
+#import "Sync.h"
 
 @implementation DCManager
 
@@ -19,6 +20,9 @@
         self.manager = [AFHTTPRequestOperationManager manager];
         self.hp = [[PFHelper alloc] init];
         self.urlStr = [[NSString alloc] init];
+        id delegate = [[UIApplication sharedApplication] delegate];
+        self.managedObjectContext = [delegate managedObjectContext];
+        self.fetchRequest = [[NSFetchRequest alloc] init];
     }
     return self;
 }
@@ -410,6 +414,105 @@
         [self.delegate DCManager:self getUserSettingErrorResponse:[error localizedDescription]];
     }];
 }
+- (BOOL)checkInternet {
+    Reachability *reachability = [Reachability reachabilityForInternetConnection];
+    NetworkStatus networkStatus = [reachability currentReachabilityStatus];
+    return networkStatus != NotReachable;
+}
+- (BOOL)checkSyncTimeStamp {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@last_update",API_URL];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self checkSyncFromDB:[responseObject objectForKey:@"folder"] product:[responseObject objectForKey:@"product"]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%@",[error localizedDescription]);
+    }];
+    return true;
+}
+- (BOOL)checkSyncFromDB:(NSString *)folderTime product:(NSString *)product {
+    NSString *fordelDB = [[NSString alloc] init];
+    NSString *productDB = [[NSString alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Sync" inManagedObjectContext:self.managedObjectContext];
+    [self.fetchRequest setEntity:entity];
+    NSError* error;
+    NSArray *fetchedObjects = [self.managedObjectContext executeFetchRequest:self.fetchRequest error:&error];
+    for (NSManagedObject *info in fetchedObjects) {
+        fordelDB = [[NSString alloc] initWithFormat:@"%@",[info valueForKey:@"folder"]];
+        productDB = [[NSString alloc] initWithFormat:@"%@",[info valueForKey:@"product"]];
+    }
+    if ([fetchedObjects count] == 0 ) {
+        Sync *syncDB = [NSEntityDescription insertNewObjectForEntityForName:@"Sync"
+                                                     inManagedObjectContext:self.managedObjectContext];
+        syncDB.folder = [(NSNumber *)folderTime stringValue];
+        syncDB.product = [(NSNumber *)product stringValue];
+        NSError *error;
+        if (![self.managedObjectContext save:&error]) {
+            NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+        }
+        return true;
+    } else {
+        if ([folderTime intValue] > [fordelDB intValue] ) {
+            NSLog(@"sync >> local");
+            [self deleteAllObjects:@"Sync"];
+            Sync *syncDB = [NSEntityDescription insertNewObjectForEntityForName:@"Sync"
+                                                         inManagedObjectContext:self.managedObjectContext];
+            syncDB.folder = [(NSNumber *)folderTime stringValue];
+            syncDB.product = [(NSNumber *)product stringValue];
+            NSError *error;
+            if (![self.managedObjectContext save:&error]) {
+                NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
+            }
+            NSLog(@"update sync ok !");
+        } else if ([folderTime intValue] == [fordelDB intValue] ) {
+            NSLog(@"sync == local");
+            return false;
+        } else if ([folderTime intValue] < [fordelDB intValue] ) {
+            NSLog(@"sync << local");
+            return false;
+        } else {
+            NSLog(@"sync error");
+            return false;
+        }
+    }
+    return false;
+}
+
+- (void) deleteAllObjects: (NSString *) entityDescription  {
+    NSEntityDescription *entity = [NSEntityDescription entityForName:entityDescription inManagedObjectContext:self.managedObjectContext];
+    [self.fetchRequest setEntity:entity];
+    NSError *error;
+    NSArray *items = [self.managedObjectContext executeFetchRequest:self.fetchRequest error:&error];
+    for (NSManagedObject *managedObject in items) {
+    	[self.managedObjectContext deleteObject:managedObject];
+    	NSLog(@"%@ object deleted",entityDescription);
+    }
+    if (![self.managedObjectContext save:&error]) {
+    	NSLog(@"Error deleting %@ - error:%@",entityDescription,error);
+    }
+    
+}
+
+- (void)getDrinkListFromLocal {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 - (void)changePassword:(NSString *)old_password new_password:(NSString *)new_password {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/change_password/%@",API_URL,[self getUserId]];
