@@ -70,6 +70,7 @@
     [self.view removeFromSuperview];
     [self.Demoapi saveAppKey:self.testcode.text];
     [self.Demoapi saveAppKeyCheck:@"123"];
+    [self.delegate PFTutorialViewController:self];
 }
 
 - (IBAction)appstoreTutorial:(id)sender {

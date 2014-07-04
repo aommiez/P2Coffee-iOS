@@ -194,7 +194,6 @@ BOOL refreshDataNews;
 
 - (void)PFTutorialViewController:(id)sender{
     [self.delegate ShowTabbar];
-    [self viewDidLoad];
 }
 
 - (void)DCManager:(id)sender getNewsByAppKeyResponse:(NSDictionary *)response {
