@@ -210,7 +210,7 @@
 /*
  get contact by app key
  */
-- (void)getContactByAppKey:(NSInteger *)app_key;
+- (void)getContactByAppKey:(NSString *)app_key;
 /*
  get contact branch by id
 */

@@ -68,7 +68,7 @@ BOOL refreshDataContact;
     
     self.arrObj = [[NSMutableArray alloc] init];
     
-    [self.Demoapi getContactByAppKey:0];
+    [self.Demoapi getContactByAppKey:@""];
     
     UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured:)];
     [self.imgscrollview addGestureRecognizer:singleTap];
@@ -289,7 +289,7 @@ BOOL refreshDataContact;
     
     [self.delegate HideTabbar];
     
-    if ([[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"locations"] objectForKey:@"picture_length"] intValue] <= 1) {
+    if ([[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"picture_length"] intValue] <= 1) {
         
         PFBranch1ViewController *branch1 = [[PFBranch1ViewController alloc] init];
         

@@ -101,8 +101,8 @@ BOOL resultBool;
     return [self.userDefaults objectForKey:@"access_token"];
 }
 
-- (void)getContactByAppKey:(NSInteger *)app_key {
-    self.urlStr = [[NSString alloc] initWithFormat:@"%@contact?app_key=%ld",API_URL,(unsigned long)app_key];
+- (void)getContactByAppKey:(NSString *)app_key {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@contact?app_key=%@",API_URL,[self getAppKey]];
     [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self.delegate DCManager:self getContactByAppKeyResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -297,7 +297,7 @@ BOOL resultBool;
 }
 #pragma mark - Stamp
 - (void)getStampStyle {
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@stamp/style",API_URL];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@stamp/style?app_key=%@",API_URL,[self getAppKey]];
     [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self.delegate DCManager:self getStampStyleResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
@@ -315,7 +315,7 @@ BOOL resultBool;
 }
 
 - (void)getReward {
-    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@reward",API_URL];
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@reward?app_key=%@",API_URL,[self getAppKey]];
     [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         [self.delegate DCManager:self getRewardResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
