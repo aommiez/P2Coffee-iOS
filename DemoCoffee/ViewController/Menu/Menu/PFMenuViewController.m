@@ -69,9 +69,20 @@ BOOL refreshDataMenu;
     
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
-    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     self.arrObj = [[NSMutableArray alloc] init];
-    [self.Demoapi getDrinkList];
+    //[self.Demoapi getDrinkList];
+    if ([self.Demoapi checkInternet]) {
+        NSLog(@"connect");
+        [self.Demoapi checkSyncTimeStamp];
+        if ([self.Demoapi checkSyncFromDB:[userDefaults objectForKey:@"folder"] product:[userDefaults objectForKey:@"product"]]) {
+            [self.Demoapi getDrinkListFromLocalFromCache:NO];
+        } else {
+            [self.Demoapi getDrinkListFromLocalFromCache:YES];
+        }
+    } else {
+        NSLog(@"disconnect");
+    }
     
     UIView *hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
     self.tableView.tableHeaderView = hv;
@@ -335,6 +346,27 @@ BOOL refreshDataMenu;
 - (void)DCManager:(id)sender getLinkErrorResponse:(NSString *)errorResponse {
     NSLog(@"%@",errorResponse);
 }
-
+- (void)DCManager:(id)sender getDrinkListFromLocalFromCacheResponse:(NSDictionary *)response {
+    self.obj = response;
+    
+    [self.waitView removeFromSuperview];
+    
+    if (!refreshDataMenu) {
+        for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+        }
+    } else {
+        [self.arrObj removeAllObjects];
+        for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+        }
+    }
+    
+    
+    [self reloadData:YES];
+}
+- (void)DCManager:(id)sender getDrinkListFromLocalFromCacheErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
 
 @end

@@ -87,17 +87,6 @@ BOOL newMedia;
     [self.tabBarViewController setSelectedIndex:2];
     [self.tabBarViewController setSelectedIndex:1];
     [self.tabBarViewController setSelectedIndex:0];
-    DCManager *dc = [[DCManager alloc] init];
-    if ([dc checkInternet]) {
-        NSLog(@"connect");
-        if ([dc checkSyncTimeStamp]) {
-            NSLog(@" checkSyncTimeStamp true");
-        } else {
-            NSLog(@"checkSyncTimeStamp false");
-        }
-    } else {
-        NSLog(@"disconnect");
-    }
     [self.window setRootViewController:self.tabBarViewController];
     [self.window makeKeyAndVisible];
     return YES;

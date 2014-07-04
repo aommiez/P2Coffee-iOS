@@ -10,7 +10,7 @@
 #import "Sync.h"
 
 @implementation DCManager
-
+BOOL resultBool;
 
 - (id) init
 {
@@ -23,6 +23,7 @@
         id delegate = [[UIApplication sharedApplication] delegate];
         self.managedObjectContext = [delegate managedObjectContext];
         self.fetchRequest = [[NSFetchRequest alloc] init];
+        resultBool = false;
     }
     return self;
 }
@@ -419,16 +420,18 @@
     NetworkStatus networkStatus = [reachability currentReachabilityStatus];
     return networkStatus != NotReachable;
 }
-- (BOOL)checkSyncTimeStamp {
+- (void)checkSyncTimeStamp {
     self.urlStr = [[NSString alloc] initWithFormat:@"%@last_update",API_URL];
     [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self checkSyncFromDB:[responseObject objectForKey:@"folder"] product:[responseObject objectForKey:@"product"]];
+        [self.userDefaults setObject:[responseObject objectForKey:@"folder"] forKey:@"folder"];
+        [self.userDefaults setObject:[responseObject objectForKey:@"product"] forKey:@"product"];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%@",[error localizedDescription]);
     }];
-    return true;
 }
 - (BOOL)checkSyncFromDB:(NSString *)folderTime product:(NSString *)product {
+    NSLog(@"folderTime : %@",folderTime);
+    NSLog(@"product : %@",product);
     NSString *fordelDB = [[NSString alloc] init];
     NSString *productDB = [[NSString alloc] init];
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Sync" inManagedObjectContext:self.managedObjectContext];
@@ -439,6 +442,8 @@
         fordelDB = [[NSString alloc] initWithFormat:@"%@",[info valueForKey:@"folder"]];
         productDB = [[NSString alloc] initWithFormat:@"%@",[info valueForKey:@"product"]];
     }
+    NSLog(@"fordelDB : %@", fordelDB);
+    NSLog(@"productDB : %@",productDB);
     if ([fetchedObjects count] == 0 ) {
         Sync *syncDB = [NSEntityDescription insertNewObjectForEntityForName:@"Sync"
                                                      inManagedObjectContext:self.managedObjectContext];
@@ -448,6 +453,7 @@
         if (![self.managedObjectContext save:&error]) {
             NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
         }
+        resultBool = true;
         return true;
     } else {
         if ([folderTime intValue] > [fordelDB intValue] ) {
@@ -462,14 +468,19 @@
                 NSLog(@"Whoops, couldn't save: %@", [error localizedDescription]);
             }
             NSLog(@"update sync ok !");
+            resultBool = true;
+            return true;
         } else if ([folderTime intValue] == [fordelDB intValue] ) {
             NSLog(@"sync == local");
+            resultBool = false;
             return false;
         } else if ([folderTime intValue] < [fordelDB intValue] ) {
             NSLog(@"sync << local");
+            resultBool = false;
             return false;
         } else {
             NSLog(@"sync error");
+            resultBool = false;
             return false;
         }
     }
@@ -491,10 +502,88 @@
     
 }
 
-- (void)getDrinkListFromLocal {
+- (void)getDrinkListFromLocalFromCache:(BOOL)fromCache {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@product/folder?parent_id=38",API_URL];
+
+    
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    BOOL __block responseFromCache = fromCache; // yes by default
+    
+    void (^requestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject) =
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (responseFromCache) {
+            // response was returned from cache
+            //NSLog(@"RESPONSE FROM CACHE: %@", responseObject);
+            [self.delegate DCManager:self getDrinkListFromLocalFromCacheResponse:responseObject];
+        }
+        else {
+            // response was returned from the server, not from cache
+            //NSLog(@"RESPONSE: %@", responseObject);
+            [self.delegate DCManager:self getDrinkListFromLocalFromCacheResponse:responseObject];
+        }
+    };
+    
+    void (^requestFailureBlock)(AFHTTPRequestOperation *operation, NSError *error) =
+    ^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"ERROR: %@", error);
+        [self.delegate DCManager:self getDrinkListFromLocalFromCacheErrorResponse:[error localizedDescription]];
+    };
+    
+    AFHTTPRequestOperation *operation = [manager GET:urlStr
+                                          parameters:nil
+                                             success:requestSuccessBlock
+                                             failure:requestFailureBlock];
+    
+    [operation setCacheResponseBlock:
+     ^NSCachedURLResponse *(NSURLConnection *connection, NSCachedURLResponse *cachedResponse) {
+         // this will be called whenever server returns status code 200, not 304
+         responseFromCache = NO;
+         return cachedResponse;
+     }];
     
 }
 
+- (void)getLinkCache:(NSString *)link {
+    
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@",link];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    
+    BOOL __block responseFromCache = YES; // yes by default
+    
+    void (^requestSuccessBlock)(AFHTTPRequestOperation *operation, id responseObject) =
+    ^(AFHTTPRequestOperation *operation, id responseObject) {
+        if (responseFromCache) {
+            // response was returned from cache
+            //NSLog(@"RESPONSE FROM CACHE: %@", responseObject);
+            [self.delegate DCManager:self getLinkCacheResponse:responseObject];
+        }
+        else {
+            // response was returned from the server, not from cache
+            //NSLog(@"RESPONSE: %@", responseObject);
+            [self.delegate DCManager:self getLinkCacheResponse:responseObject];
+        }
+    };
+    
+    void (^requestFailureBlock)(AFHTTPRequestOperation *operation, NSError *error) =
+    ^(AFHTTPRequestOperation *operation, NSError *error) {
+        //NSLog(@"ERROR: %@", error);
+        [self.delegate DCManager:self getLinkCacheErrorResponse:[error localizedDescription]];
+    };
+    
+    AFHTTPRequestOperation *operation = [manager GET:urlStr
+                                          parameters:nil
+                                             success:requestSuccessBlock
+                                             failure:requestFailureBlock];
+    
+    [operation setCacheResponseBlock:
+     ^NSCachedURLResponse *(NSURLConnection *connection, NSCachedURLResponse *cachedResponse) {
+         // this will be called whenever server returns status code 200, not 304
+         responseFromCache = NO;
+         return cachedResponse;
+     }];
+    
+}
 
 
 

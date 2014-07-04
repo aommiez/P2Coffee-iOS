@@ -101,6 +101,9 @@
 - (void)DCManager:(id)sender getDrinkListByAppKeyErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getDessertListByAppKeyResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getDessertListByAppKeyErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getDrinkListFromLocalFromCacheResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getDrinkListFromLocalFromCacheErrorResponse:(NSString *)errorResponse;
+
 
 #pragma mark - Stamp Protocal Delegate
 - (void)DCManager:(id)sender getStampStyleResponse:(NSDictionary *)response;
@@ -132,6 +135,8 @@
 //test code
 - (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getLinkCacheResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getLinkCacheErrorResponse:(NSString *)errorResponse;
 
 @end
 
@@ -271,7 +276,8 @@
 - (void)updateSetting:(NSString *)profilename facebook:(NSString *)facebook email:(NSString *)email website:(NSString *)website tel:(NSString *)tel gender:(NSString *)gender birthday:(NSString *)birthday;
 - (void)logOut;
 - (BOOL)checkInternet;
-- (BOOL)checkSyncTimeStamp;
+- (void)checkSyncTimeStamp;
 - (BOOL)checkSyncFromDB:(NSString *)folderTime product:(NSString *)product ;
-- (void)getDrinkListFromLocal;
+- (void)getDrinkListFromLocalFromCache:(BOOL)fromCache;
+- (void)getLinkCache:(NSString *)link;
 @end

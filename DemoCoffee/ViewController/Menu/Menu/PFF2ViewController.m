@@ -39,7 +39,8 @@
     self.arrObj = [[NSMutableArray alloc] init];
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
-    [self.Demoapi getLink:self.link];
+    //[self.Demoapi getLink:self.link];
+    [self.Demoapi getLinkCache:self.link];
 }
 
 - (void)didReceiveMemoryWarning
@@ -157,7 +158,22 @@
         [self.navigationController pushViewController:f1 animated:YES];
     }
 }
-
+- (void)DCManager:(id)sender getLinkCacheResponse:(NSDictionary *)response {
+    [self.waitView removeFromSuperview];
+    
+    self.obj = response;
+    //NSLog(@"%@",self.obj);
+    
+    [self.arrObj removeAllObjects];
+    for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
+        [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+    }
+    
+    [self reloadData:YES];
+}
+- (void)DCManager:(id)sender getLinkCacheErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
 - (void)DCManager:(id)sender getLinkResponse:(NSDictionary *)response {
     
     [self.waitView removeFromSuperview];
