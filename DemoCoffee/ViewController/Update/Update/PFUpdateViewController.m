@@ -121,11 +121,30 @@ BOOL refreshDataNews;
 }
 
 - (void)notify {
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Notification coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
+    
+    if ([self.Demoapi checkLogin] == false){
+        
+        self.loginView = [PFLoginViewController alloc];
+        self.loginView.menu = @"notify";
+        self.loginView.delegate = self;
+        [self.view addSubview:self.loginView.view];
+        
+    }else{
+        
+        [self.delegate HideTabbar];
+        
+        PFNotificationViewController *notify = [[PFNotificationViewController alloc] init];
+        
+        if(IS_WIDESCREEN) {
+            notify = [[PFNotificationViewController alloc] initWithNibName:@"PFNotificationViewController_Wide" bundle:nil];
+        } else {
+            notify = [[PFNotificationViewController alloc] initWithNibName:@"PFNotificationViewController" bundle:nil];
+        }
+        
+        notify.delegate = self;
+        [self.navController pushViewController:notify animated:YES];
+    }
+    
 }
 
 - (void)PFAccountViewController:(id)sender{

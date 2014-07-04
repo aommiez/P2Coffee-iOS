@@ -234,8 +234,16 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
         UITextField *appkey = [alertView textFieldAtIndex:0];
-        [self.Demoapi saveAppKey:appkey.text];
-        [self viewDidLoad];
+        if (![appkey.text length]==0) {
+            [self.Demoapi saveAppKey:appkey.text];
+            [self viewDidLoad];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                        message:@"Please fill Test code."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        }
     }
 }
 
@@ -290,8 +298,7 @@
     if ([removeBreckets intValue] == 96) {
         self.pageControl.currentPage = 3;
     }
-    
-    NSLog(@"%@",removeBreckets);
+
 }
 
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView

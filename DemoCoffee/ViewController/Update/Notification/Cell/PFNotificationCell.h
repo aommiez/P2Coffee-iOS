@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "AsyncImageView.h"
 
 @interface PFNotificationCell : UITableViewCell
+
+@property (weak, nonatomic) IBOutlet UILabel *topicLabel;
+@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *msgLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *bg;
 
 @end
