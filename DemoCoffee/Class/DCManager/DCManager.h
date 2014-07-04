@@ -132,6 +132,8 @@
 - (void)DCManager:(id)sender settingMessageResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender settingMessageErrorResponse:(NSString *)errorResponse;
 
+- (void)DCManager:(id)sender changPasswordResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender changPasswordErrorResponse:(NSString *)errorResponse;
 //test code
 - (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse;
