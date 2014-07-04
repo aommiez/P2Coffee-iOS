@@ -9,7 +9,7 @@
 #import "PFAccountViewController.h"
 #import "UIView+MTAnimation.h"
 
-@interface PFAccountViewController ()
+@interface PFAccountViewController () <UIScrollViewDelegate>
 
 @end
 
@@ -79,6 +79,8 @@
     
     self.appkey.text = [self.Demoapi getAppKey];
     self.testcode.text = [self.Demoapi getAppKey];
+    
+    self.tutorialScrollView.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning
@@ -200,6 +202,8 @@
 }
 
 - (IBAction)closeTutorialView:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(0,0) animated:YES];
+    self.pageControl.currentPage = 0;
     [self.tutorialMainView removeFromSuperview];
     [self.Demoapi saveAppKey:self.testcode.text];
     [self viewDidLoad];
@@ -232,8 +236,16 @@
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
         UITextField *appkey = [alertView textFieldAtIndex:0];
-        [self.Demoapi saveAppKey:appkey.text];
-        [self viewDidLoad];
+        if (![appkey.text length]==0) {
+            [self.Demoapi saveAppKey:appkey.text];
+            [self viewDidLoad];
+        } else {
+            [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
+                                        message:@"Please fill Test code."
+                                       delegate:nil
+                              cancelButtonTitle:@"OK"
+                              otherButtonTitles:nil] show];
+        }
     }
 }
 
@@ -259,6 +271,56 @@
 
 - (void) PFProfileViewControllerBack {
     [self viewDidLoad];
+}
+
+#pragma scrollviewdelegate
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView
+{
+    //NSLog(@"1");
+}
+
+- (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    NSString *removeBreckets = [[NSString alloc] init];
+    removeBreckets = @"0";
+    
+    NSString *contentOffSet = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(self.tutorialScrollView.contentOffset)];
+    removeBreckets = [contentOffSet stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"{ ,0}"]];
+    
+    if ([removeBreckets intValue] <= 0) {
+        self.pageControl.currentPage = 0;
+    }
+    if ([removeBreckets intValue] == 32) {
+        self.pageControl.currentPage = 1;
+    }
+    if ([removeBreckets intValue] == 64) {
+        self.pageControl.currentPage = 2;
+    }
+    if ([removeBreckets intValue] == 96) {
+        self.pageControl.currentPage = 3;
+    }
+
+}
+
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+
+}
+
+- (IBAction)next1tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(320,0) animated:YES];
+    self.pageControl.currentPage = 1;
+}
+
+- (IBAction)next2tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(640,0) animated:YES];
+    self.pageControl.currentPage = 2;
+}
+
+- (IBAction)next3tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(960,0) animated:YES];
+    self.pageControl.currentPage = 3;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

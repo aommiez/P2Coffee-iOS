@@ -9,6 +9,7 @@
                 <outlet property="Date" destination="q2w-9y-1jC" id="e4l-c6-DFk"/>
                 <outlet property="birthdayView" destination="26X-G7-7qn" id="949-pH-fpt"/>
                 <outlet property="birthday_bt" destination="AC1-Kg-sis" id="j6A-K7-p0n"/>
+                <outlet property="confirmpassword" destination="ydg-LX-n9J" id="lys-48-RhW"/>
                 <outlet property="displayname" destination="RV3-zi-V2V" id="uJ2-6g-FL3"/>
                 <outlet property="displaynameView" destination="GXj-1I-Zea" id="Ufw-Yi-9e5"/>
                 <outlet property="displayname_bt" destination="ePI-ah-oCx" id="BeI-qA-oYA"/>
@@ -19,6 +20,8 @@
                 <outlet property="genderView" destination="3bJ-KG-OjV" id="NEO-g7-zW3"/>
                 <outlet property="gender_bt" destination="buQ-ni-dS8" id="Q8W-bE-5y8"/>
                 <outlet property="male_bt" destination="gYJ-Oh-or9" id="Ipg-JT-L78"/>
+                <outlet property="newpassword" destination="Tfp-5W-Vby" id="RaQ-dy-JZC"/>
+                <outlet property="password" destination="e33-rF-W9p" id="jen-5J-ZWr"/>
                 <outlet property="passwordView" destination="wVb-Pb-zbf" id="Ydc-z3-S2H"/>
                 <outlet property="password_bt" destination="FKU-0s-TLV" id="ioJ-Ua-5D5"/>
                 <outlet property="phone" destination="SvB-y3-omb" id="nfk-dy-1DX"/>
@@ -93,6 +96,9 @@
                             <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="FR9-E1-2fK"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -111,6 +117,9 @@
                             <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="Lws-Yz-WuJ"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -129,6 +138,9 @@
                             <color key="textColor" red="0.57647058819999997" green="0.58431372550000005" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="BIw-97-GoX"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -142,7 +154,7 @@
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="emailTapped:" destination="-1" eventType="touchUpInside" id="fs0-mA-C4K"/>
+                        <action selector="passwordTapped:" destination="-1" eventType="touchUpInside" id="q5M-9G-yPD"/>
                     </connections>
                 </button>
             </subviews>

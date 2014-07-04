@@ -274,6 +274,9 @@
 
 - (void)settingUser:(NSString *)obj1 email:(NSString *)obj2 website:(NSString *)obj3 tel:(NSString *)obj4 gender:(NSString *)obj5 birthday:(NSString *)obj6;
 - (void)updateSetting:(NSString *)profilename facebook:(NSString *)facebook email:(NSString *)email website:(NSString *)website tel:(NSString *)tel gender:(NSString *)gender birthday:(NSString *)birthday;
+
+- (void)changePassword:(NSString *)old_password new_password:(NSString *)new_password;
+
 - (void)logOut;
 - (BOOL)checkInternet;
 - (void)checkSyncTimeStamp;

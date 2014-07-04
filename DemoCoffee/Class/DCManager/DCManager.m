@@ -603,5 +603,14 @@ BOOL resultBool;
 
 
 
+- (void)changePassword:(NSString *)old_password new_password:(NSString *)new_password {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/change_password/%@",API_URL,[self getUserId]];
+    NSDictionary *parameters = @{@"old_password":old_password , @"new_password":new_password  };
+    [self.manager POST:urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self changPasswordResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self changPasswordErrorResponse:[error localizedDescription]];
+    }];
+}
 
 @end
