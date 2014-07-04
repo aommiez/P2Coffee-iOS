@@ -31,7 +31,7 @@ BOOL refreshDataNews;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+        
     [self.view addSubview:self.waitView];
     
     CALayer *popup = [self.popupwaitView layer];
@@ -82,6 +82,17 @@ BOOL refreshDataNews;
     
     self.arrObj = [[NSMutableArray alloc] init];
     [self.Demoapi getNewsByAppKey:@"5" next:@"NO" app_key:@""];
+    
+    NSLog(@"%@",[self.Demoapi getAppKeyCheck]);
+    
+    if (![[self.Demoapi getAppKeyCheck] isEqualToString:@"123"]) {
+        
+        self.tutorialView = [PFTutorialViewController alloc];
+        self.tutorialView.delegate = self;
+        [self.view addSubview:self.tutorialView.view];
+        
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -162,6 +173,28 @@ BOOL refreshDataNews;
     account.delegate = self;
     [self.navController pushViewController:account animated:YES];
     
+}
+
+- (void)PFNotifyViewController:(id)sender{
+    
+    [self.delegate HideTabbar];
+    
+    PFNotificationViewController *notify = [[PFNotificationViewController alloc] init];
+    
+    if(IS_WIDESCREEN) {
+        notify = [[PFNotificationViewController alloc] initWithNibName:@"PFNotificationViewController_Wide" bundle:nil];
+    } else {
+        notify = [[PFNotificationViewController alloc] initWithNibName:@"PFNotificationViewController" bundle:nil];
+    }
+    
+    notify.delegate = self;
+    [self.navController pushViewController:notify animated:YES];
+    
+}
+
+- (void)PFTutorialViewController:(id)sender{
+    [self.delegate ShowTabbar];
+    [self viewDidLoad];
 }
 
 - (void)DCManager:(id)sender getNewsByAppKeyResponse:(NSDictionary *)response {

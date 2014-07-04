@@ -7,7 +7,6 @@
 //
 
 #import "PFAccountViewController.h"
-#import "UIView+MTAnimation.h"
 
 @interface PFAccountViewController () <UIScrollViewDelegate>
 
@@ -188,9 +187,10 @@
 }
 
 - (IBAction)logoutTapped:(id)sender {
-    
+    [self.Demoapi removeAppKeyCheck];
     [FBSession.activeSession closeAndClearTokenInformation];
     [self.Demoapi logOut];
+    [self.Demoapi removeAppKey];
     [self.navigationController popViewControllerAnimated:YES];
     
 }
@@ -207,6 +207,20 @@
     [self.tutorialMainView removeFromSuperview];
     [self.Demoapi saveAppKey:self.testcode.text];
     [self viewDidLoad];
+}
+
+- (IBAction)appstoreTutorial:(id)sender {
+    [self.Demoapi appinfo];
+}
+
+- (void)DCManager:(id)sender appinfoResponse:(NSDictionary *)response {
+    NSLog(@"appinfo %@",response);
+    
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[response objectForKey:@"admin_ios_store"]]];
+}
+
+- (void)DCManager:(id)sender appinfoErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
 }
 
 - (IBAction)linkTutorial:(id)sender {

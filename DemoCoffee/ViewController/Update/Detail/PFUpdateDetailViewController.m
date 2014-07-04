@@ -567,14 +567,11 @@ BOOL newMediaDetail;
         [controller addURL:[NSURL URLWithString:urlString]];
         [self presentViewController:controller animated:YES completion:Nil];
     } else {
-//        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
-//                                    message:@"Please login facebook on Settings."
-//                                   delegate:nil
-//                          cancelButtonTitle:@"OK"
-//                          otherButtonTitles:nil] show];
-        
-        NSURL*url=[NSURL URLWithString:@"prefs:root=General"];
-        [[UIApplication sharedApplication] openURL:url];
+        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
+                                    message:@"Please login facebook on Settings."
+                                   delegate:nil
+                          cancelButtonTitle:@"OK"
+                          otherButtonTitles:nil] show];
     }
     
 }

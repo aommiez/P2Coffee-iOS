@@ -135,6 +135,9 @@
 - (void)DCManager:(id)sender changPasswordResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender changPasswordErrorResponse:(NSString *)errorResponse;
 //test code
+- (void)DCManager:(id)sender appinfoResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender appinfoErrorResponse:(NSString *)errorResponse;
+
 - (void)DCManager:(id)sender getCodeResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender getCodeErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender getLinkCacheResponse:(NSDictionary *)response;
@@ -155,6 +158,16 @@
 @property NSPersistentStoreCoordinator *persistentStoreCoordinator;
 @property NSFetchRequest *fetchRequest;
 #pragma mark - function
+
+//tutorial
+- (void)appinfo;
+
+- (void)saveAppKeyCheck:(NSString *)appkeyCheck;
+- (NSString *)getAppKeyCheck;
+- (void)removeAppKeyCheck;
+//
+
+
 - (BOOL)checkLogin;
 /*
  request app key from server

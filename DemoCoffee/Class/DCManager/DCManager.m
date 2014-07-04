@@ -51,6 +51,19 @@ BOOL resultBool;
 - (void)removeAppKey {
     [self.userDefaults removeObjectForKey:@"app_key"];
 }
+//
+
+- (void)saveAppKeyCheck:(NSString *)appkeyCheck {
+    [self.userDefaults setObject:appkeyCheck forKey:@"appkeyCheck"];
+}
+- (NSString *)getAppKeyCheck {
+    return [self.userDefaults objectForKey:@"appkeyCheck"];
+}
+- (void)removeAppKeyCheck {
+    [self.userDefaults removeObjectForKey:@"appkeyCheck"];
+}
+
+//
 - (void)getPictureById:(NSInteger *)picture_id width:(NSInteger *)width height:(NSInteger *)height blur:(NSInteger *)blur {
     
     if ( width != 0 && height != 0 ) {
@@ -610,6 +623,15 @@ BOOL resultBool;
         [self.delegate DCManager:self changPasswordResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         [self.delegate DCManager:self changPasswordErrorResponse:[error localizedDescription]];
+    }];
+}
+
+- (void)appinfo {
+    self.urlStr = [[NSString alloc] initWithFormat:@"%@app/info",API_URL];
+    [self.manager GET:self.urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self appinfoResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self appinfoErrorResponse:[error localizedDescription]];
     }];
 }
 

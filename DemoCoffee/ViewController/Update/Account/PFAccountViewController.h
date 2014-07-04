@@ -81,6 +81,7 @@
 - (IBAction)appkeyTextTutorial:(id)sender;
 - (IBAction)testcodeTextTutorial:(id)sender;
 
+- (IBAction)appstoreTutorial:(id)sender;
 - (IBAction)linkTutorial:(id)sender;
 - (IBAction)newappkeyTutorial:(id)sender;
 - (IBAction)newtestcodeTutorial:(id)sender;

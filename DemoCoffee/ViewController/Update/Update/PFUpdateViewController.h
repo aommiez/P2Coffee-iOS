@@ -12,6 +12,7 @@
 
 #import "PFUpdateCell.h"
 
+#import "PFTutorialViewController.h"
 #import "PFLoginViewController.h"
 #import "PFUpdateDetailViewController.h"
 #import "PFAccountViewController.h"
@@ -32,6 +33,7 @@
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
 @property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
+@property (retain, nonatomic) PFTutorialViewController *tutorialView;
 @property (retain, nonatomic) PFLoginViewController *loginView;
 
 @property (retain, nonatomic) IBOutlet UIView *waitView;

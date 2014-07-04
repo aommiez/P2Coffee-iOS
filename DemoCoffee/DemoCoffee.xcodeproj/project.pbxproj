@@ -94,6 +94,8 @@
 		523FD2B51959695100B965EF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD2901959695100B965EF /* UIImageView+WebCache.m */; };
 		523FD2B61959695100B965EF /* MWPhotoBrowser.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 523FD2911959695100B965EF /* MWPhotoBrowser.bundle */; };
 		523FD2BA19597E6E00B965EF /* UILabel+UILabelDynamicHeight.m in Sources */ = {isa = PBXBuildFile; fileRef = 523FD2B919597E6E00B965EF /* UILabel+UILabelDynamicHeight.m */; };
+		524EDDAF19668E7C00333430 /* PFTutorialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 524EDDAD19668E7C00333430 /* PFTutorialViewController.m */; };
+		524EDDB019668E7C00333430 /* PFTutorialViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 524EDDAE19668E7C00333430 /* PFTutorialViewController.xib */; };
 		525885AC19610DFC0084F390 /* logo_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 525885AA19610DFC0084F390 /* logo_login.png */; };
 		525885AD19610DFC0084F390 /* logo_login@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 525885AB19610DFC0084F390 /* logo_login@2x.png */; };
 		525885B1196124B70084F390 /* PFProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 525885AF196124B70084F390 /* PFProfileViewController.m */; };
@@ -478,6 +480,9 @@
 		523FD2911959695100B965EF /* MWPhotoBrowser.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = MWPhotoBrowser.bundle; sourceTree = "<group>"; };
 		523FD2B819597E6E00B965EF /* UILabel+UILabelDynamicHeight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+UILabelDynamicHeight.h"; sourceTree = "<group>"; };
 		523FD2B919597E6E00B965EF /* UILabel+UILabelDynamicHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+UILabelDynamicHeight.m"; sourceTree = "<group>"; };
+		524EDDAC19668E7C00333430 /* PFTutorialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFTutorialViewController.h; sourceTree = "<group>"; };
+		524EDDAD19668E7C00333430 /* PFTutorialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PFTutorialViewController.m; sourceTree = "<group>"; };
+		524EDDAE19668E7C00333430 /* PFTutorialViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PFTutorialViewController.xib; sourceTree = "<group>"; };
 		525885AA19610DFC0084F390 /* logo_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_login.png; sourceTree = "<group>"; };
 		525885AB19610DFC0084F390 /* logo_login@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo_login@2x.png"; sourceTree = "<group>"; };
 		525885AE196124B70084F390 /* PFProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PFProfileViewController.h; sourceTree = "<group>"; };
@@ -1239,6 +1244,9 @@
 			isa = PBXGroup;
 			children = (
 				52A60AC9195D71B500A88D99 /* Images */,
+				524EDDAC19668E7C00333430 /* PFTutorialViewController.h */,
+				524EDDAD19668E7C00333430 /* PFTutorialViewController.m */,
+				524EDDAE19668E7C00333430 /* PFTutorialViewController.xib */,
 			);
 			path = Tutorial;
 			sourceTree = "<group>";
@@ -1940,6 +1948,7 @@
 				EA024D12195037EB0032CF51 /* PFRewardViewController_Wide.xib in Resources */,
 				525AE03D19580810005329A1 /* ic_fb@2x.png in Resources */,
 				525AE01B19580489005329A1 /* ic_update_on@2x.png in Resources */,
+				524EDDB019668E7C00333430 /* PFTutorialViewController.xib in Resources */,
 				52A60AD8195D71B500A88D99 /* 02_vector_box.png in Resources */,
 				526A34DC1954024400D5FAB0 /* button_point.png in Resources */,
 				52A60ABE195D2A0800A88D99 /* PFAccountCell.xib in Resources */,
@@ -2109,6 +2118,7 @@
 				3686238F1953F001004636DF /* AFHTTPRequestOperationManager.m in Sources */,
 				523FD2991959695100B965EF /* MWZoomingScrollView.m in Sources */,
 				523FD2A01959695100B965EF /* PSTCollectionViewData.m in Sources */,
+				524EDDAF19668E7C00333430 /* PFTutorialViewController.m in Sources */,
 				EA024CEC195031220032CF51 /* PFBranchViewController.m in Sources */,
 				523FD29C1959695100B965EF /* NSIndexPath+PSTCollectionViewAdditions.m in Sources */,
 				523FD2A51959695100B965EF /* PSTGridLayoutInfo.m in Sources */,
