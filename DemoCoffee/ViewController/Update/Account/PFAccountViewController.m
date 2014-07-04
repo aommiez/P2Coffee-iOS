@@ -202,6 +202,8 @@
 }
 
 - (IBAction)closeTutorialView:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(0,0) animated:YES];
+    self.pageControl.currentPage = 0;
     [self.tutorialMainView removeFromSuperview];
     [self.Demoapi saveAppKey:self.testcode.text];
     [self viewDidLoad];
@@ -304,6 +306,21 @@
 - (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
 {
 
+}
+
+- (IBAction)next1tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(320,0) animated:YES];
+    self.pageControl.currentPage = 1;
+}
+
+- (IBAction)next2tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(640,0) animated:YES];
+    self.pageControl.currentPage = 2;
+}
+
+- (IBAction)next3tutorialTapped:(id)sender {
+    [self.tutorialScrollView setContentOffset:CGPointMake(960,0) animated:YES];
+    self.pageControl.currentPage = 3;
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

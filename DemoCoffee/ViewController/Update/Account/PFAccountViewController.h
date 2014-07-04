@@ -73,6 +73,9 @@
 @property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (IBAction)tutorialTapped:(id)sender;
+- (IBAction)next1tutorialTapped:(id)sender;
+- (IBAction)next2tutorialTapped:(id)sender;
+- (IBAction)next3tutorialTapped:(id)sender;
 - (IBAction)closeTutorialView:(id)sender;
 
 - (IBAction)appkeyTextTutorial:(id)sender;

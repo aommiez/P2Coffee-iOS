@@ -246,6 +246,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="next2tutorialTapped:" destination="-1" eventType="touchUpInside" id="mo2-ae-rCB"/>
+                    </connections>
                 </button>
                 <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kok-He-BJE">
                     <rect key="frame" x="245" y="40" width="55" height="30"/>
@@ -255,6 +258,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="next1tutorialTapped:" destination="-1" eventType="touchUpInside" id="Yw8-X0-Mu2"/>
+                    </connections>
                 </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-2.png" id="1fC-68-5QK">
                     <rect key="frame" x="340" y="90" width="280" height="420"/>
@@ -298,6 +304,9 @@
                         <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
+                    <connections>
+                        <action selector="next3tutorialTapped:" destination="-1" eventType="touchUpInside" id="eBD-8J-p8b"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="neo-pI-9nl">
                     <rect key="frame" x="1090" y="375" width="95" height="30"/>
