@@ -87,6 +87,7 @@ BOOL refreshDataNews;
     
     if (![[self.Demoapi getAppKeyCheck] isEqualToString:@"123"]) {
         
+        [self.delegate HideTabbar];
         self.tutorialView = [PFTutorialViewController alloc];
         self.tutorialView.delegate = self;
         [self.view addSubview:self.tutorialView.view];
