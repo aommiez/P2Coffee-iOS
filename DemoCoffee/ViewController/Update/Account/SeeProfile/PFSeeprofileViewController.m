@@ -146,7 +146,7 @@
                             if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1 && [[self.objUsersetting objectForKey:@"show_facebook"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_email"] intValue] == 0  && [[self.objUsersetting objectForKey:@"show_website"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 0 && [[self.objUsersetting objectForKey:@"show_gender"] intValue] == 0) {
                                 cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
                                 
-                                NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+                                NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
                                 NSString *mySmallerString = [myString substringToIndex:10];
                                 cell.detailrow.text = mySmallerString;
                             }
@@ -194,7 +194,7 @@
             if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 1) {
                 cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
 
-                NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+                NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
                 NSString *mySmallerString = [myString substringToIndex:10];
                 cell.detailrow.text = mySmallerString;
             }
@@ -228,7 +228,7 @@
             if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 2) {
                 cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
                 
-                NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+                NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
                 NSString *mySmallerString = [myString substringToIndex:10];
                 cell.detailrow.text = mySmallerString;
             }
@@ -253,7 +253,7 @@
             if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 3) {
                 cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
                 
-                NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+                NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
                 NSString *mySmallerString = [myString substringToIndex:10];
                 cell.detailrow.text = mySmallerString;
             }
@@ -269,7 +269,7 @@
             if ([[self.objUsersetting objectForKey:@"show_email"] intValue] + [[self.objUsersetting objectForKey:@"show_facebook"] intValue] + [[self.objUsersetting objectForKey:@"show_website"] intValue] + [[self.objUsersetting objectForKey:@"show_gender"] intValue] + [[self.objUsersetting objectForKey:@"show_mobile"] intValue] == 4) {
                 cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
                 
-                NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+                NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
                 NSString *mySmallerString = [myString substringToIndex:10];
                 cell.detailrow.text = mySmallerString;
             }
@@ -278,7 +278,7 @@
         if ([[self.objUsersetting objectForKey:@"show_birth_date"] intValue] == 1) {
             cell.imgrow.image = [UIImage imageNamed:@"ic_birthday.png"];
             
-            NSString *myString = [[self.objUsersetting objectForKey:@"birth_date"] objectForKey:@"date"];
+            NSString *myString = [[self.obj objectForKey:@"birth_date"] objectForKey:@"date"];
             NSString *mySmallerString = [myString substringToIndex:10];
             cell.detailrow.text = mySmallerString;
         }

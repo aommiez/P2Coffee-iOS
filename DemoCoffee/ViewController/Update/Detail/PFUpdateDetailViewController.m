@@ -559,7 +559,6 @@ BOOL newMediaDetail;
         self.textComment.text = @"Add Comment";
     }
     
-    /*
     NSString *urlString = [[NSString alloc]init];
     urlString = [[NSString alloc] initWithFormat:@"%@",[[self.obj objectForKey:@"node"] objectForKey:@"share_url"]];
     
@@ -568,18 +567,15 @@ BOOL newMediaDetail;
         [controller addURL:[NSURL URLWithString:urlString]];
         [self presentViewController:controller animated:YES completion:Nil];
     } else {
-        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
-                                    message:@"Please login facebook on Settings."
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
+//        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
+//                                    message:@"Please login facebook on Settings."
+//                                   delegate:nil
+//                          cancelButtonTitle:@"OK"
+//                          otherButtonTitles:nil] show];
+        
+        NSURL*url=[NSURL URLWithString:@"prefs:root=General"];
+        [[UIApplication sharedApplication] openURL:url];
     }
-     */
-    [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
-                                message:@"Share coming soon."
-                               delegate:nil
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil] show];
     
 }
 
