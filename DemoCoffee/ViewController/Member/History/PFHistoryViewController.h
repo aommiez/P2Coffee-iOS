@@ -11,6 +11,8 @@
 
 #import "PFHistoryCell.h"
 
+#import "DCManager.h"
+
 @protocol PFHistoryViewControllerDelegate <NSObject>
 
 - (void) PFHistoryViewControllerBack;
@@ -19,10 +21,13 @@
 
 @interface PFHistoryViewController : UIViewController
 
+@property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFHistoryViewControllerDelegate> delegate;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIView *headerView;
 @property (weak, nonatomic) IBOutlet UIView *historyView;
+
+@property (retain, nonatomic) NSMutableArray *arrObj;
 
 @property (strong, nonatomic) NSString *detailhistory;
 

@@ -14,6 +14,8 @@
 
 @implementation PFHistoryViewController
 
+BOOL refreshDataHistory;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -51,6 +53,13 @@
     self.headerView.frame = CGRectMake(self.headerView.frame.origin.x, self.headerView.frame.origin.y, self.headerView.frame.size.width, self.headerView.frame.size.height+descText.frame.size.height-15);
     
     self.tableView.tableHeaderView = self.headerView;
+    
+    self.Demoapi = [[DCManager alloc] init];
+    self.Demoapi.delegate = self;
+    [self.Demoapi history];
+    
+    self.arrObj = [[NSMutableArray alloc] init];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -58,13 +67,44 @@
     [super didReceiveMemoryWarning];
 }
 
+-(NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait;
+}
+
+- (void)DCManager:(id)sender getHistoryResponse:(NSDictionary *)response {
+    NSLog(@"Member History %@",response);
+    
+    if (!refreshDataHistory) {
+        for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+        }
+    } else {
+        [self.arrObj removeAllObjects];
+        for (int i=0; i<[[response objectForKey:@"data"] count]; ++i) {
+            [self.arrObj addObject:[[response objectForKey:@"data"] objectAtIndex:i]];
+        }
+    }
+    
+    [self reloadData:YES];
+}
+
+- (void)DCManager:(id)sender getHistoryErrorResponse:(NSString *)errorResponse {
+    NSLog(@"%@",errorResponse);
+}
+
+- (void)reloadData:(BOOL)animated
+{
+    [self.tableView reloadData];
+    self.tableView.contentSize = CGSizeMake(self.tableView.contentSize.width,self.tableView.contentSize.height);
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 10;
+    return [self.arrObj count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 45;
+    return 50;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -86,6 +126,9 @@
     } else {
         cell.backgroundColor = [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0];
     }
+    
+    NSString *history = [[NSString alloc] initWithFormat:@"%@%@%@%@%@",[[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"created_at"] objectForKey:@"date"],@" : ",[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"title"],@" : ",[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"description"]];
+    cell.detail.text = history;
     
     return cell;
 }

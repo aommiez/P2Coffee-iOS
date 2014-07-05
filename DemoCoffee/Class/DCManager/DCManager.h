@@ -114,6 +114,8 @@
 - (void)DCManager:(id)sender getRewardErrorResponse:(NSString *)errorResponse;
 - (void)DCManager:(id)sender addPointResponse:(NSDictionary *)response;
 - (void)DCManager:(id)sender addPointErrorResponse:(NSString *)errorResponse;
+- (void)DCManager:(id)sender getHistoryResponse:(NSDictionary *)response;
+- (void)DCManager:(id)sender getHistoryErrorResponse:(NSString *)errorResponse;
 
 #pragma mark - user
 - (void)DCManager:(id)sender getUserSettingResponse:(NSDictionary *)response;
@@ -278,6 +280,7 @@
 - (void)getReward;
 - (void)addPoint:(NSString *)point password:(NSString *)password;
 - (void)getLink:(NSString *)link;
+- (void)history;
 
 #pragma mark - user
 - (void)getUserSetting;

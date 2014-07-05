@@ -968,10 +968,12 @@ BOOL refreshDataMember;
 }
 
 - (void) PFRewardViewControllerBack {
+    [self viewDidLoad];
     [self.delegate ShowTabbar];
 }
 
 - (void) PFHistoryViewControllerBack {
+    [self viewDidLoad];
     [self.delegate ShowTabbar];
 }
 

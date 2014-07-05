@@ -341,6 +341,15 @@ BOOL resultBool;
         [self.delegate DCManager:self getLinkErrorResponse:[error localizedDescription]];
     }];
 }
+
+- (void)history {
+    NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/history/%@",API_URL,[self getUserId]];
+    [self.manager GET:urlStr parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        [self.delegate DCManager:self getHistoryResponse:responseObject];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [self.delegate DCManager:self getHistoryErrorResponse:[error localizedDescription]];
+    }];
+}
 #pragma mark - user 
 - (void)getUserSetting {
     NSString *urlStr = [[NSString alloc] initWithFormat:@"%@user/setting/%@",API_URL,[self getUserId]];

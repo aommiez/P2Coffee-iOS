@@ -10,4 +10,6 @@
 
 @interface PFHistoryCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *detail;
+
 @end
