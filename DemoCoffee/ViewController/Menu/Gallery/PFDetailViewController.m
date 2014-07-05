@@ -145,7 +145,7 @@
 }
 
 - (IBAction)fullimgTapped:(id)sender {
-    [self.delegate PFDetailViewController:self viewPicture:self.link];
+    [self.delegate PFImageViewController:self viewPicture:self.link];
 }
 
 - (IBAction)orderTapped:(id)sender {

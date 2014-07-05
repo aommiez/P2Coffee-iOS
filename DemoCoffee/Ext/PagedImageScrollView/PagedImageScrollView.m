@@ -114,7 +114,6 @@ NSString *removeBreckets;
     
     NSString *contentOffSet = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(self.scrollView.contentOffset)];
     removeBreckets = [contentOffSet stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"{ ,0}"]];
-    
     [self.delegate PagedImageScrollView:self current:removeBreckets];
 
 }

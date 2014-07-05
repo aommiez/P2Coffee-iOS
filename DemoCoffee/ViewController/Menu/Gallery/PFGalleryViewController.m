@@ -208,6 +208,7 @@
 }
 
 - (IBAction)fullimgalbumTapped:(id)sender {
+    
     [self.delegate PFGalleryViewController:self sum:self.arrgalleryimg current:self.current];
 }
 
