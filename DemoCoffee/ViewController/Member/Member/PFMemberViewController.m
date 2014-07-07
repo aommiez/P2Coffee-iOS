@@ -15,6 +15,7 @@
 @implementation PFMemberViewController
 
 BOOL refreshDataMember;
+BOOL refreshheader;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,32 +46,11 @@ BOOL refreshDataMember;
     [[self.navController navigationBar] setTranslucent:YES];
     [self.view addSubview:self.navController.view];
     
+    refreshDataMember = YES;
+    
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
     
-    self.obj = [[NSDictionary alloc] init];
-    self.objStamp = [[NSDictionary alloc] init];
-    self.objStyle = [[NSDictionary alloc] init];
-    self.arrObj = [[NSMutableArray alloc] init];
-    
-    refreshDataMember = YES;
-    
-    CALayer *postermember = [self.postermember layer];
-    [postermember setMasksToBounds:YES];
-    [postermember setCornerRadius:7.0f];
-    
-    CALayer *posternomember = [self.posternomember layer];
-    [posternomember setMasksToBounds:YES];
-    [posternomember setCornerRadius:7.0f];
-    
-    CALayer *signinButton = [self.signinButton layer];
-    [signinButton setMasksToBounds:YES];
-    [signinButton setCornerRadius:7.0f];
-    
-    CALayer *addButton = [self.addButton layer];
-    [addButton setMasksToBounds:YES];
-    [addButton setCornerRadius:7.0f];
-        
     [self.Demoapi getStampStyle];
     
     if ([self.Demoapi checkLogin] != 0){
@@ -79,11 +59,33 @@ BOOL refreshDataMember;
         UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
         self.tableView.tableFooterView = fv;
         
+        self.obj = [[NSDictionary alloc] init];
+        self.objStamp = [[NSDictionary alloc] init];
+        self.objStyle = [[NSDictionary alloc] init];
+        self.arrObj = [[NSMutableArray alloc] init];
+        
+        CALayer *postermember = [self.postermember layer];
+        [postermember setMasksToBounds:YES];
+        [postermember setCornerRadius:7.0f];
+        
+        CALayer *addButton = [self.addButton layer];
+        [addButton setMasksToBounds:YES];
+        [addButton setCornerRadius:7.0f];
+        
     }else{
         //no login
-        self.tableView.tableHeaderView = self.nomemberView;
-        self.tableView.tableFooterView = self.footernomemberView;
+        //self.tableView.tableHeaderView = self.nomemberView;
+        //self.tableView.tableFooterView = self.footernomemberView;
+        
+        CALayer *posternomember = [self.posternomember layer];
+        [posternomember setMasksToBounds:YES];
+        [posternomember setCornerRadius:7.0f];
+        
+        CALayer *signinButton = [self.signinButton layer];
+        [signinButton setMasksToBounds:YES];
+        [signinButton setCornerRadius:7.0f];
     }
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -102,7 +104,7 @@ BOOL refreshDataMember;
     [self.waitView removeFromSuperview];
     
     //login
-    if ([self.Demoapi checkLogin] != false){
+    if ([self.Demoapi checkLogin] != 0){
     
         self.stampurl = [response objectForKey:@"stamp_icon"];
     
@@ -127,6 +129,8 @@ BOOL refreshDataMember;
     } else {
     //no login
         
+        [self.tableView reloadData];
+        
         [DLImageLoader loadImageFromURL:[response objectForKey:@"poster"]
                             completed:^(NSError *error, NSData *imgData) {
                                 self.posternomember.image = [UIImage imageWithData:imgData];
@@ -145,23 +149,31 @@ BOOL refreshDataMember;
         self.bg.contentMode = UIViewContentModeScaleAspectFill;
     
         self.conditionnomember.text = [[NSString alloc] initWithString:[response objectForKey:@"condition_info"]];
+        
+        if (!refreshheader) {
 
-        CGRect frame = self.conditionnomember.frame;
-        frame.size = [self.conditionnomember sizeOfMultiLineLabel];
-        [self.conditionnomember sizeOfMultiLineLabel];
-        [self.conditionnomember setFrame:frame];
-        int lines = self.conditionnomember.frame.size.height/15;
-        self.conditionnomember.numberOfLines = lines;
-        UILabel *descText = [[UILabel alloc] initWithFrame:frame];
-        descText.text = self.conditionnomember.text;
-        descText.numberOfLines = lines;
-        [descText setFont:[UIFont systemFontOfSize:15]];
-        descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
-        self.conditionnomember.alpha = 0;
-        [self.conditionnomemberView addSubview:descText];
-        self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
-    
-        self.footernomemberView.frame = CGRectMake(self.footernomemberView.frame.origin.x, self.footernomemberView.frame.origin.y+descText.frame.size.height-25, self.footernomemberView.frame.size.width, self.footernomemberView.frame.size.height);
+            CGRect frame = self.conditionnomember.frame;
+            frame.size = [self.conditionnomember sizeOfMultiLineLabel];
+            [self.conditionnomember sizeOfMultiLineLabel];
+            [self.conditionnomember setFrame:frame];
+            int lines = self.conditionnomember.frame.size.height/15;
+            self.conditionnomember.numberOfLines = lines;
+            UILabel *descText = [[UILabel alloc] initWithFrame:frame];
+            descText.text = self.conditionnomember.text;
+            descText.numberOfLines = lines;
+            [descText setFont:[UIFont systemFontOfSize:15]];
+            descText.textColor = [UIColor colorWithRed:104.0/255.0 green:71.0/255.0 blue:56.0/255.0 alpha:1.0];
+        
+            self.conditionnomember.alpha = 0;
+            [self.conditionnomemberView addSubview:descText];
+        
+            self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
+            
+            self.nomemberView.frame = CGRectMake(self.nomemberView.frame.origin.x, self.nomemberView.frame.origin.y, self.nomemberView.frame.size.width, self.nomemberView.frame.size.height+descText.frame.size.height-25);
+            
+            self.tableView.tableHeaderView = self.nomemberView;
+            self.tableView.tableFooterView = self.footernomemberView;
+        }
     }
     
 }
@@ -770,7 +782,7 @@ BOOL refreshDataMember;
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if ([self.Demoapi checkLogin] != false){
+    if ([self.Demoapi checkLogin] != 0){
         return [self.arrObj count];
     } else {
         return 0;
@@ -977,8 +989,16 @@ BOOL refreshDataMember;
 }
 
 - (void) PFHistoryViewControllerBack {
-    [self viewDidLoad];
-    [self.delegate ShowTabbar];
+
+    if ([self.Demoapi checkLogin] == 0){
+        refreshheader = YES;
+        [self viewDidLoad];
+        [self.delegate ShowTabbar];
+    } else {
+        refreshheader = NO;
+        [self viewDidLoad];
+        [self.delegate ShowTabbar];
+    }
     
 }
 
