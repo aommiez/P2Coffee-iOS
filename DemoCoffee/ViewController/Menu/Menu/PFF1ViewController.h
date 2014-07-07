@@ -28,11 +28,11 @@
 @property (strong, nonatomic) NSString *titlename;
 @property (strong, nonatomic) NSString *link;
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @end

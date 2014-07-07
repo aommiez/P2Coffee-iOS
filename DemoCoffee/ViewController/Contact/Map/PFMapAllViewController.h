@@ -21,12 +21,12 @@
 @interface PFMapAllViewController : UIViewController <CLLocationManagerDelegate,MKMapViewDelegate>
 
 @property (assign, nonatomic) id <PFMapAllViewControllerDelegate> delegate;
-@property (retain, nonatomic) IBOutlet PFMapView *allmapView;
-@property (retain, nonatomic) CLLocationManager *locationManager;
-@property (retain, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) IBOutlet PFMapView *allmapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
 @property (strong, nonatomic) NSString *lat;

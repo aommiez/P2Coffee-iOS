@@ -23,15 +23,15 @@
 
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFHistoryViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIView *headerView;
-@property (weak, nonatomic) IBOutlet UIView *historyView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *historyView;
 
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 
 @property (strong, nonatomic) NSString *detailhistory;
 
-@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
 
 
 @end

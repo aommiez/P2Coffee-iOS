@@ -33,41 +33,41 @@
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
-@property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
 @property (strong, nonatomic) PFTabBarViewController *tabBarViewController;
 
-@property (retain, nonatomic) PFLoginViewController *loginView;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 @property (strong, nonatomic) IBOutlet UIView *blurView;
 
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 @property (strong, nonatomic) NSDictionary *objStamp;
 @property (strong, nonatomic) NSDictionary *objStyle;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) IBOutlet UIImageView *bg;
 
-@property (weak, nonatomic) IBOutlet UIView *nomemberView;
-@property (weak, nonatomic) IBOutlet UIView *memberView;
-@property (weak, nonatomic) IBOutlet UIView *footernomemberView;
+@property (strong, nonatomic) IBOutlet UIView *nomemberView;
+@property (strong, nonatomic) IBOutlet UIView *memberView;
+@property (strong, nonatomic) IBOutlet UIView *footernomemberView;
 
-@property (weak, nonatomic) IBOutlet UIImageView *posternomember;
-@property (weak, nonatomic) IBOutlet UIView *conditionnomemberView;
-@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
+@property (strong, nonatomic) IBOutlet UIImageView *posternomember;
+@property (strong, nonatomic) IBOutlet UIView *conditionnomemberView;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *conditionnomember;
 
 - (IBAction)posternoTapped:(id)sender;
 - (IBAction)signinTapped:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UIButton *signinButton;
+@property (strong, nonatomic) IBOutlet UIButton *signinButton;
 
-@property (weak, nonatomic) IBOutlet UIImageView *postermember;
+@property (strong, nonatomic) IBOutlet UIImageView *postermember;
 @property (strong, nonatomic) IBOutlet UILabel *showpoint;
-@property (weak, nonatomic) IBOutlet UIButton *addButton;
+@property (strong, nonatomic) IBOutlet UIButton *addButton;
 
 - (IBAction)posterTapped:(id)sender;
 - (IBAction)addPointTapped:(id)sender;
@@ -110,7 +110,7 @@
 - (IBAction)bgTapped:(id)sender;
 
 @property (strong, nonatomic) IBOutlet UIView *addPointView;
-@property (weak, nonatomic) IBOutlet UILabel *amountLabel;
+@property (strong, nonatomic) IBOutlet UILabel *amountLabel;
 @property (strong, nonatomic) IBOutlet UITextField *password;
 @property (strong, nonatomic) IBOutlet UIButton *removeAmountButton;
 @property (strong, nonatomic) IBOutlet UIButton *addAmountButton;

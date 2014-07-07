@@ -12,12 +12,12 @@
 @interface PFOrderViewController : UIViewController
 
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) NSDictionary *objStamp;
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @property (strong, nonatomic) NSString *token;
 @property (strong, nonatomic) NSString *user_id;

@@ -26,25 +26,25 @@
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) NSDictionary *objAccount;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 
-@property (weak, nonatomic) IBOutlet UITextField *display_name;
+@property (strong, nonatomic) IBOutlet UITextField *display_name;
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
+@property (strong, nonatomic) IBOutlet AsyncImageView *thumUser;
 
-@property (weak, nonatomic) IBOutlet UITextField *facebook;
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *website;
-@property (weak, nonatomic) IBOutlet UITextField *tel;
-@property (weak, nonatomic) IBOutlet UITextField *gender;
-@property (weak, nonatomic) IBOutlet UITextField *birthday;
+@property (strong, nonatomic) IBOutlet UITextField *facebook;
+@property (strong, nonatomic) IBOutlet UITextField *email;
+@property (strong, nonatomic) IBOutlet UITextField *website;
+@property (strong, nonatomic) IBOutlet UITextField *tel;
+@property (strong, nonatomic) IBOutlet UITextField *gender;
+@property (strong, nonatomic) IBOutlet UITextField *birthday;
 
 @property (strong, nonatomic) NSString *facebookSetting;
 @property (strong, nonatomic) NSString *emailSetting;
@@ -53,14 +53,14 @@
 @property (strong, nonatomic) NSString *genderSetting;
 @property (strong, nonatomic) NSString *birthdaySetting;
 
-@property (weak, nonatomic) IBOutlet UIButton *edit_bt;
+@property (strong, nonatomic) IBOutlet UIButton *edit_bt;
 
-@property (weak, nonatomic) IBOutlet UIButton *facebook_bt;
-@property (weak, nonatomic) IBOutlet UIButton *email_bt;
-@property (weak, nonatomic) IBOutlet UIButton *website_bt;
-@property (weak, nonatomic) IBOutlet UIButton *tel_bt;
-@property (weak, nonatomic) IBOutlet UIButton *gender_bt;
-@property (weak, nonatomic) IBOutlet UIButton *birthday_bt;
+@property (strong, nonatomic) IBOutlet UIButton *facebook_bt;
+@property (strong, nonatomic) IBOutlet UIButton *email_bt;
+@property (strong, nonatomic) IBOutlet UIButton *website_bt;
+@property (strong, nonatomic) IBOutlet UIButton *tel_bt;
+@property (strong, nonatomic) IBOutlet UIButton *gender_bt;
+@property (strong, nonatomic) IBOutlet UIButton *birthday_bt;
 
 - (IBAction)fullimgTapped:(id)sender;
 

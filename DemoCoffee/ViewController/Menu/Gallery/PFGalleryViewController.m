@@ -101,17 +101,10 @@
     
     NSString *urlString = [[NSString alloc]init];
     urlString = [[NSString alloc] initWithFormat:@"http://pla2app.com/coffee/webview/share/product.php?id=%@",self.product_id];
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [controller addURL:[NSURL URLWithString:urlString]];
-        [self presentViewController:controller animated:YES completion:Nil];
-    } else {
-        [[[UIAlertView alloc] initWithTitle:@"Mingmitr"
-                                    message:@"Please login facebook on Settings."
-                                   delegate:nil
-                          cancelButtonTitle:@"OK"
-                          otherButtonTitles:nil] show];
-    }
+
+    SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [controller addURL:[NSURL URLWithString:urlString]];
+    [self presentViewController:controller animated:YES completion:Nil];
     
 }
 

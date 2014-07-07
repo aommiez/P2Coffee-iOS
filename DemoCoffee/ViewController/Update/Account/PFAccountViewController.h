@@ -28,7 +28,7 @@
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (assign, nonatomic) id <PFAccountViewControllerDelegate> delegate;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
@@ -37,14 +37,14 @@
 
 @property (strong, nonatomic) NSString *rowCount;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) IBOutlet UIView *settingView;
-@property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
-@property (weak, nonatomic) IBOutlet UITextField *display_name;
+@property (strong, nonatomic) IBOutlet AsyncImageView *thumUser;
+@property (strong, nonatomic) IBOutlet UITextField *display_name;
 
-@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
+@property (strong, nonatomic) IBOutlet UIButton *logoutButton;
 
 - (IBAction)editProfile:(id)sender;
 
@@ -62,15 +62,15 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *tutorialScrollView;
 @property (strong, nonatomic) IBOutlet UIView *tutorialDetailView;
 
-@property (weak, nonatomic) IBOutlet UITextField *testcode;
-@property (weak, nonatomic) IBOutlet UITextField *appkey;
-@property (weak, nonatomic) IBOutlet UIButton *tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next1tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next2tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
+@property (strong, nonatomic) IBOutlet UITextField *testcode;
+@property (strong, nonatomic) IBOutlet UITextField *appkey;
+@property (strong, nonatomic) IBOutlet UIButton *tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *next1tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *next2tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *next3tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *donetutorialButton;
 
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (IBAction)tutorialTapped:(id)sender;
 - (IBAction)next1tutorialTapped:(id)sender;

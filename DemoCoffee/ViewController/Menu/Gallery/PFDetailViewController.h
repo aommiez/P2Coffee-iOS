@@ -34,24 +34,24 @@
 @property (strong, nonatomic) NSString *shareimg;
 
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 @property (strong, nonatomic) NSDictionary *objdetail;
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *image;
-@property (weak, nonatomic) IBOutlet UILabel *name;
-@property (weak, nonatomic) IBOutlet UILabel *price;
-@property (weak, nonatomic) IBOutlet UILabel *baht;
-@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *productdetail;
+@property (strong, nonatomic) IBOutlet AsyncImageView *image;
+@property (strong, nonatomic) IBOutlet UILabel *name;
+@property (strong, nonatomic) IBOutlet UILabel *price;
+@property (strong, nonatomic) IBOutlet UILabel *baht;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *productdetail;
 
-@property (weak, nonatomic) IBOutlet UIView *detailView;
-@property (weak, nonatomic) IBOutlet UIView *footerView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UIView *detailView;
+@property (strong, nonatomic) IBOutlet UIView *footerView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UIButton *orderButton;
+@property (strong, nonatomic) IBOutlet UIButton *orderButton;
 
 - (IBAction)fullimgTapped:(id)sender;
 - (IBAction)orderTapped:(id)sender;

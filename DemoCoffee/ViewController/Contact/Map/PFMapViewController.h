@@ -14,9 +14,9 @@
 
 @property (assign, nonatomic) id delegate;
 
-@property (retain, nonatomic) IBOutlet PFMapView *mapView;
-@property (retain, nonatomic) CLLocationManager *locationManager;
-@property (retain, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) IBOutlet PFMapView *mapView;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) NSString *lat;
 @property (strong, nonatomic) NSString *lng;

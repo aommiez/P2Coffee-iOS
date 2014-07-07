@@ -31,22 +31,22 @@
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
-@property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
-@property (retain, nonatomic) PFTutorialViewController *tutorialView;
-@property (retain, nonatomic) PFLoginViewController *loginView;
+@property (strong, nonatomic) PFTutorialViewController *tutorialView;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
-@property (retain, nonatomic) NSString *paging;
+@property (strong, nonatomic) NSString *paging;
 
-@property (retain, nonatomic) IBOutlet UIActivityIndicatorView *act;
-@property (retain, nonatomic) IBOutlet UILabel *loadLabel;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *act;
+@property (strong, nonatomic) IBOutlet UILabel *loadLabel;
 
 @end

@@ -30,23 +30,23 @@
 @property (strong, nonatomic) IBOutlet UIView *blurView;
 @property (strong, nonatomic) IBOutlet UIView *loginView;
 
-@property (weak, nonatomic) IBOutlet UITextField *emailSignIn;
-@property (weak, nonatomic) IBOutlet UITextField *passwordSignIn;
+@property (strong, nonatomic) IBOutlet UITextField *emailSignIn;
+@property (strong, nonatomic) IBOutlet UITextField *passwordSignIn;
 
-@property (weak, nonatomic) IBOutlet UIButton *signin_bt;
-@property (weak, nonatomic) IBOutlet UIButton *signup_bt;
-@property (weak, nonatomic) IBOutlet UIButton *create_bt;
+@property (strong, nonatomic) IBOutlet UIButton *signin_bt;
+@property (strong, nonatomic) IBOutlet UIButton *signup_bt;
+@property (strong, nonatomic) IBOutlet UIButton *create_bt;
 
 - (IBAction)bgTapped:(id)sender;
 - (IBAction)signinTapped:(id)sender;
 - (IBAction)signupTapeed:(id)sender;
 
-@property (weak, nonatomic) IBOutlet UITextField *username;
-@property (weak, nonatomic) IBOutlet UITextField *emailSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *passwordSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *confirmSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *dateOfBirthSignUp;
-@property (weak, nonatomic) IBOutlet UITextField *gender;
+@property (strong, nonatomic) IBOutlet UITextField *username;
+@property (strong, nonatomic) IBOutlet UITextField *emailSignUp;
+@property (strong, nonatomic) IBOutlet UITextField *passwordSignUp;
+@property (strong, nonatomic) IBOutlet UITextField *confirmSignUp;
+@property (strong, nonatomic) IBOutlet UITextField *dateOfBirthSignUp;
+@property (strong, nonatomic) IBOutlet UITextField *gender;
 
 - (IBAction)dateBTapped:(id)sender;
 - (IBAction)genderTapped:(id)sender;
@@ -54,8 +54,8 @@
 - (IBAction)closedateTapped:(id)sender;
 - (IBAction)closegenderTapped:(id)sender;
 
-@property (retain, nonatomic) UIDatePicker *pick;
-@property (retain, nonatomic) UIButton *pickDone;
+@property (strong, nonatomic) UIDatePicker *pick;
+@property (strong, nonatomic) UIButton *pickDone;
 
 - (IBAction)sumitTapped:(id)sender;
 

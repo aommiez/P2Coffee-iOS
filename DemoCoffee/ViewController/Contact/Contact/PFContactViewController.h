@@ -33,21 +33,21 @@
 
 @property (assign, nonatomic) id delegate;
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
-@property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @property (strong, nonatomic) IBOutlet UIView *imgscrollview;
-@property (retain, nonatomic) NSMutableArray *arrcontactimg;
+@property (strong, nonatomic) NSMutableArray *arrcontactimg;
 @property (strong, nonatomic) NSString *current;
 
 @property (strong, nonatomic) IBOutlet UIView *contentView;
@@ -55,12 +55,12 @@
 
 @property (strong, nonatomic) IBOutlet UIView *mapView;
 @property (strong, nonatomic) IBOutlet UIView *mapButton;
-@property (weak, nonatomic) IBOutlet UIImageView *mapImage;
+@property (strong, nonatomic) IBOutlet UIImageView *mapImage;
 @property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *location;
 
-@property (weak, nonatomic) IBOutlet UILabel *phone;
-@property (weak, nonatomic) IBOutlet UILabel *website;
-@property (weak, nonatomic) IBOutlet UILabel *email;
+@property (strong, nonatomic) IBOutlet UILabel *phone;
+@property (strong, nonatomic) IBOutlet UILabel *website;
+@property (strong, nonatomic) IBOutlet UILabel *email;
 
 - (IBAction)mapTapped:(id)sender;
 

@@ -48,6 +48,13 @@ BOOL refreshDataMember;
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
     
+    self.obj = [[NSDictionary alloc] init];
+    self.objStamp = [[NSDictionary alloc] init];
+    self.objStyle = [[NSDictionary alloc] init];
+    self.arrObj = [[NSMutableArray alloc] init];
+    
+    refreshDataMember = YES;
+    
     CALayer *postermember = [self.postermember layer];
     [postermember setMasksToBounds:YES];
     [postermember setCornerRadius:7.0f];
@@ -66,17 +73,12 @@ BOOL refreshDataMember;
         
     [self.Demoapi getStampStyle];
     
-    //login
-    if ([self.Demoapi checkLogin] != false){
-        
-        self.obj = [[NSDictionary alloc] init];
-        self.objStamp = [[NSDictionary alloc] init];
-        self.objStyle = [[NSDictionary alloc] init];
-        self.arrObj = [[NSMutableArray alloc] init];
-        
+    if ([self.Demoapi checkLogin] != 0){
+        //login
         self.tableView.tableHeaderView = self.memberView;
         UIView *fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 320, 52)];
         self.tableView.tableFooterView = fv;
+        
     }else{
         //no login
         self.tableView.tableHeaderView = self.nomemberView;
@@ -848,12 +850,13 @@ BOOL refreshDataMember;
 
 - (IBAction)signinTapped:(id)sender {
     self.loginView = [PFLoginViewController alloc];
-    //self.loginView.menu = @"member";
+    self.loginView.menu = @"member";
     self.loginView.delegate = self;
     [self.view addSubview:self.loginView.view];
 }
 
-- (void)PFMemberViewController:(id)sender{
+- (void)PFMemberViewController:(id)sender{  
+    [self viewDidLoad];
     [self.delegate ShowTabbar];
 }
 
@@ -970,11 +973,13 @@ BOOL refreshDataMember;
 - (void) PFRewardViewControllerBack {
     [self viewDidLoad];
     [self.delegate ShowTabbar];
+    
 }
 
 - (void) PFHistoryViewControllerBack {
     [self viewDidLoad];
     [self.delegate ShowTabbar];
+    
 }
 
 @end

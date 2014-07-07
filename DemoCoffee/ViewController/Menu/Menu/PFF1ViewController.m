@@ -70,24 +70,50 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
-    PFMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFMenuCell"];
-    if(cell == nil) {
-        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFMenuCell" owner:self options:nil];
-        cell = [nib objectAtIndex:0];
+    if ([[self.obj objectForKey:@"children_type"] isEqualToString:@"product"]) {
+        
+        PFDetailCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFDetailCell"];
+        if(cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFDetailCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.thumb.layer.masksToBounds = YES;
+        cell.thumb.contentMode = UIViewContentModeScaleAspectFill;
+        
+        NSString *thumbid = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb_id"];
+        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=300&height=200"];
+        cell.thumb.imageURL = [[NSURL alloc] initWithString:urlimg];
+        
+        cell.name.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"];
+        cell.price.text = [NSString stringWithFormat:@"%@",[[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"price"]];
+        cell.detail.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"description"];
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
+        
+        
+    } else {
+        
+        PFMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PFMenuCell"];
+        if(cell == nil) {
+            NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFMenuCell" owner:self options:nil];
+            cell = [nib objectAtIndex:0];
+        }
+        
+        cell.namemenu.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"];
+        cell.thumbmenu.layer.masksToBounds = YES;
+        cell.thumbmenu.contentMode = UIViewContentModeScaleAspectFill;
+        
+        NSString *thumbid = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb_id"];
+        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=300&height=200"];
+        cell.thumbmenu.imageURL = [[NSURL alloc] initWithString:urlimg];
+        
+        cell.backgroundColor = [UIColor clearColor];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        return cell;
     }
-    
-    cell.namemenu.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"];
-    cell.thumbmenu.layer.masksToBounds = YES;
-    cell.thumbmenu.contentMode = UIViewContentModeScaleAspectFill;
-    
-    NSString *thumbid = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb_id"];
-    NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=300&height=200"];
-    cell.thumbmenu.imageURL = [[NSURL alloc] initWithString:urlimg];
-    
-    cell.backgroundColor = [UIColor clearColor];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    return cell;
     
 }
 

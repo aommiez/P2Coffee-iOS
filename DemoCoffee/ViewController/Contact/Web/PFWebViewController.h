@@ -17,10 +17,10 @@
 @interface PFWebViewController : UIViewController <UIWebViewDelegate>
 
 @property (assign, nonatomic) id delegate;
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 @property NSString *url;
 
 @end

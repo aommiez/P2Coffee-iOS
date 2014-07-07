@@ -28,27 +28,27 @@
 
 @property (strong, nonatomic) NSDictionary *objEdit;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
 @property (strong, nonatomic) IBOutlet UINavigationController *navController;
-@property (weak, nonatomic  ) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic  ) IBOutlet UINavigationItem *navItem;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
 
-@property (weak, nonatomic) IBOutlet UITextField *display_name;
+@property (strong, nonatomic) IBOutlet UITextField *display_name;
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *thumUser;
+@property (strong, nonatomic) IBOutlet AsyncImageView *thumUser;
 
-@property (weak, nonatomic) IBOutlet UITextField *email;
-@property (weak, nonatomic) IBOutlet UITextField *website;
-@property (weak, nonatomic) IBOutlet UITextField *tel;
-@property (weak, nonatomic) IBOutlet UITextField *gender;
-@property (weak, nonatomic) IBOutlet UITextField *birthday;
+@property (strong, nonatomic) IBOutlet UITextField *email;
+@property (strong, nonatomic) IBOutlet UITextField *website;
+@property (strong, nonatomic) IBOutlet UITextField *tel;
+@property (strong, nonatomic) IBOutlet UITextField *gender;
+@property (strong, nonatomic) IBOutlet UITextField *birthday;
 
-@property (weak, nonatomic) IBOutlet UIImageView *password;
+@property (strong, nonatomic) IBOutlet UIImageView *password;
 
 - (IBAction)uploadPictureTapped:(id)sender;
 

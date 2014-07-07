@@ -21,14 +21,14 @@
 @interface PFNotificationViewController : UIViewController
 
 @property (assign, nonatomic) id <PFNotificationViewControllerDelegate> delegate;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) DCManager *Demoapi;
 
-@property (retain, nonatomic) NSArray *tableData;
-@property (retain, nonatomic) NSDictionary *obj;
-@property (retain, nonatomic) NSString *nString;
-@property (retain, nonatomic) NSString *type;
-@property (retain, nonatomic) IBOutlet AMBlurView *blurView;
-@property (retain, nonatomic) IBOutlet UITextView *textView;
+@property (strong, nonatomic) NSArray *tableData;
+@property (strong, nonatomic) NSDictionary *obj;
+@property (strong, nonatomic) NSString *nString;
+@property (strong, nonatomic) NSString *type;
+@property (strong, nonatomic) IBOutlet AMBlurView *blurView;
+@property (strong, nonatomic) IBOutlet UITextView *textView;
 
 @end

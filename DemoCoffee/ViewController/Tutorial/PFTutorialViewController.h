@@ -26,13 +26,13 @@
 @property (strong, nonatomic) IBOutlet UIScrollView *tutorialScrollView;
 @property (strong, nonatomic) IBOutlet UIView *tutorialDetailView;
 
-@property (weak, nonatomic) IBOutlet UITextField *testcode;
-@property (weak, nonatomic) IBOutlet UIButton *next1tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next2tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *next3tutorialButton;
-@property (weak, nonatomic) IBOutlet UIButton *donetutorialButton;
+@property (strong, nonatomic) IBOutlet UITextField *testcode;
+@property (strong, nonatomic) IBOutlet UIButton *next1tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *next2tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *next3tutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *donetutorialButton;
 
-@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
+@property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (IBAction)next1tutorialTapped:(id)sender;
 - (IBAction)next2tutorialTapped:(id)sender;

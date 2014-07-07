@@ -26,25 +26,25 @@
 @interface PFBranch1ViewController : UIViewController
 
 @property (assign, nonatomic) id <PFBranch1ViewControllerDelegate> delegate;
-@property (retain, nonatomic) CLLocationManager *locationManager;
-@property (retain, nonatomic) CLLocation *currentLocation;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) DCManager *Demoapi;
-@property (retain, nonatomic) NSMutableArray *arrObj;
+@property (strong, nonatomic) NSMutableArray *arrObj;
 @property (strong, nonatomic) NSDictionary *obj;
 
 @property (strong, nonatomic) NSDictionary *objContact;
 
-@property (retain, nonatomic) IBOutlet UIView *waitView;
-@property (retain, nonatomic) IBOutlet UIView *popupwaitView;
+@property (strong, nonatomic) IBOutlet UIView *waitView;
+@property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
-@property (weak, nonatomic) IBOutlet UIView *branchView;
-@property (weak, nonatomic) IBOutlet AsyncImageView *imageView;
-@property (weak, nonatomic) IBOutlet AsyncImageView *mapImage;
-@property (weak, nonatomic) IBOutlet UILabel *location;
-@property (weak, nonatomic) IBOutlet UILabel *phone;
+@property (strong, nonatomic) IBOutlet UIView *branchView;
+@property (strong, nonatomic) IBOutlet AsyncImageView *imageView;
+@property (strong, nonatomic) IBOutlet AsyncImageView *mapImage;
+@property (strong, nonatomic) IBOutlet UILabel *location;
+@property (strong, nonatomic) IBOutlet UILabel *phone;
 
 @property (strong, nonatomic) NSString *link;
 

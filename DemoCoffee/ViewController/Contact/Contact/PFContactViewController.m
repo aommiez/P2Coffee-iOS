@@ -298,8 +298,8 @@ BOOL refreshDataContact;
         } else {
             branch1 = [[PFBranch1ViewController alloc] initWithNibName:@"PFBranch1ViewController" bundle:nil];
         }
-        branch1.objContact = [self.arrObj objectAtIndex:indexPath.row];
         branch1.delegate = self;
+        branch1.objContact = [self.arrObj objectAtIndex:indexPath.row];
         [self.navController pushViewController:branch1 animated:YES];
     
     } else {
@@ -311,8 +311,8 @@ BOOL refreshDataContact;
         } else {
             branch = [[PFBranchViewController alloc] initWithNibName:@"PFBranchViewController" bundle:nil];
         }
-        branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
         branch.delegate = self;
+        branch.objContact = [self.arrObj objectAtIndex:indexPath.row];
         [self.navController pushViewController:branch animated:YES];
 
     }

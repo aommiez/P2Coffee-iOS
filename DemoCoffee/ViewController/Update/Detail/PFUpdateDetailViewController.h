@@ -29,14 +29,14 @@
 @property (assign, nonatomic) id <PFUpdateDetailViewControllerDelegate> delegate;
 @property (strong, nonatomic) IBOutlet UIView *detailView;
 @property (strong, nonatomic) IBOutlet UIView *headerView;
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *textCommentView;
 
-@property (retain, nonatomic) PFLoginViewController *loginView;
+@property (strong, nonatomic) PFLoginViewController *loginView;
 
-@property (weak, nonatomic) IBOutlet UILabel *titlenews;
-@property (weak, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *detailnews;
-@property (weak, nonatomic) IBOutlet AsyncImageView *detailthumb;
+@property (strong, nonatomic) IBOutlet UILabel *titlenews;
+@property (strong, nonatomic) IBOutlet UILabel_UILabelDynamicHeight *detailnews;
+@property (strong, nonatomic) IBOutlet AsyncImageView *detailthumb;
 
 @property (strong, nonatomic) DCManager *Demoapi;
 @property (strong, nonatomic) NSDictionary *obj;
@@ -44,8 +44,8 @@
 @property (strong, nonatomic) NSString *prevString;
 @property (strong, nonatomic) NSString *paging;
 
-@property (weak, nonatomic) IBOutlet UIButton *postBut;
-@property (weak, nonatomic) IBOutlet UITextView *textComment;
+@property (strong, nonatomic) IBOutlet UIButton *postBut;
+@property (strong, nonatomic) IBOutlet UITextView *textComment;
 
 - (IBAction)postCommentTapped:(id)sender;
 
