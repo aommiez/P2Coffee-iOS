@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *bgheaderView;
 
 @property (strong, nonatomic) NSString *user_id;
 

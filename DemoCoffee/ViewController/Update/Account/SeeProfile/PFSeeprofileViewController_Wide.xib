@@ -6,6 +6,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFSeeprofileViewController">
             <connections>
+                <outlet property="bgheaderView" destination="im4-CE-2LF" id="GHY-an-0Xu"/>
                 <outlet property="display_name" destination="U3f-Pr-47H" id="228-qQ-0BU"/>
                 <outlet property="headerView" destination="Pbx-XI-Xfi" id="kj0-6P-HDX"/>
                 <outlet property="popupwaitView" destination="cQz-Cb-KJb" id="tpG-I9-tYc"/>

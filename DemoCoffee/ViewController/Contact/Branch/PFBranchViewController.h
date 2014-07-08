@@ -48,6 +48,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UIView *branchView;
 
+@property (strong, nonatomic) IBOutlet UIView *mapView;
+
 @property (strong, nonatomic) IBOutlet AsyncImageView *mapImage;
 @property (strong, nonatomic) IBOutlet UILabel *location;
 @property (strong, nonatomic) IBOutlet UILabel *phone;
@@ -59,6 +61,9 @@
 @property (strong, nonatomic) NSString *current;
 
 @property (strong, nonatomic) NSMutableArray *arrgalleryimg;
+
+@property (strong, nonatomic) IBOutlet UIButton *locationButton;
+@property (strong, nonatomic) IBOutlet UIButton *callButton;
 
 - (IBAction)fullimgTapped:(id)sender;
 

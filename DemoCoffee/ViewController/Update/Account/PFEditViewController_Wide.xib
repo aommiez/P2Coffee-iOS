@@ -6,14 +6,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFEditViewController">
             <connections>
+                <outlet property="bgbirthdayView" destination="78j-fW-gME" id="NRk-hl-X5g"/>
+                <outlet property="bgemailView" destination="DGX-ZY-dMJ" id="eol-tY-owE"/>
+                <outlet property="bggenderView" destination="sa7-mq-0tL" id="zsg-Z3-dFe"/>
+                <outlet property="bgphoneView" destination="Q3H-MT-Ncv" id="QW0-4s-knX"/>
+                <outlet property="bgprofileView" destination="1Gw-us-prU" id="6PN-by-Xn9"/>
+                <outlet property="bgwebsiteView" destination="N1D-av-OPk" id="KcR-m0-YE8"/>
                 <outlet property="birthday" destination="fem-oz-e6c" id="Ulf-Ov-wPR"/>
                 <outlet property="display_name" destination="uQ7-PO-0ho" id="ppA-JK-hvy"/>
+                <outlet property="displaynameView" destination="Sno-i7-UXF" id="SBm-e0-syI"/>
                 <outlet property="email" destination="xXY-bi-fLI" id="FWv-f6-CGv"/>
                 <outlet property="gender" destination="yv9-90-IPc" id="o8X-UU-noU"/>
                 <outlet property="headerView" destination="QSp-NF-bI0" id="GOA-ne-Wzh"/>
                 <outlet property="navController" destination="NqR-IL-4ow" id="csb-EP-w1I"/>
                 <outlet property="navItem" destination="Idk-xv-ZlE" id="geT-rQ-SVO"/>
                 <outlet property="password" destination="qcc-ur-9LW" id="GfQ-73-TI7"/>
+                <outlet property="passwordView" destination="92S-oU-UD0" id="15N-e3-Oxp"/>
                 <outlet property="popupwaitView" destination="mnY-Nm-wv9" id="sek-U6-G6k"/>
                 <outlet property="tableView" destination="4Fn-yY-Dc8" id="Sxx-CI-3ZC"/>
                 <outlet property="tel" destination="DaR-aL-rjW" id="UUg-AU-XnZ"/>

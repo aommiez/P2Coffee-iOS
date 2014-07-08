@@ -6,6 +6,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFProfileViewController">
             <connections>
+                <outlet property="bgbirthdayView" destination="CIY-6Y-iwi" id="gA0-zF-ddA"/>
+                <outlet property="bgemailView" destination="G3o-b0-ZvN" id="icf-fx-3V9"/>
+                <outlet property="bgfacebookView" destination="jXd-mt-ssH" id="dOB-c9-QaX"/>
+                <outlet property="bggenderView" destination="4AB-J6-bCJ" id="lQM-qm-Ejm"/>
+                <outlet property="bgphoneView" destination="xkQ-yk-7DS" id="a4P-2L-fox"/>
+                <outlet property="bgprofileView" destination="gWf-xd-Wev" id="LBt-nb-Cqr"/>
+                <outlet property="bgwebsiteView" destination="kWi-oH-Ba8" id="NfE-GQ-dAW"/>
                 <outlet property="birthday" destination="fWp-uw-uUA" id="UD8-o1-zWC"/>
                 <outlet property="birthday_bt" destination="EGD-Jf-hMK" id="TsN-4a-dJT"/>
                 <outlet property="display_name" destination="Rql-le-fSc" id="1Ls-U9-MSj"/>

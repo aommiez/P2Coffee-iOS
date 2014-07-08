@@ -55,9 +55,25 @@ BOOL refreshDataContact;
     [mapimg setMasksToBounds:YES];
     [mapimg setCornerRadius:7.0f];
     
-    CALayer *mapview = [self.mapView layer];
-    [mapview setMasksToBounds:YES];
-    [mapview setCornerRadius:7.0f];
+    CALayer *mapButton = [self.mapButton layer];
+    [mapButton setMasksToBounds:YES];
+    [mapButton setCornerRadius:7.0f];
+    
+    self.mapView.layer.shadowOffset = CGSizeMake(1, -1);
+    self.mapView.layer.shadowRadius = 5;
+    self.mapView.layer.shadowOpacity = 0.2;
+    
+    self.callButton.layer.shadowOffset = CGSizeMake(1, -1);
+    self.callButton.layer.shadowRadius = 5;
+    self.callButton.layer.shadowOpacity = 0.2;
+    
+    self.websiteButton.layer.shadowOffset = CGSizeMake(1, -1);
+    self.websiteButton.layer.shadowRadius = 5;
+    self.websiteButton.layer.shadowOpacity = 0.2;
+    
+    self.emailButton.layer.shadowOffset = CGSizeMake(1, -1);
+    self.emailButton.layer.shadowRadius = 5;
+    self.emailButton.layer.shadowOpacity = 0.2;
     
     loadContact = NO;
     noDataContact = NO;
@@ -243,6 +259,7 @@ BOOL refreshDataContact;
     
     self.tableView.tableHeaderView = self.headerView;
     self.tableView.tableFooterView = self.footerView;
+
 }
 
 - (void)DCManager:(id)sender getContactByAppKeyErrorResponse:(NSString *)errorResponse {
@@ -268,6 +285,10 @@ BOOL refreshDataContact;
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    
+    cell.bgView.layer.shadowOffset = CGSizeMake(1, -1);
+    cell.bgView.layer.shadowRadius = 5;
+    cell.bgView.layer.shadowOpacity = 0.2;
     
     if (indexPath.row == 0) {
         cell.bgimg.image = [UIImage imageNamed:@"chapter_branch_01.png"];

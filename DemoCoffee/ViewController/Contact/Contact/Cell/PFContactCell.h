@@ -11,6 +11,7 @@
 
 @interface PFContactCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIView *bgView;
 @property (weak, nonatomic) IBOutlet UILabel *branch;
 @property (weak, nonatomic) IBOutlet AsyncImageView *imgbranch;
 @property (weak, nonatomic) IBOutlet UIImageView *bgimg;

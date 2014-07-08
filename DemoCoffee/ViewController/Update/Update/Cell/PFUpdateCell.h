@@ -11,10 +11,10 @@
 
 @interface PFUpdateCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIView *detailNewsView;
-@property (weak, nonatomic) IBOutlet UILabel *titleNews;
-@property (weak, nonatomic) IBOutlet UILabel *detailNews;
+@property (strong, nonatomic) IBOutlet UIView *detailNewsView;
+@property (strong, nonatomic) IBOutlet UILabel *titleNews;
+@property (strong, nonatomic) IBOutlet UILabel *detailNews;
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *thumbnails;
+@property (strong, nonatomic) IBOutlet AsyncImageView *thumbnails;
 
 @end

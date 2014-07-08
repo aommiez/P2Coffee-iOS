@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *bgEditView;
 @property (strong, nonatomic) IBOutlet UIView *footerView;
 
 @property (strong, nonatomic) NSDictionary *obj;
@@ -40,7 +41,9 @@
 @property (strong, nonatomic) IBOutlet UIView *waitView;
 @property (strong, nonatomic) IBOutlet UIView *popupwaitView;
 
-@property (strong, nonatomic) IBOutlet UIView *settingView;
+@property (strong, nonatomic) IBOutlet UIView *bgnewsView;
+@property (strong, nonatomic) IBOutlet UIView *bgmessageView;
+
 @property (strong, nonatomic) IBOutlet AsyncImageView *thumUser;
 @property (strong, nonatomic) IBOutlet UITextField *display_name;
 

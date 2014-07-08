@@ -70,6 +70,9 @@ BOOL newMediaDetail;
     [descText setFont:[UIFont systemFontOfSize:15]];
     self.detailnews.alpha = 0;
     [self.detailView addSubview:descText];
+    self.detailView.layer.shadowOffset = CGSizeMake(1, -1);
+    self.detailView.layer.shadowRadius = 5;
+    self.detailView.layer.shadowOpacity = 0.2;
     
     NSString *thumbid = [self.obj objectForKey:@"thumb_id"];
     NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=800&height=600"];
@@ -383,6 +386,11 @@ BOOL newMediaDetail;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFUpdateCommentCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
+    
+    cell.bgView.layer.shadowOffset = CGSizeMake(1, 1);
+    cell.bgView.layer.shadowRadius = 5;
+    cell.bgView.layer.shadowOpacity = 0.2;
+    
     //
     NSString *str = [[NSString alloc] init];
     str =  [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"content"];
@@ -465,40 +473,6 @@ BOOL newMediaDetail;
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
-
-//- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-//{
-//    [self.textComment resignFirstResponder];
-//    
-//    [UIView mt_animateViews:@[self.textCommentView] duration:0.34 timingFunction:kMTEaseOutSine animations:^{
-//        if ( IS_WIDESCREEN) {
-//            self.textCommentView.frame = CGRectMake(0, 464+60, 320, 44);
-//        } else {
-//            self.textCommentView.frame = CGRectMake(0, 440, 320, 44);
-//        }
-//        self.textComment.frame = CGRectMake(10, 7, 236, 30);
-//        self.postBut.frame = CGRectMake(254, 7, 54, 30);
-//    } completion:^{
-//        
-//    }];
-//    
-//    [UIView animateWithDuration:0.50
-//                          delay:0.1  /* starts the animation after 3 seconds */
-//                        options:UIViewAnimationCurveEaseOut
-//                     animations:^ {
-//                         self.tableView.frame = CGRectMake(self.tableView.frame.origin.x, self.tableView.frame.origin.y, 320, self.view.frame.size.height-44);
-//                         if ([self.arrObj count] > 0)
-//                             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:[self.arrObj count]-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
-//                     }
-//                     completion:^(BOOL finished) {
-//                         
-//                     }];
-//    
-//    if ([self.textComment.text isEqualToString:@""]) {
-//        [self.textComment setTextColor:[UIColor lightGrayColor]];
-//        self.textComment.text = @"Add Comment";
-//    }
-//}
 
 - (UIImage *)imageRotatedByDegrees:(UIImage*)oldImage deg:(CGFloat)degrees{
     // calculate the size of the rotated view's containing box for our drawing space

@@ -11,7 +11,7 @@
 @interface PFAccountCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UIView *bgView;
-@property (weak, nonatomic) IBOutlet UIImageView *imgrow;
-@property (weak, nonatomic) IBOutlet UITextField *detailrow;
+@property (strong, nonatomic) IBOutlet UIImageView *imgrow;
+@property (strong, nonatomic) IBOutlet UITextField *detailrow;
 
 @end

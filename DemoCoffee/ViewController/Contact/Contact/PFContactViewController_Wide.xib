@@ -6,9 +6,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFContactViewController">
             <connections>
+                <outlet property="callButton" destination="ncF-EP-eaN" id="dvE-2F-J73"/>
                 <outlet property="content" destination="awT-9C-kLl" id="XH9-Yn-ep3"/>
                 <outlet property="contentView" destination="ltw-aC-8hm" id="3Kq-dL-yea"/>
                 <outlet property="email" destination="zCw-wq-2Er" id="617-Zd-4zD"/>
+                <outlet property="emailButton" destination="Gqh-Rx-ofL" id="nvc-bd-at1"/>
                 <outlet property="footerView" destination="bEq-Dt-B8y" id="cl8-RG-C9k"/>
                 <outlet property="headerView" destination="Yxi-9Z-rKl" id="9nY-HV-P1N"/>
                 <outlet property="imgscrollview" destination="jXM-Gg-4QW" id="iIu-gh-XiH"/>
@@ -24,6 +26,7 @@
                 <outlet property="view" destination="7zu-Q2-k0h" id="xGO-dj-QBR"/>
                 <outlet property="waitView" destination="XtE-sc-mKx" id="URT-nJ-jIy"/>
                 <outlet property="website" destination="tcf-ex-TZA" id="sOZ-F1-t5r"/>
+                <outlet property="websiteButton" destination="Fup-TO-nYQ" id="3Cp-Ne-IRZ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -118,7 +121,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <view contentMode="scaleToFill" id="ltw-aC-8hm">
                     <rect key="frame" x="0.0" y="180" width="320" height="37"/>

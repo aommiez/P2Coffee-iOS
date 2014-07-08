@@ -17,18 +17,19 @@
 
 @interface PFUpdateCommentCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *commentLabel;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *userImg;
-@property (weak, nonatomic) IBOutlet UIButton *imgBut;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
+@property (strong, nonatomic) IBOutlet UILabel *commentLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *userImg;
+@property (strong, nonatomic) IBOutlet UIButton *imgBut;
 @property (assign, nonatomic) id <PFUpdateCommentCellDelegate> delegate;
 @property (nonatomic, weak) IBOutlet AsyncImageView *myImageView;
-@property (weak, nonatomic) IBOutlet UIImageView *bgComment;
-@property (weak, nonatomic) IBOutlet UIImageView *lineImg;
+@property (strong, nonatomic) IBOutlet UIImageView *bgComment;
+@property (strong, nonatomic) IBOutlet UIImageView *lineImg;
 
-@property (weak, nonatomic) IBOutlet UIImageView *headImg;
+@property (strong, nonatomic) IBOutlet UIImageView *headImg;
 
-@property (weak, nonatomic) IBOutlet UILabel *timeComment;
+@property (strong, nonatomic) IBOutlet UILabel *timeComment;
 
 - (IBAction)userImgTapped:(id)sender;
 

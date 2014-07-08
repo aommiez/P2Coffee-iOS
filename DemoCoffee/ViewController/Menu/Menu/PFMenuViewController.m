@@ -189,6 +189,10 @@ BOOL refreshDataMenu;
         cell.thumb.layer.masksToBounds = YES;
         cell.thumb.contentMode = UIViewContentModeScaleAspectFill;
         
+        cell.bgView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+        cell.bgView.layer.shadowRadius = 5;
+        cell.bgView.layer.shadowOpacity = 0.2;
+        
         NSString *thumbid = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb_id"];
         NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=300&height=200"];
         cell.thumb.imageURL = [[NSURL alloc] initWithString:urlimg];
@@ -213,6 +217,10 @@ BOOL refreshDataMenu;
         cell.namemenu.text = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"name"];
         cell.thumbmenu.layer.masksToBounds = YES;
         cell.thumbmenu.contentMode = UIViewContentModeScaleAspectFill;
+        
+        cell.bgView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+        cell.bgView.layer.shadowRadius = 5;
+        cell.bgView.layer.shadowOpacity = 0.2;
         
         NSString *thumbid = [[self.arrObj objectAtIndex:indexPath.row] objectForKey:@"thumb_id"];
         NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=300&height=200"];

@@ -34,6 +34,13 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) IBOutlet UIView *headerView;
+@property (strong, nonatomic) IBOutlet UIView *bgprofileView;
+@property (strong, nonatomic) IBOutlet UIView *bgfacebookView;
+@property (strong, nonatomic) IBOutlet UIView *bgemailView;
+@property (strong, nonatomic) IBOutlet UIView *bgwebsiteView;
+@property (strong, nonatomic) IBOutlet UIView *bgphoneView;
+@property (strong, nonatomic) IBOutlet UIView *bggenderView;
+@property (strong, nonatomic) IBOutlet UIView *bgbirthdayView;
 
 @property (strong, nonatomic) IBOutlet UITextField *display_name;
 

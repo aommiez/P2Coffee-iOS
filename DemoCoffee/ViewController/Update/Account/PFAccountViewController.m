@@ -39,9 +39,17 @@
     self.tableView.tableHeaderView = self.headerView;
     self.tableView.tableFooterView = self.footerView;
     
-    CALayer *tutorialButton = [self.tutorialButton layer];
-    [tutorialButton setMasksToBounds:YES];
-    [tutorialButton setCornerRadius:5.0f];
+    self.bgEditView.layer.shadowOffset = CGSizeMake(1, -1);
+    self.bgEditView.layer.shadowOpacity = 0.2;
+    
+    self.bgnewsView.layer.shadowOffset = CGSizeMake(1, -1);
+    self.bgnewsView.layer.shadowOpacity = 0.2;
+    
+    self.bgmessageView.layer.shadowOffset = CGSizeMake(1, -1);
+    self.bgmessageView.layer.shadowOpacity = 0.2;
+    
+    self.tutorialButton.layer.shadowOffset = CGSizeMake(1, -1);
+    self.tutorialButton.layer.shadowOpacity = 0.2;
     
     CALayer *next1tutorialButton = [self.next1tutorialButton layer];
     [next1tutorialButton setMasksToBounds:YES];
@@ -62,10 +70,6 @@
     CALayer *logoutButton = [self.logoutButton layer];
     [logoutButton setMasksToBounds:YES];
     [logoutButton setCornerRadius:5.0f];
-    
-    CALayer *settingView = [self.settingView layer];
-    [settingView setMasksToBounds:YES];
-    [settingView setCornerRadius:5.0f];
     
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;

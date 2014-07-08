@@ -11,9 +11,9 @@
 
 @interface PFNotificationCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *topicLabel;
-@property (weak, nonatomic) IBOutlet UILabel *timeLabel;
-@property (weak, nonatomic) IBOutlet UILabel *msgLabel;
-@property (weak, nonatomic) IBOutlet UIImageView *bg;
+@property (strong, nonatomic) IBOutlet UILabel *topicLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *msgLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *bg;
 
 @end

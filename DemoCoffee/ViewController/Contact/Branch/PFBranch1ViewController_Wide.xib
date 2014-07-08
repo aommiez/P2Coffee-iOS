@@ -7,9 +7,12 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PFBranch1ViewController">
             <connections>
                 <outlet property="branchView" destination="wIO-Qh-8TM" id="fWp-wp-MV4"/>
+                <outlet property="callButton" destination="GSh-NA-zkq" id="2f7-dZ-RGr"/>
                 <outlet property="imageView" destination="ZYK-rB-uB1" id="hDW-0J-Hsw"/>
                 <outlet property="location" destination="Q0f-qr-mPg" id="q4R-Bt-Uyg"/>
+                <outlet property="locationButton" destination="wNa-1x-bZN" id="NA9-tf-r5H"/>
                 <outlet property="mapImage" destination="cdY-6K-UC7" id="eCH-EE-uJ4"/>
+                <outlet property="mapView" destination="Js8-H8-EAv" id="C1j-sH-sco"/>
                 <outlet property="phone" destination="NT5-5j-u6Y" id="1f8-dS-AOE"/>
                 <outlet property="popupwaitView" destination="MB9-ZR-2Nx" id="uRI-WL-tWE"/>
                 <outlet property="tableView" destination="vur-nF-823" id="XHT-m9-Dd8"/>
@@ -93,10 +96,17 @@
                         <action selector="mapTapped:" destination="-1" eventType="touchUpInside" id="dwu-Ah-eWP"/>
                     </connections>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-6K-UC7" customClass="AsyncImageView">
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Js8-H8-EAv">
                     <rect key="frame" x="10" y="230" width="300" height="120"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                </imageView>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cdY-6K-UC7" customClass="AsyncImageView">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="120"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wNa-1x-bZN">
                     <rect key="frame" x="10" y="360" width="300" height="45"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

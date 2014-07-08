@@ -62,6 +62,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *website;
 @property (strong, nonatomic) IBOutlet UILabel *email;
 
+@property (strong, nonatomic) IBOutlet UIButton *callButton;
+@property (strong, nonatomic) IBOutlet UIButton *websiteButton;
+@property (strong, nonatomic) IBOutlet UIButton *emailButton;
+
 - (IBAction)mapTapped:(id)sender;
 
 - (IBAction)callTapped:(id)sender;

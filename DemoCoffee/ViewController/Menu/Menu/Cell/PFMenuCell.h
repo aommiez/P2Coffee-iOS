@@ -11,7 +11,8 @@
 
 @interface PFMenuCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet AsyncImageView *thumbmenu;
-@property (weak, nonatomic) IBOutlet UILabel *namemenu;
+@property (strong, nonatomic) IBOutlet UIView *bgView;
+@property (strong, nonatomic) IBOutlet AsyncImageView *thumbmenu;
+@property (strong, nonatomic) IBOutlet UILabel *namemenu;
 
 @end
