@@ -7,6 +7,7 @@
 //
 
 #import "PFEditViewController.h"
+#import "NSData+Base64.h"
 
 @interface PFEditViewController ()
 
@@ -283,7 +284,8 @@ BOOL newMedia;
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
     NSString *base64String = [self encodeToBase64String:image];
-    NSLog(@"%@",base64String);
+    //NSLog(@"%@",base64String);
+    
     [self.Demoapi userPictureUpload:base64String];
     [picker dismissViewControllerAnimated:YES completion:^{
         self.thumUser.image = image;

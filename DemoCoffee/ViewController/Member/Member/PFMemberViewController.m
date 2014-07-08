@@ -147,10 +147,10 @@ BOOL refreshheader;
         
         self.bg.layer.masksToBounds = YES;
         self.bg.contentMode = UIViewContentModeScaleAspectFill;
-    
-        self.conditionnomember.text = [[NSString alloc] initWithString:[response objectForKey:@"condition_info"]];
         
         if (!refreshheader) {
+            
+            self.conditionnomember.text = [[NSString alloc] initWithString:[response objectForKey:@"condition_info"]];
 
             CGRect frame = self.conditionnomember.frame;
             frame.size = [self.conditionnomember sizeOfMultiLineLabel];
@@ -166,11 +166,14 @@ BOOL refreshheader;
         
             self.conditionnomember.alpha = 0;
             [self.conditionnomemberView addSubview:descText];
+            
+            self.nomemberView.frame = CGRectMake(self.nomemberView.frame.origin.x, self.nomemberView.frame.origin.y, self.nomemberView.frame.size.width, self.nomemberView.frame.size.height+descText.frame.size.height-25);
         
             self.conditionnomemberView.frame = CGRectMake(self.conditionnomemberView.frame.origin.x, self.conditionnomemberView.frame.origin.y, self.conditionnomemberView.frame.size.width, self.conditionnomemberView.frame.size.height+descText.frame.size.height-15);
             
-            self.nomemberView.frame = CGRectMake(self.nomemberView.frame.origin.x, self.nomemberView.frame.origin.y, self.nomemberView.frame.size.width, self.nomemberView.frame.size.height+descText.frame.size.height-25);
-            
+            self.tableView.tableHeaderView = self.nomemberView;
+            self.tableView.tableFooterView = self.footernomemberView;
+        } else {
             self.tableView.tableHeaderView = self.nomemberView;
             self.tableView.tableFooterView = self.footernomemberView;
         }
