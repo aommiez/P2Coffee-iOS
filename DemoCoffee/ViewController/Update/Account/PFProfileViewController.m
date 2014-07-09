@@ -38,26 +38,9 @@
     
     self.tableView.tableHeaderView = self.headerView;
     
-    self.bgprofileView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgprofileView.layer.shadowOpacity = 0.2;
-    
-    self.bgfacebookView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgfacebookView.layer.shadowOpacity = 0.2;
-    
-    self.bgemailView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgemailView.layer.shadowOpacity = 0.2;
-    
-    self.bgwebsiteView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgwebsiteView.layer.shadowOpacity = 0.2;
-    
-    self.bgphoneView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgphoneView.layer.shadowOpacity = 0.2;
-    
-    self.bggenderView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bggenderView.layer.shadowOpacity = 0.2;
-    
-    self.bgbirthdayView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgbirthdayView.layer.shadowOpacity = 0.2;
+    self.bgprofileView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.bgprofileView.layer.shadowRadius = 2;
+    self.bgprofileView.layer.shadowOpacity = 0.1;
     
     CALayer *edit_bt = [self.edit_bt layer];
     [edit_bt setMasksToBounds:YES];

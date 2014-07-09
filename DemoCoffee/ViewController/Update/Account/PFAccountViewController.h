@@ -68,18 +68,12 @@
 @property (strong, nonatomic) IBOutlet UITextField *testcode;
 @property (strong, nonatomic) IBOutlet UITextField *appkey;
 @property (strong, nonatomic) IBOutlet UIButton *tutorialButton;
-@property (strong, nonatomic) IBOutlet UIButton *next1tutorialButton;
-@property (strong, nonatomic) IBOutlet UIButton *next2tutorialButton;
-@property (strong, nonatomic) IBOutlet UIButton *next3tutorialButton;
-@property (strong, nonatomic) IBOutlet UIButton *donetutorialButton;
+@property (strong, nonatomic) IBOutlet UIButton *nexttutorialButton;
 
 @property (strong, nonatomic) IBOutlet UIPageControl *pageControl;
 
 - (IBAction)tutorialTapped:(id)sender;
-- (IBAction)next1tutorialTapped:(id)sender;
-- (IBAction)next2tutorialTapped:(id)sender;
-- (IBAction)next3tutorialTapped:(id)sender;
-- (IBAction)closeTutorialView:(id)sender;
+- (IBAction)nexttutorialTapped:(id)sender;
 
 - (IBAction)appkeyTextTutorial:(id)sender;
 - (IBAction)testcodeTextTutorial:(id)sender;

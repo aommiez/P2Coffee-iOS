@@ -59,21 +59,9 @@ BOOL refreshDataContact;
     [mapButton setMasksToBounds:YES];
     [mapButton setCornerRadius:7.0f];
     
-    self.mapView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.mapView.layer.shadowRadius = 5;
-    self.mapView.layer.shadowOpacity = 0.2;
-    
-    self.callButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.callButton.layer.shadowRadius = 5;
-    self.callButton.layer.shadowOpacity = 0.2;
-    
-    self.websiteButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.websiteButton.layer.shadowRadius = 5;
-    self.websiteButton.layer.shadowOpacity = 0.2;
-    
-    self.emailButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.emailButton.layer.shadowRadius = 5;
-    self.emailButton.layer.shadowOpacity = 0.2;
+    self.mapView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.mapView.layer.shadowRadius = 2;
+    self.mapView.layer.shadowOpacity = 0.1;
     
     loadContact = NO;
     noDataContact = NO;
@@ -285,10 +273,6 @@ BOOL refreshDataContact;
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
-    
-    cell.bgView.layer.shadowOffset = CGSizeMake(1, -1);
-    cell.bgView.layer.shadowRadius = 5;
-    cell.bgView.layer.shadowOpacity = 0.2;
     
     if (indexPath.row == 0) {
         cell.bgimg.image = [UIImage imageNamed:@"chapter_branch_01.png"];

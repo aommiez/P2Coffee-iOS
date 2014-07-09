@@ -56,6 +56,10 @@
                             <action selector="userImgTapped:" destination="Ybz-oe-T2b" eventType="touchUpInside" id="dRV-iD-apf"/>
                         </connections>
                     </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LineCommentBoxIp5.png" translatesAutoresizingMaskIntoConstraints="NO" id="OnB-8L-puU">
+                        <rect key="frame" x="10" y="81" width="300" height="3"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jBK-zi-oxb">
                         <rect key="frame" x="90" y="43" width="160" height="21"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -82,5 +86,6 @@
     <resources>
         <image name="BodyCommentBoxIp5.png" width="300" height="69"/>
         <image name="HeadCommentBoxIp5.png" width="300" height="3"/>
+        <image name="LineCommentBoxIp5.png" width="300" height="3"/>
     </resources>
 </document>

@@ -46,17 +46,9 @@
     [mapimg setMasksToBounds:YES];
     [mapimg setCornerRadius:7.0f];
     
-    self.mapView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.mapView.layer.shadowRadius = 5;
-    self.mapView.layer.shadowOpacity = 0.2;
-    
-    self.locationButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.locationButton.layer.shadowRadius = 5;
-    self.locationButton.layer.shadowOpacity = 0.2;
-    
-    self.callButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.callButton.layer.shadowRadius = 5;
-    self.callButton.layer.shadowOpacity = 0.2;
+    self.mapView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.mapView.layer.shadowRadius = 2;
+    self.mapView.layer.shadowOpacity = 0.1;
     
     NSString *urlmap = [NSString stringWithFormat:@"%@%@%@%@%@%@%@%@",@"http://maps.googleapis.com/maps/api/staticmap?center=",self.lat,@",",self.lng,@"&zoom=16&size=6400x280&sensor=false&markers=color:red%7Clabel:Satit%7C",self.lat,@",",self.lng];
     

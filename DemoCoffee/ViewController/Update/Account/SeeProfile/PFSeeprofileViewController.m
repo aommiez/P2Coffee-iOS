@@ -37,8 +37,9 @@
     self.navigationItem.title = @"Profile";
     
     self.tableView.tableHeaderView = self.headerView;
-    self.bgheaderView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgheaderView.layer.shadowOpacity = 0.2;
+    self.bgheaderView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.bgheaderView.layer.shadowRadius = 2;
+    self.bgheaderView.layer.shadowOpacity = 0.1;
     
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
@@ -108,9 +109,6 @@
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFAccountCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    cell.bgView.layer.shadowOffset = CGSizeMake(1, -1);
-    cell.bgView.layer.shadowOpacity = 0.2;
     
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;

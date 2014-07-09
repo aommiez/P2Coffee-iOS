@@ -43,6 +43,8 @@
     self.Demoapi = [[DCManager alloc] init];
     self.Demoapi.delegate = self;
     
+    NSLog(@"%@",self.objdetail);
+    
     NSString *productid = [NSString stringWithFormat:@"pictures?product_id=%@",self.product_id];
     [self.Demoapi getProductId:productid];
     
@@ -118,6 +120,14 @@
     
     if ([[response objectForKey:@"length"] intValue] == 0) {
         
+        self.link = [[self.objdetail objectForKey:@"thumb"] objectForKey:@"link"];
+        
+        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@",[[self.objdetail objectForKey:@"thumb"] objectForKey:@"link"]];
+        
+        self.image.imageURL = [[NSURL alloc] initWithString:urlimg];
+        
+        self.image.layer.masksToBounds = YES;
+        self.image.contentMode = UIViewContentModeScaleAspectFill;
         
     } else {
         

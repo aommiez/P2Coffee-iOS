@@ -70,9 +70,10 @@ BOOL newMediaDetail;
     [descText setFont:[UIFont systemFontOfSize:15]];
     self.detailnews.alpha = 0;
     [self.detailView addSubview:descText];
-    self.detailView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.detailView.layer.shadowRadius = 5;
-    self.detailView.layer.shadowOpacity = 0.2;
+    
+    self.detailView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.detailView.layer.shadowRadius = 2;
+    self.detailView.layer.shadowOpacity = 0.1;
     
     NSString *thumbid = [self.obj objectForKey:@"thumb_id"];
     NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=800&height=600"];
@@ -386,10 +387,6 @@ BOOL newMediaDetail;
         NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"PFUpdateCommentCell" owner:self options:nil];
         cell = [nib objectAtIndex:0];
     }
-    
-    cell.bgView.layer.shadowOffset = CGSizeMake(1, 1);
-    cell.bgView.layer.shadowRadius = 5;
-    cell.bgView.layer.shadowOpacity = 0.2;
     
     //
     NSString *str = [[NSString alloc] init];

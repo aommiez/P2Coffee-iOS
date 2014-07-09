@@ -14,6 +14,8 @@
 
 @implementation PFAccountViewController
 
+NSString *removeBreckets;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -39,33 +41,20 @@
     self.tableView.tableHeaderView = self.headerView;
     self.tableView.tableFooterView = self.footerView;
     
-    self.bgEditView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgEditView.layer.shadowOpacity = 0.2;
+    self.bgEditView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    self.bgEditView.layer.shadowRadius = 2;
+    self.bgEditView.layer.shadowOpacity = 0.1;
     
-    self.bgnewsView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgnewsView.layer.shadowOpacity = 0.2;
+    removeBreckets = [[NSString alloc] init];
+    removeBreckets = @"0";
     
-    self.bgmessageView.layer.shadowOffset = CGSizeMake(1, -1);
-    self.bgmessageView.layer.shadowOpacity = 0.2;
+    [self.nexttutorialButton setTitle:@"Next" forState:UIControlStateNormal];
+    [self.nexttutorialButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1.0]];
     
-    self.tutorialButton.layer.shadowOffset = CGSizeMake(1, -1);
-    self.tutorialButton.layer.shadowOpacity = 0.2;
-    
-    CALayer *next1tutorialButton = [self.next1tutorialButton layer];
-    [next1tutorialButton setMasksToBounds:YES];
-    [next1tutorialButton setCornerRadius:5.0f];
-    
-    CALayer *next2tutorialButton = [self.next2tutorialButton layer];
-    [next2tutorialButton setMasksToBounds:YES];
-    [next2tutorialButton setCornerRadius:5.0f];
-    
-    CALayer *next3tutorialButton = [self.next3tutorialButton layer];
-    [next3tutorialButton setMasksToBounds:YES];
-    [next3tutorialButton setCornerRadius:5.0f];
-    
-    CALayer *donetutorialButton = [self.donetutorialButton layer];
-    [donetutorialButton setMasksToBounds:YES];
-    [donetutorialButton setCornerRadius:5.0f];
+    CALayer *nexttutorialButton = [self.nexttutorialButton layer];
+    [nexttutorialButton setMasksToBounds:YES];
+    [nexttutorialButton setCornerRadius:5.0f];
     
     CALayer *logoutButton = [self.logoutButton layer];
     [logoutButton setMasksToBounds:YES];
@@ -205,14 +194,6 @@
     [[[[UIApplication sharedApplication] delegate] window] addSubview:self.tutorialMainView];
 }
 
-- (IBAction)closeTutorialView:(id)sender {
-    [self.tutorialScrollView setContentOffset:CGPointMake(0,0) animated:YES];
-    self.pageControl.currentPage = 0;
-    [self.tutorialMainView removeFromSuperview];
-    [self.Demoapi saveAppKey:self.testcode.text];
-    [self viewDidLoad];
-}
-
 - (IBAction)appstoreTutorial:(id)sender {
     [self.Demoapi appinfo];
 }
@@ -300,23 +281,37 @@
 
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    NSString *removeBreckets = [[NSString alloc] init];
-    removeBreckets = @"0";
     
     NSString *contentOffSet = [NSString stringWithFormat:@"%@", NSStringFromCGPoint(self.tutorialScrollView.contentOffset)];
     removeBreckets = [contentOffSet stringByTrimmingCharactersInSet: [NSCharacterSet characterSetWithCharactersInString:@"{ ,0}"]];
     
     if ([removeBreckets intValue] <= 0) {
         self.pageControl.currentPage = 0;
+        [self.nexttutorialButton setTitle:@"Next" forState:UIControlStateNormal];
+        [self.nexttutorialButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1.0]];
+
     }
     if ([removeBreckets intValue] == 32) {
         self.pageControl.currentPage = 1;
+        [self.nexttutorialButton setTitle:@"Next" forState:UIControlStateNormal];
+        [self.nexttutorialButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1.0]];
+
     }
     if ([removeBreckets intValue] == 64) {
         self.pageControl.currentPage = 2;
+        [self.nexttutorialButton setTitle:@"Next" forState:UIControlStateNormal];
+        [self.nexttutorialButton setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:241.0/255.0 green:241.0/255.0 blue:242.0/255.0 alpha:1.0]];
+
     }
     if ([removeBreckets intValue] == 96) {
         self.pageControl.currentPage = 3;
+        [self.nexttutorialButton setTitle:@"Done" forState:UIControlStateNormal];
+        [self.nexttutorialButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:37.0/255.0 green:107.0/255.0 blue:176.0/255.0 alpha:1.0]];
+
     }
 
 }
@@ -326,19 +321,33 @@
 
 }
 
-- (IBAction)next1tutorialTapped:(id)sender {
-    [self.tutorialScrollView setContentOffset:CGPointMake(320,0) animated:YES];
-    self.pageControl.currentPage = 1;
-}
+- (IBAction)nexttutorialTapped:(id)sender {
+    
+    if ([removeBreckets intValue] <= 0) {
+        [self.tutorialScrollView setContentOffset:CGPointMake(320,0) animated:YES];
+        self.pageControl.currentPage = 1;
+        removeBreckets = @"32";
 
-- (IBAction)next2tutorialTapped:(id)sender {
-    [self.tutorialScrollView setContentOffset:CGPointMake(640,0) animated:YES];
-    self.pageControl.currentPage = 2;
-}
+    } else if ([removeBreckets intValue] == 32) {
+        [self.tutorialScrollView setContentOffset:CGPointMake(640,0) animated:YES];
+        self.pageControl.currentPage = 2;
+        removeBreckets = @"64";
 
-- (IBAction)next3tutorialTapped:(id)sender {
-    [self.tutorialScrollView setContentOffset:CGPointMake(960,0) animated:YES];
-    self.pageControl.currentPage = 3;
+    } else if ([removeBreckets intValue] == 64) {
+        [self.tutorialScrollView setContentOffset:CGPointMake(960,0) animated:YES];
+        self.pageControl.currentPage = 3;
+        removeBreckets = @"96";
+        [self.nexttutorialButton setTitle:@"Done" forState:UIControlStateNormal];
+        [self.nexttutorialButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.nexttutorialButton setBackgroundColor:[UIColor colorWithRed:37.0/255.0 green:107.0/255.0 blue:176.0/255.0 alpha:1.0]];
+
+    } else if ([removeBreckets intValue] == 96) {
+        [self.tutorialScrollView setContentOffset:CGPointMake(0,0) animated:YES];
+        self.pageControl.currentPage = 0;
+        [self.tutorialMainView removeFromSuperview];
+        [self.Demoapi saveAppKey:self.testcode.text];
+        [self viewDidLoad];
+    }
 }
 
 - (void)viewWillDisappear:(BOOL)animated {

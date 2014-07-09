@@ -11,13 +11,10 @@
                 <outlet property="bgmessageView" destination="Ci1-vt-SQQ" id="koM-ZU-7HZ"/>
                 <outlet property="bgnewsView" destination="lSe-61-VQ8" id="Bug-Uu-zZS"/>
                 <outlet property="display_name" destination="51D-8v-EKE" id="UGK-AE-q7n"/>
-                <outlet property="donetutorialButton" destination="zZN-Ic-dZf" id="ucw-dD-3EF"/>
                 <outlet property="footerView" destination="kyA-Dl-qRp" id="B41-c2-n7q"/>
                 <outlet property="headerView" destination="kmW-zk-hMF" id="YFq-DV-P1q"/>
                 <outlet property="logoutButton" destination="e5g-6S-Zf3" id="YGd-O1-HjK"/>
-                <outlet property="next1tutorialButton" destination="Kok-He-BJE" id="dq2-Au-ySH"/>
-                <outlet property="next2tutorialButton" destination="MVk-Qm-cKm" id="8Kh-Lr-v4x"/>
-                <outlet property="next3tutorialButton" destination="Y14-9O-LSz" id="QnU-2C-zNM"/>
+                <outlet property="nexttutorialButton" destination="rEw-Ff-mHf" id="fmL-22-xu1"/>
                 <outlet property="pageControl" destination="BOW-2z-UYV" id="zoU-Mv-7eV"/>
                 <outlet property="popupwaitView" destination="3a2-rP-Fz6" id="WnI-Lu-Ujo"/>
                 <outlet property="switchMessage" destination="9Wt-Eh-Ehw" id="3Rx-Uy-pQQ"/>
@@ -228,6 +225,18 @@
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                 </scrollView>
+                <button appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="rEw-Ff-mHf">
+                    <rect key="frame" x="245" y="40" width="55" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
+                    <state key="normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="nexttutorialTapped:" destination="-1" eventType="touchUpInside" id="oat-JB-I6o"/>
+                    </connections>
+                </button>
                 <pageControl appearanceType="aqua" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" id="BOW-2z-UYV">
                     <rect key="frame" x="125" y="520" width="70" height="37"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -240,30 +249,6 @@
             <rect key="frame" x="0.0" y="0.0" width="1280" height="568"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="MVk-Qm-cKm">
-                    <rect key="frame" x="565" y="40" width="55" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="next2tutorialTapped:" destination="-1" eventType="touchUpInside" id="mo2-ae-rCB"/>
-                    </connections>
-                </button>
-                <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Kok-He-BJE">
-                    <rect key="frame" x="245" y="40" width="55" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.94509803921568625" green="0.94509803921568625" blue="0.94901960784313721" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="next1tutorialTapped:" destination="-1" eventType="touchUpInside" id="Yw8-X0-Mu2"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-2.png" id="1fC-68-5QK">
                     <rect key="frame" x="340" y="90" width="280" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -276,18 +261,6 @@
                     <rect key="frame" x="980" y="90" width="280" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
-                <button appearanceType="aqua" opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="zZN-Ic-dZf">
-                    <rect key="frame" x="1205" y="40" width="55" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.14509803921568626" green="0.41960784313725491" blue="0.69019607843137254" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Done">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="closeTutorialView:" destination="-1" eventType="touchUpInside" id="51v-9B-gou"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="intro-1.png" id="eQf-KT-Jsp">
                     <rect key="frame" x="20" y="90" width="280" height="420"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -298,18 +271,6 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                 </textField>
-                <button opaque="NO" alpha="0.69999999999999973" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Y14-9O-LSz">
-                    <rect key="frame" x="885" y="40" width="55" height="30"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" red="0.94509803920000002" green="0.94509803920000002" blue="0.94901960780000005" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Next">
-                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                    </state>
-                    <connections>
-                        <action selector="next3tutorialTapped:" destination="-1" eventType="touchUpInside" id="eBD-8J-p8b"/>
-                    </connections>
-                </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="neo-pI-9nl">
                     <rect key="frame" x="1090" y="375" width="95" height="30"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

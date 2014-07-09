@@ -272,9 +272,9 @@ BOOL refreshDataNews;
     cell.backgroundColor = [UIColor clearColor];
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     [cell.detailNewsView.layer setCornerRadius:5.0f];
-    cell.detailNewsView.layer.shadowOffset = CGSizeMake(1, -1);
-    cell.detailNewsView.layer.shadowRadius = 5;
-    cell.detailNewsView.layer.shadowOpacity = 0.2;
+    cell.detailNewsView.layer.shadowOffset = CGSizeMake(0.5, -0.5);
+    cell.detailNewsView.layer.shadowRadius = 2;
+    cell.detailNewsView.layer.shadowOpacity = 0.1;
     
     return cell;
 }
