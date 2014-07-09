@@ -390,6 +390,32 @@ BOOL resultBool;
     }];
 }
 
+//
+- (void)uploadPicture:(NSData *)imageData {
+    NSLog(@"%@",imageData);
+    NSDictionary *parameters = @{@"picture":imageData ,@"access_token":[self getAccessToken]};
+    NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/update/%@",API_URL,[self getUserId]];
+    
+    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+        [formData appendPartWithFileData:imageData name:@"picture" fileName:@"picture.jpg" mimeType:@"image/jpeg"];
+    } error:nil];
+    [request setValue:[self getAccessToken] forHTTPHeaderField:@"X-Auth-Token"];
+    
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
+    NSProgress *progress = nil;
+    
+    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
+        NSLog(@"%@",progress);
+        if (error) {
+            NSLog(@"Error: %@", error);
+        } else {
+            NSLog(@"%@ %@", response, responseObject);
+        }
+    }];
+    [uploadTask resume];
+}
+//
+
 - (void)logOut {
     [self.userDefaults removeObjectForKey:@"access_token"];
     [self.userDefaults removeObjectForKey:@"user_id"];

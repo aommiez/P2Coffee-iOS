@@ -84,9 +84,9 @@ BOOL newMedia;
     return UIInterfaceOrientationMaskPortrait;
 }
 
--(void)close {
-    [self dismissModalViewControllerAnimated:YES];
-}
+//-(void)close {
+//    [self dismissModalViewControllerAnimated:YES];
+//}
 
 - (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
     self.objEdit = response;
@@ -294,10 +294,14 @@ BOOL newMedia;
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
-    NSString *base64String = [self encodeToBase64String:image];
+    //NSString *base64String = [self encodeToBase64String:image];
     //NSLog(@"%@",base64String);
-    
-    [self.Demoapi userPictureUpload:base64String];
+    //[self.Demoapi userPictureUpload:base64String];
+    //
+    image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
+    NSData *imageData1 = UIImageJPEGRepresentation(image, 75);
+    [self.Demoapi uploadPicture:imageData1];
+    //
     [picker dismissViewControllerAnimated:YES completion:^{
         self.thumUser.image = image;
         

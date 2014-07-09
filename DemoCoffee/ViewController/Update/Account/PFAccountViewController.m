@@ -237,7 +237,7 @@ NSString *removeBreckets;
         UITextField *appkey = [alertView textFieldAtIndex:0];
         if (![appkey.text length]==0) {
             [self.Demoapi saveAppKey:appkey.text];
-            [self viewDidLoad];
+            self.testcode.text = appkey.text;
         } else {
             [[[UIAlertView alloc] initWithTitle:@"DemoCoffee"
                                         message:@"Please fill Test code."
