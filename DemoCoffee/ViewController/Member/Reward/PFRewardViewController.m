@@ -41,7 +41,6 @@
     self.user_id = [self.Demoapi getUserId];
     
     NSString *url = [[NSString alloc] initWithFormat:@"%@%@%@%@%@%@",@"http://app.pla2.com/webview/stamp/page2.php?id=",self.reward_id,@"&user=",self.user_id,@"&domain=coffee&token=",self.token];
-    NSLog(@"%@",url);
     NSURLRequest *req = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
     self.webView.delegate = self;
     self.webView.scalesPageToFit = YES;
