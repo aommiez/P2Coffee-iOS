@@ -84,9 +84,9 @@ BOOL newMedia;
     return UIInterfaceOrientationMaskPortrait;
 }
 
-//-(void)close {
-//    [self dismissModalViewControllerAnimated:YES];
-//}
+-(void)close {
+    [self dismissModalViewControllerAnimated:YES];
+}
 
 - (void)DCManager:(id)sender meResponse:(NSDictionary *)response {
     self.objEdit = response;

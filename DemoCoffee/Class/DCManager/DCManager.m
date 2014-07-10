@@ -392,9 +392,22 @@ BOOL resultBool;
 
 //
 - (void)uploadPicture:(NSData *)imageData {
-    NSLog(@"%@",imageData);
-    NSDictionary *parameters = @{@"picture":imageData ,@"access_token":[self getAccessToken]};
-    NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/update/%@",API_URL,[self getUserId]];
+
+    NSDictionary *parameters = @{@"id":[self getUserId]};
+    NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/picture/%@",API_URL,[self getUserId]];
+    /*
+     self.manager = [AFHTTPRequestOperationManager manager];
+     self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+     self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+     [self.manager.requestSerializer setValue:[self getUserToken] forHTTPHeaderField:@"X-Auth-Token"];
+     [self.manager POST:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
+     [formData appendPartWithFileData:imageData name:@"picture" fileName:@"picture.jpg" mimeType:@"image/jpeg"];
+     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
+     NSLog(@"Success: %@", responseObject);
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+     NSLog(@"Error: %@", error);
+     }];
+     */
     
     NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
         [formData appendPartWithFileData:imageData name:@"picture" fileName:@"picture.jpg" mimeType:@"image/jpeg"];
