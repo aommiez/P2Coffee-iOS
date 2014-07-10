@@ -288,20 +288,44 @@ BOOL newMedia;
     }
 }
 
-- (NSString *)encodeToBase64String:(UIImage *)image {
-    return [UIImagePNGRepresentation(image) base64EncodedStringWithOptions:NSDataBase64Encoding64CharacterLineLength];
+- (NSString*)base64forData:(NSData*)theData {
+    
+    const uint8_t* input = (const uint8_t*)[theData bytes];
+    NSInteger length = [theData length];
+    
+    static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
+    
+    NSMutableData* data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
+    uint8_t* output = (uint8_t*)data.mutableBytes;
+    
+    NSInteger i;
+    for (i=0; i < length; i += 3) {
+        NSInteger value = 0;
+        NSInteger j;
+        for (j = i; j < (i + 3); j++) {
+            value <<= 8;
+            
+            if (j < length) {
+                value |= (0xFF & input[j]);
+            }
+        }
+        
+        NSInteger theIndex = (i / 3) * 4;
+        output[theIndex + 0] =                    table[(value >> 18) & 0x3F];
+        output[theIndex + 1] =                    table[(value >> 12) & 0x3F];
+        output[theIndex + 2] = (i + 1) < length ? table[(value >> 6)  & 0x3F] : '=';
+        output[theIndex + 3] = (i + 2) < length ? table[(value >> 0)  & 0x3F] : '=';
+    }
+    
+    return [[NSString alloc] initWithData:data encoding:NSASCIIStringEncoding];
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(NSDictionary *)editingInfo{
     
-    //NSString *base64String = [self encodeToBase64String:image];
-    //NSLog(@"%@",base64String);
-    //[self.Demoapi userPictureUpload:base64String];
-    //
-    image = [self squareImageWithImage:image scaledToSize:CGSizeMake(640, 640)];
-    NSData *imageData1 = UIImageJPEGRepresentation(image, 75);
-    [self.Demoapi uploadPicture:imageData1];
-    //
+    NSData *imageData = UIImagePNGRepresentation(image);
+    NSString *base64String = [self base64forData:imageData];
+    [self.Demoapi userPictureUpload:base64String];
+
     [picker dismissViewControllerAnimated:YES completion:^{
         self.thumUser.image = image;
         

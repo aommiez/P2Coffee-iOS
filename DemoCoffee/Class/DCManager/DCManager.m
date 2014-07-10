@@ -384,50 +384,11 @@ BOOL resultBool;
     NSLog(@"%@",picture_base64);
     self.urlStr = [[NSString alloc] initWithFormat:@"%@user/update/%@",API_URL,[self getUserId]];
     [self.manager POST:self.urlStr parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        [self.delegate DCManager:self userPictureUploadResponse:responseObject];
+        [self.delegate DCManager:self meResponse:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [self.delegate DCManager:self userPictureUploadErrorResponse:[error localizedDescription]];
+        [self.delegate DCManager:self meErrorResponse:[error localizedDescription]];
     }];
 }
-
-//
-- (void)uploadPicture:(NSData *)imageData {
-
-    NSDictionary *parameters = @{@"id":[self getUserId]};
-    NSString *strUrl = [[NSString alloc] initWithFormat:@"%@user/picture/%@",API_URL,[self getUserId]];
-    /*
-     self.manager = [AFHTTPRequestOperationManager manager];
-     self.manager.responseSerializer = [AFJSONResponseSerializer serializer];
-     self.manager.requestSerializer = [AFJSONRequestSerializer serializer];
-     [self.manager.requestSerializer setValue:[self getUserToken] forHTTPHeaderField:@"X-Auth-Token"];
-     [self.manager POST:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-     [formData appendPartWithFileData:imageData name:@"picture" fileName:@"picture.jpg" mimeType:@"image/jpeg"];
-     } success:^(AFHTTPRequestOperation *operation, id responseObject) {
-     NSLog(@"Success: %@", responseObject);
-     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-     NSLog(@"Error: %@", error);
-     }];
-     */
-    
-    NSMutableURLRequest *request = [[AFHTTPRequestSerializer serializer] multipartFormRequestWithMethod:@"POST" URLString:strUrl parameters:parameters constructingBodyWithBlock:^(id<AFMultipartFormData> formData) {
-        [formData appendPartWithFileData:imageData name:@"picture" fileName:@"picture.jpg" mimeType:@"image/jpeg"];
-    } error:nil];
-    [request setValue:[self getAccessToken] forHTTPHeaderField:@"X-Auth-Token"];
-    
-    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
-    NSProgress *progress = nil;
-    
-    NSURLSessionUploadTask *uploadTask = [manager uploadTaskWithStreamedRequest:request progress:&progress completionHandler:^(NSURLResponse *response, id responseObject, NSError *error) {
-        NSLog(@"%@",progress);
-        if (error) {
-            NSLog(@"Error: %@", error);
-        } else {
-            NSLog(@"%@ %@", response, responseObject);
-        }
-    }];
-    [uploadTask resume];
-}
-//
 
 - (void)logOut {
     [self.userDefaults removeObjectForKey:@"access_token"];
