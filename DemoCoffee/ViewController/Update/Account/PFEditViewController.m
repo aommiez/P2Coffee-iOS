@@ -275,6 +275,11 @@ BOOL newMedia;
 
 - (void) useCameraRoll
 {
+    [self.view addSubview:self.waitView];
+    
+    CALayer *popup = [self.popupwaitView layer];
+    [popup setMasksToBounds:YES];
+    [popup setCornerRadius:7.0f];
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:247.0f/255.0f green:148.0f/255.0f blue:30.0f/255.0f alpha:1.0f]];
     
@@ -344,6 +349,7 @@ BOOL newMedia;
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self.waitView removeFromSuperview];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
