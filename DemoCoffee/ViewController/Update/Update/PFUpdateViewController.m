@@ -88,7 +88,12 @@ BOOL refreshDataNews;
     if (![[self.Demoapi getAppKeyCheck] isEqualToString:@"123"]) {
         
         [self.delegate HideTabbar];
-        self.tutorialView = [PFTutorialViewController alloc];
+        self.tutorialView = [[PFTutorialViewController alloc] init];
+        if(IS_WIDESCREEN) {
+            self.tutorialView = [[PFTutorialViewController alloc] initWithNibName:@"PFTutorialViewController_Wide" bundle:nil];
+        } else {
+            self.tutorialView = [[PFTutorialViewController alloc] initWithNibName:@"PFAccountViewController" bundle:nil];
+        }
         self.tutorialView.delegate = self;
         [self.view addSubview:self.tutorialView.view];
         
