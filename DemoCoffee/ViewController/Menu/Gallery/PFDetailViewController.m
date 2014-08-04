@@ -133,8 +133,8 @@
 
         self.link = [[[[response objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"] objectForKey:@"link"];
         
-        NSString *thumbid = [[[[response objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"] objectForKey:@"id"];
-        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",self.link,thumbid,@"?width=800&height=600"];
+        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@",self.link,@"?width=800&height=600"];
+
         self.image.imageURL = [[NSURL alloc] initWithString:urlimg];
         
         self.image.layer.masksToBounds = YES;
