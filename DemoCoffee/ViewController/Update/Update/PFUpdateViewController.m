@@ -204,7 +204,7 @@ BOOL refreshDataNews;
 
 - (void)DCManager:(id)sender getNewsByAppKeyResponse:(NSDictionary *)response {
     self.obj = response;
-    NSLog(@"Update %@",response);
+    //NSLog(@"Update %@",response);
     
     [self.waitView removeFromSuperview];
     

@@ -119,7 +119,7 @@ BOOL refreshDataContact;
 
 - (void)DCManager:(id)sender getContactByAppKeyResponse:(NSDictionary *)response {
     self.obj = response;
-    NSLog(@"contact %@",response);
+    //NSLog(@"contact %@",response);
     
     [self.waitView removeFromSuperview];
     

@@ -187,7 +187,7 @@ BOOL refreshheader;
 
 - (void)DCManager:(id)sender getStampResponse:(NSDictionary *)response {
     self.objStamp = response;
-    NSLog(@"Member nomemberview getStamp %@",response);
+    //NSLog(@"Member nomemberview getStamp %@",response);
     
     self.showpoint.text = [[NSString alloc] initWithFormat:@"%@",[response objectForKey:@"point"]];
     
@@ -723,7 +723,7 @@ BOOL refreshheader;
 }
 
 - (void)DCManager:(id)sender getRewardResponse:(NSDictionary *)response {
-    NSLog(@"Member memberview getReward %@",response);
+    //NSLog(@"Member memberview getReward %@",response);
     
     //login
     if (!refreshDataMember) {

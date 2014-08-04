@@ -114,7 +114,7 @@
 
 - (void)DCManager:(id)sender getProductIdResponse:(NSDictionary *)response {
     self.obj = response;
-    NSLog(@"%@",response);
+    NSLog(@"picture %@",response);
     
     [self.waitView removeFromSuperview];
     
@@ -130,11 +130,11 @@
         self.image.contentMode = UIViewContentModeScaleAspectFill;
         
     } else {
-        
+
         self.link = [[[[response objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"] objectForKey:@"link"];
         
-        NSString *thumbid = [[[response objectForKey:@"data"] objectForKey:@"picture"] objectForKey:@"id"];
-        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",@"http://coffee-api.pla2app.com/picture/",thumbid,@"?width=800&height=600"];
+        NSString *thumbid = [[[[response objectForKey:@"data"] objectAtIndex:0] objectForKey:@"picture"] objectForKey:@"id"];
+        NSString *urlimg = [[NSString alloc] initWithFormat:@"%@%@%@",self.link,thumbid,@"?width=800&height=600"];
         self.image.imageURL = [[NSURL alloc] initWithString:urlimg];
         
         self.image.layer.masksToBounds = YES;

@@ -108,7 +108,7 @@ BOOL refreshDataMenu;
 
 - (void)DCManager:(id)sender getFolderListResponse:(NSDictionary *)response {
     self.obj = response;
-    NSLog(@"getFolderList %@",response);
+    //NSLog(@"getFolderList %@",response);
     
     [self.waitView removeFromSuperview];
     
